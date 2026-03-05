@@ -1008,15 +1008,6 @@ export const caseStudies = [
 // ─── ACHIEVEMENTS ─────────────────────────────────────────────────
 export const achievements = [
   {
-    id: "retained",
-    icon: "🏆",
-    title: "Retained During Team Restructure",
-    detail:
-      "Kept on while 2 senior devs and a BA were let go. Recognised as the highest-value contributor on the product team.",
-    year: "2025",
-    color: "#f5c842",
-  },
-  {
     id: "domain",
     icon: "🎓",
     title: "2,000+ Hours of Domain Leadership",
