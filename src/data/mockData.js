@@ -932,7 +932,7 @@ export const caseStudies = [
       {
         step: "Delivery",
         detail:
-          "Facilitated 120+ live training sessions across 18 months. Created 60+ SOPs, 30 video walkthroughs, and a searchable Confluence knowledge base. Ran weekly Q&A office hours.",
+          "Facilitated 120+ live training sessions across 18 months. Created 60+ SOPs, 30 video walkthroughs, and a publicly hosted knowledge base at learntargetcrm.com. Ran weekly Q&A office hours.",
       },
       {
         step: "Iteration",
