@@ -226,7 +226,7 @@ function CertFlipCard({ cert, index, inView, onClick }) {
             borderRadius: 2,
             display: 'flex', flexDirection: 'column', overflow: 'hidden',
           }}>
-            <Box sx={{ background: cert.color, p: 1.2 }}>
+            <Box sx={{ background: cert.color, p: 1.2, textAlign: 'center' }}>
               <Typography sx={{ color: '#fff', fontSize: '0.6rem', fontWeight: 700, fontFamily: '"JetBrains Mono",monospace' }}>
                 {cert.issuer} · CERTIFICATE
               </Typography>
