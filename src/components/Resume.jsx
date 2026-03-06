@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { Box, Typography, Button, Divider, Stack, Chip, List, ListItem, CircularProgress } from '@mui/material';
+import React from 'react';
+import { Box, Typography, Button, Divider, Stack, Chip, List, ListItem } from '@mui/material';
 import Grid2 from '@mui/material/Grid2';
 import DownloadIcon from '@mui/icons-material/Download';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -7,8 +7,6 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useColorScheme } from '@mui/material/styles';
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
 import { personal, experience, certifications } from '../data/mockData';
 
 const MotionBox = motion.create(Box);
@@ -45,60 +43,9 @@ const topSkills = ['Product Discovery', 'User Story Writing', 'Azure DevOps', 'P
 
 export default function Resume() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-  const resumeContentRef = useRef(null);
   const { mode } = useColorScheme();
-  const [downloading, setDownloading] = useState(false);
-
-  const handleDownload = async () => {
-    const el = resumeContentRef.current;
-    if (!el) return;
-    setDownloading(true);
-    try {
-      const canvas = await html2canvas(el, {
-        scale: 2,
-        useCORS: true,
-        backgroundColor: null,
-        logging: false,
-      });
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-      const pageW = pdf.internal.pageSize.getWidth();
-      const pageH = pdf.internal.pageSize.getHeight();
-      const margin = 8;
-      const contentW = pageW - margin * 2;
-      const imgRatio = canvas.height / canvas.width;
-      const contentH = contentW * imgRatio;
-
-      if (contentH <= pageH - margin * 2) {
-        pdf.addImage(imgData, 'PNG', margin, margin, contentW, contentH);
-      } else {
-        // Multi-page: slice the canvas into pages
-        const pxPerPage = (canvas.width * (pageH - margin * 2)) / contentW;
-        let yOffset = 0;
-        let page = 0;
-        while (yOffset < canvas.height) {
-          if (page > 0) pdf.addPage();
-          const sliceH = Math.min(pxPerPage, canvas.height - yOffset);
-          const sliceCanvas = document.createElement('canvas');
-          sliceCanvas.width = canvas.width;
-          sliceCanvas.height = sliceH;
-          const ctx = sliceCanvas.getContext('2d');
-          ctx.drawImage(canvas, 0, yOffset, canvas.width, sliceH, 0, 0, canvas.width, sliceH);
-          const sliceImg = sliceCanvas.toDataURL('image/png');
-          const drawH = (sliceH / canvas.width) * contentW;
-          pdf.addImage(sliceImg, 'PNG', margin, margin, contentW, drawH);
-          yOffset += sliceH;
-          page++;
-        }
-      }
-      const themeSuffix = mode === 'light' ? 'Light' : 'Dark';
-      pdf.save(`Mahmood_Ahmad_Resume_${themeSuffix}.pdf`);
-    } catch (err) {
-      console.error('PDF generation failed:', err);
-    } finally {
-      setDownloading(false);
-    }
-  };
+  const resumeFile = mode === 'light' ? '/Mahmood_Ahmad_Resume_Light.pdf' : '/Mahmood_Ahmad_Resume_Dark.pdf';
+  const resumeDownloadName = mode === 'light' ? 'Mahmood_Ahmad_Resume_Light.pdf' : 'Mahmood_Ahmad_Resume_Dark.pdf';
 
   return (
     <Box id="resume" sx={{ py: 14, background: 'var(--gradient-section)' }}>
@@ -119,7 +66,7 @@ export default function Resume() {
               <Box sx={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 3, p: 2.5, mb: 2 }}>
                 <ResumeThumb />
                 <Stack spacing={1.5} sx={{ mt: 2.5 }}>
-                  <Button variant="contained" color="primary" fullWidth startIcon={downloading ? <CircularProgress size={18} sx={{ color: '#fff' }} /> : <DownloadIcon />} onClick={handleDownload} disabled={downloading}>{downloading ? 'Generating…' : 'Download Resume'}</Button>
+                  <Button variant="contained" color="primary" fullWidth startIcon={<DownloadIcon />} href={resumeFile} download={resumeDownloadName}>Download Resume</Button>
                   <Button variant="outlined" fullWidth startIcon={<LinkedInIcon />} href={personal.linkedin} target="_blank" sx={{ borderColor: 'var(--glass-hover)', color: 'text.secondary', '&:hover': { borderColor: 'primary.light', color: 'secondary.main' } }}>LinkedIn Profile</Button>
                 </Stack>
               </Box>
@@ -139,7 +86,6 @@ export default function Resume() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              ref={resumeContentRef}
               sx={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 3, p: { xs: 3, md: 5 } }}
             >
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 3, pb: 3, borderBottom: '2px solid #1d6aff' }}>
