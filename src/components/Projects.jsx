@@ -28,9 +28,9 @@ function SectionLabel({ children }) {
 
 function StatusBadge({ status }) {
   const map = {
-    Live:      { color: '#00e5a0', bg: 'rgba(0,229,160,0.1)',  border: 'rgba(0,229,160,0.25)',  icon: <CheckCircleIcon sx={{ fontSize: 10 }} /> },
+    Live: { color: '#00e5a0', bg: 'rgba(0,229,160,0.1)', border: 'rgba(0,229,160,0.25)', icon: <CheckCircleIcon sx={{ fontSize: 10 }} /> },
     Completed: { color: '#4d8dff', bg: 'rgba(77,141,255,0.1)', border: 'rgba(77,141,255,0.25)', icon: <CheckCircleIcon sx={{ fontSize: 10 }} /> },
-    Upcoming:  { color: '#f5c842', bg: 'rgba(245,200,66,0.1)', border: 'rgba(245,200,66,0.25)', icon: <AccessTimeIcon sx={{ fontSize: 10 }} /> },
+    Upcoming: { color: '#f5c842', bg: 'rgba(245,200,66,0.1)', border: 'rgba(245,200,66,0.25)', icon: <AccessTimeIcon sx={{ fontSize: 10 }} /> },
   };
   const s = map[status] || map.Live;
   return (
@@ -82,7 +82,7 @@ function ProjectDialog({ project, open, onClose }) {
             {/* Browser chrome */}
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1, background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
               <Box sx={{ display: 'flex', gap: 0.6 }}>
-                {['#ff5f57','#ffbd2e','#28c840'].map(c => <Box key={c} sx={{ width: 10, height: 10, borderRadius: '50%', background: c }} />)}
+                {['#ff5f57', '#ffbd2e', '#28c840'].map(c => <Box key={c} sx={{ width: 10, height: 10, borderRadius: '50%', background: c }} />)}
               </Box>
               <Box sx={{ flex: 1, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 1, px: 1.5, py: 0.4 }}>
                 <Typography sx={{ color: 'text.secondary', fontSize: '0.7rem', fontFamily: '"JetBrains Mono",monospace' }}>{project.demoUrl}</Typography>
