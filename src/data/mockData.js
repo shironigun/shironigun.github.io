@@ -899,7 +899,7 @@ export const caseStudies = [
   },
   {
     id: "cs-training",
-    title: "Engineering a 2,000-Hour Domain Training Program",
+    title: "How I Cut New-Hire Ramp Time from 8 Weeks to 3",
     subtitle: "Cutting New-Hire Ramp Time from 8 Weeks to 3",
     company: "Contour Software",
     period: "2024 – 2025",
