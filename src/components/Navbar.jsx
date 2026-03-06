@@ -18,6 +18,7 @@ const primaryLinks = [
 ];
 
 const workLinks = [
+  { label: 'Products',       href: '#products' },
   { label: 'Certifications', href: '#certifications' },
   { label: 'Projects',       href: '#projects' },
   { label: 'Case Studies',   href: '#case-studies' },
