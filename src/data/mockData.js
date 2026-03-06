@@ -845,8 +845,9 @@ export const caseStudies = [
   },
   {
     id: "cs-postman-poc",
-    title: "POC for Postman — API & Performance Testing",
-    subtitle: "Evaluating Postman's Suitability Beyond Traditional QA Workflows",
+    title: "How a Postman POC Standardised API Testing Across 5+ Teams",
+    subtitle:
+      "Evaluating Postman's Suitability Beyond Traditional QA Workflows",
     company: "Perseus Group, Constellation Software",
     period: "Q1 2025",
     role: "Product Quality Analyst",
