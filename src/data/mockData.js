@@ -890,7 +890,7 @@ export const caseStudies = [
     results: [
       { metric: "12", label: "Features evaluated end-to-end" },
       { metric: "4", label: "Pricing tiers mapped" },
-      { metric: "✅", label: "Adopted as standard API tool" },
+      { metric: "5+", label: "Teams adopted as standard API tool" },
       { metric: "10+", label: "Pros & cons documented" },
     ],
     learnings:
