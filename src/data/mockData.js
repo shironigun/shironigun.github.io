@@ -164,11 +164,11 @@ export const experience = [
     location: "Lahore, Pakistan",
     current: true,
     bullets: [
-      'Orchestrated translation of high-level product vision into actionable <b>Epics and User Stories</b> within Aha! and Azure DevOps; established "Strict Quality Gates" that significantly minimized scope creep.',
-      "Led <b>cross-functional discovery sessions</b> using hybrid methodologies — leveraging Quantitative Analysis (Regression, Trend, Break-even) to validate market needs with data-backed insights.",
-      "Modelled complex solution architectures using <b>Microsoft Visio and draw.io</b>; proactively resolved systemic bottlenecks using SWOT and 5 Whys root-cause analysis.",
-      "Standardized roadmap execution through <b>advanced Gantt Planning</b> and proactive Risk & Escalation Management, increasing delivery predictability across distributed teams.",
-      "Pioneered the use of <b>Microsoft Power Platform (Power Apps & Automate) and Power BI</b> to build custom internal dashboards monitoring product-market fit in real-time.",
+      'Orchestrate the translation of high-level product vision into actionable <b>Epics and User Stories</b> within Aha! and Azure DevOps — established "Strict Quality Gates" and acceptance criteria that significantly minimized scope creep and reduced defect leakage across the development lifecycle.',
+      "Lead <b>cross-functional discovery sessions</b> using hybrid research methodologies; leverage Quantitative Analysis (Regression, Trend, Break-even) to validate market needs — ensuring prioritization is driven by <b>data-backed insights</b> rather than intuition.",
+      "Model complex solution architectures and business processes using <b>Microsoft Visio and draw.io</b>; proactively resolve systemic bottlenecks via SWOT and 5 Whys root-cause analysis, while clarifying cross-functional ownership through <b>RACI/RASCI</b> frameworks.",
+      "Standardize roadmap execution through <b>advanced Gantt Planning</b> and proactive Risk & Escalation Management — directly increasing delivery predictability and stakeholder alignment across distributed teams.",
+      "Pioneered <b>Microsoft Power Platform (Power Apps & Automate) and Power BI</b> dashboards that streamline workflows, monitor product-market fit in real-time, and validate post-launch outcomes against KPIs.",
     ],
     tags: [
       "Aha!",
@@ -191,11 +191,12 @@ export const experience = [
     location: "Lahore, Pakistan",
     current: false,
     bullets: [
-      "Liaised with Product Owners to refine business requirements, ensuring seamless alignment and process optimization through <b>cross-functional collaboration</b>.",
-      "Supervised execution of critical test cases within <b>Azure DevOps for million-dollar DMS and CRM offerings</b>, establishing systematic approaches that improved overall product performance.",
-      "Led over <b>2,000 hours of domain training sessions</b> for development, operations, BAs, and cross-functional teams, driving alignment and knowledge sharing.",
-      "Collaborated with development teams to identify and resolve defects through <b>manual and automation testing</b>, increasing product reliability and client satisfaction.",
-      "Created detailed test plans and used <b>control flow diagrams</b> to visualize application flows, improving sprint velocity and release quality.",
+      "Liaised with Product Owners to refine business requirements — ensuring seamless alignment, clarity, and <b>process optimization</b> through cross-functional collaboration.",
+      "Created detailed <b>test plans</b> and used control flow diagrams to visualize application flows, improving test coverage and sprint execution.",
+      "Improved development, sprint, and release processes — <b>enhancing delivery speed</b> and operational efficiency across product teams.",
+      "Supervised execution of critical test cases within <b>Azure DevOps for million-dollar DMS and CRM offerings</b>; established a systematic approach that improved overall product performance with notable reliability increases.",
+      "Collaborated with development teams to identify and resolve defects through <b>manual and automation testing</b>, directly increasing product reliability and client satisfaction.",
+      "Led over <b>2,000+ hours of domain training sessions</b> for development, operations, BAs, and cross-functional teams — driving alignment, knowledge sharing, and reduced onboarding time.",
     ],
     tags: [
       "Azure DevOps",
@@ -217,9 +218,10 @@ export const experience = [
     current: false,
     bullets: [
       "Initiated <b>global UI standards documentation</b>, improving consistency and usability across the enterprise product suite.",
+      "Gained deep <b>domain, business, and sprint process</b> understanding, proactively identifying and enhancing workflow inefficiencies.",
       "Conducted <b>UAT, functional, API, and cross-platform testing</b>, ensuring system stability and meeting customer needs throughout the sprint lifecycle.",
-      "Spent <b>360+ hours collaborating</b> with operations, development, cross-functional teams, PO, and Initiative Manager, driving quality improvements.",
-      "Implemented workarounds, reduced testing efforts, tracked and managed bug reports — maintaining high product quality and timely resolution.",
+      "Implemented workarounds, reduced testing efforts, tracked and managed bug reports — ensuring <b>timely resolution</b> and maintaining high product quality.",
+      "Spent <b>360+ hours collaborating</b> with operations, development, cross-functional teams, PO, and Initiative Manager — driving quality improvements and process efficiency.",
     ],
     tags: [
       "UAT",
@@ -238,9 +240,10 @@ export const experience = [
     location: "Lahore, Pakistan",
     current: false,
     bullets: [
-      "Designed and customized <b>WordPress themes</b> to meet client specifications, creating unique websites that enhanced user engagement and brand identity.",
-      "Converted <b>PSD designs into fully functional WordPress sites</b>, maintaining design integrity and seamless transition from design to development.",
-      "Utilized <b>Elementor</b> to create responsive, dynamic, and mobile-friendly pages improving overall user experience and reducing bounce rates.",
+      "Designed and customized <b>WordPress themes</b> to client specifications — delivering unique websites that enhanced user engagement and strengthened brand identity.",
+      "Converted <b>PSD designs into fully functional WordPress sites</b>, ensuring pixel-perfect design integrity and seamless design-to-development handoff.",
+      "Utilized <b>Elementor</b> to create responsive, dynamic, and mobile-friendly pages — improving user experience and reducing bounce rates.",
+      "Enhanced <b>UI/UX</b> by optimizing site navigation and layout, resulting in increased user satisfaction and measurable engagement improvements.",
     ],
     tags: [
       "WordPress",
@@ -260,8 +263,9 @@ export const experience = [
     current: false,
     bullets: [
       "Conceptualized and crafted visually appealing <b>e-brochures and marketing materials</b> that enhanced brand visibility and professional communication.",
-      "Refined and optimized the <b>web interface design</b>, resulting in a more intuitive and user-friendly website experience with improved navigation.",
-      "Applied <b>user-centred design principles</b>, prototyping and iterating on UI improvements that resulted in tangible UX enhancements.",
+      "Refined and optimized the <b>web interface design</b>, resulting in a more intuitive and user-friendly experience with improved navigation and aesthetics.",
+      "Sketched and prototyped <b>user interface designs</b> to streamline the design process — ensuring alignment with user needs and smoother development handoff.",
+      "Collaborated on key <b>design improvements</b> applying user-centred design principles, resulting in tangible enhancements to the overall user experience.",
     ],
     tags: [
       "UX Design",
