@@ -899,8 +899,8 @@ export const caseStudies = [
   },
   {
     id: "cs-training",
-    title: "How I Cut New-Hire Ramp Time from 8 Weeks to 3",
-    subtitle: "Cutting New-Hire Ramp Time from 8 Weeks to 3",
+    title: "How I Cut Domain Training from Months to Minutes",
+    subtitle: "A Self-Initiated Knowledge Base Adopted by Operations, Development, QA, Stakeholders & End Customers",
     company: "Contour Software",
     period: "2024 – 2025",
     role: "Junior SQA Analyst",
@@ -915,9 +915,9 @@ export const caseStudies = [
       "SOPs",
     ],
     overview:
-      "New team members were taking 8 weeks to become productive due to a complete lack of domain documentation. I designed and delivered a structured training program that compressed that to 3 weeks and became the team's standard onboarding playbook.",
+      "Domain training that once took months of shadowing was compressed into a self-serve knowledge base accessible in minutes. I designed and delivered a 2,000+ hour structured training program now used by operations, internal development, QA, stakeholder teams, and end customers as the primary domain reference.",
     problem:
-      "Domain knowledge lived entirely in the heads of 3 senior engineers who were also responsible for delivery. New hires were learning by osmosis, asking the same questions repeatedly, and blocking senior engineers from their own work.",
+      "Domain knowledge lived entirely in the heads of 3 senior engineers who were also responsible for delivery. New hires were learning by osmosis over months, asking the same questions repeatedly, and blocking senior engineers from their own work. There was no single source of truth for operations, dev, QA, or customer-facing teams.",
     approach: [
       {
         step: "Knowledge Audit",
@@ -941,10 +941,10 @@ export const caseStudies = [
       },
     ],
     results: [
-      { metric: "5 wks", label: "Ramp time reduction (8 → 3 wks)" },
+      { metric: "Months→Min", label: "Training time compressed" },
       { metric: "2,000+", label: "Training hours delivered" },
       { metric: "60+", label: "SOPs and guides authored" },
-      { metric: "4", label: "Teams using the knowledge base" },
+      { metric: "5+", label: "Teams: Ops, Dev, QA, Stakeholders, Customers" },
     ],
     learnings:
       "The act of documenting knowledge made the senior engineers realise how much implicit context they were carrying. The real ROI wasn't just faster onboarding — it was freeing senior engineers from 2+ hours of interruptions daily.",
