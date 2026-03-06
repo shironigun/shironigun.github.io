@@ -844,56 +844,57 @@ export const caseStudies = [
       "The biggest insight was that quality is a communication problem as much as a technical one. Once acceptance criteria became a shared artefact — not just a QA checklist — the whole team started thinking about edge cases earlier.",
   },
   {
-    id: "cs-powerbi",
-    title: "Building a Real-Time Product-Market Fit Dashboard",
-    subtitle: "From Manual Reporting to Live Stakeholder Intelligence",
-    company: "Perseus Group",
-    period: "Q3 2025",
+    id: "cs-postman-poc",
+    title: "POC for Postman — API & Performance Testing",
+    subtitle: "Evaluating Postman's Suitability Beyond Traditional QA Workflows",
+    company: "Perseus Group, Constellation Software",
+    period: "Q1 2025",
     role: "Product Quality Analyst",
-    category: "Data & Analytics",
-    readTime: "4 min read",
-    color: "#f2c811",
+    category: "API Testing & Automation",
+    readTime: "5 min read",
+    color: "#ff6c37",
     tags: [
-      "Power BI",
-      "Power Automate",
-      "Data Viz",
-      "KPIs",
-      "Stakeholder Mgmt",
+      "Postman",
+      "API Testing",
+      "Performance Testing",
+      "Newman CLI",
+      "CI/CD",
+      "Automation",
     ],
     overview:
-      "The product team was spending 4+ hours daily on manual reporting and had no real-time visibility into product-market fit post-launch. I designed and built a Power BI solution that made that invisible, instantly.",
+      "Postman is widely used for functional API testing, but its capabilities for automation, performance, and security testing were unexplored within the team. I researched, designed, and delivered a comprehensive POC document evaluating Postman's full feature set — covering 12 capabilities, pricing tiers, pros/cons, and actionable recommendations that led to team-wide adoption.",
     problem:
-      "Post-launch reviews relied on manually compiled spreadsheets assembled from Azure DevOps, customer support tickets, and email feedback — a slow, error-prone process. Stakeholders were making product decisions on week-old data.",
+      "The QA team relied entirely on manual API validation with no standardised tooling for functional, performance, or automated API testing. There was no CI/CD integration for API tests, no structured approach to API chaining or environment management, and no visibility into API health or performance benchmarks.",
     approach: [
       {
-        step: "Stakeholder Interviews",
+        step: "Feature Deep-Dive",
         detail:
-          "Ran structured interviews with 6 stakeholders to identify the 12 KPIs they actually needed vs. the 40+ metrics being tracked. Used a MoSCoW prioritisation to define the MVP dashboard scope.",
+          "Evaluated 12 core Postman capabilities: Workspaces, Environments, Collection Execution (Manual/Scheduled/CLI), Flows (no-code automation), API Chaining, Performance Testing, Postbot AI, Unit Testing with Chai.js, Built-in Test Data Generation (Faker.js), CI/CD Integrations (Newman, Jenkins, GitHub Actions, Azure DevOps), Security & Vault Integrations, and Monitors.",
       },
       {
-        step: "Data Architecture",
+        step: "Plan-by-Plan Analysis",
         detail:
-          "Mapped all data sources: Azure DevOps (work items), SharePoint (customer feedback), SQL Server (usage telemetry). Built Power Query transforms to normalise and clean data from each source.",
+          "Mapped every feature against Postman's Free, Basic, Professional, and Enterprise pricing tiers — documenting limits such as 25 vs 250 collection runs, 100 vs 500 virtual users for performance testing, and workspace/collaboration restrictions per plan.",
       },
       {
-        step: "Dashboard Design",
+        step: "Pros & Cons Evaluation",
         detail:
-          "Designed a 3-page Power BI dashboard: Executive Summary (NPS, adoption, defect trends), Product Health (velocity, sprint burndown, backlog age), and Customer Voice (feedback sentiment, support volume).",
+          "Identified 10 key strengths (intuitive UI, Chai.js assertions, Postbot AI, Newman CLI for CI/CD, real-time collaboration) and 6 critical limitations (performance caps at 500 virtual users, no distributed load testing, limited contract testing, no built-in fuzz/vulnerability scanning, high cost for unlimited runs at $49/seat/month).",
       },
       {
-        step: "Automation",
+        step: "Recommendations & Delivery",
         detail:
-          "Built Power Automate flows to refresh data hourly and send automated digest emails to stakeholders every morning at 8am with overnight highlights.",
+          "Concluded that Postman is best for functional, contract, and end-to-end testing with automation — but requires complementary tools like JMeter/Gatling for high-scale performance and OWASP ZAP for security. Delivered the POC document and presented findings to the QA and engineering teams.",
       },
     ],
     results: [
-      { metric: "60%", label: "Faster time-to-insight" },
-      { metric: "4 hrs", label: "Daily manual reporting eliminated" },
-      { metric: "6", label: "Stakeholders using live dashboard" },
-      { metric: "100%", label: "Data accuracy (vs. ~85% manual)" },
+      { metric: "12", label: "Features evaluated end-to-end" },
+      { metric: "4", label: "Pricing tiers mapped" },
+      { metric: "✅", label: "Adopted as standard API tool" },
+      { metric: "10+", label: "Pros & cons documented" },
     ],
     learnings:
-      'The most important lesson: start with the decision, not the data. Every KPI on the dashboard maps to a specific product decision the team needs to make. Dashboards that start with "what data do we have?" tend to become cluttered and unused.',
+      "A good POC isn't just about proving a tool works — it's about defining where it excels and where it doesn't. By being transparent about Postman's limitations upfront, the team trusted the recommendation and adopted it faster than if I'd only highlighted the positives.",
   },
   {
     id: "cs-training",
