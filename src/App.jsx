@@ -9,6 +9,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Tools from './components/Tools';
 import Experience from './components/Experience';
+import Products from './components/Products';
 import Certifications from './components/Certifications';
 import Projects from './components/Projects';
 import CaseStudies from './components/CaseStudies';
@@ -31,6 +32,7 @@ export default function App() {
       <Skills />
       <Tools />
       <Experience />
+      <Products />
       <Certifications />
       <Projects />
       <CaseStudies />

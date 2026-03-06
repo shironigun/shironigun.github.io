@@ -1054,6 +1054,27 @@ export const achievements = [
   },
 ];
 
+// ─── PRODUCTS ─────────────────────────────────────────────────────
+export const products = [
+  {
+    id: "target-crm",
+    name: "TargetCRM",
+    company: "Constellation Dealer Group · Perseus Group",
+    role: "Product Quality Analyst",
+    description:
+      "A customer engagement platform that turns every interaction into a growth opportunity — supporting SMS, email, and Messenger across the entire purchasing journey.",
+    features: [
+      "Automations & Visibility",
+      "Broadcasts & Customer Groups",
+      "Messenger & Customers",
+      "Surveys & Reviews",
+      "Analytics & Mobile App",
+    ],
+    knowledgeBaseUrl: "https://learntargetcrm.com/",
+    color: "#4d8dff",
+  },
+];
+
 // ─── ARTICLES / BLOG ──────────────────────────────────────────────
 // Add your LinkedIn articles, blog posts, or thought leadership pieces here
 export const articles = [
