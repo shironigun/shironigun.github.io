@@ -41,7 +41,7 @@ export default function About() {
               <Typography key={i} variant="body1" sx={{ color: 'text.secondary', mb: 2.5, fontSize: '0.97rem' }} />
             ))}
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2.5, fontSize: '0.97rem' }}>
-              I'm a <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>Certified ScrumMaster® (CSM®)</Box> and <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>ISTQB®-certified Agile Product Analyst</Box> at Perseus Group, Constellation Software — one of the world's top vertical market software conglomerates.
+              I'm a <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>Certified ScrumMaster® (CSM®)</Box> and <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>ISTQB®-certified Product Quality Analyst</Box> at Perseus Group, Constellation Software — one of the world's top vertical market software conglomerates.
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2.5, fontSize: '0.97rem' }}>
               My superpower is a dual perspective: deep SQA foundations combined with a strategic product mindset. I excel at the entire lifecycle — from <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>discovery workshops and stakeholder mapping</Box>, to translating insights into clear Epics and acceptance criteria in Azure DevOps.

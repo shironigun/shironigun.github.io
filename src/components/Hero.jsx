@@ -76,7 +76,7 @@ function BgCanvas() {
   return <canvas ref={canvasRef} style={{ position: 'fixed', inset: 0, zIndex: 0, opacity: 0.55, pointerEvents: 'none' }} />;
 }
 
-const phrases = ['Agile Product Analyst', 'CSM® Certified', 'CTFL Certified', 'QA Strategist', 'Product Thinker'];
+const phrases = ['Product Quality Analyst', 'CSM® Certified', 'CTFL Certified', 'QA Strategist', 'Product Thinker'];
 
 export default function Hero() {
   const [typed, setTyped] = useState('');

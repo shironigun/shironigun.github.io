@@ -1,10 +1,10 @@
 // ─── PERSONAL INFO ───────────────────────────────────────────────
 export const personal = {
   name: "Mahmood Ahmad",
-  title: "Agile Product Analyst",
+  title: "Product Quality Analyst",
   tagline: "CSM® · CTFL · Bridging Business Goals & Technical Excellence",
   bio: [
-    "I'm a Certified ScrumMaster® (CSM®) and ISTQB®-certified Agile Product Analyst at Perseus Group, Constellation Software — one of the world's top vertical market software conglomerates.",
+    "I'm a Certified ScrumMaster® (CSM®) and ISTQB®-certified Product Quality Analyst at Perseus Group, Constellation Software — one of the world's top vertical market software conglomerates.",
     "My superpower is a dual perspective: deep SQA foundations combined with a strategic product mindset. I excel at the entire lifecycle from discovery workshops and stakeholder mapping, to translating insights into clear Epics and acceptance criteria in Azure DevOps.",
     "Whether I'm modelling processes, running regression analysis, or building Power Platform dashboards — my goal is always to improve predictability, alignment, and user trust.",
   ],

@@ -24,7 +24,7 @@ function ResumeThumb() {
     <Box sx={{ width: '100%', aspectRatio: '3/4', background: 'linear-gradient(160deg,#0a1628,#061325)', borderRadius: 2, border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden' }}>
       <Box sx={{ background: '#1d6aff', p: 2 }}>
         <Typography sx={{ color: '#fff', fontWeight: 800, fontSize: '0.85rem', fontFamily: '"Plus Jakarta Sans",sans-serif' }}>Mahmood Ahmad</Typography>
-        <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.65rem', fontFamily: '"JetBrains Mono",monospace' }}>Agile Product Analyst · CSM® · CTFL</Typography>
+        <Typography sx={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.65rem', fontFamily: '"JetBrains Mono",monospace' }}>Product Quality Analyst · CSM® · CTFL</Typography>
       </Box>
       <Box sx={{ p: 1.5 }}>
         {[...Array(5)].map((_, i) => (
@@ -87,7 +87,7 @@ export default function Resume() {
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 3, pb: 3, borderBottom: '2px solid #1d6aff' }}>
                 <Box>
                   <Typography variant="h3" sx={{ color: 'text.primary', fontSize: '1.8rem', mb: 0.5 }}>Mahmood Ahmad</Typography>
-                  <Typography sx={{ fontFamily: '"JetBrains Mono",monospace', color: '#00c8ff', fontSize: '0.78rem' }}>Agile Product Analyst (CSM®, CTFL) · Perseus Group, Constellation Software</Typography>
+                  <Typography sx={{ fontFamily: '"JetBrains Mono",monospace', color: '#00c8ff', fontSize: '0.78rem' }}>Product Quality Analyst (CSM®, CTFL) · Perseus Group, Constellation Software</Typography>
                 </Box>
                 <Box sx={{ textAlign: 'right', display: { xs: 'none', sm: 'block' } }}>
                   <Typography variant="caption" sx={{ display: 'block', color: 'text.secondary' }}>{personal.phone}</Typography>
@@ -98,7 +98,7 @@ export default function Resume() {
 
               <Box sx={{ mb: 3.5 }}>
                 <Typography variant="overline" sx={{ color: 'primary.light', display: 'block', mb: 1.5, letterSpacing: '.12em' }}>Summary</Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.85 }}>CSM® and ISTQB®-certified Agile Product Analyst partnering with cross-functional teams to transform complex product visions into secure, high-quality solutions. Dual expertise spanning rigorous SQA practices and strategic product discovery.</Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.85 }}>CSM® and ISTQB®-certified Product Quality Analyst partnering with cross-functional teams to transform complex product visions into secure, high-quality solutions. Dual expertise spanning rigorous SQA practices and strategic product discovery.</Typography>
               </Box>
               <Divider sx={{ mb: 3.5 }} />
 

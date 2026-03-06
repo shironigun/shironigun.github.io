@@ -2,7 +2,7 @@
 
 ## Overview
 
-Personal portfolio website for **Mahmood Ahmad**, Agile Product Analyst at
+Personal portfolio website for **Mahmood Ahmad**, Product Quality Analyst at
 Perseus Group, Constellation Software. Built with React + Vite, deployed on
 GitHub Pages via GitHub Actions.
 

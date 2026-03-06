@@ -11,7 +11,7 @@
 ## Content
 
 - **Name**: Mahmood Ahmad
-- **Title**: Agile Product Analyst
+- **Title**: Product Quality Analyst
 - **Tagline**: CSM® · CTFL · Bridging Business Goals & Technical Excellence
 
 ## Last Updated

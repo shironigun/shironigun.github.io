@@ -19,7 +19,7 @@
 
 ## Bio (3 paragraphs)
 
-1. CSM® and ISTQB® certified Agile Product Analyst at Perseus Group,
+1. CSM® and ISTQB® certified Product Quality Analyst at Perseus Group,
    Constellation Software
 2. Dual perspective: SQA foundations + strategic product mindset. Discovery
    workshops, stakeholder mapping, Epics/acceptance criteria in Azure DevOps
