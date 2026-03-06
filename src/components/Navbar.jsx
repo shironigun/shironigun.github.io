@@ -27,7 +27,6 @@ const workLinks = [
 
 const moreLinks = [
   { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Articles', href: '#articles' },
   { label: 'Resume', href: '#resume' },
 ];
 

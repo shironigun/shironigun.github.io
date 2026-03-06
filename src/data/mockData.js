@@ -674,7 +674,7 @@ export const projectsData = [
     status: "Live",
     impact: "40% defect reduction",
     thumbnail: null,
-    demoUrl: null, // Replace with actual URL if publicly accessible
+    demoUrl: null,
     repoUrl: null,
     description:
       "End-to-end ownership of quality for a million-dollar CRM product. Established strict quality gates, acceptance criteria, and a systematic defect-tracking framework that reduced leakage by over 40%.",
@@ -798,26 +798,6 @@ export const projectsData = [
       "Built AI solutions for Customer Retention & Performance Monitoring",
     ],
     color: "#f5a623",
-  },
-  {
-    id: "placeholder",
-    title: "Your Next Project Here",
-    company: "Coming Soon",
-    period: "2026",
-    type: "TBD",
-    status: "Upcoming",
-    impact: "TBD",
-    thumbnail: null,
-    demoUrl: null,
-    repoUrl: null,
-    description:
-      "This card is a placeholder for your next project. Update the mockData.js file to add your new project details, screenshots, live demo URL, or repository link.",
-    longDescription:
-      "Add your project description, highlights, and links here. This portfolio is built to grow with you — each project card supports a live demo iframe, repository link, tags, highlights, and a detailed description.",
-    tags: ["Add Your Tags"],
-    highlights: ["Add highlight 1", "Add highlight 2", "Add highlight 3"],
-    color: "#5a5f6e",
-    isPlaceholder: true,
   },
 ];
 
@@ -982,31 +962,6 @@ export const caseStudies = [
     learnings:
       "The act of documenting knowledge made the senior engineers realise how much implicit context they were carrying. The real ROI wasn't just faster onboarding — it was freeing senior engineers from 2+ hours of interruptions daily.",
   },
-  {
-    id: "cs-placeholder",
-    title: "Add Your Next Case Study",
-    subtitle: "Document a challenge you solved, impact you created",
-    company: "Your Company",
-    period: "2026",
-    role: "Your Role",
-    category: "Coming Soon",
-    readTime: "? min read",
-    color: "#5a5f6e",
-    tags: ["Add Tags"],
-    overview:
-      "This is a placeholder for your next case study. Update the caseStudies array in mockData.js with your real story — the problem, your approach, and the measurable results.",
-    problem: "Describe the problem or challenge you faced.",
-    approach: [
-      { step: "Step 1", detail: "Describe your first action." },
-      { step: "Step 2", detail: "Describe your second action." },
-    ],
-    results: [
-      { metric: "?", label: "Add your metric" },
-      { metric: "?", label: "Add your metric" },
-    ],
-    learnings: "What did you learn from this project?",
-    isPlaceholder: true,
-  },
 ];
 
 // ─── ACHIEVEMENTS ─────────────────────────────────────────────────
@@ -1088,45 +1043,3 @@ export const products = [
   },
 ];
 
-// ─── ARTICLES / BLOG ──────────────────────────────────────────────
-// Add your LinkedIn articles, blog posts, or thought leadership pieces here
-export const articles = [
-  {
-    id: "art-1",
-    title:
-      'Why "Done" Is Never Really Done: A QA Perspective on Acceptance Criteria',
-    platform: "LinkedIn Article",
-    date: "Coming Soon",
-    readTime: "4 min",
-    excerpt:
-      "Most teams treat acceptance criteria as a checkbox. Here's why treating it as a conversation changes everything about how you ship quality.",
-    url: personal?.linkedin,
-    tags: ["Quality", "Acceptance Criteria", "Agile"],
-    isPlaceholder: true,
-  },
-  {
-    id: "art-2",
-    title:
-      "From QA to Product: What Testing Taught Me About Building the Right Thing",
-    platform: "LinkedIn Article",
-    date: "Coming Soon",
-    readTime: "5 min",
-    excerpt:
-      "Two years of finding bugs in other people's assumptions taught me more about product thinking than any MBA could.",
-    url: personal?.linkedin,
-    tags: ["Career", "Product Thinking", "QA"],
-    isPlaceholder: true,
-  },
-  {
-    id: "art-3",
-    title: "Add Your Article Here",
-    platform: "Your Platform",
-    date: "Whenever you publish",
-    readTime: "? min",
-    excerpt:
-      "Update articles in mockData.js with your real LinkedIn articles, blog posts, or thought leadership content.",
-    url: "#",
-    tags: ["Your Tags"],
-    isPlaceholder: true,
-  },
-];
