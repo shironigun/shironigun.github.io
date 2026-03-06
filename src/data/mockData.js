@@ -900,7 +900,8 @@ export const caseStudies = [
   {
     id: "cs-training",
     title: "How I Cut Domain Training from Months to Minutes",
-    subtitle: "A Self-Initiated Knowledge Base Adopted by Operations, Development, QA, Stakeholders & End Customers",
+    subtitle:
+      "A Self-Initiated Knowledge Base Adopted by Operations, Development, QA, Stakeholders & End Customers",
     company: "Contour Software",
     period: "2024 – 2025",
     role: "Junior SQA Analyst",

@@ -31,8 +31,8 @@ function CaseStudyDialog({ cs, open, onClose }) {
       PaperProps={{ sx: { background: '#061325', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 3, maxHeight: '92vh' } }}
     >
       {/* Header */}
-      <Box sx={{ position: 'relative', overflow: 'hidden' }}>
-        <Box sx={{ background: `linear-gradient(135deg, ${cs.color}22, rgba(6,19,37,0.98))`, px: 4, pt: 4, pb: 3, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+      <Box sx={{ position: 'relative', overflow: 'visible', flexShrink: 0 }}>
+        <Box sx={{ background: `linear-gradient(135deg, ${cs.color}22, rgba(6,19,37,0.98))`, px: 4, pt: 4, pb: 4, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 1 }}>
             <IconButton onClick={onClose} size="small" sx={{ color: 'text.secondary', cursor: 'none' }}><CloseIcon fontSize="small" /></IconButton>
           </Box>
