@@ -967,6 +967,15 @@ export const caseStudies = [
 // ─── ACHIEVEMENTS ─────────────────────────────────────────────────
 export const achievements = [
   {
+    id: "hackathon",
+    icon: "🥇",
+    title: "1st Place — Division-Wide AI Hackathon",
+    detail:
+      "Led requirements, UI/UX prototyping, and the final presentation for AI-powered Customer Retention and Employee Performance Monitoring solutions — winning 1st out of 11 teams.",
+    year: "2025",
+    color: "#ff6c37",
+  },
+  {
     id: "domain",
     icon: "🎓",
     title: "2,000+ Hours of Domain Leadership",
@@ -1010,15 +1019,6 @@ export const achievements = [
       "Trained QA resources transitioning from different domains and fresh graduates — now independently contributing to the product.",
     year: "2024–2025",
     color: "#00e5a0",
-  },
-  {
-    id: "hackathon",
-    icon: "🥇",
-    title: "1st Place — Division-Wide AI Hackathon",
-    detail:
-      "Led requirements, UI/UX prototyping, and the final presentation for AI-powered Customer Retention and Employee Performance Monitoring solutions — winning 1st out of 11 teams.",
-    year: "2025",
-    color: "#ff6c37",
   },
 ];
 
