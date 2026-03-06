@@ -49,9 +49,9 @@ function ProductDialog({ product, open, onClose }) {
 
       <DialogContent sx={{ p: 0 }}>
         {!webviewError ? (
-          <Box sx={{ position: 'relative', width: '100%', height: '70vh', background: '#000' }}>
+          <Box sx={{ position: 'relative', width: '100%', height: '70vh', background: '#000', display: 'flex', flexDirection: 'column' }}>
             {/* Browser chrome */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1, background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1, background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)', flexShrink: 0 }}>
               <Box sx={{ display: 'flex', gap: 0.6 }}>
                 {['#ff5f57', '#ffbd2e', '#28c840'].map(c => <Box key={c} sx={{ width: 10, height: 10, borderRadius: '50%', background: c }} />)}
               </Box>
@@ -63,8 +63,7 @@ function ProductDialog({ product, open, onClose }) {
               src={product.knowledgeBaseUrl}
               title={`${product.name} Knowledge Base`}
               width="100%"
-              height="calc(100% - 42px)"
-              style={{ border: 'none', display: 'block' }}
+              style={{ border: 'none', display: 'block', flex: 1 }}
               onError={() => setWebviewError(true)}
               sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
             />
