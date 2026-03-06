@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Typography, Button, Divider, Stack, Chip, List, ListItem } from '@mui/material';
 import Grid2 from '@mui/material/Grid2';
 import DownloadIcon from '@mui/icons-material/Download';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { motion } from 'framer-motion';
@@ -31,7 +30,7 @@ function ResumeThumb() {
         {[...Array(5)].map((_, i) => (
           <Box key={i} sx={{ mb: i === 0 || i === 2 ? 2 : 0.8 }}>
             {(i === 0 || i === 2) && <Box sx={{ display: 'flex', gap: 0.5, mb: 0.7, alignItems: 'center' }}><Box sx={{ width: 5, height: 5, background: '#00c8ff', borderRadius: '50%' }} /><Box sx={{ height: 4, width: 50, background: 'rgba(255,255,255,0.15)', borderRadius: 2 }} /></Box>}
-            <Box sx={{ height: 4, width: ['80%','65%','90%','70%','55%'][i], background: i % 3 === 0 ? 'rgba(29,106,255,0.25)' : 'rgba(255,255,255,0.08)', borderRadius: 2, mb: 0.5 }} />
+            <Box sx={{ height: 4, width: ['80%', '65%', '90%', '70%', '55%'][i], background: i % 3 === 0 ? 'rgba(29,106,255,0.25)' : 'rgba(255,255,255,0.08)', borderRadius: 2, mb: 0.5 }} />
           </Box>
         ))}
       </Box>
@@ -63,7 +62,7 @@ export default function Resume() {
               <Box sx={{ background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 3, p: 2.5, mb: 2 }}>
                 <ResumeThumb />
                 <Stack spacing={1.5} sx={{ mt: 2.5 }}>
-                  <Button variant="contained" color="primary" fullWidth startIcon={<EmailOutlinedIcon />} href={`mailto:${personal.email}?subject=Resume Request`}>Request Resume</Button>
+                  <Button variant="contained" color="primary" fullWidth startIcon={<DownloadIcon />} href="/Mahmood_Ahmad_Resume.pdf" download="Mahmood_Ahmad_Resume.pdf">Download Resume</Button>
                   <Button variant="outlined" fullWidth startIcon={<LinkedInIcon />} href={personal.linkedin} target="_blank" sx={{ borderColor: 'rgba(255,255,255,0.12)', color: 'text.secondary', '&:hover': { borderColor: 'primary.light', color: 'secondary.main' } }}>LinkedIn Profile</Button>
                 </Stack>
               </Box>
