@@ -15,6 +15,7 @@ import Projects from './components/Projects';
 import CaseStudies from './components/CaseStudies';
 import Achievements from './components/Achievements';
 import Testimonials from './components/Testimonials';
+import Articles from './components/Articles';
 
 import Resume from './components/Resume';
 import Connect from './components/Connect';
@@ -38,6 +39,7 @@ export default function App() {
       <CaseStudies />
       <Achievements />
       <Testimonials />
+      <Articles />
 
       <Resume />
       <Connect />
