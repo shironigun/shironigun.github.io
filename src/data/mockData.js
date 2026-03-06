@@ -471,6 +471,15 @@ export const projects = [
     featured: false,
     impact: "POC adopted by team",
   },
+  {
+    id: 3,
+    title: "AI Hackathon — Customer Retention & Performance Monitoring",
+    desc: "Won 1st place out of 11 teams at a division-wide AI Hackathon. Built AI-powered solutions for Customer Retention and Employee Performance Monitoring using Language Cognitive Models, Text Analyzers, and Semantic Analyzers.",
+    tags: ["AI", "Hackathon", "UI/UX", "Cognitive Models", "Semantic Analysis"],
+    icon: "🥇",
+    featured: true,
+    impact: "1st place / 11 teams",
+  },
 ];
 
 // ─── CERTIFICATIONS WITH PDF PROOF ───────────────────────────────
@@ -1023,6 +1032,15 @@ export const achievements = [
       "Trained QA resources transitioning from different domains and fresh graduates — now independently contributing to the product.",
     year: "2024–2025",
     color: "#00e5a0",
+  },
+  {
+    id: "hackathon",
+    icon: "🥇",
+    title: "1st Place — Division-Wide AI Hackathon",
+    detail:
+      "Led requirements, UI/UX prototyping, and the final presentation for AI-powered Customer Retention and Employee Performance Monitoring solutions — winning 1st out of 11 teams.",
+    year: "2025",
+    color: "#ff6c37",
   },
 ];
 
