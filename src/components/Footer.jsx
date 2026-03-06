@@ -9,7 +9,7 @@ export default function Footer() {
       <Box
         component="footer"
         sx={{
-          borderTop: '1px solid rgba(255,255,255,0.07)',
+          borderTop: '1px solid var(--glass-divider)',
           py: 4,
           px: { xs: 2.5, md: 5 },
           display: 'flex',

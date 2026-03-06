@@ -28,10 +28,10 @@ function ProductDialog({ product, open, onClose }) {
 
     return (
         <Dialog open={open} onClose={onClose} maxWidth="lg" fullWidth
-            PaperProps={{ sx: { background: '#061325', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 3, overflow: 'hidden', maxHeight: '92vh' } }}
+            PaperProps={{ sx: { background: 'var(--dialog-bg)', border: '1px solid var(--glass-border)', borderRadius: 3, overflow: 'hidden', maxHeight: '92vh' } }}
         >
             {/* Toolbar */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, px: 3, py: 1.8, borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)', flexWrap: 'wrap' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, px: 3, py: 1.8, borderBottom: '1px solid var(--glass-border)', background: 'var(--glass-bg)', flexWrap: 'wrap' }}>
                 <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: product.color, flexShrink: 0 }} />
                 <Box sx={{ flex: 1, minWidth: 0 }}>
                     <Typography sx={{ color: 'text.primary', fontWeight: 700, fontSize: '0.95rem', lineHeight: 1.2 }}>{product.name}</Typography>
@@ -39,7 +39,7 @@ function ProductDialog({ product, open, onClose }) {
                 </Box>
                 <Box sx={{ display: 'flex', gap: 1, flexShrink: 0 }}>
                     <Tooltip title="Open Knowledge Base">
-                        <IconButton href={product.knowledgeBaseUrl} target="_blank" size="small" sx={{ color: 'primary.light', border: '1px solid rgba(29,106,255,0.3)', cursor: 'none', '&:hover': { background: 'rgba(29,106,255,0.1)' } }}>
+                        <IconButton href={product.knowledgeBaseUrl} target="_blank" size="small" sx={{ color: 'primary.light', border: '1px solid rgba(29,106,255,0.3)', cursor: 'none', '&:hover': { background: 'var(--accent-glow-mild)' } }}>
                             <OpenInNewIcon fontSize="small" />
                         </IconButton>
                     </Tooltip>
@@ -51,11 +51,11 @@ function ProductDialog({ product, open, onClose }) {
                 {!webviewError ? (
                     <Box sx={{ position: 'relative', width: '100%', height: '70vh', background: '#000', display: 'flex', flexDirection: 'column' }}>
                         {/* Browser chrome */}
-                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1, background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)', flexShrink: 0 }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1, background: 'var(--glass-bg)', borderBottom: '1px solid var(--glass-bg)', flexShrink: 0 }}>
                             <Box sx={{ display: 'flex', gap: 0.6 }}>
                                 {['#ff5f57', '#ffbd2e', '#28c840'].map(c => <Box key={c} sx={{ width: 10, height: 10, borderRadius: '50%', background: c }} />)}
                             </Box>
-                            <Box sx={{ flex: 1, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 1, px: 1.5, py: 0.4 }}>
+                            <Box sx={{ flex: 1, background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 1, px: 1.5, py: 0.4 }}>
                                 <Typography sx={{ color: 'text.secondary', fontSize: '0.7rem', fontFamily: '"JetBrains Mono",monospace' }}>{product.knowledgeBaseUrl}</Typography>
                             </Box>
                         </Box>
@@ -91,8 +91,8 @@ function ProductCard({ product, index, inView, onOpen }) {
             transition={{ duration: 0.55, delay: index * 0.1, ease: [0.16, 1, 0.3, 1], scale: { type: 'spring', stiffness: 400, damping: 20 } }}
             onClick={onOpen}
             sx={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: 'var(--glass-bg)',
+                border: '1px solid var(--glass-border)',
                 borderRadius: 3, p: 3, height: '100%',
                 backdropFilter: 'blur(10px)',
                 position: 'relative', overflow: 'hidden',
@@ -132,7 +132,7 @@ function ProductCard({ product, index, inView, onOpen }) {
             <Stack direction="row" flexWrap="wrap" gap={0.8}>
                 {product.features.map(f => (
                     <Chip key={f} label={f} size="small" variant="outlined"
-                        sx={{ fontSize: '0.65rem', color: 'text.secondary', borderColor: 'rgba(255,255,255,0.12)', borderRadius: 2 }}
+                        sx={{ fontSize: '0.65rem', color: 'text.secondary', borderColor: 'var(--glass-hover)', borderRadius: 2 }}
                     />
                 ))}
             </Stack>
@@ -158,7 +158,7 @@ export default function Products() {
     const [activeProduct, setActiveProduct] = useState(null);
 
     return (
-        <Box id="products" sx={{ py: 14, background: 'radial-gradient(ellipse at 50% 50%, rgba(29,106,255,0.04), transparent 70%)' }}>
+        <Box id="products" sx={{ py: 14, background: 'var(--gradient-radial)' }}>
             <Box sx={{ maxWidth: 1140, mx: 'auto', px: { xs: 2.5, md: 5 } }}>
                 <SectionLabel>Products</SectionLabel>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', mb: 7, flexWrap: 'wrap', gap: 3 }}>

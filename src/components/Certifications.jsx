@@ -34,8 +34,8 @@ function PdfDialog({ cert, open, onClose }) {
       fullWidth
       PaperProps={{
         sx: {
-          background: '#061325',
-          border: '1px solid rgba(255,255,255,0.1)',
+          background: 'var(--dialog-bg)',
+          border: '1px solid var(--glass-border)',
           borderRadius: 3,
           overflow: 'hidden',
         },
@@ -44,8 +44,8 @@ function PdfDialog({ cert, open, onClose }) {
       {/* Header */}
       <Box sx={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        px: 3, py: 2, borderBottom: '1px solid rgba(255,255,255,0.08)',
-        background: 'rgba(255,255,255,0.03)',
+        px: 3, py: 2, borderBottom: '1px solid var(--glass-border)',
+        background: 'var(--glass-bg)',
       }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <Avatar sx={{ width: 32, height: 32, background: cert.color, fontSize: '0.72rem', fontWeight: 800 }}>
@@ -66,7 +66,7 @@ function PdfDialog({ cert, open, onClose }) {
               href={cert.credentialUrl}
               target="_blank"
               size="small"
-              sx={{ color: 'primary.light', border: '1px solid rgba(29,106,255,0.3)', '&:hover': { background: 'rgba(29,106,255,0.1)' }, cursor: 'none' }}
+              sx={{ color: 'primary.light', border: '1px solid rgba(29,106,255,0.3)', '&:hover': { background: 'var(--accent-glow-mild)' }, cursor: 'none' }}
             >
               <OpenInNewIcon fontSize="small" />
             </IconButton>
@@ -95,7 +95,7 @@ function PdfDialog({ cert, open, onClose }) {
           <Box sx={{
             height: '60vh', display: 'flex', flexDirection: 'column',
             alignItems: 'center', justifyContent: 'center', gap: 3,
-            background: 'linear-gradient(160deg,#0a1628,#061325)',
+            background: 'var(--dialog-bg-gradient)',
           }}>
             <Box sx={{
               width: 80, height: 80, borderRadius: '50%',
@@ -107,7 +107,7 @@ function PdfDialog({ cert, open, onClose }) {
             <Box sx={{ textAlign: 'center', maxWidth: 380, px: 3 }}>
               <Typography variant="h6" sx={{ color: 'text.primary', mb: 1 }}>PDF not linked yet</Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}>
-                To display the certificate PDF, upload it to Google Drive, copy the embed link, and replace the <code style={{ color: '#00c8ff', background: 'rgba(0,200,255,0.08)', padding: '2px 6px', borderRadius: 4 }}>pdfUrl</code> value in <code style={{ color: '#00c8ff', background: 'rgba(0,200,255,0.08)', padding: '2px 6px', borderRadius: 4 }}>mockData.js</code>.
+                To display the certificate PDF, upload it to Google Drive, copy the embed link, and replace the <code style={{ color: 'var(--code-color)', background: 'var(--code-bg)', padding: '2px 6px', borderRadius: 4 }}>pdfUrl</code> value in <code style={{ color: 'var(--code-color)', background: 'var(--code-bg)', padding: '2px 6px', borderRadius: 4 }}>mockData.js</code>.
               </Typography>
               <Button
                 variant="outlined"
@@ -160,8 +160,8 @@ function CertFlipCard({ cert, index, inView, onClick }) {
           position: 'absolute', inset: 0,
           backfaceVisibility: 'hidden',
           WebkitBackfaceVisibility: 'hidden',
-          background: 'rgba(255,255,255,0.035)',
-          border: `1px solid rgba(255,255,255,0.08)`,
+          background: 'var(--glass-bg)',
+          border: `1px solid var(--glass-border)`,
           borderRadius: 3,
           p: 3,
           backdropFilter: 'blur(10px)',
@@ -211,7 +211,7 @@ function CertFlipCard({ cert, index, inView, onClick }) {
           backfaceVisibility: 'hidden',
           WebkitBackfaceVisibility: 'hidden',
           transform: 'rotateY(180deg)',
-          background: `linear-gradient(145deg, ${cert.color}18, rgba(6,19,37,0.95))`,
+          background: `linear-gradient(145deg, ${cert.color}18, var(--dropdown-bg))`,
           border: `1px solid ${cert.color}45`,
           borderRadius: 3,
           p: 3,
@@ -221,7 +221,7 @@ function CertFlipCard({ cert, index, inView, onClick }) {
           {/* Mini PDF preview mockup */}
           <Box sx={{
             flex: 1, mb: 2,
-            background: 'rgba(255,255,255,0.04)',
+            background: 'var(--glass-bg)',
             border: `1px solid ${cert.color}25`,
             borderRadius: 2,
             display: 'flex', flexDirection: 'column', overflow: 'hidden',
@@ -233,11 +233,11 @@ function CertFlipCard({ cert, index, inView, onClick }) {
             </Box>
             <Box sx={{ p: 1.5, flex: 1, display: 'flex', flexDirection: 'column', gap: 0.7 }}>
               {[...Array(4)].map((_, i) => (
-                <Box key={i} sx={{ height: 4, width: [`90%`, `65%`, `80%`, `50%`][i], background: i === 0 ? `${cert.color}40` : 'rgba(255,255,255,0.08)', borderRadius: 2 }} />
+                <Box key={i} sx={{ height: 4, width: [`90%`, `65%`, `80%`, `50%`][i], background: i === 0 ? `${cert.color}40` : 'var(--glass-border)', borderRadius: 2 }} />
               ))}
               <Box sx={{ mt: 1, display: 'flex', gap: 1 }}>
                 <Box sx={{ height: 4, width: '30%', background: `${cert.color}30`, borderRadius: 2 }} />
-                <Box sx={{ height: 4, width: '20%', background: 'rgba(255,255,255,0.05)', borderRadius: 2 }} />
+                <Box sx={{ height: 4, width: '20%', background: 'var(--glass-bg)', borderRadius: 2 }} />
               </Box>
             </Box>
           </Box>
@@ -299,8 +299,8 @@ export default function Certifications() {
                 onClick={() => setActiveFilter(cat)}
                 sx={{
                   cursor: 'none',
-                  background: activeFilter === cat ? 'rgba(29,106,255,0.18)' : 'rgba(255,255,255,0.04)',
-                  border: activeFilter === cat ? '1px solid rgba(29,106,255,0.5)' : '1px solid rgba(255,255,255,0.08)',
+                  background: activeFilter === cat ? 'var(--accent-glow-strong)' : 'var(--glass-bg)',
+                  border: activeFilter === cat ? '1px solid rgba(29,106,255,0.5)' : '1px solid var(--glass-border)',
                   color: activeFilter === cat ? 'primary.light' : 'text.secondary',
                   transition: 'all 0.2s',
                   '&:hover': { borderColor: 'rgba(29,106,255,0.4)', color: 'primary.light' },

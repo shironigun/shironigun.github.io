@@ -25,7 +25,7 @@ export default function Experience() {
   const exp = experience[activeTab];
 
   return (
-    <Box id="experience" sx={{ py: 14, background: 'linear-gradient(180deg,transparent,rgba(29,106,255,0.025),transparent)' }}>
+    <Box id="experience" sx={{ py: 14, background: 'var(--gradient-section)' }}>
       <Box sx={{ maxWidth: 1140, mx: 'auto', px: { xs: 2.5, md: 5 } }}>
         <SectionLabel>Experience</SectionLabel>
         <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: 'text.primary', mb: 7 }}>
@@ -43,10 +43,10 @@ export default function Experience() {
                   '& .MuiTabs-indicator': { left: 0, right: 'auto', width: 3, borderRadius: '0 3px 3px 0', background: 'linear-gradient(180deg,#1d6aff,#00c8ff)' },
                   '& .MuiTab-root': {
                     alignItems: 'flex-start', textAlign: 'left', color: 'text.secondary',
-                    borderLeft: '1px solid rgba(255,255,255,0.07)', borderRadius: '0 8px 8px 0',
+                    borderLeft: '1px solid var(--glass-divider)', borderRadius: '0 8px 8px 0',
                     mr: 1, minHeight: 'auto', py: 1.8, px: 2.5,
-                    '&.Mui-selected': { color: 'secondary.main', background: 'rgba(29,106,255,0.08)' },
-                    '&:hover': { background: 'rgba(255,255,255,0.03)' },
+                    '&.Mui-selected': { color: 'secondary.main', background: 'var(--accent-glow)' },
+                    '&:hover': { background: 'var(--glass-bg)' },
                   },
                 }}
               >
@@ -69,7 +69,7 @@ export default function Experience() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -8 }}
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                  sx={{ pl: { xs: 0, md: 5 }, pt: { xs: 4, md: 0 }, borderLeft: { md: '1px solid rgba(255,255,255,0.07)' } }}
+                  sx={{ pl: { xs: 0, md: 5 }, pt: { xs: 4, md: 0 }, borderLeft: { md: '1px solid var(--glass-divider)' } }}
                 >
                   <Box sx={{ mb: 3 }}>
                     <Box sx={{ display: 'flex', gap: 1, mb: 1, flexWrap: 'wrap', alignItems: 'center' }}>
@@ -98,7 +98,7 @@ export default function Experience() {
 
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8, mt: 3 }}>
                     {exp.tags.map(tag => (
-                      <Chip key={tag} label={tag} size="small" sx={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.65rem', background: 'rgba(29,106,255,0.08)', border: '1px solid rgba(29,106,255,0.18)', color: 'primary.light' }} />
+                      <Chip key={tag} label={tag} size="small" sx={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.65rem', background: 'var(--accent-glow)', border: '1px solid var(--accent-glow-strong)', color: 'primary.light' }} />
                     ))}
                   </Box>
                 </MotionBox>

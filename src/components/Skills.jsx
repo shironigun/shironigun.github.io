@@ -37,7 +37,7 @@ export default function Skills() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Box id="skills" sx={{ py: 14, background: 'linear-gradient(180deg,transparent,rgba(29,106,255,0.025),transparent)' }}>
+    <Box id="skills" sx={{ py: 14, background: 'var(--gradient-section)' }}>
       <Box sx={{ maxWidth: 1140, mx: 'auto', px: { xs: 2.5, md: 5 } }}>
         <SectionLabel>Skills</SectionLabel>
         <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: 'text.primary', mb: 7 }}>
@@ -54,7 +54,7 @@ export default function Skills() {
               mb: 5,
               '& .MuiTab-root': { color: 'text.secondary', '&.Mui-selected': { color: 'secondary.main' } },
               '& .MuiTabs-indicator': { background: 'linear-gradient(90deg,#1d6aff,#00c8ff)', height: 2, borderRadius: 1 },
-              borderBottom: '1px solid rgba(255,255,255,0.07)',
+              borderBottom: '1px solid var(--glass-divider)',
             }}
           >
             {skillGroups.map((g, i) => (
@@ -84,12 +84,12 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            sx={{ mt: 6, p: 3.5, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 3, backdropFilter: 'blur(8px)' }}
+            sx={{ mt: 6, p: 3.5, background: 'var(--glass-bg)', border: '1px solid var(--glass-divider)', borderRadius: 3, backdropFilter: 'blur(8px)' }}
           >
             <Typography variant="overline" sx={{ color: 'text.secondary', display: 'block', mb: 2 }}>Soft Skills & Competencies</Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               {softSkills.map(s => (
-                <Chip key={s} label={s} size="small" sx={{ background: 'rgba(29,106,255,0.08)', border: '1px solid rgba(29,106,255,0.2)', color: 'primary.light', transition: 'all 0.2s', '&:hover': { background: 'rgba(29,106,255,0.18)', transform: 'translateY(-2px)' } }} />
+                <Chip key={s} label={s} size="small" sx={{ background: 'var(--accent-glow)', border: '1px solid var(--accent-border)', color: 'primary.light', transition: 'all 0.2s', '&:hover': { background: 'var(--accent-glow-strong)', transform: 'translateY(-2px)' } }} />
               ))}
             </Box>
           </MotionBox>

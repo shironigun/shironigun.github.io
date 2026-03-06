@@ -54,7 +54,7 @@ export default function About() {
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               {softSkills.map((skill, i) => (
                 <MotionBox key={skill} component="span" variants={fadeUp} custom={i * 0.03} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
-                  <Chip label={skill} size="small" variant="outlined" sx={{ borderColor: 'rgba(255,255,255,0.1)', color: 'text.secondary', fontSize: '0.75rem', transition: 'all 0.2s', '&:hover': { borderColor: 'primary.light', color: 'secondary.main', background: 'rgba(29,106,255,0.07)' } }} />
+                  <Chip label={skill} size="small" variant="outlined" sx={{ borderColor: 'var(--glass-border)', color: 'text.secondary', fontSize: '0.75rem', transition: 'all 0.2s', '&:hover': { borderColor: 'primary.light', color: 'secondary.main', background: 'var(--accent-glow)' } }} />
                 </MotionBox>
               ))}
             </Box>
@@ -63,7 +63,7 @@ export default function About() {
 
         <Grid2 size={{ xs: 12, md: 5 }}>
           <MotionBox variants={fadeUp} custom={1} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
-            <Box sx={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 3, p: 3, backdropFilter: 'blur(10px)', mb: 3 }}>
+            <Box sx={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 3, p: 3, backdropFilter: 'blur(10px)', mb: 3 }}>
               <Typography variant="overline" sx={{ color: 'text.secondary', display: 'block', mb: 2 }}>Quick Info</Typography>
               <Stack spacing={2}>
                 {[
@@ -72,13 +72,13 @@ export default function About() {
                   { icon: <SchoolIcon fontSize="small" />, label: personal.education },
                 ].map((item, i) => (
                   <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
-                    <Box sx={{ width: 30, height: 30, borderRadius: 1.5, background: 'rgba(29,106,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'primary.light', flexShrink: 0, mt: 0.2 }}>{item.icon}</Box>
+                    <Box sx={{ width: 30, height: 30, borderRadius: 1.5, background: 'var(--accent-glow-mild)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'primary.light', flexShrink: 0, mt: 0.2 }}>{item.icon}</Box>
                     <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.6 }}>{item.label}</Typography>
                   </Box>
                 ))}
               </Stack>
             </Box>
-            <Box sx={{ background: 'linear-gradient(135deg,rgba(29,106,255,0.1),rgba(0,200,255,0.06))', border: '1px solid rgba(29,106,255,0.2)', borderRadius: 3, p: 3 }}>
+            <Box sx={{ background: 'linear-gradient(135deg,var(--accent-glow-mild),rgba(0,200,255,0.06))', border: '1px solid var(--accent-border)', borderRadius: 3, p: 3 }}>
               <Typography variant="h6" sx={{ color: 'text.primary', mb: 1.5, fontSize: '1rem' }}>My Belief</Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', fontStyle: 'italic', lineHeight: 1.8 }}>
                 "Data should drive decisions, not gut feelings. And quality isn't a phase — it's a culture."

@@ -28,11 +28,11 @@ function ArticleDialog({ article, open, onClose }) {
   return (
     <Dialog
       open={open} onClose={onClose} maxWidth="md" fullWidth scroll="paper"
-      PaperProps={{ sx: { background: '#061325', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 3, maxHeight: '92vh' } }}
+      PaperProps={{ sx: { background: 'var(--dialog-bg)', border: '1px solid var(--glass-border)', borderRadius: 3, maxHeight: '92vh' } }}
     >
       {/* Header */}
       <Box sx={{ position: 'relative', overflow: 'visible', flexShrink: 0 }}>
-        <Box sx={{ background: `linear-gradient(135deg, ${article.color}22, rgba(6,19,37,0.98))`, px: 4, pt: 3, pb: 3, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <Box sx={{ background: `linear-gradient(135deg, ${article.color}22, var(--dropdown-bg))`, px: 4, pt: 3, pb: 3, borderBottom: '1px solid var(--glass-border)' }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5 }}>
             <Box sx={{ display: 'flex', gap: 0.8, flexWrap: 'wrap' }}>
               {article.tags.map(t => (
@@ -88,8 +88,8 @@ function ArticleCard({ article, index, inView, onClick }) {
       onClick={onClick}
       sx={{
         display: 'flex', flexDirection: 'column',
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.08)',
+        background: 'var(--glass-bg)',
+        border: '1px solid var(--glass-border)',
         borderRadius: 3, p: 3,
         height: '100%',
         cursor: 'none',
@@ -126,7 +126,7 @@ function ArticleCard({ article, index, inView, onClick }) {
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Box sx={{ display: 'flex', gap: 0.6, flexWrap: 'wrap' }}>
           {article.tags.slice(0, 2).map(t => (
-            <Chip key={t} label={t} size="small" sx={{ fontSize: '0.6rem', height: 18, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', color: 'text.secondary' }} />
+            <Chip key={t} label={t} size="small" sx={{ fontSize: '0.6rem', height: 18, background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', color: 'text.secondary' }} />
           ))}
         </Box>
         <Typography sx={{ color: article.color, fontSize: '0.75rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 0.3 }}>
@@ -143,7 +143,7 @@ export default function Articles() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <Box id="articles" sx={{ py: 14, background: 'linear-gradient(180deg,transparent,rgba(29,106,255,0.02),transparent)' }}>
+    <Box id="articles" sx={{ py: 14, background: 'var(--gradient-section)' }}>
       <Box sx={{ maxWidth: 1140, mx: 'auto', px: { xs: 2.5, md: 5 } }}>
         <SectionLabel>Articles & Thought Leadership</SectionLabel>
         <Box sx={{ mb: 7 }}>

@@ -41,7 +41,7 @@ export default function Testimonials() {
   };
 
   return (
-    <Box id="testimonials" sx={{ py: 14, background: 'radial-gradient(ellipse at 50% 50%, rgba(29,106,255,0.05), transparent 70%)' }}>
+    <Box id="testimonials" sx={{ py: 14, background: 'var(--gradient-radial)' }}>
       <Box sx={{ maxWidth: 1140, mx: 'auto', px: { xs: 2.5, md: 5 } }}>
         <SectionLabel>Testimonials</SectionLabel>
         <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: 'text.primary', mb: 7 }}>
@@ -67,7 +67,7 @@ export default function Testimonials() {
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 style={{ position: 'absolute', width: '100%' }}
               >
-                <Box sx={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: 4, p: { xs: 3.5, md: 5.5 }, backdropFilter: 'blur(16px)', position: 'relative' }}>
+                <Box sx={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 4, p: { xs: 3.5, md: 5.5 }, backdropFilter: 'blur(16px)', position: 'relative' }}>
                   <FormatQuoteIcon sx={{ fontSize: 60, color: 'primary.main', opacity: 0.22, position: 'absolute', top: 24, left: 32 }} />
                   <Box sx={{ display: 'flex', gap: 0.3, mb: 3 }}>
                     {[...Array(t.rating)].map((_, i) => <StarIcon key={i} sx={{ fontSize: 16, color: '#f5c842' }} />)}
@@ -81,7 +81,7 @@ export default function Testimonials() {
                       <Typography variant="h6" sx={{ color: 'text.primary', fontSize: '1rem', fontWeight: 700 }}>{t.author}</Typography>
                       <Typography variant="caption" sx={{ color: 'text.secondary' }}>{t.role}</Typography>
                     </Box>
-                    <Chip label={t.relationship} size="small" sx={{ background: 'rgba(29,106,255,0.1)', border: '1px solid rgba(29,106,255,0.2)', color: 'primary.light', fontSize: '0.62rem' }} />
+                    <Chip label={t.relationship} size="small" sx={{ background: 'var(--accent-glow-mild)', border: '1px solid var(--accent-border)', color: 'primary.light', fontSize: '0.62rem' }} />
                   </Box>
                 </Box>
               </motion.div>
@@ -89,13 +89,13 @@ export default function Testimonials() {
           </Box>
 
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1.5, mt: 4 }}>
-            <IconButton onClick={prev} sx={{ border: '1px solid rgba(255,255,255,0.1)', color: 'text.secondary', '&:hover': { borderColor: 'primary.light', color: 'secondary.main' }, cursor: 'none' }}>
+            <IconButton onClick={prev} sx={{ border: '1px solid var(--glass-border)', color: 'text.secondary', '&:hover': { borderColor: 'primary.light', color: 'secondary.main' }, cursor: 'none' }}>
               <ArrowBackIcon fontSize="small" />
             </IconButton>
             {testimonials.map((_, i) => (
-              <Box key={i} onClick={() => goTo(i)} sx={{ width: active === i ? 24 : 8, height: 8, borderRadius: 4, background: active === i ? 'linear-gradient(90deg,#1d6aff,#00c8ff)' : 'rgba(255,255,255,0.15)', cursor: 'none', transition: 'all 0.3s' }} />
+              <Box key={i} onClick={() => goTo(i)} sx={{ width: active === i ? 24 : 8, height: 8, borderRadius: 4, background: active === i ? 'linear-gradient(90deg,#1d6aff,#00c8ff)' : 'var(--glass-hover)', cursor: 'none', transition: 'all 0.3s' }} />
             ))}
-            <IconButton onClick={next} sx={{ border: '1px solid rgba(255,255,255,0.1)', color: 'text.secondary', '&:hover': { borderColor: 'primary.light', color: 'secondary.main' }, cursor: 'none' }}>
+            <IconButton onClick={next} sx={{ border: '1px solid var(--glass-border)', color: 'text.secondary', '&:hover': { borderColor: 'primary.light', color: 'secondary.main' }, cursor: 'none' }}>
               <ArrowForwardIcon fontSize="small" />
             </IconButton>
           </Box>

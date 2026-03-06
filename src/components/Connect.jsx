@@ -23,7 +23,7 @@ function SectionLabel({ children }) {
 
 const channels = [
   { label: 'WhatsApp', value: personal.phone, icon: <WhatsAppIcon />, href: personal.whatsapp, color: '#25d366', bg: 'rgba(37,211,102,0.1)' },
-  { label: 'Email', value: personal.email, icon: <EmailOutlinedIcon />, href: `mailto:${personal.email}`, color: '#4d8dff', bg: 'rgba(29,106,255,0.1)' },
+  { label: 'Email', value: personal.email, icon: <EmailOutlinedIcon />, href: `mailto:${personal.email}`, color: '#4d8dff', bg: 'var(--accent-glow-mild)' },
   { label: 'LinkedIn', value: 'mahmoodahmad-connect', icon: <LinkedInIcon />, href: personal.linkedin, color: '#0077b5', bg: 'rgba(0,119,181,0.1)' },
 ];
 
@@ -41,7 +41,7 @@ export default function Connect() {
   };
 
   return (
-    <Box id="connect" sx={{ py: 14, background: 'radial-gradient(ellipse at 50% 0%,rgba(29,106,255,0.07),transparent 60%)' }}>
+    <Box id="connect" sx={{ py: 14, background: 'var(--gradient-radial-top)' }}>
       <Box sx={{ maxWidth: 1140, mx: 'auto', px: { xs: 2.5, md: 5 } }}>
         <SectionLabel>Let's Connect</SectionLabel>
         <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '3rem' }, color: 'text.primary', mb: 7 }}>
@@ -63,7 +63,7 @@ export default function Connect() {
                     target="_blank"
                     whileHover={{ x: 6 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                    sx={{ display: 'flex', alignItems: 'center', gap: 2, p: 2.2, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 3, textDecoration: 'none', cursor: 'none', transition: 'border-color 0.25s, background 0.25s', '&:hover': { borderColor: ch.color, background: ch.bg } }}
+                    sx={{ display: 'flex', alignItems: 'center', gap: 2, p: 2.2, background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 3, textDecoration: 'none', cursor: 'none', transition: 'border-color 0.25s, background 0.25s', '&:hover': { borderColor: ch.color, background: ch.bg } }}
                   >
                     <Box sx={{ width: 42, height: 42, borderRadius: 2, background: ch.bg, color: ch.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{ch.icon}</Box>
                     <Box sx={{ flex: 1 }}>
@@ -82,7 +82,7 @@ export default function Connect() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              sx={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: 4, p: { xs: 3, md: 4.5 }, backdropFilter: 'blur(12px)' }}
+              sx={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 4, p: { xs: 3, md: 4.5 }, backdropFilter: 'blur(12px)' }}
             >
               <Typography variant="h5" sx={{ color: 'text.primary', mb: 3 }}>Send a message 👋</Typography>
               <Grid2 container spacing={2} sx={{ mb: 2 }}>
@@ -97,11 +97,11 @@ export default function Connect() {
               <FormControl fullWidth size="small" sx={{ mb: 2 }}>
                 <InputLabel>Purpose</InputLabel>
                 <Select name="purpose" value={form.purpose} label="Purpose" onChange={handleChange}
-                  sx={{ background: 'rgba(255,255,255,0.03)', color: 'text.primary', borderRadius: 2, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(255,255,255,0.1)' }, '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(29,106,255,0.5)' }, '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: '#1d6aff' }, '& .MuiSvgIcon-root': { color: 'text.secondary' }, cursor: 'none' }}
-                  MenuProps={{ PaperProps: { sx: { background: '#061325', border: '1px solid rgba(255,255,255,0.1)' } } }}
+                  sx={{ background: 'var(--glass-bg)', color: 'text.primary', borderRadius: 2, '& .MuiOutlinedInput-notchedOutline': { borderColor: 'var(--glass-border)' }, '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: 'rgba(29,106,255,0.5)' }, '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: '#1d6aff' }, '& .MuiSvgIcon-root': { color: 'text.secondary' }, cursor: 'none' }}
+                  MenuProps={{ PaperProps: { sx: { background: 'var(--dialog-bg)', border: '1px solid var(--glass-border)' } } }}
                 >
                   {['Job Opportunity', 'Collaboration', 'Consulting', 'Mentorship', 'Just connecting'].map(o => (
-                    <MenuItem key={o} value={o} sx={{ color: 'text.secondary', '&:hover': { background: 'rgba(29,106,255,0.1)' }, cursor: 'none' }}>{o}</MenuItem>
+                    <MenuItem key={o} value={o} sx={{ color: 'text.secondary', '&:hover': { background: 'var(--accent-glow-mild)' }, cursor: 'none' }}>{o}</MenuItem>
                   ))}
                 </Select>
               </FormControl>

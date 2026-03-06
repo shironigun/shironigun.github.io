@@ -20,12 +20,14 @@ import Articles from './components/Articles';
 import Resume from './components/Resume';
 import Connect from './components/Connect';
 import Footer from './components/Footer';
+import ThemeToggle from './components/ThemeToggle';
 
 export default function App() {
   return (
     <ThemeProvider theme={theme} defaultMode="dark">
       <InitColorSchemeScript defaultMode="dark" />
       <CssBaseline />
+      <ThemeToggle />
       <CustomCursor />
       <Navbar />
       <Hero />

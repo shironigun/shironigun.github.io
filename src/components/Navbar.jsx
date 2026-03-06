@@ -50,12 +50,12 @@ function DropdownMenu({ links, open }) {
           }}
         >
           <Box sx={{
-            background: 'rgba(6,19,37,0.97)',
-            border: '1px solid rgba(255,255,255,0.1)',
+            background: 'var(--dropdown-bg)',
+            border: '1px solid var(--glass-border)',
             borderRadius: 2.5,
             backdropFilter: 'blur(24px)',
             py: 1, minWidth: 180,
-            boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+            boxShadow: 'var(--shadow-heavy)',
           }}>
             {links.map(link => (
               <Button
@@ -66,7 +66,7 @@ function DropdownMenu({ links, open }) {
                   justifyContent: 'flex-start', px: 2.5, py: 1,
                   color: 'text.secondary', fontSize: '0.82rem', fontWeight: 500,
                   borderRadius: 0,
-                  '&:hover': { color: 'secondary.main', background: 'rgba(29,106,255,0.08)' },
+                  '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' },
                 }}
               >
                 {link.label}
@@ -89,7 +89,7 @@ function NavDropdown({ label, links }) {
     >
       <Button
         endIcon={<ExpandMoreIcon sx={{ fontSize: '14px !important', transition: 'transform 0.2s', transform: open ? 'rotate(180deg)' : 'none' }} />}
-        sx={{ color: open ? 'secondary.main' : 'text.secondary', fontSize: '0.8rem', fontWeight: 500, px: 1.5, py: 0.8, '&:hover': { color: 'secondary.main', background: 'rgba(29,106,255,0.07)' } }}
+        sx={{ color: open ? 'secondary.main' : 'text.secondary', fontSize: '0.8rem', fontWeight: 500, px: 1.5, py: 0.8, '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}
       >
         {label}
       </Button>
@@ -118,9 +118,9 @@ export default function Navbar() {
   return (
     <>
       <AppBar position="fixed" elevation={0} sx={{
-        background: scrolled ? 'rgba(3,13,26,0.9)' : 'transparent',
+        background: scrolled ? 'var(--nav-bg)' : 'transparent',
         backdropFilter: scrolled ? 'blur(20px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : '1px solid transparent',
+        borderBottom: scrolled ? '1px solid var(--glass-divider)' : '1px solid transparent',
         transition: 'all 0.35s ease',
       }}>
         <Toolbar sx={{ px: { xs: 2, md: 5 }, py: 1, justifyContent: 'space-between' }}>
@@ -138,7 +138,7 @@ export default function Navbar() {
           <Box sx={{ display: { xs: 'none', lg: 'flex' }, gap: 0.3, alignItems: 'center' }}>
             {primaryLinks.map((link, i) => (
               <motion.div key={link.label} initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.05 }}>
-                <Button onClick={() => scrollTo(link.href)} sx={{ color: 'text.secondary', fontSize: '0.8rem', fontWeight: 500, px: 1.4, py: 0.8, '&:hover': { color: 'secondary.main', background: 'rgba(29,106,255,0.07)' } }}>
+                <Button onClick={() => scrollTo(link.href)} sx={{ color: 'text.secondary', fontSize: '0.8rem', fontWeight: 500, px: 1.4, py: 0.8, '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>
                   {link.label}
                 </Button>
               </motion.div>
@@ -164,22 +164,22 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <Drawer anchor="right" open={mobileOpen} onClose={() => setMobileOpen(false)}
-        PaperProps={{ sx: { width: 290, p: 2, background: 'rgba(6,19,37,0.98)', backdropFilter: 'blur(20px)', borderLeft: '1px solid rgba(255,255,255,0.07)' } }}
+        PaperProps={{ sx: { width: 290, p: 2, background: 'var(--dropdown-bg)', backdropFilter: 'blur(20px)', borderLeft: '1px solid var(--glass-divider)' } }}
       >
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2, pb: 2, borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2, pb: 2, borderBottom: '1px solid var(--glass-divider)' }}>
           <Typography variant="h6" sx={{ fontWeight: 800, color: 'text.primary', fontSize: '1rem' }}>M<Box component="span" sx={{ color: 'primary.light' }}>.</Box>Ahmad</Typography>
           <IconButton onClick={() => setMobileOpen(false)} sx={{ color: 'text.secondary', cursor: 'none' }}><CloseIcon /></IconButton>
         </Box>
         <List dense>
           {primaryLinks.map(link => (
             <ListItem key={link.label} disablePadding>
-              <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', '&:hover': { color: 'secondary.main', background: 'rgba(29,106,255,0.08)' } }}>{link.label}</ListItemButton>
+              <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>{link.label}</ListItemButton>
             </ListItem>
           ))}
 
           {/* Work group */}
           <ListItem disablePadding>
-            <ListItemButton onClick={() => setMobileWork(!mobileWork)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', justifyContent: 'space-between', '&:hover': { color: 'secondary.main', background: 'rgba(29,106,255,0.08)' } }}>
+            <ListItemButton onClick={() => setMobileWork(!mobileWork)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', justifyContent: 'space-between', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>
               Work
               <ExpandMoreIcon sx={{ fontSize: 16, transition: 'transform 0.2s', transform: mobileWork ? 'rotate(180deg)' : 'none' }} />
             </ListItemButton>
@@ -187,14 +187,14 @@ export default function Navbar() {
           <Collapse in={mobileWork}>
             {workLinks.map(link => (
               <ListItem key={link.label} disablePadding sx={{ pl: 2 }}>
-                <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', fontSize: '0.85rem', '&:hover': { color: 'secondary.main', background: 'rgba(29,106,255,0.08)' } }}>{link.label}</ListItemButton>
+                <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', fontSize: '0.85rem', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>{link.label}</ListItemButton>
               </ListItem>
             ))}
           </Collapse>
 
           {/* More group */}
           <ListItem disablePadding>
-            <ListItemButton onClick={() => setMobileMore(!mobileMore)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', justifyContent: 'space-between', '&:hover': { color: 'secondary.main', background: 'rgba(29,106,255,0.08)' } }}>
+            <ListItemButton onClick={() => setMobileMore(!mobileMore)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', justifyContent: 'space-between', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>
               More
               <ExpandMoreIcon sx={{ fontSize: 16, transition: 'transform 0.2s', transform: mobileMore ? 'rotate(180deg)' : 'none' }} />
             </ListItemButton>
@@ -202,7 +202,7 @@ export default function Navbar() {
           <Collapse in={mobileMore}>
             {moreLinks.map(link => (
               <ListItem key={link.label} disablePadding sx={{ pl: 2 }}>
-                <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', fontSize: '0.85rem', '&:hover': { color: 'secondary.main', background: 'rgba(29,106,255,0.08)' } }}>{link.label}</ListItemButton>
+                <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', fontSize: '0.85rem', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>{link.label}</ListItemButton>
               </ListItem>
             ))}
           </Collapse>

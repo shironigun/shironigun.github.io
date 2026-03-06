@@ -47,10 +47,10 @@ function ProjectDialog({ project, open, onClose }) {
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="lg" fullWidth
-      PaperProps={{ sx: { background: '#061325', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 3, overflow: 'hidden', maxHeight: '92vh' } }}
+      PaperProps={{ sx: { background: 'var(--dialog-bg)', border: '1px solid var(--glass-border)', borderRadius: 3, overflow: 'hidden', maxHeight: '92vh' } }}
     >
       {/* Toolbar */}
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, px: 3, py: 1.8, borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)', flexWrap: 'wrap' }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, px: 3, py: 1.8, borderBottom: '1px solid var(--glass-border)', background: 'var(--glass-bg)', flexWrap: 'wrap' }}>
         <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: project.color, flexShrink: 0 }} />
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <Typography sx={{ color: 'text.primary', fontWeight: 700, fontSize: '0.95rem', lineHeight: 1.2 }}>{project.title}</Typography>
@@ -59,14 +59,14 @@ function ProjectDialog({ project, open, onClose }) {
         <Box sx={{ display: 'flex', gap: 1, flexShrink: 0 }}>
           {project.repoUrl && (
             <Tooltip title="View Repository">
-              <IconButton href={project.repoUrl} target="_blank" size="small" sx={{ color: 'text.secondary', border: '1px solid rgba(255,255,255,0.1)', cursor: 'none', '&:hover': { color: 'text.primary', borderColor: 'rgba(255,255,255,0.3)' } }}>
+              <IconButton href={project.repoUrl} target="_blank" size="small" sx={{ color: 'text.secondary', border: '1px solid var(--glass-border)', cursor: 'none', '&:hover': { color: 'text.primary', borderColor: 'rgba(255,255,255,0.3)' } }}>
                 <GitHubIcon fontSize="small" />
               </IconButton>
             </Tooltip>
           )}
           {project.demoUrl && (
             <Tooltip title="Open Live Demo">
-              <IconButton href={project.demoUrl} target="_blank" size="small" sx={{ color: 'primary.light', border: '1px solid rgba(29,106,255,0.3)', cursor: 'none', '&:hover': { background: 'rgba(29,106,255,0.1)' } }}>
+              <IconButton href={project.demoUrl} target="_blank" size="small" sx={{ color: 'primary.light', border: '1px solid rgba(29,106,255,0.3)', cursor: 'none', '&:hover': { background: 'var(--accent-glow-mild)' } }}>
                 <OpenInNewIcon fontSize="small" />
               </IconButton>
             </Tooltip>
@@ -80,11 +80,11 @@ function ProjectDialog({ project, open, onClose }) {
         {project.demoUrl && !webviewError ? (
           <Box sx={{ position: 'relative', width: '100%', height: '65vh', background: '#000' }}>
             {/* Browser chrome */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1, background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1, background: 'var(--glass-bg)', borderBottom: '1px solid var(--glass-bg)' }}>
               <Box sx={{ display: 'flex', gap: 0.6 }}>
                 {['#ff5f57', '#ffbd2e', '#28c840'].map(c => <Box key={c} sx={{ width: 10, height: 10, borderRadius: '50%', background: c }} />)}
               </Box>
-              <Box sx={{ flex: 1, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 1, px: 1.5, py: 0.4 }}>
+              <Box sx={{ flex: 1, background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 1, px: 1.5, py: 0.4 }}>
                 <Typography sx={{ color: 'text.secondary', fontSize: '0.7rem', fontFamily: '"JetBrains Mono",monospace' }}>{project.demoUrl}</Typography>
               </Box>
             </Box>
@@ -125,7 +125,7 @@ function ProjectDialog({ project, open, onClose }) {
 
               <Grid2 size={{ xs: 12, md: 4 }}>
                 {/* Metrics */}
-                <Box sx={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 3, p: 3, mb: 2 }}>
+                <Box sx={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 3, p: 3, mb: 2 }}>
                   <Typography variant="overline" sx={{ color: 'text.secondary', display: 'block', mb: 2 }}>Project Info</Typography>
                   {[
                     { label: 'Company', val: project.company },
@@ -134,7 +134,7 @@ function ProjectDialog({ project, open, onClose }) {
                     { label: 'Status', val: project.status },
                     { label: 'Impact', val: project.impact },
                   ].map(row => (
-                    <Box key={row.label} sx={{ display: 'flex', justifyContent: 'space-between', py: 0.9, borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                    <Box key={row.label} sx={{ display: 'flex', justifyContent: 'space-between', py: 0.9, borderBottom: '1px solid var(--glass-bg)' }}>
                       <Typography variant="caption" sx={{ color: 'text.secondary' }}>{row.label}</Typography>
                       <Typography variant="caption" sx={{ color: 'text.primary', fontWeight: 500, textAlign: 'right', maxWidth: 160 }}>{row.val}</Typography>
                     </Box>
@@ -165,15 +165,15 @@ function ProjectCard({ project, index, inView, onClick }) {
       whileHover={{ y: -6 }}
       onClick={() => onClick(project)}
       sx={{
-        background: project.isPlaceholder ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.04)',
-        border: project.isPlaceholder ? '1px dashed rgba(255,255,255,0.1)' : '1px solid rgba(255,255,255,0.08)',
+        background: project.isPlaceholder ? 'var(--glass-bg)' : 'var(--glass-bg)',
+        border: project.isPlaceholder ? '1px dashed var(--glass-border)' : '1px solid var(--glass-border)',
         borderRadius: 3, p: 3,
         cursor: 'none', height: '100%',
         display: 'flex', flexDirection: 'column',
         backdropFilter: 'blur(8px)',
         transition: 'border-color 0.3s, box-shadow 0.3s',
         position: 'relative', overflow: 'hidden',
-        '&::before': { content: '""', position: 'absolute', top: 0, left: 0, width: 3, height: '100%', background: project.isPlaceholder ? 'rgba(255,255,255,0.1)' : `linear-gradient(180deg, ${project.color}, transparent)`, borderRadius: '0 0 0 0' },
+        '&::before': { content: '""', position: 'absolute', top: 0, left: 0, width: 3, height: '100%', background: project.isPlaceholder ? 'var(--glass-border)' : `linear-gradient(180deg, ${project.color}, transparent)`, borderRadius: '0 0 0 0' },
         '&:hover': { borderColor: project.isPlaceholder ? 'rgba(255,255,255,0.2)' : `${project.color}55`, boxShadow: project.isPlaceholder ? 'none' : `0 12px 40px ${project.color}15` },
       }}
     >
@@ -196,7 +196,7 @@ function ProjectCard({ project, index, inView, onClick }) {
       <Box>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.6, mb: 2 }}>
           {project.tags.slice(0, 4).map(t => (
-            <Chip key={t} label={t} size="small" sx={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.6rem', height: 20, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', color: 'text.secondary' }} />
+            <Chip key={t} label={t} size="small" sx={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.6rem', height: 20, background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', color: 'text.secondary' }} />
           ))}
         </Box>
         {/* Impact bar */}
@@ -224,7 +224,7 @@ export default function Projects() {
   const filtered = activeFilter === 'All' ? projectsData : projectsData.filter(p => p.type === activeFilter);
 
   return (
-    <Box id="projects" sx={{ py: 14, background: 'linear-gradient(180deg,transparent,rgba(29,106,255,0.025),transparent)' }}>
+    <Box id="projects" sx={{ py: 14, background: 'var(--gradient-section)' }}>
       <Box sx={{ maxWidth: 1140, mx: 'auto', px: { xs: 2.5, md: 5 } }}>
         <SectionLabel>Projects</SectionLabel>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', mb: 5, flexWrap: 'wrap', gap: 3 }}>
@@ -233,7 +233,7 @@ export default function Projects() {
           </Typography>
           <Box sx={{ display: 'flex', gap: 0.8, flexWrap: 'wrap' }}>
             {typeFilters.map(f => (
-              <Chip key={f} label={f} size="small" onClick={() => setActiveFilter(f)} sx={{ cursor: 'none', background: activeFilter === f ? 'rgba(29,106,255,0.18)' : 'rgba(255,255,255,0.04)', border: activeFilter === f ? '1px solid rgba(29,106,255,0.5)' : '1px solid rgba(255,255,255,0.08)', color: activeFilter === f ? 'primary.light' : 'text.secondary', transition: 'all 0.2s', '&:hover': { borderColor: 'rgba(29,106,255,0.4)', color: 'primary.light' } }} />
+              <Chip key={f} label={f} size="small" onClick={() => setActiveFilter(f)} sx={{ cursor: 'none', background: activeFilter === f ? 'var(--accent-glow-strong)' : 'var(--glass-bg)', border: activeFilter === f ? '1px solid rgba(29,106,255,0.5)' : '1px solid var(--glass-border)', color: activeFilter === f ? 'primary.light' : 'text.secondary', transition: 'all 0.2s', '&:hover': { borderColor: 'rgba(29,106,255,0.4)', color: 'primary.light' } }} />
             ))}
           </Box>
         </Box>

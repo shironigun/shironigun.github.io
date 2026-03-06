@@ -24,8 +24,8 @@ function AchievementCard({ item, index, inView }) {
       whileHover={{ y: -5, scale: 1.01 }}
       transition={{ duration: 0.55, delay: index * 0.08, ease: [0.16, 1, 0.3, 1], scale: { type: 'spring', stiffness: 400, damping: 20 } }}
       sx={{
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.08)',
+        background: 'var(--glass-bg)',
+        border: '1px solid var(--glass-border)',
         borderRadius: 3, p: 3,
         backdropFilter: 'blur(10px)',
         position: 'relative', overflow: 'hidden',
@@ -58,7 +58,7 @@ export default function Achievements() {
   const [ref, inView] = useInView({ threshold: 0.05, triggerOnce: true });
 
   return (
-    <Box id="achievements" sx={{ py: 14, background: 'radial-gradient(ellipse at 50% 50%, rgba(29,106,255,0.04), transparent 70%)' }}>
+    <Box id="achievements" sx={{ py: 14, background: 'var(--gradient-radial)' }}>
       <Box sx={{ maxWidth: 1140, mx: 'auto', px: { xs: 2.5, md: 5 } }}>
         <SectionLabel>Achievements</SectionLabel>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', mb: 7, flexWrap: 'wrap', gap: 3 }}>
@@ -83,10 +83,10 @@ export default function Achievements() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.7 }}
-          sx={{ mt: 4, p: 3, border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 3, textAlign: 'center' }}
+          sx={{ mt: 4, p: 3, border: '1px dashed var(--glass-border)', borderRadius: 3, textAlign: 'center' }}
         >
           <Typography variant="body2" sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
-            ✨ <strong style={{ color: '#eef2fb' }}>This section grows with you.</strong> Add new achievements to the <code style={{ color: '#00c8ff', background: 'rgba(0,200,255,0.08)', padding: '2px 6px', borderRadius: 4 }}>achievements</code> array in <code style={{ color: '#00c8ff', background: 'rgba(0,200,255,0.08)', padding: '2px 6px', borderRadius: 4 }}>mockData.js</code> as your career progresses.
+            ✨ <strong style={{ color: 'var(--strong-inline)' }}>This section grows with you.</strong> Add new achievements to the <code style={{ color: 'var(--code-color)', background: 'var(--code-bg)', padding: '2px 6px', borderRadius: 4 }}>achievements</code> array in <code style={{ color: 'var(--code-color)', background: 'var(--code-bg)', padding: '2px 6px', borderRadius: 4 }}>mockData.js</code> as your career progresses.
           </Typography>
         </MotionBox>
       </Box>

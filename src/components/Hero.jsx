@@ -21,8 +21,8 @@ function StatCard({ num, suffix, label }) {
       whileHover={{ y: -4, scale: 1.02 }}
       transition={{ type: 'spring', stiffness: 400, damping: 17 }}
       sx={{
-        p: 2.5, background: 'rgba(29,106,255,0.08)',
-        border: '1px solid rgba(29,106,255,0.18)', borderRadius: 3, textAlign: 'center',
+        p: 2.5, background: 'var(--accent-glow)',
+        border: '1px solid var(--accent-glow-strong)', borderRadius: 3, textAlign: 'center',
       }}
     >
       <Typography sx={{ fontWeight: 800, fontSize: '2.2rem', lineHeight: 1, background: 'linear-gradient(135deg,#4d8dff,#00c8ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
@@ -109,7 +109,7 @@ export default function Hero() {
   return (
     <Box id="home" sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', pt: 12, pb: 6, position: 'relative', overflow: 'hidden' }}>
       <BgCanvas />
-      <Box sx={{ position: 'absolute', top: '20%', right: '-5%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle,rgba(29,106,255,0.08),transparent 65%)', pointerEvents: 'none', zIndex: 1 }} />
+      <Box sx={{ position: 'absolute', top: '20%', right: '-5%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle,var(--accent-glow),transparent 65%)', pointerEvents: 'none', zIndex: 1 }} />
       <Box sx={{ position: 'absolute', bottom: '10%', left: '-5%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle,rgba(0,200,255,0.05),transparent 65%)', pointerEvents: 'none', zIndex: 1 }} />
 
       <Box sx={{ width: '100%', maxWidth: 1140, mx: 'auto', px: { xs: 2.5, md: 5 }, position: 'relative', zIndex: 2 }}>
@@ -117,7 +117,7 @@ export default function Hero() {
           <Grid size={{ xs: 12, lg: 7 }}>
             <motion.div variants={containerVariants} initial="hidden" animate="visible">
               <motion.div variants={itemVariants}>
-                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 1, border: '1px solid rgba(255,255,255,0.09)', background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(8px)', borderRadius: 10, px: 2, py: 0.7, mb: 3 }}>
+                <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 1, border: '1px solid var(--glass-border)', background: 'var(--glass-bg)', backdropFilter: 'blur(8px)', borderRadius: 10, px: 2, py: 0.7, mb: 3 }}>
                   <FiberManualRecordIcon sx={{ fontSize: 8, color: '#00e5a0', animation: 'pulse 2s infinite', '@keyframes pulse': { '0%,100%': { opacity: 1 }, '50%': { opacity: 0.3 } } }} />
                   <Typography variant="caption" sx={{ color: 'secondary.main', fontSize: '0.72rem' }}>Open to new opportunities</Typography>
                 </Box>
@@ -143,7 +143,7 @@ export default function Hero() {
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ mb: 4 }}>
                   <Button variant="contained" color="primary" size="large" onClick={() => document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' })} sx={{ px: 3.5, py: 1.4 }}>View Experience →</Button>
                   <Button variant="outlined" size="large" href={personal.whatsapp} target="_blank" startIcon={<WhatsAppIcon />} sx={{ px: 3, py: 1.4, borderColor: 'rgba(37,211,102,0.4)', color: '#25d366', '&:hover': { borderColor: '#25d366', background: 'rgba(37,211,102,0.07)' } }}>WhatsApp</Button>
-                  <Button variant="outlined" size="large" href={personal.linkedin} target="_blank" startIcon={<LinkedInIcon />} sx={{ px: 3, py: 1.4, borderColor: 'rgba(255,255,255,0.12)', color: 'text.secondary', '&:hover': { borderColor: 'primary.light', color: 'secondary.main' } }}>LinkedIn</Button>
+                  <Button variant="outlined" size="large" href={personal.linkedin} target="_blank" startIcon={<LinkedInIcon />} sx={{ px: 3, py: 1.4, borderColor: 'var(--glass-hover)', color: 'text.secondary', '&:hover': { borderColor: 'primary.light', color: 'secondary.main' } }}>LinkedIn</Button>
                 </Stack>
               </motion.div>
               <motion.div variants={itemVariants}>
@@ -152,7 +152,7 @@ export default function Hero() {
                     <LocationOnOutlinedIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
                     <Typography variant="caption" sx={{ color: 'text.secondary' }}>Lahore, Pakistan 🇵🇰</Typography>
                   </Box>
-                  <Box sx={{ width: '1px', height: 14, background: 'rgba(255,255,255,0.1)' }} />
+                  <Box sx={{ width: '1px', height: 14, background: 'var(--glass-border)' }} />
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                     <EmailOutlinedIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
                     <Typography variant="caption" sx={{ color: 'text.secondary' }}>{personal.email}</Typography>
@@ -167,9 +167,9 @@ export default function Hero() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              sx={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: 4, p: 3.5, backdropFilter: 'blur(20px)', animation: 'float 6s ease-in-out infinite', '@keyframes float': { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } } }}
+              sx={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 4, p: 3.5, backdropFilter: 'blur(20px)', animation: 'float 6s ease-in-out infinite', '@keyframes float': { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } } }}
             >
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3, pb: 2.5, borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3, pb: 2.5, borderBottom: '1px solid var(--glass-divider)' }}>
                 <Avatar sx={{ width: 52, height: 52, background: 'linear-gradient(135deg,#1d6aff,#00c8ff)', fontWeight: 800, fontSize: '1.3rem' }}>M</Avatar>
                 <Box>
                   <Typography variant="h6" sx={{ color: 'text.primary', letterSpacing: '-0.3px' }}>Mahmood Ahmad</Typography>
@@ -181,7 +181,7 @@ export default function Hero() {
               </Grid>
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8 }}>
                 {['CSM®', 'CTFL', 'Agile', 'Azure DevOps', 'Power BI', 'Python', 'SQL'].map(t => (
-                  <Chip key={t} label={t} size="small" sx={{ background: 'rgba(29,106,255,0.1)', border: '1px solid rgba(29,106,255,0.22)', color: 'primary.light' }} />
+                  <Chip key={t} label={t} size="small" sx={{ background: 'var(--accent-glow-mild)', border: '1px solid var(--accent-glow-strong)', color: 'primary.light' }} />
                 ))}
               </Box>
             </MotionBox>

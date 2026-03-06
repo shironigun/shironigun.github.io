@@ -28,11 +28,11 @@ function SectionLabel({ children }) {
 function CaseStudyDialog({ cs, open, onClose }) {
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth scroll="paper"
-      PaperProps={{ sx: { background: '#061325', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 3, maxHeight: '92vh' } }}
+      PaperProps={{ sx: { background: 'var(--dialog-bg)', border: '1px solid var(--glass-border)', borderRadius: 3, maxHeight: '92vh' } }}
     >
       {/* Header */}
       <Box sx={{ position: 'relative', overflow: 'visible', flexShrink: 0 }}>
-        <Box sx={{ background: `linear-gradient(135deg, ${cs.color}22, rgba(6,19,37,0.98))`, px: 4, pt: 3, pb: 3, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <Box sx={{ background: `linear-gradient(135deg, ${cs.color}22, var(--dropdown-bg))`, px: 4, pt: 3, pb: 3, borderBottom: '1px solid var(--glass-border)' }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5 }}>
             <Chip label={cs.category} size="small" sx={{ background: `${cs.color}20`, border: `1px solid ${cs.color}40`, color: cs.color, fontFamily: '"JetBrains Mono",monospace', fontSize: '0.65rem' }} />
             <IconButton onClick={onClose} size="small" sx={{ color: 'text.secondary', cursor: 'none' }}><CloseIcon fontSize="small" /></IconButton>
@@ -60,7 +60,7 @@ function CaseStudyDialog({ cs, open, onClose }) {
         </Box>
 
         {/* Problem */}
-        <Box sx={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderLeft: `3px solid ${cs.color}`, borderRadius: '0 12px 12px 0', p: 3, mb: 4 }}>
+        <Box sx={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-divider)', borderLeft: `3px solid ${cs.color}`, borderRadius: '0 12px 12px 0', p: 3, mb: 4 }}>
           <Typography variant="overline" sx={{ color: cs.color, display: 'block', mb: 1.5 }}>The Problem</Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.85 }}>{cs.problem}</Typography>
         </Box>
@@ -83,7 +83,7 @@ function CaseStudyDialog({ cs, open, onClose }) {
           </Stack>
         </Box>
 
-        <Divider sx={{ borderColor: 'rgba(255,255,255,0.07)', mb: 4 }} />
+        <Divider sx={{ borderColor: 'var(--glass-divider)', mb: 4 }} />
 
         {/* Results */}
         <Box sx={{ mb: 4 }}>
@@ -134,8 +134,8 @@ function CaseStudyCard({ cs, index, inView, onClick }) {
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       onClick={() => onClick(cs)}
       sx={{
-        background: cs.isPlaceholder ? 'rgba(255,255,255,0.02)' : 'rgba(255,255,255,0.04)',
-        border: cs.isPlaceholder ? '1px dashed rgba(255,255,255,0.1)' : '1px solid rgba(255,255,255,0.08)',
+        background: cs.isPlaceholder ? 'var(--glass-bg)' : 'var(--glass-bg)',
+        border: cs.isPlaceholder ? '1px dashed var(--glass-border)' : '1px solid var(--glass-border)',
         borderRadius: 3, p: 3.5,
         cursor: 'none', height: '100%',
         display: 'flex', flexDirection: 'column',
