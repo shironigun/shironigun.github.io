@@ -32,12 +32,12 @@ function CaseStudyDialog({ cs, open, onClose }) {
     >
       {/* Header */}
       <Box sx={{ position: 'relative', overflow: 'visible', flexShrink: 0 }}>
-        <Box sx={{ background: `linear-gradient(135deg, ${cs.color}22, rgba(6,19,37,0.98))`, px: 4, pt: 4, pb: 4, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 1 }}>
+        <Box sx={{ background: `linear-gradient(135deg, ${cs.color}22, rgba(6,19,37,0.98))`, px: 4, pt: 3, pb: 3, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1.5 }}>
+            <Chip label={cs.category} size="small" sx={{ background: `${cs.color}20`, border: `1px solid ${cs.color}40`, color: cs.color, fontFamily: '"JetBrains Mono",monospace', fontSize: '0.65rem' }} />
             <IconButton onClick={onClose} size="small" sx={{ color: 'text.secondary', cursor: 'none' }}><CloseIcon fontSize="small" /></IconButton>
           </Box>
-          <Chip label={cs.category} size="small" sx={{ background: `${cs.color}20`, border: `1px solid ${cs.color}40`, color: cs.color, mb: 2, fontFamily: '"JetBrains Mono",monospace', fontSize: '0.65rem' }} />
-          <Typography variant="h4" sx={{ color: 'text.primary', mb: 1, lineHeight: 1.35, pb: 0.5 }}>{cs.title}</Typography>
+          <Typography variant="h4" sx={{ color: 'text.primary', mb: 1, lineHeight: 1.35 }}>{cs.title}</Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>{cs.subtitle}</Typography>
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
