@@ -214,7 +214,7 @@ function ProjectCard({ project, index, inView, onClick }) {
   );
 }
 
-const typeFilters = ['All', 'Product QA', 'Data & Analytics', 'Automation', 'Knowledge Management', 'UX & Documentation'];
+const typeFilters = ['All', 'Product QA', 'Data & Analytics', 'Automation', 'Knowledge Management', 'UX & Documentation', 'AI & Innovation'];
 
 export default function Projects() {
   const [ref, inView] = useInView({ threshold: 0.05, triggerOnce: true });

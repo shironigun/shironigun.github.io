@@ -777,6 +777,29 @@ export const projectsData = [
     color: "#da1f27",
   },
   {
+    id: "ai-hackathon",
+    title: "AI Hackathon — 1st Place Win",
+    company: "Contour Software",
+    period: "2025",
+    type: "AI & Innovation",
+    status: "Completed",
+    impact: "1st place out of 15 teams",
+    thumbnail: null,
+    demoUrl: null,
+    repoUrl: null,
+    description:
+      "Won 1st place in a company-wide AI hackathon by building an intelligent solution that impressed judges across engineering and leadership. Competed against 15 teams and delivered a working prototype within the event timeframe.",
+    longDescription:
+      "Participated in Contour Software's inaugural AI hackathon, competing against 15 cross-functional teams. Ideated, designed, and built a working AI-powered prototype within the competition timeframe. The solution demonstrated practical business value and technical creativity, earning 1st place from a panel of engineering directors and senior leadership.",
+    tags: ["AI", "Hackathon", "Prototype", "Innovation", "Team Collaboration"],
+    highlights: [
+      "1st place out of 15 teams",
+      "Built working AI prototype under time pressure",
+      "Recognised by senior leadership",
+    ],
+    color: "#f5a623",
+  },
+  {
     id: "placeholder",
     title: "Your Next Project Here",
     company: "Coming Soon",
