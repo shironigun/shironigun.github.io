@@ -113,7 +113,7 @@ export default function Resume() {
                     </Box>
                     <Typography sx={{ fontFamily: '"JetBrains Mono",monospace', color: '#00c8ff', fontSize: '0.73rem', mb: 1.2 }}>{exp.company}</Typography>
                     <List disablePadding>
-                      {exp.bullets.slice(0, 2).map((b, j) => (
+                      {exp.bullets.map((b, j) => (
                         <ListItem key={j} disablePadding sx={{ mb: 0.4, alignItems: 'flex-start' }}>
                           <ChevronRightIcon sx={{ fontSize: 14, color: '#00c8ff', mt: 0.4, mr: 0.5, flexShrink: 0 }} />
                           <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7, fontSize: '0.82rem' }} dangerouslySetInnerHTML={{ __html: b }} />

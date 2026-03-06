@@ -14,30 +14,38 @@
 
 - **Period**: Jan 2026 — Present (3 months)
 - **Current**: Yes
-- **5 bullets**: Epics/User Stories in Aha!/Azure DevOps with "Strict Quality Gates" → reduced scope creep & defect leakage
-- Cross-functional discovery sessions, Quantitative Analysis (Regression, Trend, Break-even) → data-backed prioritization
-- Solution architecture in Visio/draw.io, SWOT, 5 Whys, RACI/RASCI for ownership clarity
+- **5 bullets**: Epics/User Stories in Aha!/Azure DevOps with "Strict Quality
+  Gates" → reduced scope creep & defect leakage
+- Cross-functional discovery sessions, Quantitative Analysis (Regression, Trend,
+  Break-even) → data-backed prioritization
+- Solution architecture in Visio/draw.io, SWOT, 5 Whys, RACI/RASCI for ownership
+  clarity
 - Gantt Planning, Risk & Escalation Management → delivery predictability
-- Power Platform + Power BI dashboards → real-time product-market fit, KPI validation
+- Power Platform + Power BI dashboards → real-time product-market fit, KPI
+  validation
 
 ### 2. Junior SQA Analyst — Contour Software (Perseus Group)
 
 - **Period**: Feb 2024 — Feb 2026 (2 years 1 month)
-- **6 bullets**: Requirements refinement with POs → alignment, clarity, process optimization
+- **6 bullets**: Requirements refinement with POs → alignment, clarity, process
+  optimization
 - Test plans + control flow diagrams → improved test coverage & sprint execution
 - Improved dev/sprint/release processes → enhanced delivery speed
 - Azure DevOps test execution for million-dollar DMS/CRM → reliability increases
 - Manual + automation testing → product reliability & client satisfaction
-- 2,000+ hours domain training → alignment, knowledge sharing, reduced onboarding
+- 2,000+ hours domain training → alignment, knowledge sharing, reduced
+  onboarding
 
 ### 3. SQA Trainee — Contour Software
 
 - **Period**: Dec 2023 — Feb 2024 (3 months)
 - **5 bullets**: Global UI standards documentation → consistency & usability
-- Deep domain/business/sprint process understanding → enhanced workflow inefficiencies
+- Deep domain/business/sprint process understanding → enhanced workflow
+  inefficiencies
 - UAT, functional, API, cross-platform testing → system stability
 - Bug tracking, workarounds → timely resolution & high quality
-- 360+ hours collaborating cross-functionally → quality improvements & efficiency
+- 360+ hours collaborating cross-functionally → quality improvements &
+  efficiency
 
 ### 4. WordPress Designer — Media Solutions
 
