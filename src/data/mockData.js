@@ -1043,6 +1043,15 @@ export const achievements = [
     year: "2026",
     color: "#4d8dff",
   },
+  {
+    id: "qa-mentorship",
+    icon: "🌱",
+    title: "Built QA Talent from the Ground Up",
+    detail:
+      "Trained QA resources transitioning from different domains and fresh graduates — now independently contributing to the product.",
+    year: "2024–2025",
+    color: "#00e5a0",
+  },
 ];
 
 // ─── ARTICLES / BLOG ──────────────────────────────────────────────
