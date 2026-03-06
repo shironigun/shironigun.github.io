@@ -214,7 +214,7 @@ function ProjectCard({ project, index, inView, onClick }) {
   );
 }
 
-const typeFilters = ['All', 'Product QA', 'Knowledge Management', 'API Testing & Automation', 'UX & Documentation', 'AI & Innovation'];
+const typeFilters = ['All', 'AI & Innovation', 'Product QA', 'Knowledge Management', 'API Testing & Automation', 'UX & Documentation'];
 
 export default function Projects() {
   const [ref, inView] = useInView({ threshold: 0.05, triggerOnce: true });

@@ -1,9 +1,13 @@
 # Project Context — Mahmood Ahmad Portfolio
 
 ## Overview
-Personal portfolio website for **Mahmood Ahmad**, Agile Product Analyst at Perseus Group, Constellation Software. Built with React + Vite, deployed on GitHub Pages via GitHub Actions.
+
+Personal portfolio website for **Mahmood Ahmad**, Agile Product Analyst at
+Perseus Group, Constellation Software. Built with React + Vite, deployed on
+GitHub Pages via GitHub Actions.
 
 ## Tech Stack
+
 - **Framework**: React 18 + Vite
 - **UI Library**: MUI (Material UI) v6
 - **Animations**: Framer Motion
@@ -11,6 +15,7 @@ Personal portfolio website for **Mahmood Ahmad**, Agile Product Analyst at Perse
 - **Repository**: `shironigun/shironigun.github.io`
 
 ## File Structure
+
 ```
 src/
   App.jsx              — Main app, renders all sections in order
@@ -39,6 +44,7 @@ src/
 ```
 
 ## Section Render Order (App.jsx)
+
 1. Navbar (fixed)
 2. Hero
 3. About
@@ -57,35 +63,46 @@ src/
 16. Footer
 
 ## Navbar Structure
+
 - **Primary**: About, Skills, Tools, Experience
-- **Work** (dropdown): Products, Certifications, Projects, Case Studies, Achievements
+- **Work** (dropdown): Products, Certifications, Projects, Case Studies,
+  Achievements
 - **More** (dropdown): Testimonials, Articles, Resume
 
 ## Key Data Exports (mockData.js)
-| Export | Type | Used By |
-|--------|------|---------|
-| `personal` | Object | Navbar, Hero, About, Connect |
-| `stats` | Array[4] | About |
-| `skillGroups` | Array[4] | Skills |
-| `softSkills` | Array[12] | Skills |
-| `toolCategories` | Array[4] | Tools |
-| `experience` | Array[5] | Experience |
-| `certifications` | Array[9] | (legacy, not used by flip cards) |
-| `certificationsWithPdf` | Array[9] | Certifications |
-| `testimonials` | Array[5] | Testimonials |
-| `projects` | Array[4] | (simple cards — not rendered by Projects.jsx) |
-| `projectsData` | Array[5] | Projects |
-| `caseStudies` | Array[3] | CaseStudies |
-| `achievements` | Array[6] | Achievements |
-| `products` | Array[1] | Products |
-| `articles` | Array[2] | Articles |
+
+| Export                  | Type      | Used By                                       |
+| ----------------------- | --------- | --------------------------------------------- |
+| `personal`              | Object    | Navbar, Hero, About, Connect                  |
+| `stats`                 | Array[4]  | About                                         |
+| `skillGroups`           | Array[4]  | Skills                                        |
+| `softSkills`            | Array[12] | Skills                                        |
+| `toolCategories`        | Array[4]  | Tools                                         |
+| `experience`            | Array[5]  | Experience                                    |
+| `certifications`        | Array[9]  | (legacy, not used by flip cards)              |
+| `certificationsWithPdf` | Array[9]  | Certifications                                |
+| `testimonials`          | Array[5]  | Testimonials                                  |
+| `projects`              | Array[4]  | (simple cards — not rendered by Projects.jsx) |
+| `projectsData`          | Array[5]  | Projects                                      |
+| `caseStudies`           | Array[3]  | CaseStudies                                   |
+| `achievements`          | Array[6]  | Achievements                                  |
+| `products`              | Array[1]  | Products                                      |
+| `articles`              | Array[2]  | Articles                                      |
 
 ## Important Notes
-- **Two project arrays exist**: `projects` (simple format, not rendered) and `projectsData` (detailed format, used by Projects.jsx). Always add to `projectsData`.
-- **No placeholder/mock content** — all removed. No "coming soon" or "add your" entries.
-- **Articles are in-portfolio** — read via dialog, not external links. Each article has a `body` array of `{type, text}` blocks.
-- **Products section** has an embedded iframe dialog for the knowledge base at `learntargetcrm.com`.
-- **Certifications** use flip cards — front shows cert info, back shows PDF preview mockup. Header text on back is centered.
+
+- **Two project arrays exist**: `projects` (simple format, not rendered) and
+  `projectsData` (detailed format, used by Projects.jsx). Always add to
+  `projectsData`.
+- **No placeholder/mock content** — all removed. No "coming soon" or "add your"
+  entries.
+- **Articles are in-portfolio** — read via dialog, not external links. Each
+  article has a `body` array of `{type, text}` blocks.
+- **Products section** has an embedded iframe dialog for the knowledge base at
+  `learntargetcrm.com`.
+- **Certifications** use flip cards — front shows cert info, back shows PDF
+  preview mockup. Header text on back is centered.
 
 ## Last Updated
+
 March 6, 2026

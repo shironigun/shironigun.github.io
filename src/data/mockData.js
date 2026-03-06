@@ -666,6 +666,29 @@ export const certificationsWithPdf = [
 // ─── PROJECTS ─────────────────────────────────────────────────────
 export const projectsData = [
   {
+    id: "ai-hackathon",
+    title: "AI Hackathon — 1st Place Win",
+    company: "Contour Software",
+    period: "2025",
+    type: "AI & Innovation",
+    status: "Completed",
+    impact: "1st place out of 11 teams",
+    thumbnail: null,
+    demoUrl: null,
+    repoUrl: null,
+    description:
+      "Won 1st place out of 11 teams at a division-wide AI Hackathon. Led requirements, UI/UX prototyping, and the final presentation. Built AI-powered solutions for Customer Retention and Employee Performance Monitoring using Language Cognitive Models, Text Analyzers, and Semantic Analyzers.",
+    longDescription:
+      "Secured 1st place out of 11 teams at a division-wide AI Hackathon. Took ownership of finalizing project requirements, defining and aligning clear goals, designing UI/UX prototypes, and preparing and delivering the final presentation. The team built AI-powered solutions targeting Customer Retention and Employee Performance Monitoring, powered by AI Language Cognitive Models, Text Analyzers, and Semantic Analyzers.",
+    tags: ["AI", "Hackathon", "UI/UX", "Cognitive Models", "Semantic Analysis"],
+    highlights: [
+      "1st place out of 11 teams",
+      "Led requirements, UI/UX design & final presentation",
+      "Built AI solutions for Customer Retention & Performance Monitoring",
+    ],
+    color: "#f5a623",
+  },
+  {
     id: "crm-quality",
     title: "CRM Product Quality Initiative",
     company: "Perseus Group / Contour Software",
@@ -775,29 +798,6 @@ export const projectsData = [
       "Reduced UI bug reports by 35%",
     ],
     color: "#da1f27",
-  },
-  {
-    id: "ai-hackathon",
-    title: "AI Hackathon — 1st Place Win",
-    company: "Contour Software",
-    period: "2025",
-    type: "AI & Innovation",
-    status: "Completed",
-    impact: "1st place out of 11 teams",
-    thumbnail: null,
-    demoUrl: null,
-    repoUrl: null,
-    description:
-      "Won 1st place out of 11 teams at a division-wide AI Hackathon. Led requirements, UI/UX prototyping, and the final presentation. Built AI-powered solutions for Customer Retention and Employee Performance Monitoring using Language Cognitive Models, Text Analyzers, and Semantic Analyzers.",
-    longDescription:
-      "Secured 1st place out of 11 teams at a division-wide AI Hackathon. Took ownership of finalizing project requirements, defining and aligning clear goals, designing UI/UX prototypes, and preparing and delivering the final presentation. The team built AI-powered solutions targeting Customer Retention and Employee Performance Monitoring, powered by AI Language Cognitive Models, Text Analyzers, and Semantic Analyzers.",
-    tags: ["AI", "Hackathon", "UI/UX", "Cognitive Models", "Semantic Analysis"],
-    highlights: [
-      "1st place out of 11 teams",
-      "Led requirements, UI/UX design & final presentation",
-      "Built AI solutions for Customer Retention & Performance Monitoring",
-    ],
-    color: "#f5a623",
   },
 ];
 
