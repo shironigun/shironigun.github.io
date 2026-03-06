@@ -11,24 +11,24 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { personal } from '../data/mockData';
 
 const primaryLinks = [
-  { label: 'About',    href: '#about' },
-  { label: 'Skills',   href: '#skills' },
-  { label: 'Tools',    href: '#tools' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Tools', href: '#tools' },
   { label: 'Experience', href: '#experience' },
 ];
 
 const workLinks = [
-  { label: 'Products',       href: '#products' },
+  { label: 'Products', href: '#products' },
   { label: 'Certifications', href: '#certifications' },
-  { label: 'Projects',       href: '#projects' },
-  { label: 'Case Studies',   href: '#case-studies' },
-  { label: 'Achievements',   href: '#achievements' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Case Studies', href: '#case-studies' },
+  { label: 'Achievements', href: '#achievements' },
 ];
 
 const moreLinks = [
   { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Articles',     href: '#articles' },
-  { label: 'Resume',       href: '#resume' },
+  { label: 'Articles', href: '#articles' },
+  { label: 'Resume', href: '#resume' },
 ];
 
 function DropdownMenu({ links, open }) {
