@@ -2,11 +2,11 @@
 export const personal = {
   name: "Mahmood Ahmad",
   title: "Product Quality Analyst",
-  tagline: "CSM® · CTFL · Bridging Business Goals & Technical Excellence",
+  tagline: "CSM® · CTFL · Where Product Thinking Meets Quality Engineering",
   bio: [
-    "I'm a Certified ScrumMaster® (CSM®) and ISTQB®-certified Product Quality Analyst at Perseus Group, Constellation Software Inc. — one of the world's top vertical market software conglomerates.",
-    "My superpower is a dual perspective: deep SQA foundations combined with a strategic product mindset. I excel at the entire lifecycle from discovery workshops and stakeholder mapping, to translating insights into clear Epics and acceptance criteria in Azure DevOps.",
-    "Whether I'm modelling processes, running regression analysis, or building Power Platform dashboards — my goal is always to improve predictability, alignment, and user trust.",
+    "I'm a Certified ScrumMaster® (CSM®) and ISTQB®-certified Product Quality Analyst at Perseus Group, Constellation Software Inc. — one of the world's largest vertical market software conglomerates, trusted across 40+ industries globally.",
+    "My edge is a rare dual lens: rigorous SQA engineering paired with a product-first mindset. I operate across the full delivery lifecycle — from discovery workshops and stakeholder mapping, to crafting Epics, writing airtight acceptance criteria, and validating releases in Azure DevOps.",
+    "I don't just find bugs — I close the gap between what users need and what gets shipped. Whether that means modelling business processes, running regression coverage analysis, or building Power Platform dashboards that surface real-time quality signals, I make teams ship with confidence.",
   ],
   location: "Lahore, Punjab, Pakistan",
   email: "mehmood4129@gmail.com",
