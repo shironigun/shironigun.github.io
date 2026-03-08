@@ -38,17 +38,10 @@ export default function About() {
         <Grid2 size={{ xs: 12, md: 7 }}>
           <MotionBox variants={fadeUp} custom={0} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
             {personal.bio.map((p, i) => (
-              <Typography key={i} variant="body1" sx={{ color: 'text.secondary', mb: 2.5, fontSize: '0.97rem' }} />
+              <Typography key={i} variant="body1" sx={{ color: 'text.secondary', mb: 2.5, fontSize: '0.97rem', lineHeight: 1.85 }}>
+                {p}
+              </Typography>
             ))}
-            <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2.5, fontSize: '0.97rem' }}>
-              I'm a <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>Certified ScrumMaster® (CSM®)</Box> and <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>ISTQB®-certified Product Quality Analyst</Box> at Perseus Group, Constellation Software — one of the world's top vertical market software conglomerates.
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2.5, fontSize: '0.97rem' }}>
-              My superpower is a dual perspective: deep SQA foundations combined with a strategic product mindset. I excel at the entire lifecycle — from <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>discovery workshops and stakeholder mapping</Box>, to translating insights into clear Epics and acceptance criteria in Azure DevOps.
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'text.secondary', mb: 4, fontSize: '0.97rem' }}>
-              Whether modelling processes, running regression analysis, or building Power Platform dashboards — my goal is always to improve <Box component="strong" sx={{ color: 'text.primary', fontWeight: 600 }}>predictability, alignment, and user trust.</Box>
-            </Typography>
 
             <Typography variant="overline" sx={{ color: 'text.secondary', display: 'block', mb: 2 }}>Core Soft Skills</Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
