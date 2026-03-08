@@ -5,7 +5,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { personal } from '../data/mockData';
@@ -150,7 +150,7 @@ export default function Navbar() {
               <NavDropdown label="More" links={moreLinks} />
             </motion.div>
             <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.34 }}>
-              <Button variant="contained" color="primary" startIcon={<WhatsAppIcon fontSize="small" />} href={personal.whatsapp} target="_blank" sx={{ ml: 1, py: 0.9, px: 2.5 }}>
+              <Button variant="contained" color="primary" startIcon={<LinkedInIcon fontSize="small" />} href={personal.linkedin} target="_blank" sx={{ ml: 1, py: 0.9, px: 2.5 }}>
                 Let's Connect
               </Button>
             </motion.div>
@@ -208,7 +208,7 @@ export default function Navbar() {
           </Collapse>
 
           <ListItem sx={{ mt: 2 }}>
-            <Button fullWidth variant="contained" color="primary" startIcon={<WhatsAppIcon />} href={personal.whatsapp} target="_blank">WhatsApp</Button>
+            <Button fullWidth variant="contained" color="primary" startIcon={<LinkedInIcon />} href={personal.linkedin} target="_blank">Let's Connect</Button>
           </ListItem>
         </List>
       </Drawer>

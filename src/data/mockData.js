@@ -4,7 +4,7 @@ export const personal = {
   title: "Product Quality Analyst",
   tagline: "CSM® · CTFL · Bridging Business Goals & Technical Excellence",
   bio: [
-    "I'm a Certified ScrumMaster® (CSM®) and ISTQB®-certified Product Quality Analyst at Perseus Group, Constellation Software — one of the world's top vertical market software conglomerates.",
+    "I'm a Certified ScrumMaster® (CSM®) and ISTQB®-certified Product Quality Analyst at Perseus Group, Constellation Dealer — one of the world's top vertical market software conglomerates.",
     "My superpower is a dual perspective: deep SQA foundations combined with a strategic product mindset. I excel at the entire lifecycle from discovery workshops and stakeholder mapping, to translating insights into clear Epics and acceptance criteria in Azure DevOps.",
     "Whether I'm modelling processes, running regression analysis, or building Power Platform dashboards — my goal is always to improve predictability, alignment, and user trust.",
   ],
@@ -158,7 +158,7 @@ export const experience = [
   {
     id: 0,
     role: "Product Quality Analyst",
-    company: "Perseus Group, Constellation Software",
+    company: "Perseus Group, Constellation Dealer",
     period: "Jan 2026 — Present",
     duration: "3 months",
     location: "Lahore, Pakistan",
@@ -397,6 +397,17 @@ export const testimonials = [
   {
     id: 0,
     quote:
+      "Mahmood has displayed great commitment to TargetCRM since I have joined. When Sehar left our team, Mahmood stepped up to play a crucial role in our QA. He knows the application very well, and has ensured that our release quality is always High. What I really appreciate with Mahmood is that he is always thinking about the overall quality of the application. His focus goes beyond the items he is working on. He has recommended UI changes to make the application more usable and consistent, he has recommended performance updates ensure a Dealers have a great experience and as also pointed out areas where the application logic was not doing what a dealer would expect. I want to thank him for going above and beyond his role to ensure that the TargetCRM product is as good as possible. I'm happy to have him on my team, and am looking forward to see him grow in experience and leadership.",
+    author: "Richard Pineault",
+    role: "R&D Manager, Perseus Group, Constellation Dealer",
+    initials: "RP",
+    avatar: "/testimonial-profiles/Richard-Pineault.jpeg",
+    rating: 5,
+    relationship: "Managed directly",
+  },
+  {
+    id: 1,
+    quote:
       "I had the pleasure of working with Mahmood, and if I were to give an example of someone who is dedicated, hardworking, smart, and highly attentive to detail, it would be him. He is an exceptional QA professional with a strong mindset and the ability to quickly learn whatever is required. He excels in his current role, consistently gives his best, and takes full ownership of his responsibilities. It's been a great experience working alongside him.",
     author: "Adeen Bin Waheed",
     role: "Senior Software Developer — Team Lead, Contour Software",
@@ -406,7 +417,7 @@ export const testimonials = [
     relationship: "Worked on the same team",
   },
   {
-    id: 1,
+    id: 2,
     quote:
       "I've had the privilege of working with Mahmood, a highly skilled and detail-oriented QA professional. He approaches every task with precision and a deep commitment to quality, ensuring our application meets the highest standards before every release. Mahmood's keen eye for identifying edge cases and potential issues has consistently saved us from production bugs. He collaborates seamlessly with the development team, providing clear and constructive feedback. His dedication, proactive mindset, and passion for continuous improvement make him an invaluable asset to any team. I strongly recommend Mahmood for any role where quality and reliability are a priority.",
     author: "Daud Riaz",
@@ -660,7 +671,7 @@ export const projectsData = [
   {
     id: "ai-hackathon",
     title: "AI Hackathon — 1st Place Win",
-    company: "Contour Software",
+    company: "Perseus Group / Contour Software",
     period: "2025",
     type: "AI & Innovation",
     status: "Completed",
@@ -706,7 +717,7 @@ export const projectsData = [
   {
     id: "domain-training",
     title: "Cross-Functional Domain Training Program",
-    company: "Contour Software",
+    company: "Perseus Group / Contour Software",
     period: "2024 – 2025",
     type: "Knowledge Management",
     status: "Completed",
@@ -735,7 +746,7 @@ export const projectsData = [
   {
     id: "postman-poc",
     title: "Postman POC — API & Performance Testing",
-    company: "Perseus Group",
+    company: "Perseus Group / Contour Software",
     period: "2025",
     type: "API Testing & Automation",
     status: "Completed",
@@ -765,7 +776,7 @@ export const projectsData = [
   {
     id: "ui-standards",
     title: "Global UI Standards Documentation",
-    company: "Contour Software",
+    company: "Perseus Group / Contour Software",
     period: "2023 – 2024",
     type: "UX & Documentation",
     status: "Completed",
@@ -799,7 +810,7 @@ export const caseStudies = [
     id: "cs-defect-reduction",
     title: "How I Reduced CRM Defect Leakage by 40%",
     subtitle: "Systematic Quality Gates & Acceptance Criteria Framework",
-    company: "Perseus Group, Constellation Software",
+    company: "Perseus Group, Constellation Dealer",
     period: "Q1 2024 – Q4 2025",
     role: "Product Quality Analyst",
     category: "Quality Engineering",
@@ -852,7 +863,7 @@ export const caseStudies = [
     title: "How a Postman POC Standardised API Testing Across 5+ Teams",
     subtitle:
       "Evaluating Postman's Suitability Beyond Traditional QA Workflows",
-    company: "Perseus Group, Constellation Software",
+    company: "Perseus Group, Constellation Dealer",
     period: "Q1 2025",
     role: "Product Quality Analyst",
     category: "API Testing & Automation",
@@ -906,7 +917,7 @@ export const caseStudies = [
     title: "How I Cut Domain Training from Months to Minutes",
     subtitle:
       "A Self-Initiated Knowledge Base Adopted by Operations, Development, QA, Stakeholders & End Customers",
-    company: "Perseus Group, Constellation Software",
+    company: "Perseus Group, Constellation Dealer",
     period: "2024 – 2025",
     role: "Junior SQA Analyst",
     category: "Knowledge Management",
@@ -1019,7 +1030,7 @@ export const products = [
   {
     id: "target-crm",
     name: "TargetCRM",
-    company: "Constellation Dealer Group · Perseus Group",
+    company: "Constellation Dealership Group · Perseus Group",
     role: "Product Quality Analyst",
     description:
       "A customer engagement platform that turns every interaction into a growth opportunity — supporting SMS, email, and Messenger across the entire purchasing journey.",
