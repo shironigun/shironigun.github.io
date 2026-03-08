@@ -392,57 +392,29 @@ export const certifications = [
   },
 ];
 
-// ─── TESTIMONIALS ────────────────────────────────────────────────
+// ─── TESTIMONIALS (LinkedIn Recommendations) ────────────────────
 export const testimonials = [
   {
     id: 0,
     quote:
-      "Mahmood has an exceptional ability to bridge the gap between business requirements and technical implementation. His dedication to quality and systematic approach to testing elevated our entire CRM product. He truly understands the product better than anyone else on the team — his attention to detail is simply unmatched.",
-    author: "Senior R&D Manager",
-    role: "Perseus Group, Constellation Software",
-    initials: "RM",
+      "I had the pleasure of working with Mahmood, and if I were to give an example of someone who is dedicated, hardworking, smart, and highly attentive to detail, it would be him. He is an exceptional QA professional with a strong mindset and the ability to quickly learn whatever is required. He excels in his current role, consistently gives his best, and takes full ownership of his responsibilities. It's been a great experience working alongside him.",
+    author: "Adeen Bin Waheed",
+    role: "Senior Software Developer — Team Lead, Contour Software",
+    initials: "AW",
+    avatar: "/testimonial-profiles/Adeen-Bin-Waheed.png",
     rating: 5,
-    relationship: "Direct Manager",
+    relationship: "Worked on the same team",
   },
   {
     id: 1,
     quote:
-      "Working with Mahmood was a masterclass in cross-functional collaboration. He led 2,000+ hours of domain sessions, always ensuring everyone — from devs to operations — was aligned and empowered. His passion for building the right thing, not just the thing right, made every sprint measurably better.",
-    author: "Senior Software Developer",
-    role: "Contour Software",
-    initials: "SD",
+      "I've had the privilege of working with Mahmood, a highly skilled and detail-oriented QA professional. He approaches every task with precision and a deep commitment to quality, ensuring our application meets the highest standards before every release. Mahmood's keen eye for identifying edge cases and potential issues has consistently saved us from production bugs. He collaborates seamlessly with the development team, providing clear and constructive feedback. His dedication, proactive mindset, and passion for continuous improvement make him an invaluable asset to any team. I strongly recommend Mahmood for any role where quality and reliability are a priority.",
+    author: "Daud Riaz",
+    role: "Senior Software Developer — Team Lead, Contour Software",
+    initials: "DR",
+    avatar: "/testimonial-profiles/Daud-Riaz.jpeg",
     rating: 5,
-    relationship: "Colleague",
-  },
-  {
-    id: 2,
-    quote:
-      "Mahmood's Power BI dashboards and Power Platform automations completely transformed how we monitor product-market fit. What impressed me most was his ability to understand which metrics actually matter and translate them into actionable insights. He doesn't just analyze — he thinks like a product strategist.",
-    author: "Product Owner",
-    role: "Contour Software",
-    initials: "PO",
-    rating: 5,
-    relationship: "Product Owner",
-  },
-  {
-    id: 3,
-    quote:
-      "Mahmood was one of the most proactive members of our entire team. He didn't just follow the process — he constantly improved it. His quality gates and acceptance criteria framework reduced our defect leakage significantly. He's someone who makes the whole team better just by being present.",
-    author: "Initiative Manager",
-    role: "Perseus Group",
-    initials: "IM",
-    rating: 5,
-    relationship: "Senior Stakeholder",
-  },
-  {
-    id: 4,
-    quote:
-      "I've worked with many analysts, but Mahmood's dual expertise in both product strategy and QA is rare. He can facilitate a discovery workshop in the morning and then write precise test cases in the afternoon. His CSM® and CTFL certifications are not just credentials — they reflect how he actually operates.",
-    author: "Engineering Lead",
-    role: "Contour Software",
-    initials: "EL",
-    rating: 5,
-    relationship: "Team Lead",
+    relationship: "Worked on the same team",
   },
 ];
 
@@ -934,7 +906,7 @@ export const caseStudies = [
     title: "How I Cut Domain Training from Months to Minutes",
     subtitle:
       "A Self-Initiated Knowledge Base Adopted by Operations, Development, QA, Stakeholders & End Customers",
-    company: "Contour Software",
+    company: "Perseus Group, Constellation Software",
     period: "2024 – 2025",
     role: "Junior SQA Analyst",
     category: "Knowledge Management",
@@ -974,7 +946,7 @@ export const caseStudies = [
       },
     ],
     results: [
-      { metric: "Months→Min", label: "Training time compressed" },
+      { metric: "~90%", label: "Training time reduced" },
       { metric: "2,000+", label: "Training hours delivered" },
       { metric: "60+", label: "SOPs and guides authored" },
       { metric: "5+", label: "Teams: Ops, Dev, QA, Stakeholders, Customers" },

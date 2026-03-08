@@ -79,16 +79,6 @@ export default function Achievements() {
         </Grid2>
 
         {/* Add your own prompt */}
-        <MotionBox
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.7 }}
-          sx={{ mt: 4, p: 3, border: '1px dashed var(--glass-border)', borderRadius: 3, textAlign: 'center' }}
-        >
-          <Typography variant="body2" sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
-            ✨ <strong style={{ color: 'var(--strong-inline)' }}>This section grows with you.</strong> Add new achievements to the <code style={{ color: 'var(--code-color)', background: 'var(--code-bg)', padding: '2px 6px', borderRadius: 4 }}>achievements</code> array in <code style={{ color: 'var(--code-color)', background: 'var(--code-bg)', padding: '2px 6px', borderRadius: 4 }}>mockData.js</code> as your career progresses.
-          </Typography>
-        </MotionBox>
       </Box>
     </Box>
   );

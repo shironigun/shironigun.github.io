@@ -53,9 +53,9 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 28 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          sx={{ maxWidth: 820, mx: 'auto' }}
+          sx={{ maxWidth: { xs: '100%', md: 920 }, mx: 'auto' }}
         >
-          <Box sx={{ overflow: 'hidden', position: 'relative', minHeight: 380 }}>
+          <Box sx={{ overflow: 'hidden', position: 'relative' }}>
             <AnimatePresence mode="wait" custom={dir}>
               <motion.div
                 key={active}
@@ -65,18 +65,17 @@ export default function Testimonials() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                style={{ position: 'absolute', width: '100%' }}
               >
                 <Box sx={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 4, p: { xs: 3.5, md: 5.5 }, backdropFilter: 'blur(16px)', position: 'relative' }}>
                   <FormatQuoteIcon sx={{ fontSize: 60, color: 'primary.main', opacity: 0.22, position: 'absolute', top: 24, left: 32 }} />
                   <Box sx={{ display: 'flex', gap: 0.3, mb: 3 }}>
                     {[...Array(t.rating)].map((_, i) => <StarIcon key={i} sx={{ fontSize: 16, color: '#f5c842' }} />)}
                   </Box>
-                  <Typography variant="body1" sx={{ color: 'text.primary', fontSize: { xs: '0.97rem', md: '1.06rem' }, lineHeight: 1.9, fontStyle: 'italic', fontWeight: 300, mb: 4, pt: 1 }}>
+                  <Typography variant="body1" sx={{ color: 'text.primary', fontSize: { xs: '0.88rem', sm: '0.95rem', md: '1.04rem' }, lineHeight: { xs: 1.75, md: 1.9 }, fontStyle: 'italic', fontWeight: 300, mb: 4, pt: 1 }}>
                     "{t.quote}"
                   </Typography>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
-                    <Avatar sx={{ width: 46, height: 46, background: 'linear-gradient(135deg,#1d6aff,#00c8ff)', fontWeight: 800 }}>{t.initials}</Avatar>
+                    <Avatar src={t.avatar} sx={{ width: 46, height: 46, background: 'linear-gradient(135deg,#1d6aff,#00c8ff)', fontWeight: 800 }}>{t.initials}</Avatar>
                     <Box sx={{ flex: 1 }}>
                       <Typography variant="h6" sx={{ color: 'text.primary', fontSize: '1rem', fontWeight: 700 }}>{t.author}</Typography>
                       <Typography variant="caption" sx={{ color: 'text.secondary' }}>{t.role}</Typography>

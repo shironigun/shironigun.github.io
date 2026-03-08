@@ -58,7 +58,6 @@ export default function CustomCursor() {
           pointerEvents: 'none',
           zIndex: 9999,
           transform: 'translate(-50%,-50%)',
-          mixBlendMode: 'screen',
         }}
       />
       <Box

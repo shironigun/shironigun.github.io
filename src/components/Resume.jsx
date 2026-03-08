@@ -44,7 +44,7 @@ const topSkills = ['Product Discovery', 'User Story Writing', 'Azure DevOps', 'P
 export default function Resume() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
   const { mode } = useColorScheme();
-  const resumeFile = mode === 'light' ? '/Mahmood_Ahmad_Resume_Light.pdf' : '/Mahmood_Ahmad_Resume_Dark.pdf';
+  const resumeFile = mode === 'light' ? '/resumes/Mahmood_Ahmad_Resume_Light.pdf' : '/resumes/Mahmood_Ahmad_Resume_Dark.pdf';
   const resumeDownloadName = mode === 'light' ? 'Mahmood_Ahmad_Resume_Light.pdf' : 'Mahmood_Ahmad_Resume_Dark.pdf';
 
   return (
