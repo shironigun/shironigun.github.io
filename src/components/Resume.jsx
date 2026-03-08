@@ -150,7 +150,13 @@ export default function Resume() {
 
               <Box>
                 <Typography variant="overline" sx={{ color: 'primary.light', display: 'block', mb: 2, letterSpacing: '.12em' }}>Key Certifications</Typography>
-                {certifications.slice(0, 5).map((c, i) => (
+                {certifications.filter(c => [
+                  'Business Analysis Fundamentals',
+                  'Certified ScrumMaster® (CSM®)',
+                  'Certified Tester Foundation Level (CTFL)',
+                  'Foundations of Project Management',
+                  'Agile with Atlassian Jira',
+                ].includes(c.title)).map((c, i) => (
                   <Box key={i} sx={{ display: 'flex', justifyContent: 'space-between', py: 0.8, borderBottom: '1px solid var(--glass-bg)', flexWrap: 'wrap', gap: 1 }}>
                     <Typography sx={{ color: 'text.primary', fontSize: '0.84rem', fontWeight: 500 }}>{c.title}</Typography>
                     <Typography variant="caption" sx={{ color: 'text.secondary' }}>{c.issuer} · {c.date}</Typography>

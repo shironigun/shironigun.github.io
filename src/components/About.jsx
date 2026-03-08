@@ -81,7 +81,7 @@ export default function About() {
             <Box sx={{ background: 'linear-gradient(135deg,var(--accent-glow-mild),rgba(0,200,255,0.06))', border: '1px solid var(--accent-border)', borderRadius: 3, p: 3 }}>
               <Typography variant="h6" sx={{ color: 'text.primary', mb: 1.5, fontSize: '1rem' }}>My Belief</Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary', fontStyle: 'italic', lineHeight: 1.8 }}>
-                "Data should drive decisions, not gut feelings. And quality isn't a phase — it's a culture."
+                "I own what I touch, question what I don't understand, and refuse to leave things worse than I found them."
               </Typography>
             </Box>
           </MotionBox>
