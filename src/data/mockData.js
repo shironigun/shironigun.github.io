@@ -498,8 +498,8 @@ export const certificationsWithPdf = [
     color: "#0078d4",
     initials: "MS",
     category: "Product",
-    pdfUrl:
-      "https://drive.google.com/file/d/1_REPLACE_WITH_YOUR_FILE_ID/preview",
+    certFile: "/certifications/Business-Analysis-Fundamentals.pdf",
+    certType: "pdf",
     credentialUrl: "https://www.linkedin.com/in/mahmoodahmad-connect",
     skills: [
       "Quantitative Analysis",
@@ -519,8 +519,8 @@ export const certificationsWithPdf = [
     color: "#da1f27",
     initials: "SA",
     category: "Agile",
-    pdfUrl:
-      "https://drive.google.com/file/d/2_REPLACE_WITH_YOUR_FILE_ID/preview",
+    certFile: "/certifications/CSM.jpeg",
+    certType: "image",
     credentialUrl:
       "https://www.scrumalliance.org/community/profile/mahmoodahmad",
     skills: [
@@ -541,8 +541,8 @@ export const certificationsWithPdf = [
     color: "#00b050",
     initials: "IB",
     category: "QA",
-    pdfUrl:
-      "https://drive.google.com/file/d/3_REPLACE_WITH_YOUR_FILE_ID/preview",
+    certFile: "/certifications/ISTQB-Certificate.jpeg",
+    certType: "image",
     credentialUrl:
       "https://www.istqb.org/certifications/certified-tester-foundation-level",
     skills: [
@@ -563,8 +563,8 @@ export const certificationsWithPdf = [
     color: "#03bd62",
     initials: "DC",
     category: "Data",
-    pdfUrl:
-      "https://drive.google.com/file/d/4_REPLACE_WITH_YOUR_FILE_ID/preview",
+    certFile: "/certifications/Intermediate-Python.pdf",
+    certType: "pdf",
     credentialUrl: "https://www.datacamp.com/certificate/mahmoodahmad",
     skills: [
       "Pandas DataFrames",
@@ -584,8 +584,8 @@ export const certificationsWithPdf = [
     color: "#03bd62",
     initials: "DC",
     category: "Data",
-    pdfUrl:
-      "https://drive.google.com/file/d/5_REPLACE_WITH_YOUR_FILE_ID/preview",
+    certFile: "/certifications/Introduction-to-SQL-Server.pdf",
+    certType: "pdf",
     credentialUrl: "https://www.datacamp.com",
     skills: [
       "SELECT Statements",
@@ -605,8 +605,8 @@ export const certificationsWithPdf = [
     color: "#1877f2",
     initials: "MT",
     category: "Dev",
-    pdfUrl:
-      "https://drive.google.com/file/d/6_REPLACE_WITH_YOUR_FILE_ID/preview",
+    certFile: "/certifications/Programming-with-Javascript.pdf",
+    certType: "pdf",
     credentialUrl: "https://coursera.org/verify/SX8SPEHU2LG9",
     skills: ["JavaScript", "JSON", "OOP", "Web Design"],
     description:
@@ -621,8 +621,8 @@ export const certificationsWithPdf = [
     color: "#0052cc",
     initials: "AT",
     category: "Agile",
-    pdfUrl:
-      "https://drive.google.com/file/d/7_REPLACE_WITH_YOUR_FILE_ID/preview",
+    certFile: "/certifications/Agile-with-Atlassian-Jira.pdf",
+    certType: "pdf",
     credentialUrl: "https://coursera.org/verify/H9AYZXZ96DXK",
     skills: ["Jira Boards", "Scrum", "Kanban", "Agile Workflows"],
     description:
@@ -637,8 +637,8 @@ export const certificationsWithPdf = [
     color: "#4285f4",
     initials: "GL",
     category: "PM",
-    pdfUrl:
-      "https://drive.google.com/file/d/8_REPLACE_WITH_YOUR_FILE_ID/preview",
+    certFile: "/certifications/Foundations-of-Project-Management.pdf",
+    certType: "pdf",
     credentialUrl: "https://coursera.org/verify/PELLCPCQ89VW",
     skills: [
       "Project Planning",
@@ -658,12 +658,28 @@ export const certificationsWithPdf = [
     color: "#1877f2",
     initials: "MT",
     category: "Dev",
-    pdfUrl:
-      "https://drive.google.com/file/d/9_REPLACE_WITH_YOUR_FILE_ID/preview",
+    certFile: "/certifications/Version-Control.pdf",
+    certType: "pdf",
     credentialUrl: "https://coursera.org/verify/HYHF9MXJN2AV",
     skills: ["Git", "GitHub", "Branching", "Version Control"],
     description:
       "Meta-certified version control course covering Git workflows, branching strategies, and GitHub collaboration.",
+  },
+  {
+    id: "py-intro",
+    title: "Introduction to Python",
+    issuer: "DataCamp",
+    date: "Mar 2025",
+    credentialId: null,
+    color: "#03bd62",
+    initials: "DC",
+    category: "Data",
+    certFile: "/certifications/Introduction-to-Python.pdf",
+    certType: "pdf",
+    credentialUrl: "https://www.datacamp.com",
+    skills: ["Python Basics", "Variables", "Data Types", "Functions"],
+    description:
+      "Introductory Python course covering core syntax, variables, data types, lists, and basic functions.",
   },
 ];
 

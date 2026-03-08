@@ -78,20 +78,30 @@ function PdfDialog({ cert, open, onClose }) {
       </Box>
 
       <DialogContent sx={{ p: 0, position: 'relative' }}>
-        {/* PDF iframe viewer */}
-        {cert.pdfUrl && !cert.pdfUrl.includes('REPLACE') ? (
-          <Box sx={{ position: 'relative', width: '100%', height: '75vh' }}>
-            <iframe
-              src={cert.pdfUrl}
-              title={cert.title}
-              width="100%"
-              height="100%"
-              style={{ border: 'none', display: 'block' }}
-              allow="autoplay"
-            />
-          </Box>
+        {cert.certFile ? (
+          cert.certType === 'image' ? (
+            /* Image certificate */
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'var(--dialog-bg)', p: 2, minHeight: '60vh' }}>
+              <img
+                src={cert.certFile}
+                alt={cert.title}
+                style={{ maxWidth: '100%', maxHeight: '75vh', objectFit: 'contain', borderRadius: 8 }}
+              />
+            </Box>
+          ) : (
+            /* PDF certificate */
+            <Box sx={{ position: 'relative', width: '100%', height: '75vh' }}>
+              <iframe
+                src={cert.certFile}
+                title={cert.title}
+                width="100%"
+                height="100%"
+                style={{ border: 'none', display: 'block' }}
+              />
+            </Box>
+          )
         ) : (
-          /* Placeholder when no PDF is linked yet */
+          /* Fallback — no file linked */
           <Box sx={{
             height: '60vh', display: 'flex', flexDirection: 'column',
             alignItems: 'center', justifyContent: 'center', gap: 3,
@@ -105,10 +115,7 @@ function PdfDialog({ cert, open, onClose }) {
               <PictureAsPdfIcon sx={{ fontSize: 36, color: cert.color }} />
             </Box>
             <Box sx={{ textAlign: 'center', maxWidth: 380, px: 3 }}>
-              <Typography variant="h6" sx={{ color: 'text.primary', mb: 1 }}>PDF not linked yet</Typography>
-              <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}>
-                To display the certificate PDF, upload it to Google Drive, copy the embed link, and replace the <code style={{ color: 'var(--code-color)', background: 'var(--code-bg)', padding: '2px 6px', borderRadius: 4 }}>pdfUrl</code> value in <code style={{ color: 'var(--code-color)', background: 'var(--code-bg)', padding: '2px 6px', borderRadius: 4 }}>mockData.js</code>.
-              </Typography>
+              <Typography variant="h6" sx={{ color: 'text.primary', mb: 1 }}>Certificate not linked yet</Typography>
               <Button
                 variant="outlined"
                 startIcon={<OpenInNewIcon />}
@@ -126,9 +133,17 @@ function PdfDialog({ cert, open, onClose }) {
   );
 }
 
-// The flip card
+// The flip card — crossfade + lift (avoids backfaceVisibility bugs with glass/blur)
 function CertFlipCard({ cert, index, inView, onClick }) {
   const [hovered, setHovered] = useState(false);
+
+  const face = {
+    position: 'absolute', inset: 0,
+    borderRadius: 3, p: 3,
+    display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+    overflow: 'hidden',
+    transition: 'opacity 0.45s cubic-bezier(0.4,0,0.2,1), transform 0.45s cubic-bezier(0.4,0,0.2,1)',
+  };
 
   return (
     <MotionBox
@@ -140,130 +155,111 @@ function CertFlipCard({ cert, index, inView, onClick }) {
       onClick={() => onClick(cert)}
       sx={{
         height: 300,
-        perspective: '1000px',
         cursor: 'none',
         position: 'relative',
       }}
     >
-      <Box
-        sx={{
-          width: '100%',
-          height: '100%',
-          position: 'relative',
-          transformStyle: 'preserve-3d',
-          transition: 'transform 0.65s cubic-bezier(0.16, 1, 0.3, 1)',
-          transform: hovered ? 'rotateY(180deg)' : 'rotateY(0deg)',
-        }}
-      >
-        {/* FRONT */}
-        <Box sx={{
-          position: 'absolute', inset: 0,
-          backfaceVisibility: 'hidden',
-          WebkitBackfaceVisibility: 'hidden',
-          background: 'var(--glass-bg)',
-          border: `1px solid var(--glass-border)`,
-          borderRadius: 3,
-          p: 3,
-          backdropFilter: 'blur(10px)',
-          display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
-          overflow: 'hidden',
-          '&::after': {
-            content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 2,
-            background: `linear-gradient(90deg, ${cert.color}, transparent)`,
-          },
-        }}>
-          <Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2, mb: 1.8 }}>
-              <Avatar sx={{ width: 30, height: 30, background: cert.color, fontSize: '0.72rem', fontWeight: 800 }}>
-                {cert.initials}
-              </Avatar>
-              <Typography variant="overline" sx={{ color: 'text.secondary', fontSize: '0.63rem' }}>{cert.issuer}</Typography>
-              <Box sx={{ ml: 'auto' }}>
-                <Chip
-                  label={cert.category}
-                  size="small"
-                  sx={{ fontSize: '0.6rem', height: 18, background: `${cert.color}18`, border: `1px solid ${cert.color}35`, color: cert.color }}
-                />
-              </Box>
+      {/* FRONT */}
+      <Box sx={{
+        ...face,
+        opacity: hovered ? 0 : 1,
+        transform: hovered ? 'scale(0.96)' : 'scale(1)',
+        pointerEvents: hovered ? 'none' : 'auto',
+        background: 'var(--glass-bg)',
+        border: '1px solid var(--glass-border)',
+        backdropFilter: 'blur(10px)',
+        '&::after': {
+          content: '""', position: 'absolute', top: 0, left: 0, right: 0, height: 2,
+          background: `linear-gradient(90deg, ${cert.color}, transparent)`,
+        },
+      }}>
+        <Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2, mb: 1.8 }}>
+            <Avatar sx={{ width: 30, height: 30, background: cert.color, fontSize: '0.72rem', fontWeight: 800 }}>
+              {cert.initials}
+            </Avatar>
+            <Typography variant="overline" sx={{ color: 'text.secondary', fontSize: '0.63rem' }}>{cert.issuer}</Typography>
+            <Box sx={{ ml: 'auto' }}>
+              <Chip
+                label={cert.category}
+                size="small"
+                sx={{ fontSize: '0.6rem', height: 18, background: `${cert.color}18`, border: `1px solid ${cert.color}35`, color: cert.color }}
+              />
             </Box>
-            <Typography sx={{ color: 'text.primary', fontSize: '0.92rem', fontWeight: 700, lineHeight: 1.35, mb: 1 }}>
-              {cert.title}
-            </Typography>
-            <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mb: 1.5 }}>
-              {cert.date}{cert.credentialId ? ` · ID: ${cert.credentialId}` : ''}
+          </Box>
+          <Typography sx={{ color: 'text.primary', fontSize: '0.92rem', fontWeight: 700, lineHeight: 1.35, mb: 1 }}>
+            {cert.title}
+          </Typography>
+          <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mb: 1.5 }}>
+            {cert.date}{cert.credentialId ? ` · ID: ${cert.credentialId}` : ''}
+          </Typography>
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <VerifiedIcon sx={{ fontSize: 13, color: '#00e5a0' }} />
+            <Typography variant="caption" sx={{ color: '#00e5a0', fontSize: '0.63rem' }}>Verified</Typography>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, opacity: 0.5 }}>
+            <PictureAsPdfIcon sx={{ fontSize: 13, color: 'text.secondary' }} />
+            <Typography variant="caption" sx={{ color: 'text.secondary', fontSize: '0.63rem' }}>Hover to preview</Typography>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* BACK */}
+      <Box sx={{
+        ...face,
+        opacity: hovered ? 1 : 0,
+        transform: hovered ? 'scale(1)' : 'scale(0.96)',
+        pointerEvents: hovered ? 'auto' : 'none',
+        background: `linear-gradient(145deg, ${cert.color}18, var(--dropdown-bg))`,
+        border: `1px solid ${cert.color}45`,
+      }}>
+        {/* Mini PDF preview mockup */}
+        <Box sx={{
+          flex: 1, mb: 2,
+          background: 'var(--glass-bg)',
+          border: `1px solid ${cert.color}25`,
+          borderRadius: 2,
+          display: 'flex', flexDirection: 'column', overflow: 'hidden',
+        }}>
+          <Box sx={{ background: cert.color, p: 1.2, textAlign: 'center' }}>
+            <Typography sx={{ color: '#fff', fontSize: '0.6rem', fontWeight: 700, fontFamily: '"JetBrains Mono",monospace' }}>
+              {cert.issuer} · CERTIFICATE
             </Typography>
           </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              <VerifiedIcon sx={{ fontSize: 13, color: '#00e5a0' }} />
-              <Typography variant="caption" sx={{ color: '#00e5a0', fontSize: '0.63rem' }}>Verified</Typography>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, opacity: 0.5 }}>
-              <PictureAsPdfIcon sx={{ fontSize: 13, color: 'text.secondary' }} />
-              <Typography variant="caption" sx={{ color: 'text.secondary', fontSize: '0.63rem' }}>Hover for PDF</Typography>
+          <Box sx={{ p: 1.5, flex: 1, display: 'flex', flexDirection: 'column', gap: 0.7 }}>
+            {[...Array(4)].map((_, i) => (
+              <Box key={i} sx={{ height: 4, width: ['90%', '65%', '80%', '50%'][i], background: i === 0 ? `${cert.color}40` : 'var(--glass-border)', borderRadius: 2 }} />
+            ))}
+            <Box sx={{ mt: 1, display: 'flex', gap: 1 }}>
+              <Box sx={{ height: 4, width: '30%', background: `${cert.color}30`, borderRadius: 2 }} />
+              <Box sx={{ height: 4, width: '20%', background: 'var(--glass-bg)', borderRadius: 2 }} />
             </Box>
           </Box>
         </Box>
 
-        {/* BACK */}
-        <Box sx={{
-          position: 'absolute', inset: 0,
-          backfaceVisibility: 'hidden',
-          WebkitBackfaceVisibility: 'hidden',
-          transform: 'rotateY(180deg)',
-          background: `linear-gradient(145deg, ${cert.color}18, var(--dropdown-bg))`,
-          border: `1px solid ${cert.color}45`,
-          borderRadius: 3,
-          p: 3,
-          display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
-          overflow: 'hidden',
-        }}>
-          {/* Mini PDF preview mockup */}
-          <Box sx={{
-            flex: 1, mb: 2,
-            background: 'var(--glass-bg)',
-            border: `1px solid ${cert.color}25`,
-            borderRadius: 2,
-            display: 'flex', flexDirection: 'column', overflow: 'hidden',
-          }}>
-            <Box sx={{ background: cert.color, p: 1.2, textAlign: 'center' }}>
-              <Typography sx={{ color: '#fff', fontSize: '0.6rem', fontWeight: 700, fontFamily: '"JetBrains Mono",monospace' }}>
-                {cert.issuer} · CERTIFICATE
-              </Typography>
-            </Box>
-            <Box sx={{ p: 1.5, flex: 1, display: 'flex', flexDirection: 'column', gap: 0.7 }}>
-              {[...Array(4)].map((_, i) => (
-                <Box key={i} sx={{ height: 4, width: [`90%`, `65%`, `80%`, `50%`][i], background: i === 0 ? `${cert.color}40` : 'var(--glass-border)', borderRadius: 2 }} />
-              ))}
-              <Box sx={{ mt: 1, display: 'flex', gap: 1 }}>
-                <Box sx={{ height: 4, width: '30%', background: `${cert.color}30`, borderRadius: 2 }} />
-                <Box sx={{ height: 4, width: '20%', background: 'var(--glass-bg)', borderRadius: 2 }} />
-              </Box>
-            </Box>
-          </Box>
-
-          <Box>
-            <Typography sx={{ color: 'text.primary', fontSize: '0.82rem', fontWeight: 700, mb: 0.5 }}>{cert.title}</Typography>
-            <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mb: 2, lineHeight: 1.6 }}>
-              {cert.description}
-            </Typography>
-            <Button
-              size="small"
-              fullWidth
-              startIcon={<PictureAsPdfIcon />}
-              sx={{
-                background: `${cert.color}20`,
-                border: `1px solid ${cert.color}50`,
-                color: cert.color,
-                fontSize: '0.72rem',
-                py: 0.8,
-                cursor: 'none',
-                '&:hover': { background: `${cert.color}35` },
-              }}
-            >
-              Click to View Full Certificate
-            </Button>
-          </Box>
+        <Box>
+          <Typography sx={{ color: 'text.primary', fontSize: '0.82rem', fontWeight: 700, mb: 0.5 }}>{cert.title}</Typography>
+          <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mb: 2, lineHeight: 1.6 }}>
+            {cert.description}
+          </Typography>
+          <Button
+            size="small"
+            fullWidth
+            startIcon={<PictureAsPdfIcon />}
+            sx={{
+              background: `${cert.color}20`,
+              border: `1px solid ${cert.color}50`,
+              color: cert.color,
+              fontSize: '0.72rem',
+              py: 0.8,
+              cursor: 'none',
+              '&:hover': { background: `${cert.color}35` },
+            }}
+          >
+            Click to View Full Certificate
+          </Button>
         </Box>
       </Box>
     </MotionBox>
