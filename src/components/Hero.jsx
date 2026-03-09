@@ -40,7 +40,8 @@ function BgCanvas() {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let W, H, dots = [], mx = 0, my = 0, raf;
-    const GAP = 72;
+    let GAP = 72;
+    if (window.innerWidth < 600) GAP = 40;
     const resize = () => {
       W = canvas.width = window.innerWidth;
       H = canvas.height = window.innerHeight;
@@ -79,7 +80,7 @@ function BgCanvas() {
 const phrases = ['Product Quality Analyst', 'CSM® Certified', 'CTFL Certified', 'QA Strategist', 'Product Thinker'];
 
 export default function Hero() {
-  const [typed, setTyped] = useState('');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const [pIdx, setPIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
 
@@ -108,7 +109,7 @@ export default function Hero() {
 
   return (
     <Box id="home" sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', pt: 12, pb: 6, position: 'relative', overflow: 'hidden' }}>
-      <BgCanvas />
+      {!prefersReducedMotion && <BgCanvas />}
       <Box sx={{ position: 'absolute', top: '20%', right: '-5%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle,var(--accent-glow),transparent 65%)', pointerEvents: 'none', zIndex: 1 }} />
       <Box sx={{ position: 'absolute', bottom: '10%', left: '-5%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle,rgba(0,200,255,0.05),transparent 65%)', pointerEvents: 'none', zIndex: 1 }} />
 
@@ -170,7 +171,7 @@ export default function Hero() {
               sx={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: 4, p: 3.5, backdropFilter: 'blur(20px)', animation: 'float 6s ease-in-out infinite', '@keyframes float': { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } } }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3, pb: 2.5, borderBottom: '1px solid var(--glass-divider)' }}>
-                <Avatar sx={{ width: 52, height: 52, background: 'linear-gradient(135deg,#1d6aff,#00c8ff)', fontWeight: 800, fontSize: '1.3rem' }}>M</Avatar>
+                <Avatar alt="Mahmood Ahmad" sx={{ width: 52, height: 52, background: 'linear-gradient(135deg,#1d6aff,#00c8ff)', fontWeight: 800, fontSize: '1.3rem' }}>M</Avatar>
                 <Box>
                   <Typography variant="h6" sx={{ color: 'text.primary', letterSpacing: '-0.3px' }}>Mahmood Ahmad</Typography>
                   <Typography variant="caption" sx={{ color: 'secondary.main' }}>Product Quality Analyst</Typography>

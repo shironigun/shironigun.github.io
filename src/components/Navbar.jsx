@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   AppBar, Toolbar, Box, Button, IconButton, Typography,
   Drawer, List, ListItem, ListItemButton, Collapse,
@@ -87,10 +87,7 @@ function NavDropdown({ label, links }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Button
-        endIcon={<ExpandMoreIcon sx={{ fontSize: '14px !important', transition: 'transform 0.2s', transform: open ? 'rotate(180deg)' : 'none' }} />}
-        sx={{ color: open ? 'secondary.main' : 'text.secondary', fontSize: '0.8rem', fontWeight: 500, px: 1.5, py: 0.8, '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}
-      >
+      <Button aria-haspopup="true" aria-expanded={open} endIcon={<ExpandMoreIcon sx={{ fontSize: '14px !important', transition: 'transform 0.2s', transform: open ? 'rotate(180deg)' : 'none' }} } }
         {label}
       </Button>
       <DropdownMenu links={links} open={open} />
@@ -110,14 +107,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', h);
   }, []);
 
-  const scrollTo = (href) => {
+  const scrollTo = useCallback((href) => {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     setMobileOpen(false);
-  };
+  }, [setMobileOpen]);
 
   return (
     <>
-      <AppBar position="fixed" elevation={0} sx={{
+      <AppBar component="nav" role="navigation" position="fixed" elevation={0} sx={{
         background: scrolled ? 'var(--nav-bg)' : 'transparent',
         backdropFilter: scrolled ? 'blur(20px)' : 'none',
         borderBottom: scrolled ? '1px solid var(--glass-divider)' : '1px solid transparent',
@@ -128,7 +125,7 @@ export default function Navbar() {
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <Typography
               variant="h6" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              sx={{ fontWeight: 800, letterSpacing: '-0.5px', color: 'text.primary', cursor: 'none' }}
+              sx={{ fontWeight: 800, letterSpacing: '-0.5px', color: 'text.primary', cursor: 'pointer' }}
             >
               M<Box component="span" sx={{ color: 'primary.light' }}>.</Box>Ahmad
             </Typography>
@@ -156,7 +153,7 @@ export default function Navbar() {
             </motion.div>
           </Box>
 
-          <IconButton sx={{ display: { lg: 'none' }, color: 'text.primary', cursor: 'none' }} onClick={() => setMobileOpen(true)}>
+          <IconButton aria-label="Open navigation menu" sx={{ display: { lg: 'none' }, color: 'text.primary', cursor: 'pointer' }} onClick={() => setMobileOpen(true)}>
             <MenuIcon />
           </IconButton>
         </Toolbar>
@@ -168,12 +165,12 @@ export default function Navbar() {
       >
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2, pb: 2, borderBottom: '1px solid var(--glass-divider)' }}>
           <Typography variant="h6" sx={{ fontWeight: 800, color: 'text.primary', fontSize: '1rem' }}>M<Box component="span" sx={{ color: 'primary.light' }}>.</Box>Ahmad</Typography>
-          <IconButton onClick={() => setMobileOpen(false)} sx={{ color: 'text.secondary', cursor: 'none' }}><CloseIcon /></IconButton>
+          <IconButton aria-label="Close navigation menu" onClick={() => setMobileOpen(false)} sx={{ color: 'text.secondary', cursor: 'pointer' }}><CloseIcon /></IconButton>
         </Box>
         <List dense>
           {primaryLinks.map(link => (
             <ListItem key={link.label} disablePadding>
-              <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>{link.label}</ListItemButton>
+              <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', cursor: 'pointer', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>{link.label}</ListItemButton>
             </ListItem>
           ))}
 
@@ -187,7 +184,7 @@ export default function Navbar() {
           <Collapse in={mobileWork}>
             {workLinks.map(link => (
               <ListItem key={link.label} disablePadding sx={{ pl: 2 }}>
-                <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', fontSize: '0.85rem', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>{link.label}</ListItemButton>
+                <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', fontSize: '0.85rem', cursor: 'pointer', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>{link.label}</ListItemButton>
               </ListItem>
             ))}
           </Collapse>
@@ -202,7 +199,7 @@ export default function Navbar() {
           <Collapse in={mobileMore}>
             {moreLinks.map(link => (
               <ListItem key={link.label} disablePadding sx={{ pl: 2 }}>
-                <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', fontSize: '0.85rem', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>{link.label}</ListItemButton>
+                <ListItemButton onClick={() => scrollTo(link.href)} sx={{ borderRadius: 2, mb: 0.3, color: 'text.secondary', fontSize: '0.85rem', cursor: 'pointer', '&:hover': { color: 'secondary.main', background: 'var(--accent-glow)' } }}>{link.label}</ListItemButton>
               </ListItem>
             ))}
           </Collapse>
