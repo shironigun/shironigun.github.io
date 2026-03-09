@@ -11,7 +11,7 @@ export const personal = {
   location: "Lahore, Punjab, Pakistan",
   email: "mehmood4129@gmail.com",
   phone: "+923147369673",
-  linkedin: "https://www.linkedin.com/in/mahmoodahmad-connect",
+  linkedin: "https://www.linkedin.com/in/mahmood-ahmad-connect",
   whatsapp: "https://wa.me/923147369673",
   education:
     "B.S. Information Technology · University of the Punjab (2019–2023)",
