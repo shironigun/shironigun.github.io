@@ -82,6 +82,7 @@ const phrases = ['Product Quality Analyst', 'CSM® Certified', 'CTFL Certified',
 export default function Hero() {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const [pIdx, setPIdx] = useState(0);
+  const [typed, setTyped] = useState('');
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {

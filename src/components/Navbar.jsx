@@ -87,7 +87,7 @@ function NavDropdown({ label, links }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <Button aria-haspopup="true" aria-expanded={open} endIcon={<ExpandMoreIcon sx={{ fontSize: '14px !important', transition: 'transform 0.2s', transform: open ? 'rotate(180deg)' : 'none' }} } }
+      <Button aria-haspopup="true" aria-expanded={open} endIcon={<ExpandMoreIcon sx={{ fontSize: '14px !important', transition: 'transform 0.2s', transform: open ? 'rotate(180deg)' : 'none' }} />}>
         {label}
       </Button>
       <DropdownMenu links={links} open={open} />

@@ -22,33 +22,34 @@ import Connect from './components/Connect';
 import Footer from './components/Footer';
 import ThemeToggle from './components/ThemeToggle';
 
-<div className="skip-link" style={{ position: 'absolute', left: '-999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}>
+export default function App() {
+  return (
+    <>
+      <div className="skip-link" style={{ position: 'absolute', left: '-999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}>
         <a href="#home" onFocus={e => { e.target.parentNode.style.position = 'static'; e.target.parentNode.style.left = '0'; e.target.parentNode.style.width = 'auto'; e.target.parentNode.style.height = 'auto'; }}>Skip to main content</a>
       </div>
-
-  return (
-    <ThemeProvider theme={theme} defaultMode="dark">
-      <InitColorSchemeScript defaultMode="dark" />
-      <CssBaseline />
-      <ThemeToggle />
-      <CustomCursor />
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Tools />
-      <Experience />
-      <Products />
-      <Certifications />
-      <Projects />
-      <CaseStudies />
-      <Achievements />
-      <Testimonials />
-      <Articles />
-
-      <Resume />
-      <Connect />
-      <Footer />
-    </ThemeProvider>
+      <ThemeProvider theme={theme} defaultMode="dark">
+        <InitColorSchemeScript defaultMode="dark" />
+        <CssBaseline />
+        <ThemeToggle />
+        <CustomCursor />
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Tools />
+        <Experience />
+        <Products />
+        <Certifications />
+        <Projects />
+        <CaseStudies />
+        <Achievements />
+        <Testimonials />
+        <Articles />
+        <Resume />
+        <Connect />
+        <Footer />
+      </ThemeProvider>
+    </>
   );
 }
