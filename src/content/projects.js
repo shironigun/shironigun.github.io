@@ -330,7 +330,8 @@ const allProjects = [
   {
     slug: 'promo-films',
     name: 'Product promo films',
-    summary: 'An enterprise promo, an app-store cut and a Promise Tracker story film, rebuilt from the real product UI.',
+    summary: 'Promo films for TargetCRM, also offered as Notify360: an enterprise promo, an app-store cut and a Promise Tracker story film, rebuilt from the real product UI with demo data.',
+    question: 'How do you show a product as it really works without showing a single real customer?',
     role: 'Designed and produced',
     status: 'completed',
     year: '2026',
@@ -343,7 +344,15 @@ const allProjects = [
     ],
     tags: ['Design'],
     thumb: 'films',
-    details: ['Three 1080p animated films with the product screens recreated in code and fictional data. They will be published here as video.'],
+    page: {
+      lead: 'Films that show TargetCRM, also offered as Notify360, exactly as it works, with the product screens rebuilt in code and a fictional dealership in place of real customers. Two of them play below.',
+      facts: [
+        { label: 'My role', value: 'Designed and produced' },
+        { label: 'When', value: 'November 2026' },
+        { label: 'Product', value: 'TargetCRM, also offered as Notify360' },
+        { label: 'Films', value: 'Enterprise promo, Promise Tracker story film, app-store cut' },
+      ],
+    },
   },
   {
     slug: 'delivery-dashboards',

@@ -15,6 +15,7 @@ import styles from './ArticleBody.module.css';
 //   { quote }        a pull quote
 //   { figure, caption }               one of the animated explainers below
 //   { photo, alt, width, height, caption }  a photo; it opens full size in the viewer
+//   { video, title, poster, caption }       a film played in place; nothing downloads until it is pressed
 //   { numbers: [[value, label]], caption }  a small row of figures
 //   { pair: [{ title, items }, { title, items }] }  two lists side by side
 //   { table: { columns, rows, note }, caption }
@@ -61,6 +62,25 @@ function Photo({ block }) {
   );
 }
 
+// A film, played in place. Nothing of the film downloads until it is pressed: the poster is a
+// small still from its title card, and playback streams from there.
+function Video({ block }) {
+  return (
+    <figure className={`${styles.figure} ${styles.wide}`}>
+      <video
+        className={styles.video}
+        src={block.video}
+        poster={block.poster}
+        aria-label={block.title}
+        controls
+        playsInline
+        preload="none"
+      />
+      {block.caption && <figcaption>{block.caption}</figcaption>}
+    </figure>
+  );
+}
+
 function Block({ block }) {
   if (block.p) {
     return (
@@ -76,6 +96,7 @@ function Block({ block }) {
   if (block.quote) return <blockquote className={styles.quote}><p>{block.quote}</p></blockquote>;
   if (block.note) return <aside className={styles.note}><p>{block.note}</p></aside>;
   if (block.photo) return <Photo block={block} />;
+  if (block.video) return <Video block={block} />;
   if (block.figure) {
     const F = FIGURES[block.figure];
     return (

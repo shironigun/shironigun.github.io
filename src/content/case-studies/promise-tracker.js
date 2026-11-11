@@ -29,7 +29,8 @@ export default {
     { p: 'I framed the problem, wrote the requirements, designed the manager workflow, defined and iterated the AI behaviour, and set the quality criteria and release rules. Claude Code generated the prototype code from my specifications. The developers are building the production feature, and I support them through the build.' },
 
     { h2: 'Where it is now' },
-    { p: 'Promise Tracker is heading to production. The launch film will be published here when it is released.' },
+    { p: 'Promise Tracker is heading to production. The story film walks through it from a promise made in a chat to a manager making sure it is kept, with demo data.' },
+    { video: '/videos/promise-tracker-targetcrm.mp4', title: 'Promise Tracker story film', poster: '/videos/promise-tracker-targetcrm-poster.jpg', caption: 'Promise Tracker in TargetCRM, also offered as Notify360. 2 min 14 s, demo data.' },
 
     { h2: 'What I took from it' },
     { quote: 'Reliability is a rate, not a yes or no.' },

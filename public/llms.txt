@@ -17,6 +17,7 @@ One title, six roles: business analyst, design collaborator, AI prototyper, oper
 - [API test automation and the audit](https://shironigun.github.io/case-studies/ai-test-suite-audit): API test automation built by directing AI agents, then audited and rebuilt so tests fail when the system is missing.
 - [AI QA workbench](https://shironigun.github.io/case-studies/ai-qa-workbench): multi-agent workbench from user story to triaged bug.
 - [Postman API testing evaluation](https://shironigun.github.io/case-studies/postman-evaluation): a proof of concept that made Postman the standard API testing tool across 5+ teams.
+- [Product promo films](https://shironigun.github.io/case-studies/promo-films): promo films for TargetCRM, also offered as Notify360, with a fictional dealership and demo data.
 - [AI evaluation and the Skills Evals Lab](https://shironigun.github.io/case-studies/ai-evaluation): a repeatable way to decide an AI feature is ready, and a 16-lesson course that teaches it.
 
 ## Pages

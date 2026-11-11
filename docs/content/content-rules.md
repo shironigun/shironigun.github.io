@@ -9,7 +9,7 @@ What may and may not appear on the site and in this repository. The repository i
 - Colleagues’ names, except the three people whose testimonials appear verbatim.
 - Hackathon participants’ names, internal team names and internal project codenames.
 - Programming languages or frameworks presented as his skills. He builds by directing AI agents.
-- The specific product name in copy. Say “enterprise dealership SaaS at Perseus Group, Constellation Software”. Verbatim testimonials are the only exception.
+- The specific product name in copy. Say “enterprise dealership SaaS at Perseus Group, Constellation Software”. Two exceptions: verbatim testimonials, and the promo films and the pages that show them, where the product is named TargetCRM and described as also offered as Notify360 (his approval, 11 Nov 2026). The films use a fictional dealership and demo data only.
 - Anything from his private context notes beyond the career facts he has approved for the site.
 - Inside company projects, anything beyond what he did and the problem it solved: internal feature or skill names (beyond those already on the site), per-feature test counts, data volumes, architecture, API or schema details, defects found, and who owns which feature. Exhibits built from company work use fictional examples and invented field names.
 

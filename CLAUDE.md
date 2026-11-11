@@ -14,7 +14,7 @@ If `docs/private/memory-full.md` exists on this machine, read it too. It is the 
 
 - **The repo is public.** Never commit personal information or anything from `docs/private/`.
 - **Never say where he is based**: no city, country, region, time zone or local clock.
-- **Never name the product.** Say "enterprise dealership SaaS at Perseus Group, part of Constellation Software". The verbatim testimonials are the only exception.
+- **Never name the product,** except where he has approved it. Say "enterprise dealership SaaS at Perseus Group, part of Constellation Software". Two exceptions: the verbatim testimonials, and the promo films and their pages, which show **TargetCRM** and say it is also offered as **Notify360** (approved 11 Nov 2026).
 - **He is a product person.** Lead with product, then design, then AI, then quality. Use product voice: he decides, specifies and reviews, and AI agents write the code. Never list programming languages as his skills.
 - **No overclaims.** Check every verb against [docs/content/about-mahmood.md](docs/content/about-mahmood.md). For example, he contributed to the public knowledge base; he did not write it.
 - **Testimonials stay verbatim and complete.**
