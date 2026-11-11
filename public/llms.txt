@@ -1,0 +1,33 @@
+# Mahmood Ahmad
+
+> AI Product Analyst. I shape AI products from first idea to launch for enterprise dealership SaaS (customer engagement for automotive, agricultural and equipment dealerships) at Perseus Group (Constellation Software). Official title: Product Quality Analyst. I build software by directing AI agents with Claude Code; I do not hand-write code.
+
+One title, six roles: business analyst, design collaborator, AI prototyper, operator and strategist, Scrum Master, QA lead.
+
+## Case studies
+
+- [Design phase and UI revamp](https://shironigun.github.io/case-studies/design-phase): introduced a design phase into delivery; revamped seven product areas.
+- [Quality Gates and the QA team](https://shironigun.github.io/case-studies/quality-gates): root-cause analysis, then a framework adopted by 3 teams; about 40% less defect leakage; zero critical defects across 6 sprints.
+- [Domain training and knowledge transfer](https://shironigun.github.io/case-studies/domain-knowledge-base): a self-initiated training programme of 3,900+ hours, with knowledge transfer into the public product knowledge base.
+- [AI product prototyping](https://shironigun.github.io/case-studies/ai-prototyping): working prototypes for AI ideas, built with Figma Make and Claude Code.
+- [QA Engineering Plugin](https://shironigun.github.io/case-studies/qa-plugin): open-source Claude Code marketplace; 7 plugins, 30 skills; human approval before every tracker write.
+- [AI hackathon, first place](https://shironigun.github.io/case-studies/hackathon-2025): 1st of 11 teams, as Product Owner, Scrum Master and QA lead.
+- [AI Foundations hackathon](https://shironigun.github.io/case-studies/ai-foundations-hackathon): organised and led an AI hackathon; a brief for every participant, mentoring to working demos, and a 183-page handbook.
+- [AI Promise Tracker](https://shironigun.github.io/case-studies/promise-tracker): an AI feature whose product definition I led; heading to production, not released.
+- [API test automation and the audit](https://shironigun.github.io/case-studies/ai-test-suite-audit): API test automation built by directing AI agents, then audited and rebuilt so tests fail when the system is missing.
+- [AI QA workbench](https://shironigun.github.io/case-studies/ai-qa-workbench): multi-agent workbench from user story to triaged bug.
+- [Postman API testing evaluation](https://shironigun.github.io/case-studies/postman-evaluation): a proof of concept that made Postman the standard API testing tool across 5+ teams.
+- [AI evaluation and the Skills Evals Lab](https://shironigun.github.io/case-studies/ai-evaluation): a repeatable way to decide an AI feature is ready, and a 16-lesson course that teaches it.
+
+## Pages
+
+- [Projects](https://shironigun.github.io/projects): every project at a glance.
+- [Case studies](https://shironigun.github.io/case-studies): detailed write-ups of selected work.
+- [Journey](https://shironigun.github.io/journey): every career step since 2021, from roles and promotions to certifications, workshops, talks and recognition.
+- [About](https://shironigun.github.io/about): 6,000+ hours of domain training and contribution at Perseus Group, counted from the working week.
+- [How I work](https://shironigun.github.io/how-i-work)
+- [Contact](https://shironigun.github.io/contact): open to Product Owner, Product Analyst and AI Product Manager roles.
+
+## Recognition
+
+VP Award; AI Innovator of the Month; 1st of 11 teams in a division-wide AI hackathon (as Product Owner, Scrum Master and QA lead); Division All-Hands Recognition; Annual Special Thanks. Certified ScrumMaster, ISTQB CTFL.

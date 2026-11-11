@@ -1,0 +1,180 @@
+/* The rope agent: fixed in the free strip left of the content, under the header. Position
+   comes from custom properties set each frame: --fy (figure top), --ry (rope end), --fx and
+   --tilt (off the rope), --by (bubble). */
+.root {
+  position: fixed;
+  top: 0;
+  left: calc(var(--x, 40px) - 40px * var(--s, 1));
+  z-index: 40;
+  width: calc(84px * var(--s, 1));
+  pointer-events: none;
+}
+.hidden { display: none; }
+
+.rope {
+  position: absolute;
+  top: 0;
+  left: calc(40px * var(--s, 1) - 0.75px);
+  width: 1.5px;
+  height: var(--ry, 0px);
+  border-radius: 1px;
+  background: #8C9099;
+}
+
+.figure {
+  position: absolute;
+  top: var(--fy, -170px);
+  left: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  transform: translateX(var(--fx, 0px)) rotate(var(--tilt, 0deg));
+  transform-origin: 50% 100%;
+}
+.swing, .idle { transform-box: view-box; transform-origin: 40px 11px; }
+
+/* Drawing: white shell and ink outline, so it reads on the light page and the dark bands. */
+.shell { fill: #fff; stroke: var(--ink); stroke-width: 2.2; }
+.screen { fill: var(--ink); }
+.limb { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; }
+.hand { fill: #fff; stroke: var(--ink); stroke-width: 2; }
+.torso { fill: var(--cobalt); stroke: var(--ink); stroke-width: 2; }
+.badge { fill: var(--cobalt-on-night); }
+.foot { fill: var(--ink); }
+.light { fill: var(--cobalt); }
+
+.eye, .mouthFill { fill: var(--cobalt-on-night); }
+.eyeLine, .mouthLine, .brow { fill: none; stroke: var(--cobalt-on-night); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.mouthLine { stroke-width: 2; }
+.brow { stroke-width: 1.8; }
+.glint { fill: #fff; }
+.heart { fill: #FF6B8B; }
+.star { fill: #FFD36B; }
+.cheek { fill: #FF8FA3; opacity: 0.25; transition: opacity 200ms var(--ease); }
+.cheekOn { opacity: 0.85; }
+.eyes { transition: transform 120ms linear; }
+.eyes.away { transform: translate(-3px, 0.6px) !important; }
+.sweat { fill: #9AD8FF; stroke: var(--ink); stroke-width: 1.2; }
+.crack { fill: none; stroke: #fff; stroke-width: 1.2; stroke-linejoin: round; opacity: 0.7; }
+.scan { fill: var(--cobalt-on-night); opacity: 0.85; }
+.plus { fill: none; stroke: #2FBF71; stroke-width: 2; stroke-linecap: round; }
+.bandaid { fill: #F4CFA6; stroke: var(--ink); stroke-width: 1; }
+.pad { fill: #E9B886; }
+.zs text { font-family: var(--font-display); font-size: 9px; font-weight: 600; fill: var(--cobalt); }
+
+/* Click zones: transparent shapes over head, belly, hands and legs. */
+.hits { pointer-events: auto; }
+.hit { fill: transparent; pointer-events: all; cursor: pointer; }
+.hitStroke { fill: none; stroke: transparent; stroke-width: 10; stroke-linecap: round; pointer-events: stroke; cursor: pointer; }
+
+/* Over dark bands and in dark mode the outline turns light, so every part stays visible. */
+.onDark .rope { width: 2px; background: #C9CDD6; }
+.onDark .limb { stroke: #E4E7EE; }
+.onDark .hand { stroke: #E4E7EE; }
+.onDark .foot { fill: #E4E7EE; }
+.onDark .torso { stroke: #E4E7EE; }
+.onDark .shell { stroke: #E4E7EE; }
+.onDark .zs text { fill: var(--cobalt-on-night); }
+:global(:root[data-theme='dark']) .eyes { filter: drop-shadow(0 0 1.6px rgba(169, 184, 248, 0.85)); }
+
+/* Dark-mode scare: he dims to just his eyes, then pops out. */
+.main { transform-box: view-box; transform-origin: 40px 60px; transition: opacity 260ms var(--ease); }
+.dim { opacity: 0.06; }
+.lurkEyes ellipse { fill: #C9D3FF; filter: drop-shadow(0 0 3px rgba(169, 184, 248, 0.95)); }
+.spookEye { fill: #E8ECFF; }
+.pupil { fill: var(--ink); }
+:global(:root[data-theme='dark']) .pupil { fill: #0F1115; }
+.glow { filter: drop-shadow(0 0 3px rgba(169, 184, 248, 0.95)); }
+
+/* Motion. Everything below runs only without a reduced-motion preference. */
+.motion .idle { animation: sway 4.6s ease-in-out infinite; }
+@keyframes sway { 0%, 100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
+.motion .legs { transform-box: view-box; transform-origin: 40px 86px; animation: dangle 2.2s ease-in-out infinite; }
+@keyframes dangle { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(5deg); } }
+.motion .wave { transform-box: view-box; transform-origin: 67px 44px; animation: wave 0.9s ease-in-out infinite; }
+@keyframes wave { 0%, 100% { transform: rotate(-12deg); } 50% { transform: rotate(8deg); } }
+.motion .light { animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 50% { fill: var(--cobalt-on-night); } }
+
+/* Slipping and falling: a free arm that flails, and a nervous shake. */
+.motion .flailB { transform-box: view-box; transform-origin: 67px 45px; animation: flailB 0.32s ease-in-out infinite alternate; }
+@keyframes flailB { from { transform: rotate(-16deg); } to { transform: rotate(14deg); } }
+.motion .flailA { transform-box: view-box; transform-origin: 13px 42px; animation: flailA 0.28s ease-in-out infinite alternate; }
+@keyframes flailA { from { transform: rotate(14deg); } to { transform: rotate(-14deg); } }
+.motion .shake { animation: shake 0.16s linear infinite; }
+@keyframes shake { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-0.8px, 0.3px); } 75% { transform: translate(0.8px, -0.3px); } }
+
+/* Climbing: hands take turns; walking: legs take turns. */
+.motion .climbing { animation: climb 0.5s ease-in-out infinite alternate; }
+.motion .climbB.climbing { animation-delay: -0.25s; }
+@keyframes climb { from { transform: translateY(-2.5px); } to { transform: translateY(2.5px); } }
+.motion .walking .legA, .motion .walking .legB { transform-box: view-box; animation: step 0.36s ease-in-out infinite alternate; }
+.motion .walking .legA { transform-origin: 34px 86px; }
+.motion .walking .legB { transform-origin: 46px 86px; animation-delay: -0.18s; }
+@keyframes step { from { transform: rotate(-14deg); } to { transform: rotate(14deg); } }
+
+/* Stunned: stars circling, a flickering cracked screen. Healing: a scan line. */
+.motion .orbit { transform-box: view-box; transform-origin: 40px 14px; animation: orbit 1.1s linear infinite; }
+@keyframes orbit { to { transform: rotate(360deg); } }
+.motion .flicker { animation: flicker 0.5s steps(2) infinite; }
+@keyframes flicker { 50% { fill: #2A2D35; } }
+.motion .scan { animation: scan 0.75s ease-in-out infinite alternate; }
+@keyframes scan { from { transform: translateY(0); } to { transform: translateY(34px); } }
+.motion .plus path { transform-box: fill-box; transform-origin: center; animation: twinkle 0.9s ease-in-out infinite alternate; }
+.motion .plus path:nth-child(2) { animation-delay: -0.3s; }
+.motion .plus path:nth-child(3) { animation-delay: -0.6s; }
+@keyframes twinkle { from { opacity: 0.2; transform: scale(0.6); } to { opacity: 1; transform: scale(1); } }
+
+/* Ticklish kicks, laughter and the scare's pop. */
+.motion .kick .legA, .motion .kick .legB { transform-box: view-box; animation: kick 0.14s ease-in-out 5 alternate; }
+.motion .kick .legA { transform-origin: 34px 86px; }
+.motion .kick .legB { transform-origin: 46px 86px; animation-delay: -0.07s; }
+@keyframes kick { from { transform: rotate(-24deg); } to { transform: rotate(24deg); } }
+.motion .laughing { animation: laughing 0.13s ease-in-out infinite alternate; }
+@keyframes laughing { from { transform: translateY(-0.8px) rotate(-1deg); } to { transform: translateY(0.8px) rotate(1deg); } }
+.motion .pop { animation: pop 0.5s var(--ease-out); }
+@keyframes pop { 0% { transform: scale(0.85); } 45% { transform: scale(1.2); } 100% { transform: scale(1); } }
+
+/* Talking: the mouth moves while a line is being typed out. */
+.motion .talking > * { transform-box: fill-box; transform-origin: center; animation: talk 0.24s ease-in-out infinite alternate; }
+@keyframes talk { to { transform: scaleY(0.45); } }
+
+.motion .zs text { animation: drift 2.4s ease-in-out infinite; }
+.motion .zs text:nth-child(2) { animation-delay: 0.5s; }
+.motion .zs text:nth-child(3) { animation-delay: 1s; }
+@keyframes drift { 0% { opacity: 0; transform: translate(0, 4px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(4px, -6px); } }
+
+/* Speech bubble, to the right of the head (above it once he is on the floor). */
+.bubble {
+  position: absolute;
+  top: var(--by, 0px);
+  left: calc(var(--fx, 0px) + 82px * var(--s, 1) + 6px);
+  width: max-content;
+  max-width: 230px;
+  padding: 8px 12px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: var(--text-sm);
+  line-height: 1.4;
+  box-shadow: 0 12px 30px -14px rgba(20, 22, 27, 0.4);
+}
+.bubble::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid var(--hairline-strong);
+  border-bottom: 1px solid var(--hairline-strong);
+  background: var(--surface);
+  transform: rotate(45deg);
+}
+/* The full line reserves the bubble's size; the typed part is drawn over it. */
+.ghost { visibility: hidden; }
+.typed { position: absolute; top: 8px; left: 12px; right: 12px; }
+.motion .bubble { animation: bubbleIn 220ms var(--ease-out) both; }
+@keyframes bubbleIn { from { opacity: 0; transform: translateY(4px) scale(0.96); } }

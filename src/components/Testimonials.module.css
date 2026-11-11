@@ -1,0 +1,71 @@
+/* Testimonials: a plain sliding carousel, one card at a time. */
+.carousel { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s-5); max-width: 860px; margin-inline: auto; }
+
+.window { overflow: hidden; margin: -8px; padding: 8px; transition: height 420ms var(--ease-out); }
+.track {
+  --gap: var(--s-5);
+  list-style: none;
+  display: flex;
+  gap: var(--gap);
+  align-items: flex-start;
+  transform: translateX(calc(var(--at) * -1 * (100% + var(--gap))));
+  transition: transform 560ms var(--ease-out);
+}
+.slide { flex: 0 0 100%; display: flex; }
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  margin: 0;
+  padding: var(--s-6);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(20, 22, 27, 0.04), 0 12px 32px -24px rgba(20, 22, 27, 0.25);
+}
+.mark { width: 26px; height: 20px; fill: var(--cobalt); flex: none; }
+.quote { margin: 0; flex: 1; color: var(--graphite); font-size: 0.9375rem; line-height: 1.7; }
+.author { display: flex; align-items: center; gap: var(--s-3); padding-top: var(--s-4); border-top: 1px solid var(--hairline); }
+.author img { flex: none; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.author > span { display: grid; gap: 2px; min-width: 0; }
+.author strong { color: var(--ink); font-size: var(--text-md); font-weight: 600; }
+.author > span > span { color: var(--quiet); font-size: var(--text-sm); }
+
+.controls { display: flex; align-items: center; justify-content: center; gap: var(--s-3); }
+.dots { margin-inline: var(--s-2); }
+.dots { display: flex; gap: var(--s-2); }
+.dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--hairline-strong);
+  cursor: pointer;
+  transition: width var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.dot:hover { background: var(--graphite); }
+.dot[aria-current] { width: 28px; background: var(--cobalt); }
+/* Larger hit area than the visible dot. */
+.dot { position: relative; }
+.dot::after { content: ''; position: absolute; inset: -14px -4px; }
+
+.round {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.round:hover { border-color: var(--ink); }
+
+@media (max-width: 600px) {
+  .card { padding: var(--s-5); }
+}

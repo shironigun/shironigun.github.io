@@ -1,0 +1,127 @@
+.frame {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--s-5);
+  display: grid;
+  gap: var(--s-5);
+  font-size: var(--text-md);
+}
+
+.frameHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-2) var(--s-4);
+  font-weight: 600;
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.version { font-weight: 500; font-size: var(--text-sm); color: var(--quiet); }
+
+.caption { font-size: var(--text-sm); color: var(--quiet); }
+
+/* Release gate */
+.stages {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--s-2);
+  counter-reset: none;
+}
+.stages li {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: var(--s-2);
+  font-size: 0.8125rem;
+  color: var(--quiet);
+  text-align: center;
+}
+.stages li::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: calc(50% + 10px);
+  right: calc(-50% + 10px);
+  height: 2px;
+  background: var(--hairline);
+}
+.stages li:last-child::after { display: none; }
+.stageDot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--hairline-strong); background: var(--surface); }
+.done { color: var(--ink); }
+.done .stageDot { background: var(--ink); border-color: var(--ink); }
+.done::after { background: var(--ink) !important; }
+.current { color: var(--cobalt-text); font-weight: 600; }
+.current .stageDot { border-color: var(--cobalt); box-shadow: 0 0 0 4px var(--cobalt-wash); }
+
+.checks { list-style: none; display: grid; gap: var(--s-3); }
+.checks li { display: flex; gap: var(--s-3); align-items: flex-start; }
+.checks svg { color: var(--ok); flex: none; margin-top: 4px; }
+
+/* Test levels */
+.levels { list-style: none; display: grid; gap: var(--s-4); }
+.levels li {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-4);
+}
+.levelText { display: grid; }
+.levelText span { font-size: var(--text-sm); color: var(--quiet); }
+.bar { height: 10px; background: var(--sunken); border-radius: 999px; overflow: hidden; }
+.bar span { display: block; height: 100%; background: var(--cobalt); border-radius: 999px; }
+.levelCount { font-size: var(--text-sm); color: var(--graphite); font-variant-numeric: tabular-nums; }
+.callout {
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--radius);
+  background: var(--warn-wash);
+  color: var(--warn);
+}
+
+/* Plugin flow */
+.flow { list-style: none; display: grid; gap: var(--s-2); }
+.flow li { display: grid; gap: var(--s-2); justify-items: start; }
+.flowStep {
+  display: inline-block;
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius);
+  font-weight: 600;
+  background: var(--paper);
+}
+.flow li:last-child .flowStep { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.approve {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: var(--s-5);
+  padding-left: var(--s-4);
+  border-left: 2px solid var(--cobalt);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--cobalt-text);
+  min-height: 28px;
+}
+
+/* Broadcast dashboard */
+.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3); }
+.kpi { display: grid; gap: 2px; padding: var(--s-3); border: 1px solid var(--hairline); border-radius: var(--radius); }
+.kpiLabel { font-size: 0.8125rem; color: var(--quiet); }
+.kpiValue { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; }
+.kpiDelta { font-size: 0.8125rem; color: var(--ok); font-weight: 600; }
+.chart { display: flex; align-items: flex-end; gap: 6px; height: 120px; padding-top: var(--s-2); border-bottom: 1px solid var(--hairline); }
+.chart span { flex: 1; background: var(--cobalt-wash); border-radius: 4px 4px 0 0; }
+.chart span:last-child { background: var(--cobalt); }
+
+@media (max-width: 520px) {
+  .frame { padding: var(--s-4); }
+  .stages { grid-template-columns: minmax(0, 1fr); gap: var(--s-3); }
+  .stages li { display: flex; align-items: center; gap: var(--s-3); text-align: left; font-size: var(--text-sm); }
+  .stages li::after { display: none; }
+  .levels li { grid-template-columns: minmax(0, 1fr) auto; }
+  .levels .bar { grid-column: 1 / -1; grid-row: 2; }
+  .kpis { grid-template-columns: minmax(0, 1fr); }
+}

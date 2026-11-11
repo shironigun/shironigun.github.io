@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+*.local
+.playwright-mcp/
+
+# Personal notes and private lists, never pushed (the repo is public)
+docs/private/

@@ -1,0 +1,27 @@
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.sm { width: 22px; height: 22px; font-size: 0.5625rem; }
+.md { width: 32px; height: 32px; font-size: 0.6875rem; }
+.lg { width: 40px; height: 40px; font-size: 0.8125rem; }
+
+/* Quarter strip */
+.strip { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 2px; }
+.seg { background: color-mix(in srgb, var(--hairline-strong) 70%, transparent); }
+.seg[data-year-start] { margin-left: 3px; }
+.seg[data-on] { background: var(--lane); }
+.card { height: 5px; }
+.large { height: 10px; border-radius: 3px; overflow: hidden; }
+.large .seg { border-radius: 1px; }
+
+.timeline { display: grid; gap: 6px; }
+.timelineYears { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); font-size: 0.6875rem; color: var(--quiet); font-variant-numeric: tabular-nums; }
+.timelineYears span { padding-left: 2px; }
