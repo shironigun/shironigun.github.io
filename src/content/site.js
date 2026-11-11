@@ -39,9 +39,9 @@ export const hero = {
   now: 'Leading AI feature definition and prototyping for dealership SaaS, alongside the QA function.',
 };
 
-// Time since joining on 14 December 2023, worked out when the page loads: whole tenths of a
+// Time since joining on 12 December 2023, worked out when the page loads: whole tenths of a
 // year, rounded down, so the figure never overstates.
-export const joined = new Date(2023, 11, 14);
+export const joined = new Date(2023, 11, 12);
 export const tenureYears = Math.floor(((Date.now() - joined.getTime()) / (365.2425 * 86400000)) * 10) / 10;
 export const tenure = `${tenureYears}+`;
 
@@ -93,7 +93,7 @@ export const pillars = [
     icon: 'chip',
     roles: ['AI prototyper'],
     body: 'I design AI features, write the AI skills behind them, and build working software by directing AI agents with Claude Code.',
-    proof: 'AI prototypes such as Promise Tracker; an open-source Claude Code marketplace with 30 skills.',
+    proof: 'AI prototypes such as Promise Tracker; a public Claude Code marketplace with 30 skills.',
     link: { to: '/case-studies/ai-prototyping', text: 'AI product prototyping' },
   },
   {
@@ -109,9 +109,9 @@ export const pillars = [
 // Dated, verifiable milestones.
 export const log2026 = [
   { date: 'Nov', text: 'Led an AI feature from concept to production readiness.' },
-  { date: 'Oct', text: 'Published the QA Engineering Plugin marketplace as open source.' },
+  { date: 'Oct', text: 'Published my Claude Code marketplace on GitHub.' },
   { date: 'Aug', text: 'Organised and led the AI Foundations hackathon, opened it with “AI Foundations: From Doing to Directing”, and wrote a 183-page Claude handbook for the division.' },
-  { date: 'Jul', text: 'Completed the DIS AI Foundations program and built the AI QA Workbench in four days.' },
+  { date: 'Jul', text: 'Completed the DIS AI Foundations program, taking the AI QA Workbench there and extending it.' },
   { date: 'Apr', text: 'Started a full UI and UX revamp of our dealership CRM through agentic coding.' },
   { date: 'Jan', text: 'Promoted to Product Quality Analyst.' },
 ];

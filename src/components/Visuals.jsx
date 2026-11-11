@@ -64,7 +64,7 @@ export function TestLevels() {
         ))}
       </ul>
       <div className={styles.callout}>
-        <strong>Audit:</strong> with the backend switched off, some tests still passed. I rebuilt the suite so they fail.
+        <strong>Audit:</strong> with the backend switched off, some tests still passed. The clean-up makes them fail, as they should.
       </div>
     </figure>
   );
@@ -76,7 +76,7 @@ export function PluginFlow() {
     <figure className={styles.frame}>
       <div className={styles.frameHead}>
         <span>QA Engineering Plugin</span>
-        <span className={styles.version}>Open source</span>
+        <span className={styles.version}>Public</span>
       </div>
       <ol className={styles.flow}>
         {steps.map((s, i) => (

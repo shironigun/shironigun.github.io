@@ -74,7 +74,7 @@ function TrophyThumb() {
 function PrototypesThumb() {
   return (
     <div className={styles.thumbList}>
-      {[['Heading to production', 'AI Promise Tracker'], ['Assisted', 'AI campaign planning'], ['Method', 'Click it before building it']].map(([s, t]) => (
+      {[['In pilot', 'AI Promise Tracker'], ['Assisted', 'AI campaign planning'], ['Method', 'Click it before building it']].map(([s, t]) => (
         <div key={t} className={styles.thumbRow}>
           <span className={styles.thumbTag}>{s}</span>
           <span>{t}</span>
@@ -106,7 +106,7 @@ function PipelineThumb() {
 function DecisionsThumb() {
   return (
     <div className={styles.thumbList}>
-      {[['Workshop', '10 decisions on email messaging'], ['Brief', 'Measuring rep performance'], ['Model', 'Cost of an AI feature']].map(([s, t]) => (
+      {[['Rules', 'Feature access: plan, then role'], ['Tool', 'Decision cards for a new channel'], ['Research', 'Performance without a score']].map(([s, t]) => (
         <div key={t} className={styles.thumbRow}>
           <span className={styles.thumbTag}>{s}</span>
           <span>{t}</span>

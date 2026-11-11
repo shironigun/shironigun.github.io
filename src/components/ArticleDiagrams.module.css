@@ -1,0 +1,204 @@
+/* Diagram blocks: pipeline, card grid, folder tree and timeline. Doubled class names outrank the
+   article's own list rules (.section ul / .section ol). */
+
+/* ---------- Pipeline ---------- */
+.flow {
+  display: grid;
+  gap: var(--s-4);
+  padding: clamp(16px, 2.4vw, 28px);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+}
+.legend { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.phase { display: grid; gap: var(--s-2); }
+.phase + .phase { position: relative; padding-top: var(--s-5); }
+.phase + .phase::before { /* a short connector from the phase above */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 22px;
+  width: 2px;
+  height: calc(var(--s-5) - 4px);
+  background: var(--hairline-strong);
+}
+.phaseName {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--quiet);
+}
+.steps.steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--s-4);
+  padding: 0;
+}
+.step {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: var(--s-3);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+/* An arrow to the next step in the same row (it simply falls outside when a row wraps). */
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: calc(-1 * var(--s-4) + 3px);
+  width: calc(var(--s-4) - 6px);
+  height: 2px;
+  background: var(--hairline-strong);
+}
+.stepHead { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.stepNo {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--sunken);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--graphite);
+}
+.stepName { font-size: var(--text-md) !important; font-weight: 650; line-height: 1.35 !important; color: var(--ink); }
+.stepDetail { font-size: var(--text-sm) !important; line-height: 1.5 !important; color: var(--graphite); }
+
+.kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 650;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+.kHuman .kind, .legend .kHuman { background: var(--cobalt-wash); color: var(--cobalt-text-strong); }
+.kAi .kind, .legend .kAi { background: var(--sunken); color: var(--graphite); box-shadow: inset 0 0 0 1px var(--hairline-strong); }
+.kGate .kind, .legend .kGate { background: var(--cobalt); color: var(--on-ink); }
+.kSystem .kind, .legend .kSystem { background: var(--ok-wash); color: var(--ok); }
+.step.kGate { border-color: var(--cobalt); box-shadow: 0 0 0 3px var(--cobalt-wash); }
+.step.kHuman { border-left: 3px solid var(--cobalt); }
+
+/* ---------- Card grid ---------- */
+.cards.cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--s-3);
+  padding: 0;
+}
+.cards[data-cols='2'] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.card {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: var(--s-4);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.cardTop { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s-2); }
+.cardTitle { font-size: var(--text-md) !important; font-weight: 650; color: var(--ink); }
+.cardTitleMono {
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  font-size: var(--text-md) !important;
+  font-weight: 700;
+  color: var(--cobalt-text-strong);
+}
+.cardTag {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--sunken);
+  font-size: 0.75rem;
+  font-weight: 650;
+  color: var(--graphite);
+  white-space: nowrap;
+}
+.cardBody { font-size: var(--text-sm) !important; line-height: 1.55 !important; color: var(--graphite); }
+.cardMeta { font-size: 0.75rem !important; line-height: 1.5 !important; color: var(--quiet); }
+
+/* ---------- Folder tree ---------- */
+.tree.tree {
+  list-style: none;
+  display: grid;
+  gap: 2px;
+  padding: var(--s-4) var(--s-5);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.tree li {
+  display: grid;
+  grid-template-columns: minmax(150px, max-content) minmax(0, 1fr);
+  gap: var(--s-4);
+  padding-left: calc(var(--depth) * 18px);
+  font-size: var(--text-sm) !important;
+  line-height: 1.6 !important;
+}
+.dir, .file { overflow-wrap: anywhere; font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }
+.dir { font-weight: 700; color: var(--ink); }
+.file { color: var(--cobalt-text); }
+.treeNote { color: var(--graphite); }
+
+/* ---------- Timeline ---------- */
+.timeline.timeline {
+  list-style: none;
+  display: grid;
+  gap: 0;
+  padding: 0;
+}
+.timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  column-gap: var(--s-5);
+  padding: 0 0 var(--s-4) 0;
+}
+.timeline li::before { /* the line */
+  content: '';
+  position: absolute;
+  left: 117px;
+  top: 6px;
+  bottom: 0;
+  width: 2px;
+  background: var(--hairline);
+}
+.timeline li:last-child::before { display: none; }
+.timeline li::after { /* the dot */
+  content: '';
+  position: absolute;
+  left: 112px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: inset 0 0 0 3px var(--cobalt);
+}
+.when { grid-row: span 2; font-size: var(--text-sm) !important; font-weight: 650; font-variant-numeric: tabular-nums; color: var(--quiet); text-align: right; padding-right: var(--s-4); }
+.tlTitle { padding-left: var(--s-4); font-size: var(--text-md) !important; font-weight: 650; line-height: 1.45 !important; color: var(--ink); }
+.tlDetail { padding-left: var(--s-4); font-size: var(--text-sm) !important; line-height: 1.55 !important; color: var(--graphite); }
+
+@media (max-width: 640px) {
+  .steps.steps { grid-template-columns: minmax(0, 1fr); gap: var(--s-3); }
+  .step:not(:last-child)::after { top: auto; bottom: calc(-1 * var(--s-3) + 2px); right: auto; left: 22px; width: 2px; height: calc(var(--s-3) - 4px); }
+  .cards[data-cols='2'] { grid-template-columns: minmax(0, 1fr); }
+  .tree li { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .treeNote { padding-left: 2px; }
+  .timeline li { grid-template-columns: 72px minmax(0, 1fr); column-gap: var(--s-3); }
+  .timeline li::before { left: 79px; }
+  .timeline li::after { left: 74px; }
+  .when { padding-right: var(--s-3); }
+}

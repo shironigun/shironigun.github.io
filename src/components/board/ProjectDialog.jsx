@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link } from '../../lib/router';
 import { STATUS } from '../../content/projects';
+import { useStudy } from '../../content/caseStudies';
 import Status from '../Status';
 import Thumb from '../visuals/Thumbs';
 import { DocButton } from '../DocumentViewer';
@@ -50,7 +51,9 @@ export default function ProjectDialog({ item, position, total, onClose, onPrev, 
   };
 
   const facts = item.page ? item.page.facts.filter((f) => !['My role', 'When', 'Status'].includes(f.label)) : [];
-  const numbers = item.numbers || [item.kpi];
+  const { study } = useStudy(item.page ? item.slug : null);
+  const documents = study?.documents || [];
+  const numbers = study?.body.find((b) => b.numbers)?.numbers || [item.kpi];
   const kind = item.page ? 'Case study' : 'Project';
 
   return (
@@ -165,7 +168,7 @@ export default function ProjectDialog({ item, position, total, onClose, onPrev, 
                       </Link>
                     </li>
                   )}
-                  {item.documents.map((d) => (
+                  {documents.map((d) => (
                     <li key={d.href}>
                       <DocButton src={d.href} title={d.title} className={styles.relatedLink}>
                         <span className={styles.relatedIcon}><ExternalIcon width="16" height="16" /></span>
@@ -177,11 +180,11 @@ export default function ProjectDialog({ item, position, total, onClose, onPrev, 
                     <li>
                       <a href={item.href} target="_blank" rel="noopener" className={styles.relatedLink}>
                         <span className={styles.relatedIcon}><GitHubIcon width="16" height="16" /></span>
-                        <span><strong>GitHub</strong><span>Open source repository</span></span>
+                        <span><strong>GitHub</strong><span>Public repository</span></span>
                       </a>
                     </li>
                   )}
-                  {!item.page && !item.documents.length && !item.href && (
+                  {!item.page && !documents.length && !item.href && (
                     <li className={styles.none}>No write-up yet. The description covers it.</li>
                   )}
                 </ul>

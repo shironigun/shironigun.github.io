@@ -9,19 +9,19 @@ import { hoursText } from './hours';
 export const domainLeadership = `${hoursText.junior} hours of domain leadership`;
 
 export const achievements = [
-  { icon: 'trophy', title: '1st place, division-wide AI hackathon', detail: 'Led the winning team of 11 as Product Owner, Scrum Master and QA lead.', year: '2025', to: '/case-studies/hackathon-2025' },
+  { icon: 'trophy', title: '1st place, division-wide AI hackathon', detail: 'Product Owner, Scrum Master and QA lead: I led the requirements, the UI prototypes and the final pitch. We placed 1st of 11 teams.', year: '2025', to: '/case-studies/hackathon-2025' },
   { icon: 'award', title: 'VP Award', detail: 'For contributions tied to multimillion-dollar business goals across a 200+ person division.' },
   { icon: 'shield', title: 'Quality framework adopted by 3 teams', detail: 'The Strict Quality Gates framework I designed: about 40% less defect leakage and zero critical defects across 6 sprints.', year: '2025', to: '/case-studies/quality-gates' },
   { icon: 'book', title: domainLeadership, detail: 'A self-initiated training programme, the most comprehensive in the division’s history, with knowledge transfer that fed the public knowledge base.', year: '2024–2025', to: '/case-studies/domain-knowledge-base' },
   { icon: 'pen', title: 'Introduced the design phase', detail: 'A structured design step in delivery, now part of how the team works.', to: '/case-studies/design-phase' },
-  { icon: 'rocket', title: 'Shipped a release solo', detail: 'Took over QA of a million-dollar CRM mid-cycle when the senior QA left without a handover, and shipped on time with no drop in quality.' },
+  { icon: 'rocket', title: 'Shipped a release solo', detail: 'Took over QA of a critical release mid-cycle, without a handover, and shipped it on time with no drop in quality.' },
   { icon: 'briefcase', title: 'Covered a 3-month BA vacancy', detail: 'Wrote the user stories and acceptance criteria with the Product Owner, with no gap in delivery.' },
   { icon: 'trend', title: 'Promoted to Product Quality Analyst', detail: 'From Junior SQA Analyst in under two years, into a product-analyst role.', year: '2026' },
   { icon: 'users', title: 'Built QA talent from the ground up', detail: 'Trained two QA hires from non-IT backgrounds to independent sprint work, and onboarded three new analysts in 2026.' },
   { icon: 'spark', title: 'AI Innovator of the Month' },
-  { icon: 'plug', title: 'Open-sourced a QA plugin marketplace', detail: '7 plugins and 30 skills for Claude Code.', year: '2026', to: '/case-studies/qa-plugin' },
+  { icon: 'plug', title: 'Published a Claude Code marketplace', detail: '7 plugins and 30 skills, each built for one real job.', year: '2026', to: '/case-studies/claude-marketplace' },
   { icon: 'calendar', title: 'Organised the AI Foundations hackathon', detail: 'Briefed, taught and mentored the QA and design team to working demonstrations, and was recognised with a certificate of appreciation.', year: '2026', to: '/case-studies/ai-foundations-hackathon' },
-  { icon: 'badge', title: 'Completed the DIS AI Foundations program', detail: 'Built the AI QA Workbench in four days at a five-day, cross-division AI hackathon.', year: '2026', to: '/case-studies/ai-qa-workbench' },
+  { icon: 'badge', title: 'Completed the DIS AI Foundations program', detail: 'Took the AI QA Workbench I had started a month earlier to a five-day, cross-division AI hackathon and extended it there.', year: '2026', to: '/case-studies/ai-qa-workbench' },
   { icon: 'badge', title: 'Certified ScrumMaster® at 24', detail: 'Alongside ISTQB® CTFL and Microsoft Business Analysis Fundamentals.', year: '2024' },
 ];
 
@@ -49,7 +49,7 @@ export const events = [
     label: 'Participated',
     icon: 'badge',
     items: [
-      { title: 'DIS AI Foundations program: From Developer to Orchestrator', when: 'Jul 2026', date: '2026-07', detail: 'A five-day AI hackathon run jointly by our division and other Perseus Group divisions: a day of sessions, then four days to frame a problem, design a solution and build a working prototype. I built the AI QA Workbench.', to: '/case-studies/ai-qa-workbench', links: [{ text: 'View certificate', href: '/certifications/dis-ai-foundations-certificate.jpg' }] },
+      { title: 'DIS AI Foundations program: From Developer to Orchestrator', when: 'Jul 2026', date: '2026-07', detail: 'A five-day AI hackathon run jointly by our division and other Perseus Group divisions: a day of sessions, then four days to frame a problem, design a solution and build a working prototype. I brought the AI QA Workbench, started a month earlier, and extended it.', to: '/case-studies/ai-qa-workbench', links: [{ text: 'View certificate', href: '/certifications/dis-ai-foundations-certificate.jpg' }] },
     ],
   },
   {
@@ -77,7 +77,7 @@ export const events = [
     icon: 'book',
     items: [
       { title: 'Working with Claude: The Eleven Building Blocks', when: 'Aug 2026', date: '2026-08', detail: 'A 183-page practical handbook I created for continued learning across the division, from Projects and Skills to MCP servers, agents and workflows.', links: [{ text: 'Read the handbook', href: '/documents/working-with-claude-eleven-building-blocks.pdf' }] },
-      { title: 'Skills Evals Lab', when: '2026', date: '2026-09', detail: 'A 14-module interactive course on how to test AI skills, from what makes a good skill to graders and live labs.', to: '/case-studies/ai-evaluation' },
+      { title: 'Skills Evals Lab', when: 'Oct 2026', date: '2026-10', detail: 'A 14-module interactive course on how to test AI skills, from what makes a good skill to graders and live labs.', to: '/case-studies/ai-evaluation' },
       { title: 'Playwright course in the QA plugin', when: '2026', date: '2026-09', detail: 'A self-paced automation course that remembers where each learner stopped.', to: '/case-studies/qa-plugin' },
     ],
   },

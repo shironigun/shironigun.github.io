@@ -9,10 +9,10 @@ import { hoursText } from './hours';
 export const heroSlides = [
   {
     id: 'marketplace',
-    label: 'Open source',
+    label: 'Public on GitHub',
     title: 'AI agents that ask first',
-    caption: 'A Claude Code marketplace of QA agents, with a person approving every write.',
-    to: '/case-studies/qa-plugin',
+    caption: 'A Claude Code marketplace of plugins I built one job at a time, with a person approving every write.',
+    to: '/case-studies/claude-marketplace',
     orbit: { cx: 280, cy: 180, rx: 168, ry: 118 },
     hub: { x: 280, y: 180, label: 'shironigun', sub: 'Marketplace' },
     nodes: [

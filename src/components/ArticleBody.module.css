@@ -67,6 +67,7 @@
 /* Figures */
 .figure { margin-block: 2em !important; }
 .figure figcaption { margin-top: var(--s-3); font-size: var(--text-sm); line-height: 1.55; color: var(--quiet); }
+.figNo { margin-right: 0.5em; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
 .wide {
   width: var(--wide);
   margin-left: 50%;
@@ -138,7 +139,7 @@
 
 /* Two lists side by side */
 .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-6); margin-block: 1.6em !important; }
-.pair h4 { margin-bottom: var(--s-3); padding-bottom: var(--s-2); border-bottom: 1px solid var(--ink); font-family: var(--font-body); font-size: var(--text-md); font-weight: 650; letter-spacing: 0; }
+.pairTitle { line-height: 1.1; text-wrap: balance; margin-bottom: var(--s-3); padding-bottom: var(--s-2); border-bottom: 1px solid var(--ink); font-family: var(--font-body); font-size: var(--text-md); font-weight: 650; letter-spacing: 0; }
 .pair li { font-size: var(--text-md) !important; line-height: 1.6 !important; }
 
 /* Tables */

@@ -1,10 +1,12 @@
+import { useEffect } from 'react';
 import { Link, useDocumentTitle } from '../lib/router';
-import { projectPages } from '../content/projects';
-import { caseStudies } from '../content/caseStudies';
+import { parentOf, projectPages } from '../content/projects';
+import { useStudy } from '../content/caseStudies';
 import HeaderArt, { artForTags } from '../components/HeaderArt';
-import ArticleBody, { wordCount } from '../components/ArticleBody';
+import ArticleBody, { chapters, wordCount } from '../components/ArticleBody';
 import { DocButton } from '../components/DocumentViewer';
 import Status from '../components/Status';
+import Family from '../components/Family';
 import { BookIcon, ChevronIcon } from '../components/Icons';
 import NotFound from './NotFound';
 import styles from './CaseStudy.module.css';
@@ -14,9 +16,32 @@ import styles from './CaseStudy.module.css';
 export default function Project({ slug }) {
   const index = projectPages.findIndex((p) => p.slug === slug);
   const project = projectPages[index];
-  const study = project && caseStudies[slug];
+  const { study, loading, failed } = useStudy(project ? slug : null);
   useDocumentTitle(project ? `${project.name}: Mahmood Ahmad` : 'Page not found: Mahmood Ahmad');
-  if (!project || !study) return <NotFound />;
+  // The story arrives after the router has already tried the address's chapter link, so try it again.
+  useEffect(() => {
+    if (!study || !window.location.hash) return;
+    document.getElementById(decodeURIComponent(window.location.hash.slice(1)))?.scrollIntoView({ block: 'start' });
+  }, [study]);
+  if (!project || (!study && !loading && !failed)) return <NotFound />;
+  if (!study) {
+    return (
+      <article className={styles.article}>
+        <header className={styles.header}>
+          <div className={`container ${styles.headInner}`}>
+            <p className={styles.kicker}><span className={styles.kickerName}>{project.name}</span></p>
+            <h1 className={styles.title}>{project.question}</h1>
+            <p className={styles.standfirst}>{project.page.lead}</p>
+          </div>
+        </header>
+        <div className={`container ${styles.bodyWrap}`}>
+          <p role="status" className={styles.loading}>
+            {failed ? 'This story didn’t load. Check your connection and refresh the page.' : 'Loading the story…'}
+          </p>
+        </div>
+      </article>
+    );
+  }
 
   const prev = projectPages[(index - 1 + projectPages.length) % projectPages.length];
   const next = projectPages[(index + 1) % projectPages.length];
@@ -25,6 +50,10 @@ export default function Project({ slug }) {
   const when = project.when || project.year.replace('–', ' to ');
   // Role and dates are in the byline; the rest of the record sits just below it.
   const facts = page.facts.filter((f) => !['My role', 'When'].includes(f.label));
+  // A longer story gets a chapter list, so a reader can jump to the part they came for.
+  const toc = chapters(study.body);
+  // A plugin belongs to the marketplace: the breadcrumb and kicker say so, and its siblings follow the story.
+  const parent = parentOf(project);
 
   return (
     <article className={styles.article}>
@@ -35,12 +64,14 @@ export default function Project({ slug }) {
             <ol>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/case-studies">Case studies</Link></li>
+              {parent && <li><Link to={`/case-studies/${parent.slug}`}>{parent.name}</Link></li>}
               <li><span aria-current="page">{project.name}</span></li>
             </ol>
           </nav>
           <p className={styles.kicker}>
             <span className={styles.kickerName}>{project.name}</span>
             <Status status={project.status} />
+            {parent && <Link to={`/case-studies/${parent.slug}`} className={styles.partOf}>Part of the {parent.name}</Link>}
           </p>
           <h1 className={styles.title}>{project.question}</h1>
           <p className={styles.standfirst}>{page.lead}</p>
@@ -72,6 +103,7 @@ export default function Project({ slug }) {
             <span>{project.role}</span>
             <span>{when}</span>
             <span>{minutes} min read</span>
+            {study.updated && <span>Updated {study.updated}</span>}
           </p>
           {facts.length > 0 && (
             <dl className={styles.facts}>
@@ -88,7 +120,20 @@ export default function Project({ slug }) {
       </header>
 
       <div className={`container ${styles.bodyWrap}`}>
+        {toc.length >= 4 && (
+          <nav className={styles.toc} aria-labelledby="toc-title">
+            <h2 id="toc-title" className={styles.tocTitle}>In this story</h2>
+            <ol className={styles.tocList}>
+              {toc.map((c) => <li key={c.id}><Link to={`/case-studies/${slug}#${c.id}`}>{c.title}</Link></li>)}
+            </ol>
+          </nav>
+        )}
         <ArticleBody body={study.body} />
+        {parent && (
+          <aside className={styles.siblings} aria-label={`More from the ${parent.name}`}>
+            <Family parent={parent.slug} current={slug} title={`More from the ${parent.name}`} />
+          </aside>
+        )}
       </div>
 
       <nav className={styles.pager} aria-label="More case studies">

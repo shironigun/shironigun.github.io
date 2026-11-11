@@ -50,6 +50,9 @@ Related: [content rules](content/content-rules.md), [site guide](design/site-gui
 | The closing call to action appears on every page except Contact. | The next step is always one click away. |
 | Smaller type scale. | “The whole portfolio is too zoomed.” |
 | **No text selection** (10 Nov): nothing on the site can be selected, by dragging, double or triple clicks, or Select All (`user-select: none` on `body` in `base.css`). Form fields stay selectable. | His request. Visitors cannot copy text, so the email address must stay one click away (the Email buttons open a mail client). |
+| **Parent and child projects** (11 Nov): the Claude Code marketplace is a parent project, and each plugin is its own project and case study with `parent` set. A plugin page shows the parent in its breadcrumb and header, and lists its sibling plugins after the story; the case studies page groups the plugins under the marketplace instead of mixing them into the grid. | His words: the marketplace is the parent that owns all of it; every plugin was built alone, then combined. |
+| **Data-flow diagrams** (11 Nov): the `graph` block (`DataFlow.jsx`) draws who acts as lanes, time down the page, and wires labelled with the data they carry. A trace plays once when it scrolls into view: a packet moves along each wire, the next node lights up, approval gates hold it in amber until they turn green, and a readout explains the step. Readers can pause, step or pick any node; reduced motion keeps it still. | He found the box-list diagrams unimpressive: they showed no data flow, nodes or pipeline. |
+| **Case-study voice** (11 Nov): every case study opens with a hook, uses short paragraphs and headings with personality, explains each term once, and puts one sentence before each diagram saying what to watch for. No hype words. | He asked for articles that are fun, exciting and easy to read. |
 
 ## 4. Visual system
 

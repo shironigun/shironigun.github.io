@@ -20,7 +20,7 @@ export const experience = [
       { label: 'AI-native product revamp', text: 'Led the rebuild of 7 product areas of our dealership CRM, directing Claude Code agents from specification to review against the component library and business rules.' },
       { label: 'Roadmap and product strategy', text: 'Shape the roadmap and AI feature decisions with the Product Owner and Initiative Manager in Aha! and Azure DevOps, backing priorities with quantitative analysis (regression, trend and break-even), SWOT and 5 Whys.' },
       { label: 'AI enablement at scale', text: 'Organised the AI Foundations hackathon for 9 participants across QA and design, with 9 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page handbook on working with Claude.' },
-      { label: 'Open-source AI tooling', text: 'Published an open-source Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and created the AI QA Workbench in 4 days at the DIS AI Foundations program.' },
+      { label: 'Public AI tooling', text: 'Published a public Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and built the AI QA Workbench, which I took to the DIS AI Foundations program and extended there.' },
       { label: 'Delivery and insight', text: 'Own release readiness, introduced the API automation framework and onboarded 3 analysts; set up Power BI and Power Platform dashboards tracking release cadence, change failure rate and post-launch outcomes.' },
       { label: 'Recognition', text: 'Certificate of Appreciation for organising and delivering the AI Foundations initiative; Certificate of Completion, AI Foundations: From Developer to Orchestrator (Dealer Information Systems).' },
     ],
@@ -34,7 +34,7 @@ export const experience = [
     summary: 'Owned QA for an enterprise dealership CRM and grew into business analysis and design.',
     highlights: [
       { label: 'Division-wide quality framework', text: 'Designed the Strict Quality Gates framework, adopted by 3 other teams: about 40% less defect leakage and zero critical defects across 6 consecutive sprints.' },
-      { label: 'Delivery under pressure', text: 'Took over a million-dollar CRM mid-cycle when the senior QA left without notice and shipped the critical release on time; covered a 3-month BA vacancy, owning requirements with the Product Owner, with no gap in delivery.' },
+      { label: 'Delivery under pressure', text: 'Took over QA of a critical release mid-cycle, without a handover, and shipped it on time; covered a 3-month BA vacancy, owning requirements with the Product Owner, with no gap in delivery.' },
       { label: 'Domain enablement', text: `Delivered ${hoursText.junior} hours of domain training, the most comprehensive programme in the division’s history, contributed to the public product knowledge base through training and knowledge transfer, and trained 2 non-technical hires to independent sprint work within their first quarter.` },
       { label: 'Design and tooling standards', text: 'Led the design phase for the dealership mobile app with the UX designer, and ran the Postman proof of concept that made Postman the standard API testing tool across 5+ teams.' },
       { label: 'AI hackathon winner', text: '1st of 11 teams in a division-wide AI hackathon (2025) as Product Owner, Scrum Master and QA lead, building AI for customer retention and employee performance; delivered the final pitch.' },

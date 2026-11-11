@@ -272,3 +272,6 @@
 
 /* Projects: the board starts right under the page header. */
 .boardSection:global(.section) { padding-top: clamp(24px, 3vw, 40px); }
+
+/* The plugins of a parent project, under the grid on the case studies page */
+.familyBlock { margin-top: clamp(40px, 5vw, 64px); }

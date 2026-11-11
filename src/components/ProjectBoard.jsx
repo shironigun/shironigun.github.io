@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useInView } from '../lib/hooks';
 import { STATUS } from '../content/projects';
+import { useStudy } from '../content/caseStudies';
 import { BookIcon, CloseIcon, LayersIcon } from './Icons';
 import { Avatar, DisciplineIcon, QuarterStrip } from './board/parts';
 import ProjectDialog from './board/ProjectDialog';
@@ -15,6 +16,7 @@ const haystack = (p) => [p.name, p.summary, p.role, p.id, ...p.tags, ...(p.deliv
 
 function Card({ p, onOpen }) {
   const state = STATUS[p.status];
+  const documents = useStudy(p.page ? p.slug : null).study?.documents || [];
   return (
     <button type="button" className={styles.card} style={{ '--lane': laneVar(p.lane) }} aria-haspopup="dialog" onClick={() => onOpen(p.slug)}>
       <span className={styles.cardTop}>
@@ -34,7 +36,7 @@ function Card({ p, onOpen }) {
         <span className={styles.cardQuarters}>{quarterRange(p)}</span>
         <span className={styles.cardIcons}>
           {p.page && <span title="Has a case study"><BookIcon width="14" height="14" /><span className="visually-hidden">Case study</span></span>}
-          {p.documents.length > 0 && <span title={`${p.documents.length} ${p.documents.length > 1 ? 'documents' : 'document'}`}><LayersIcon width="14" height="14" />{p.documents.length}</span>}
+          {documents.length > 0 && <span title={`${documents.length} ${documents.length > 1 ? 'documents' : 'document'}`}><LayersIcon width="14" height="14" />{documents.length}</span>}
         </span>
       </span>
       <QuarterStrip p={p} />

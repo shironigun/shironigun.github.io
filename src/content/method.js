@@ -134,6 +134,6 @@ export const principles = [
   { title: 'Review the design before development', value: '7', label: 'product areas revamped through the design phase', to: '/case-studies/design-phase' },
   { title: 'Make knowledge reusable', value: '60+', label: 'SOPs and guides written for every team', to: '/case-studies/domain-knowledge-base' },
   { title: 'Test AI output like any software', value: '4', label: 'rules set to rebuild an AI-built test suite after auditing it', to: '/case-studies/ai-test-suite-audit' },
-  { title: 'Keep a person in control', value: '30', label: 'AI skills that ask before they write', to: '/case-studies/qa-plugin' },
+  { title: 'Keep a person in control', value: '0', label: 'tracker writes without a person’s yes', to: '/case-studies/claude-marketplace' },
   { title: 'Standardise what works', value: '5+', label: 'teams adopted the API testing approach I evaluated', to: '/case-studies/postman-evaluation' },
 ];

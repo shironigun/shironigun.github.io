@@ -1,6 +1,6 @@
 // Hours in each title at Perseus Group, worked out live from the working week (Monday to Friday,
 // 8 hours a day; see lib/workHours.js). The days are contiguous, so the overall total runs from
-// 14 December 2023, the same start as tenure in site.js, up to yesterday.
+// 12 December 2023, the same start as tenure in site.js, up to yesterday.
 //
 // Where each figure is used:
 // - each title's own hours: its role on About, and that role's highlight text;
@@ -9,7 +9,7 @@
 import { formatHours, workHours } from '../lib/workHours';
 
 export const roleHours = {
-  trainee: workHours('2023-12-14', '2024-02-14'), // the two-month traineeship
+  trainee: workHours('2023-12-12', '2024-02-14'), // the two-month traineeship
   junior: workHours('2024-02-15', '2025-12'),
   current: workHours('2026-01', null),
 };

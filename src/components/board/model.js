@@ -1,5 +1,4 @@
 import { categories, projects } from '../../content/projects';
-import { caseStudies } from '../../content/caseStudies';
 
 // The Projects page's data model: every project as a board card, the kanban columns, the roadmap
 // lanes, and the helpers both views and the project popup share.
@@ -26,17 +25,13 @@ function span(p) {
   return { start: Math.max(a, FIRST), end: Math.min(b, NOW), from: { year: a, q: 1 }, to: { year: b, q: 4 } };
 }
 
-export const items = projects.map((p, i) => {
-  const study = caseStudies[p.slug];
-  return {
-    ...p,
-    id: `MA-${101 + i}`,
-    lane: p.tags[0],
-    ...span(p),
-    documents: study?.documents || [],
-    numbers: study?.body.find((b) => b.numbers)?.numbers || null,
-  };
-});
+// A card's documents and headline numbers live in its case study, which loads on demand (useStudy).
+export const items = projects.map((p, i) => ({
+  ...p,
+  id: `MA-${101 + i}`,
+  lane: p.tags[0],
+  ...span(p),
+}));
 
 export const period = (p) => p.when || p.year.replace('–', ' to ');
 export function quarterRange(p) {
@@ -51,7 +46,7 @@ const byRecency = (a, b) => qIndex(b.to) - qIndex(a.to) || qIndex(b.from) - qInd
 // Kanban columns are workflow states.
 export const COLUMNS = [
   { key: 'progress', title: 'In progress', hint: 'Being explored or built now', statuses: ['ongoing', 'development'] },
-  { key: 'production', title: 'Heading to production', hint: 'Built, on its way to customers', statuses: ['production'] },
+  { key: 'pilot', title: 'In pilot', hint: 'Built and being piloted before release', statuses: ['pilot'] },
   { key: 'live', title: 'Live and in use', hint: 'Part of how teams work today', statuses: ['practice', 'live'] },
   { key: 'done', title: 'Done', hint: 'Delivered and wrapped up', statuses: ['completed'] },
 ].map((c) => ({ ...c, items: items.filter((p) => c.statuses.includes(p.status)).sort(byRecency) }));

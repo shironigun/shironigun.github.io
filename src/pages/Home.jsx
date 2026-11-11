@@ -172,7 +172,7 @@ export default function Home() {
           <div className={styles.rowHead}>
             <div className="section-head">
               <h2 id="work-title">Case studies</h2>
-              <p>Six selected engagements spanning design, quality, product knowledge, AI prototyping, open source and innovation.</p>
+              <p>Six selected engagements spanning design, quality, product knowledge, AI prototyping, public tooling and innovation.</p>
             </div>
             <Link to="/case-studies" className="link-quiet">All case studies</Link>
           </div>

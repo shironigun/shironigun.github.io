@@ -1,0 +1,297 @@
+/* The data-flow diagram (DataFlow.jsx). Lanes are columns, time runs down the page, and the only
+   colour that moves is cobalt: the packet, the wire it is on and the node it reaches. Gates are
+   hatched in amber until they say yes, then turn green. */
+
+.graph {
+  position: relative;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: var(--text-sm);
+  color: var(--graphite);
+}
+.key, .keyWire { display: inline-flex; align-items: center; gap: 7px; }
+.keyTile {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+}
+.keyPacket {
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--cobalt);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Stage: a dot-grid board the diagram sits on */
+.stage {
+  padding: 14px 18px 10px;
+  background-color: var(--paper);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.3px);
+  background-size: 18px 18px;
+}
+.canvas { position: relative; }
+.wires { position: absolute; inset: 0; overflow: visible; }
+
+.laneLine { stroke: var(--hairline); stroke-dasharray: 2 6; }
+
+.lane {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-align: center;
+  pointer-events: none;
+}
+.laneName {
+  padding: 3px 11px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--surface);
+  font: 600 13px/1.3 var(--font-display);
+  color: var(--ink);
+  white-space: nowrap;
+}
+.laneNote { font-size: 12px; color: var(--quiet); }
+
+.phase {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 24px;
+  pointer-events: none;
+}
+.phase span {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 600 12px/1.4 var(--font-display);
+  white-space: nowrap;
+}
+.phase::after { content: ''; flex: 1; border-top: 1px dashed var(--hairline-strong); }
+
+/* Wires */
+.wire {
+  fill: none;
+  stroke: var(--hairline-strong);
+  stroke-width: 1.6;
+  transition: stroke var(--dur) var(--ease), opacity var(--dur) var(--ease);
+}
+.loop { stroke-dasharray: 4 5; }
+.arrow { fill: var(--hairline-strong); transition: fill var(--dur) var(--ease); }
+
+.done .wire { stroke: color-mix(in srgb, var(--cobalt) 55%, transparent); stroke-width: 2; }
+.done .arrow { fill: color-mix(in srgb, var(--cobalt) 55%, transparent); }
+.live .wire, .hot .wire { stroke: var(--cobalt); stroke-width: 2.4; }
+.live .arrow, .hot .arrow { fill: var(--cobalt); }
+.live .wire { stroke-dasharray: 7 6; animation: flow 0.7s linear infinite; }
+.dim { opacity: 0.28; }
+@keyframes flow { to { stroke-dashoffset: -13; } }
+
+.edgeLabel {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 2px 8px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--graphite);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: color var(--dur), border-color var(--dur), opacity var(--dur);
+}
+.edgeLabel.live, .edgeLabel.hot { border-color: var(--cobalt); color: var(--cobalt-text); background: var(--surface); }
+.edgeLabel.done { color: var(--ink); border-color: var(--cobalt-line); }
+.edgeLabel.dim { opacity: 0.35; }
+
+/* Nodes */
+.node {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px 0 10px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(20, 22, 27, 0.05);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.node:hover { border-color: var(--cobalt); }
+.node:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; }
+.tile {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  transition: background var(--dur), color var(--dur);
+}
+.nodeText { display: grid; gap: 2px; min-width: 0; }
+.name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font: 600 14px/1.22 var(--font-display);
+  color: var(--ink);
+}
+.sub {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--quiet);
+}
+
+/* Kinds: the tile says who acts; a gate is hatched, an outside tool is dashed, saved state sits heavier */
+.k_human .tile, .k_human.keyTile, .k_human .keyTile { background: var(--ink); color: var(--paper); }
+.k_ai .tile, .k_ai .keyTile { background: var(--cobalt-wash); color: var(--cobalt-text); }
+.k_gate .tile, .k_gate .keyTile { background: var(--warn-wash); color: var(--warn); }
+.k_check .tile, .k_check .keyTile { background: var(--ink); color: var(--paper); border-radius: 50%; }
+.k_store .tile, .k_store .keyTile { background: var(--sunken); color: var(--graphite); }
+.k_external .tile, .k_external .keyTile { background: var(--sunken); color: var(--graphite); }
+.k_output .tile, .k_output .keyTile { background: var(--ok-wash); color: var(--ok); }
+
+.node.k_gate {
+  border-style: dashed;
+  border-color: var(--warn);
+  background: repeating-linear-gradient(135deg, var(--warn-wash) 0 7px, var(--surface) 7px 14px);
+}
+.node.k_store { border-bottom-width: 3px; }
+.node.k_external { border-style: dashed; }
+.node.k_output { border-color: color-mix(in srgb, var(--ok) 45%, var(--hairline-strong)); }
+
+/* Trace states */
+.node.visited { border-color: color-mix(in srgb, var(--cobalt) 45%, var(--hairline-strong)); }
+.node.active {
+  z-index: 2;
+  border-color: var(--cobalt);
+  box-shadow: 0 0 0 4px var(--cobalt-wash), 0 12px 26px -14px rgba(36, 70, 219, 0.55);
+  transform: translateY(-1px);
+}
+.node.waiting .tile { animation: hold 0.9s var(--ease) infinite; }
+.node.approved { border-style: solid; border-color: var(--ok); background: var(--surface); }
+.node.approved .tile { background: var(--ok-wash); color: var(--ok); }
+.node.active.approved { box-shadow: 0 0 0 4px var(--ok-wash), 0 12px 26px -14px rgba(11, 122, 85, 0.5); }
+.dimNode { opacity: 0.35; }
+@keyframes hold { 50% { transform: scale(0.88); } }
+
+/* The packet: the data on its way to the next node */
+.packet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--cobalt);
+  color: #fff;
+  font: 600 12px/1.35 var(--font-body);
+  white-space: nowrap;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--cobalt) 22%, transparent), 0 8px 18px -8px rgba(36, 70, 219, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+.packetDot { width: 12px; height: 12px; padding: 0; }
+
+/* Readout: what is happening at the active node */
+.readout {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 6px 18px;
+  padding: 18px 20px;
+  border-top: 1px solid var(--hairline);
+  background: var(--surface);
+}
+.progress { position: absolute; top: -1px; left: 0; right: 0; height: 3px; background: transparent; }
+.progress span { display: block; height: 100%; background: var(--cobalt); transition: width var(--dur-slow) var(--ease); }
+.count {
+  font: 700 30px/1 var(--font-display);
+  color: var(--cobalt-text);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+.count small { margin-left: 2px; font-size: 14px; font-weight: 500; color: var(--quiet); }
+.readBody { display: grid; gap: 4px; min-width: 0; grid-column: 2; }
+.readout > .readBody:first-child { grid-column: 1 / -1; }
+.who { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 12.5px; color: var(--graphite); }
+.whoKind { padding: 1px 8px; border-radius: 999px; font-weight: 600; }
+.whoKind.k_human { background: var(--ink); color: var(--paper); }
+.whoKind.k_ai { background: var(--cobalt-wash); color: var(--cobalt-text); }
+.whoKind.k_gate { background: var(--warn-wash); color: var(--warn); }
+.whoKind.k_store, .whoKind.k_external { background: var(--sunken); color: var(--graphite); }
+.whoKind.k_check { background: var(--ink); color: var(--paper); }
+.whoKind.k_output { background: var(--ok-wash); color: var(--ok); }
+.readTitle { font: 600 17px/1.3 var(--font-display); color: var(--ink); }
+.readText { min-height: 3.1em; font-size: 15px; line-height: 1.55; color: var(--graphite); }
+.readHint { grid-column: 1 / -1; font-size: 15px; color: var(--graphite); }
+.controls { grid-column: 1 / -1; display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+.ctl {
+  padding: 6px 14px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color var(--dur-fast), color var(--dur-fast), background var(--dur-fast);
+}
+.ctl:hover:not(:disabled) { border-color: var(--cobalt); color: var(--cobalt-text); }
+.ctl:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+.ctl:disabled { opacity: 0.45; cursor: default; }
+.ctlMain, .ctlMain:hover:not(:disabled) { min-width: 78px; border-color: var(--cobalt); background: var(--cobalt); color: #fff; }
+
+/* Phone: nodes become an icon and a name; the readout carries the words */
+.narrow .legend { padding: 10px 12px; gap: 6px 12px; font-size: 12px; }
+.narrow .stage { padding: 10px 8px 6px; }
+.narrow .laneName { padding: 2px 6px; font-size: 12px; letter-spacing: -0.01em; }
+.narrow .node { flex-direction: column; justify-content: center; gap: 5px; padding: 6px 4px; text-align: center; }
+.narrow .tile { width: 22px; height: 22px; border-radius: 6px; }
+.narrow .tile svg { width: 12px; height: 12px; }
+.narrow .name { -webkit-line-clamp: 4; font-size: 12px; line-height: 1.12; overflow-wrap: break-word; hyphens: auto; }
+.narrow .sub { display: none; }
+.narrow .phase span { font-size: 12px; padding: 1px 8px; }
+.narrow .readout { padding: 16px 14px; gap: 4px 12px; }
+.narrow .count { font-size: 22px; }
+.narrow .readTitle { font-size: 16px; }
+.narrow .readText { font-size: 14.5px; }
+.narrow .controls { justify-content: stretch; }
+.narrow .ctl { flex: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .live .wire { animation: none; stroke-dasharray: none; }
+  .node.waiting .tile { animation: none; }
+}

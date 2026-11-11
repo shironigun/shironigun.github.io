@@ -25,7 +25,7 @@ His role on each project, exactly as the site records it. Promise Tracker (led; 
 | Design phase and UI revamp | Introduced and led | Part of how the team works (2024–2026) |
 | Quality Gates and the QA team | Designed it; leads the QA team | Part of how the team works (2024–2026) |
 | Domain training and knowledge transfer | Self-initiated; designed and delivered | Completed (2024–2025) |
-| QA Engineering Plugin | Creator | Live, open source (2026) |
+| Claude Code marketplace, the parent of eight plugins (QA Engineering is the flagship) | Creator and owner | Public (2026) |
 | Division-wide AI hackathon | Product Owner, Scrum Master and QA lead; 1st of 11 teams | Completed (2025) |
 | AI Foundations hackathon | Organised and led | Completed (Aug 2026) |
 | AI QA Workbench | Creator, during the DIS AI Foundations cohort, a five-day cross-division build | Completed (Jul 2026) |
@@ -69,7 +69,7 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 - LinkedIn: https://www.linkedin.com/in/shironigun
 - GitHub: https://github.com/shironigun
 - WhatsApp: https://wa.me/923147369673
-- Open-source plugin marketplace: https://github.com/shironigun/claude-marketplace
+- Public plugin marketplace: https://github.com/shironigun/claude-marketplace
 - Résumés: `public/resumes/Mahmood_Ahmad_Resume_Light.pdf`, `public/resumes/Mahmood_Ahmad_Resume_Dark.pdf`
 
 ## The product he works on (as described publicly)
@@ -87,7 +87,7 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 
 - **Product** (Business analyst, Operator and strategist): I run discovery, turn the product vision into a roadmap, epics and user stories, and work through product decisions with the Product Owner. *Proof:* 70 user stories and the 2026 roadmap structure this year; covered a three-month BA vacancy with no gap in delivery.
 - **Design** (Design collaborator): I brief the designer on the business rules, review every design against the component library before development, and prototype ideas that people can click. *Proof:* Introduced a structured design phase into delivery; revamped seven product areas.
-- **AI** (AI prototyper): I design AI features, write the AI skills behind them, and build working software by directing AI agents with Claude Code. *Proof:* AI prototypes such as Promise Tracker; an open-source Claude Code marketplace with 30 skills.
+- **AI** (AI prototyper): I design AI features, write the AI skills behind them, and build working software by directing AI agents with Claude Code. *Proof:* AI prototypes such as Promise Tracker; a public Claude Code marketplace with 30 skills.
 - **Quality and delivery** (QA lead, Scrum master): I lead the QA team, run the sprint board and ceremonies, and set the quality bar every feature ships with. *Proof:* Quality Gates adopted by 3 teams: about 40% less defect leakage, zero critical defects across 6 sprints.
 
 ## Experience
@@ -102,7 +102,7 @@ On our dealership SaaS products I work as the team’s business analyst and asso
 - **AI-native product revamp:** Led the rebuild of 7 product areas of our dealership CRM, directing Claude Code agents from specification to review against the component library and business rules.
 - **Roadmap and product strategy:** Shape the roadmap and AI feature decisions with the Product Owner and Initiative Manager in Aha! and Azure DevOps, backing priorities with quantitative analysis (regression, trend and break-even), SWOT and 5 Whys.
 - **AI enablement at scale:** Organised the AI Foundations hackathon for 9 participants across QA and design, with 9 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page handbook on working with Claude.
-- **Open-source AI tooling:** Published an open-source Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and created the AI QA Workbench in 4 days at the DIS AI Foundations program.
+- **Public AI tooling:** Published a public Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and created the AI QA Workbench in 4 days at the DIS AI Foundations program.
 - **Delivery and insight:** Own release readiness, introduced the API automation framework and onboarded 3 analysts; set up Power BI and Power Platform dashboards tracking release cadence, change failure rate and post-launch outcomes.
 - **Recognition:** Certificate of Appreciation for organising and delivering the AI Foundations initiative; Certificate of Completion, AI Foundations: From Developer to Orchestrator (Dealer Information Systems).
 
@@ -175,7 +175,7 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **2025** · Talk · Postman proof-of-concept presentation. Presented the evaluation that made Postman the standard API testing tool across teams.
 - **Mar 2025** · Certification · Introduction to Python, DataCamp
 - **Apr 2025** · Certification · Intermediate Python, DataCamp
-- **2025** · Achievement · 1st of 11 teams, division-wide AI hackathon. Led the winning team as Product Owner, Scrum Master and QA lead.
+- **2025** · Achievement · 1st of 11 teams, division-wide AI hackathon. Product Owner, Scrum Master and QA lead: led the requirements, the UI prototypes and the final pitch.
 - **2025** · Achievement · Quality Gates adopted by three teams. A framework built on root-cause analysis: zero critical defects across six sprints.
 - **2024 to 2025** · Achievement · Built QA talent from the ground up. Trained two QA hires from non-technical backgrounds to independent sprint work.
 - **Jan 2026** · Promotion · Product Quality Analyst, Contour Software, Perseus Group. A product role spanning business analysis, design collaboration, AI prototyping, Scrum and QA leadership.
@@ -190,7 +190,7 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **Aug 2026** · Course authored · Working with Claude: The Eleven Building Blocks. A 183-page practical handbook for continued learning across the division.
 - **2026** · Course authored · Skills Evals Lab. A 14-module interactive course on evaluating AI skills.
 - **2026** · Course authored · Playwright automation course. A self-paced course inside the QA plugin that remembers where each learner stopped.
-- **Oct 2026** · Project · Open-sourced the QA Engineering Plugin. A Claude Code marketplace of AI agents that ask for approval before every write.
+- **Oct 2026** · Project · Published my Claude Code marketplace. Plugins built one at a time, brought together in one public repo; every one asks before it writes.
 - **Nov 2026** · Project · AI feature heading to production. Led its product definition, from discovery and requirements to design, evaluation and launch readiness.
 
 ## Projects (all, in site order)
@@ -201,7 +201,8 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 - **Quality Gates and the QA team** (2024–2026; Designed it; lead the QA team; status: Part of how we work; Quality, Product) → /case-studies/quality-gates. A quality-gate framework adopted by 3 teams, and the QA team I lead. *Question:* How I reduced CRM defect leakage by about 40%
 - **Domain training and knowledge transfer** (2024–2025; Self-initiated; designed and delivered; status: Completed; Product) → /case-studies/domain-knowledge-base. A self-initiated training programme carrying the live Junior SQA hours (3,920), with knowledge transfer that fed the public product knowledge base. He contributed to the knowledge base; he did not write it. *Question:* How I turned months of shadowing into a structured training programme
 - **AI product prototyping** (2026; Prototyper; assisted the Product Owner; status: Ongoing; AI, Product, Design) → /case-studies/ai-prototyping. Working prototypes for AI ideas, built with Figma Make and Claude Code, so the team can try them before building. *Question:* Can the team try an AI idea before committing to build it?
-- **QA Engineering Plugin** (2026; Creator; status: Open source; AI, Quality, Personal builds) → /case-studies/qa-plugin. An open-source Claude Code marketplace whose flagship runs the QA loop from user story to filed bug, asking a person before every write. *Question:* What if AI QA agents asked before they wrote anything?
+- **Claude Code marketplace** (Jul to Nov 2026; Creator and owner; status: Public; AI, Quality, Personal builds) → /case-studies/claude-marketplace. The parent project: plugins he built one at a time, each for one real job, combined into one public marketplace on 9 Oct 2026 (one clean commit, product and organisation replaced by placeholders). Children, each with its own case study: release-notes-suite, ui-testing, api-testing, crm-bug-suite, qa-toolkit, qa-plugin (QA Engineering, the flagship), feature-explainer, feature-intelligence (in development on the dev branch).
+- **QA Engineering plugin** (Oct 2026; Creator; status: Public, version 0.8.1; part of the marketplace) → /case-studies/qa-plugin. One orchestrator runs the QA loop from user story to filed bug, asking a person before every write. *Question:* What if AI QA agents asked before they wrote anything?
 - **AI hackathon, first place** (2025; Product Owner, Scrum Master and QA lead; status: Completed; AI, Product) → /case-studies/hackathon-2025. AI solutions for customer retention and employee performance monitoring that won first place of 11 teams. *Question:* First place of 11 teams in a division-wide AI hackathon
 - **AI Foundations hackathon** (2026; Organised and led; status: Completed; AI, Product, Quality) → /case-studies/ai-foundations-hackathon. An AI hackathon I organised and led for the QA and design team: foundations sessions, a real-world project for every participant, mentoring to working demonstrations, and a handbook for the division. *Question:* How do you turn AI concepts into working solutions across a whole team?
 - **Postman API testing evaluation** (2025; Researched, wrote and presented; status: Completed; Quality) → /case-studies/postman-evaluation. A proof of concept that made Postman the standard API testing tool across 5+ teams, updated against Postman’s current documentation. *Question:* How a Postman proof of concept standardised API testing across 5+ teams
@@ -212,11 +213,11 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 - **Product promo films** (2026; Designed and produced; status: Completed; Design) → /case-studies/promo-films. Promo films for TargetCRM, also offered as Notify360: an enterprise promo (2:09, expo cut), an app-store cut (28 s, not exported yet) and a Promise Tracker story film (2:14). Product screens rebuilt in code from the real interface, with a fictional dealership and demo data. He wrote the stories, art-directed every scene and reviewed each cut; Claude built the films under his direction. The two exported films play on the promo films page (`public/videos/`), and the Promise Tracker film also plays on its case study.
 - **UI standards documentation** (2023–2024; Initiated and wrote; status: Completed; Design). The organisation’s first shared reference for components, interaction patterns and accessibility.
 - **Delivery analytics dashboards** (2026; Creator; status: Completed; Personal builds). Release cadence, change failure rate and items needing attention, from Azure DevOps activity.
-- **AI evaluation and the Skills Evals Lab** (Sep 2026 to now; Designed the evaluations; wrote the course; status: Ongoing; AI, Quality) → /case-studies/ai-evaluation. Company work, so only what he did and the problem it solved. Problem: an AI feature answers differently each run, so one passing test proves little and there is no clear bar for release. What he did: designed a repeatable evaluation method (one test per rule the model can get wrong, a format check first, every case run 3 times and counted only when all 3 pass, written grading criteria, hidden-instruction cases), used it on the AI features his team builds and on his own QA plugin (9 behavioural evaluations, 83.3% suite score on 13 Oct 2026, 7 of 9 cases perfect), and wrote the Skills Evals Lab (14 modules, 16 lessons, about 2¾ hours, 5 labs, associate and eval-lead tracks), hosted at /labs/skills-evals-lab.html with fictional examples only. Learning: preparing for ISTQB CT-AI and CT-GenAI.
+- **AI evaluation and the Skills Evals Lab** (Sep 2026 to now; Designed the evaluations; wrote the course; status: Ongoing; AI, Quality) → /case-studies/ai-evaluation. Company work, so only what he did and the problem it solved. Problem: an AI feature answers differently each run, so one passing test proves little and there is no clear bar for release. What he did: designed a repeatable evaluation method (one test per rule the model can get wrong, a format check first, every case run 3 times and counted only when all 3 pass, written grading criteria, hidden-instruction cases), used it on the AI features his team builds and on his own QA plugin (9 behavioural evaluations, 83.3% suite score on 13 Oct 2026, 7 of 9 cases perfect), and wrote the Skills Evals Lab (16 associate lessons and a 4-lesson eval-lead track), hosted at /labs/skills-evals-lab.html with fictional examples only. Learning: preparing for ISTQB CT-AI and CT-GenAI.
 
 ## Achievements
 
-- **1st place, division-wide AI hackathon** (2025): Led the winning team of 11 as Product Owner, Scrum Master and QA lead.
+- **1st place, division-wide AI hackathon** (2025): Product Owner, Scrum Master and QA lead: led the requirements, the UI prototypes and the final pitch. 1st of 11 teams.
 - **VP Award**: For contributions tied to multimillion-dollar business goals across a 200+ person division.
 - **Quality framework adopted by 3 teams** (2025): The Strict Quality Gates framework I designed: about 40% less defect leakage and zero critical defects across 6 sprints.
 - **Junior SQA hours of domain leadership** (live; 3,920) (2024–2025): A self-initiated training programme, the most comprehensive in the division’s history, with knowledge transfer that fed the public knowledge base.
@@ -226,7 +227,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 - **Promoted to Product Quality Analyst** (2026): From Junior SQA Analyst in under two years, into a product-analyst role.
 - **Built QA talent from the ground up**: Trained two QA hires from non-IT backgrounds to independent sprint work, and onboarded three new analysts in 2026.
 - **AI Innovator of the Month**
-- **Open-sourced a QA plugin marketplace** (2026): 7 plugins and 30 skills for Claude Code.
+- **Published a Claude Code marketplace** (2026): 7 plugins and 30 skills, each built for one real job.
 - **Organised the AI Foundations hackathon** (2026): Briefed, taught and mentored the QA and design team to working demonstrations, and was recognised with a certificate of appreciation.
 - **Completed the DIS AI Foundations program** (2026): Built the AI QA Workbench in four days at a five-day, cross-division AI hackathon.
 - **Certified ScrumMaster® at 24** (2024): Alongside ISTQB® CTFL and Microsoft Business Analysis Fundamentals.
@@ -281,7 +282,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 ## 2026 log
 
 - **Nov:** Led an AI feature from concept to production readiness.
-- **Oct:** Published the QA Engineering Plugin marketplace as open source.
+- **Oct:** Published my Claude Code marketplace on GitHub.
 - **Aug:** Organised and led the AI Foundations hackathon, opened it with “AI Foundations: From Doing to Directing”, and wrote a 183-page Claude handbook for the division.
 - **Jul:** Completed the DIS AI Foundations program and built the AI QA Workbench in four days.
 - **Apr:** Started a full UI and UX revamp of our dealership CRM through agentic coding.
@@ -325,7 +326,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 ### Skills and AI behaviour he has written
 
 - **Test-case drafting skill:** Drafts test cases in my house style, learned from hundreds of test cases I had written.
-- **QA Engineering Plugin:** 30 skills across seven plugins, from story analysis to filed bugs.
+- **Claude Code marketplace:** 30 skills across seven plugins, each built alone for one job; the QA Engineering plugin is the flagship.
 - **AI feature behaviour:** The rules an AI feature follows: what it detects, when it acts and what it must never say.
 - **Skills Evals Lab:** A 14-module interactive course on evaluating AI skills.
 - **Working with Claude handbook:** A 183-page practical guide to the eleven building blocks of Claude, written for the division.

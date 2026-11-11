@@ -14,7 +14,7 @@ export const facts = [
   'His Quality Gates cut defect leakage by about 40%. Bugs hate him.',
   'He wrote a 183-page handbook. I read all of it. Twice.',
   'He organised a hackathon with a project brief for every person.',
-  'His open-source plugin has 30 skills. I use every one.',
+  'His public plugin marketplace has 30 skills. I use every one.',
   'He asks eleven edge-case questions per story. Every. Single. One.',
   'UX intern in 2021, AI products now. Long rope.',
   'Certified ScrumMaster and ISTQB tester. He loves a good process.',

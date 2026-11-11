@@ -29,7 +29,7 @@ export default function Contact() {
             <ul className={styles.list}>
               <li><DocButton src={contact.resumeLight} title="Résumé" download className={styles.certLink}>Résumé</DocButton><span className={styles.muted}>Also as a <DocButton src={contact.resumeDark} title="Résumé, dark version" download className={styles.inlineDoc}>dark version</DocButton></span></li>
               <li><Link to="/case-studies/promise-tracker">AI Promise Tracker case study</Link><span className={styles.muted}>An AI feature I led from idea to launch</span></li>
-              <li><a href={contact.pluginRepo} target="_blank" rel="noopener">QA Engineering Plugin on GitHub</a><span className={styles.muted}>Open source</span></li>
+              <li><a href={contact.pluginRepo} target="_blank" rel="noopener">QA Engineering Plugin on GitHub</a><span className={styles.muted}>Public</span></li>
             </ul>
             <div className={styles.contactActions}>
               <DocButton src={contact.resumeLight} title="Résumé" download className="btn btn-secondary"><DownloadIcon />Résumé</DocButton>

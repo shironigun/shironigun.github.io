@@ -65,7 +65,7 @@ export function AuditSplit() {
           <p><span className={`${styles.key} ${styles.keyPass}`} aria-hidden="true" /><strong>Every</strong> test passing. Looks healthy.</p>
         )}
       </div>
-      <figcaption className={styles.caption}>What the audit showed. After it, I rebuilt the suite so tests fail when the system is missing.</figcaption>
+      <figcaption className={styles.caption}>What the audit showed. The clean-up I directed makes tests fail when the system is missing, as they should.</figcaption>
     </figure>
   );
 }
@@ -92,12 +92,12 @@ export function AgentPipeline() {
             <span className={styles.pipelineName}>{a.name}</span>
             <span className={styles.pipelineJob}>{a.job}</span>
             {a.gate && (
-              <span className={styles.pipelineGate}><PersonIcon width="14" height="14" />A person approves before it writes</span>
+              <span className={styles.pipelineGate}><PersonIcon width="14" height="14" />Drafts first</span>
             )}
           </li>
         ))}
       </ol>
-      <figcaption className={styles.caption}>Each agent has one job. Writes to the team’s tracker always wait for a person.</figcaption>
+      <figcaption className={styles.caption}>Each agent has one job. Bulk writes to the team’s tracker send only drafts a person approved.</figcaption>
     </figure>
   );
 }

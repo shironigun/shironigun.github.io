@@ -3,6 +3,7 @@ import { Link, useDocumentTitle } from '../lib/router';
 import PageHeader from '../components/PageHeader';
 import CountUp from '../components/CountUp';
 import { ProjectGrid } from '../components/ProjectCard';
+import Family from '../components/Family';
 import { categories, projectPages, projects } from '../content/projects';
 import styles from './Pages.module.css';
 
@@ -11,7 +12,10 @@ const countIn = (c) => projectPages.filter((p) => p.tags.includes(c)).length;
 export default function CaseStudies() {
   useDocumentTitle('Case studies: Mahmood Ahmad');
   const [filter, setFilter] = useState('All');
-  const shown = filter === 'All' ? projectPages : projectPages.filter((p) => p.tags.includes(filter));
+  const matching = filter === 'All' ? projectPages : projectPages.filter((p) => p.tags.includes(filter));
+  // Plugins sit under the marketplace that owns them, not loose in the grid.
+  const shown = matching.filter((p) => !p.parent);
+  const parents = shown.filter((p) => matching.some((c) => c.parent === p.slug));
   const inUse = categories.filter((c) => countIn(c) > 0);
 
   return (
@@ -33,7 +37,7 @@ export default function CaseStudies() {
       <section className="section" aria-labelledby="cases-title">
         <div className="container">
           <div className={styles.listHead}>
-            <h2 id="cases-title" className={styles.subhead}>{filter === 'All' ? 'All case studies' : `${filter} case studies`} ({shown.length})</h2>
+            <h2 id="cases-title" className={styles.subhead}>{filter === 'All' ? 'All case studies' : `${filter} case studies`} ({matching.length})</h2>
             <div className={styles.filterRow} role="toolbar" aria-label="Filter case studies">
               {['All', ...inUse].map((c) => (
                 <button key={c} type="button" className={styles.filterChip} aria-pressed={filter === c} onClick={() => setFilter(c)}>
@@ -43,6 +47,11 @@ export default function CaseStudies() {
             </div>
           </div>
           <ProjectGrid projects={shown} />
+          {parents.map((p) => (
+            <section key={p.slug} className={styles.familyBlock} aria-label={`Inside the ${p.name}`}>
+              <Family parent={p.slug} title={`Inside the ${p.name}: one case study per plugin`} />
+            </section>
+          ))}
           <p className={styles.muted} style={{ marginTop: 'var(--s-6)' }}>
             Looking for everything, including the smaller projects? <Link to="/projects">See all {projects.length} projects</Link>.
           </p>

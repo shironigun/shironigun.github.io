@@ -10,10 +10,10 @@ One title, six roles: business analyst, design collaborator, AI prototyper, oper
 - [Quality Gates and the QA team](https://shironigun.github.io/case-studies/quality-gates): root-cause analysis, then a framework adopted by 3 teams; about 40% less defect leakage; zero critical defects across 6 sprints.
 - [Domain training and knowledge transfer](https://shironigun.github.io/case-studies/domain-knowledge-base): a self-initiated training programme of 3,900+ hours, with knowledge transfer into the public product knowledge base.
 - [AI product prototyping](https://shironigun.github.io/case-studies/ai-prototyping): working prototypes for AI ideas, built with Figma Make and Claude Code.
-- [QA Engineering Plugin](https://shironigun.github.io/case-studies/qa-plugin): open-source Claude Code marketplace; 7 plugins, 30 skills; human approval before every tracker write.
+- [QA Engineering Plugin](https://shironigun.github.io/case-studies/qa-plugin): public Claude Code marketplace; 7 plugins, 30 skills; human approval before every tracker write.
 - [AI hackathon, first place](https://shironigun.github.io/case-studies/hackathon-2025): 1st of 11 teams, as Product Owner, Scrum Master and QA lead.
 - [AI Foundations hackathon](https://shironigun.github.io/case-studies/ai-foundations-hackathon): organised and led an AI hackathon; a brief for every participant, mentoring to working demos, and a 183-page handbook.
-- [AI Promise Tracker](https://shironigun.github.io/case-studies/promise-tracker): an AI feature whose product definition I led; heading to production, not released.
+- [AI Promise Tracker](https://shironigun.github.io/case-studies/promise-tracker): an AI feature whose product definition I led; in pilot, not released yet.
 - [API test automation and the audit](https://shironigun.github.io/case-studies/ai-test-suite-audit): API test automation built by directing AI agents, then audited and rebuilt so tests fail when the system is missing.
 - [AI QA workbench](https://shironigun.github.io/case-studies/ai-qa-workbench): multi-agent workbench from user story to triaged bug.
 - [Postman API testing evaluation](https://shironigun.github.io/case-studies/postman-evaluation): a proof of concept that made Postman the standard API testing tool across 5+ teams.
