@@ -57,7 +57,6 @@ Drafts are in `docs/private/linkedin/` (not in git), including `profile-update.m
 
 - Confirm two inferred quarter ranges on the Projects board: product decisions (Q1 to Q4 2026) and promo films (Q3 to Q4 2026).
 - Dates still needed in [content/journey-inputs.md](content/journey-inputs.md): VP Award, AI Innovator of the Month, Division All-Hands Recognition, Annual Special Thanks, and several approximate months.
-- The résumé PDFs in `public/resumes/` still print a location; they need new files from him.
 - The public knowledge base link points at a domain that contains the product's name.
 - Deep links such as `/projects` are served with HTTP 404 by the GitHub Pages fallback, although they render normally.
 - His LinkedIn may still list tools he asked to keep off the portfolio (Visio, Power BI, SQL, Python); he may want to update it.

@@ -63,6 +63,39 @@ export const clickLines = {
   calm: 'Okay, I’ll stay put. Gently, please.',
 };
 
+// Left alone for a few seconds, he climbs down the wall and plays along the bottom of the screen.
+// His games act out Mahmood's work: directing AI agents, roadmaps, design sketches, the promo
+// films, the Claude handbook, the hackathon win. Every number here is true to the site.
+export const roamLines = {
+  leave: ['Stretch break!', 'Taking the stairs. Well, the wall.', 'Rope’s fine. The floor is better.', 'Back in a bit.'],
+  stroll: ['Walking the roadmap.', 'Discovery walk. Who has the problem?', 'Idea to launch. Long walk, worth it.', 'Looking for the next problem worth solving.', 'Every page here is a decision he made.'],
+  crew: ['Come on, agents. Spec first.', 'I direct. The agents build.'],
+  crewDone: ['Good work, team.', 'Same rule as always: ask before you write.'],
+  roadmap: 'Planning the roadmap.',
+  roadmapDone: ['Now, next, later. Sorted.', 'Priorities clear. Roadmap done.'],
+  sketch: ['Sketch it before we build it.', 'Design first, then build.'],
+  film: 'Promo film, take two.',
+  action: 'Action!',
+  cut: ['Cut! That’s the one.', 'And that’s a wrap.'],
+  book: ['Page 92 of 183. Good handbook.', 'Rereading the Claude handbook.'],
+  trophy: 'First of eleven teams!',
+  dance: ['Launch day dance!', 'Idea to launch!'],
+  hop: ['Boing!', 'Promoted in under two years. Boing!'],
+  sit: ['Taking five.', 'I’ll just sit here and read along.'],
+  nap: 'Five more minutes…',
+  peek: ['The big picture, from up here.', 'The roadmap looks good from up here.'],
+  away: 'Checking the other screens.',
+  wrapped: 'Took the long way round.',
+  dodge: ['Can’t catch me!', 'Too slow!', 'Missed me!', 'Nope!'],
+  aside: ['Reading? I’ll step aside.', 'Out of your way.'],
+  wave: ['Hi down here!', 'Oh, hello!'],
+  click: ['Okay, okay. Back to my rope.', 'Break’s over? Fine.'],
+  tired: ['That’s enough exercise.', 'Back to my rope.'],
+  busy: 'Hold on, I’m climbing!',
+  still: 'Still down here. Hi again!',
+  newPage: ['New page! Let’s look around.', 'Ooh, a new floor.'],
+};
+
 const PAGES = {
   '/': {
     'highlights-title': 'These numbers round down, never up.',

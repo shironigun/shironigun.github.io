@@ -69,3 +69,14 @@
 @media (max-width: 600px) {
   .card { padding: var(--s-5); }
 }
+
+/* Wide screens: every card at once, side by side, the same height. */
+.wall {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  gap: var(--s-5);
+  margin: 0;
+  padding: 0;
+}
+.wall > li { display: flex; }

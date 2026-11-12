@@ -46,7 +46,7 @@ export default function CaseStudies() {
               ))}
             </div>
           </div>
-          <ProjectGrid projects={shown} />
+          <ProjectGrid projects={shown} dense />
           {parents.map((p) => (
             <section key={p.slug} className={styles.familyBlock} aria-label={`Inside the ${p.name}`}>
               <Family parent={p.slug} title={`Inside the ${p.name}: one case study per plugin`} />

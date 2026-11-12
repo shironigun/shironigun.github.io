@@ -6,7 +6,7 @@ import { certifications } from '../content/profile';
 import { projectPages } from '../content/projects';
 import { operatingModel } from '../content/method';
 import { DocButton } from './DocumentViewer';
-import { ChevronIcon, GitHubIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from './Icons';
+import { ChevronIcon, GitHubIcon, LinkedInIcon, MailIcon } from './Icons';
 import styles from './Footer.module.css';
 
 const EXPLORE = [
@@ -28,7 +28,6 @@ const SOCIAL = [
   { href: `mailto:${contact.email}`, label: 'Email', Icon: MailIcon },
   { href: contact.linkedin, label: 'LinkedIn', Icon: LinkedInIcon, external: true },
   { href: contact.github, label: 'GitHub', Icon: GitHubIcon, external: true },
-  { href: contact.whatsapp, label: 'WhatsApp', Icon: WhatsAppIcon, external: true },
 ];
 
 export default function Footer() {

@@ -1,6 +1,6 @@
 // Portfolio QA sweep. With `npm run dev` running, open http://localhost:5173, paste this into
 // the browser console, and wait for "QA sweep" to print (about two minutes). Each route loads
-// in a hidden frame at four widths and is checked for the problems below.
+// in a hidden frame at five widths and is checked for the problems below.
 
 (async () => {
   const projects = await import('/src/content/projects.js');
@@ -10,7 +10,7 @@
     ...projects.projectPages.map((p) => `/case-studies/${p.slug}`),
     ...writing.articles.map((a) => `/writing/${a.slug}`),
   ];
-  const widths = [360, 768, 1100, 1440];
+  const widths = [360, 768, 1100, 1440, 1920];
   const issues = [];
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 

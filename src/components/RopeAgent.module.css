@@ -29,9 +29,87 @@
   width: 100%;
   height: auto;
   overflow: visible;
-  transform: translateX(var(--fx, 0px)) rotate(var(--tilt, 0deg));
+  transform: translateX(var(--fx, 0px)) rotate(var(--tilt, 0deg)) scaleX(var(--face, 1));
   transform-origin: 50% 100%;
 }
+
+/* His games on the floor act out Mahmood's work. --cx is the middle of his body, --floor the
+   bottom of the window, both in the agent's own coordinates. */
+
+/* Directing AI agents: three mini agents trail behind him, each a little later than the last. */
+.crew { display: none; }
+.crewOn .crew { display: block; }
+.bot {
+  position: absolute;
+  top: calc(var(--floor, 100vh) - 4px - 30px * var(--s, 1));
+  left: calc(var(--cx, 0px) - 11px * var(--s, 1) - var(--face, 1) * var(--k) * 32px * var(--s, 1));
+  width: calc(22px * var(--s, 1));
+  height: calc(30px * var(--s, 1));
+  overflow: visible;
+  transition: left var(--lag) linear;
+}
+.bot:nth-child(1) { --k: 1.15; --lag: 0.28s; }
+.bot:nth-child(2) { --k: 2.15; --lag: 0.5s; }
+.bot:nth-child(3) { --k: 3.15; --lag: 0.72s; }
+.botShell { fill: #fff; stroke: var(--ink); stroke-width: 1.6; }
+.botScreen { fill: var(--ink); }
+.botEye { fill: var(--cobalt-on-night); }
+.botBody { fill: var(--cobalt); stroke: var(--ink); stroke-width: 1.4; }
+.botLeg { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; }
+.onDark .botShell, .onDark .botBody { stroke: #E4E7EE; }
+.onDark .botLeg { stroke: #E4E7EE; }
+.motion.crewOn .bot { animation: botIn 0.32s var(--ease-out) both, botBob 0.36s ease-in-out 0.32s infinite alternate; }
+.motion.crewOn .bot:nth-child(2) { animation-delay: 0.08s, 0.4s; }
+.motion.crewOn .bot:nth-child(3) { animation-delay: 0.16s, 0.48s; }
+.motion.crewHop .bot { animation: botHop 0.5s var(--ease-out) both; }
+@keyframes botIn { from { opacity: 0; transform: translateY(10px) scale(0.6); } }
+@keyframes botBob { to { transform: translateY(-2px); } }
+@keyframes botHop { 50% { transform: translateY(-14px); } }
+
+/* Roadmapping: sticky notes he puts up beside him, one at a time. */
+.note {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: calc(42px * var(--s, 1));
+  height: calc(34px * var(--s, 1));
+  border-radius: 3px;
+  color: #14161B;
+  font: 600 12px/1 var(--font-display);
+  box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.55);
+}
+.noteNow { background: #FFD36B; transform: rotate(-4deg); }
+.noteNext { background: #B9C6FF; transform: rotate(3deg); }
+.noteLater { background: #9BE3C0; transform: rotate(-2deg); }
+.motion .note { animation: notePop 0.3s var(--ease-out) both; }
+@keyframes notePop { from { opacity: 0; scale: 0.4; } }
+
+/* Design first: a wireframe sketch that draws itself in front of him. */
+.sketch { position: absolute; width: calc(76px * var(--s, 1)); height: auto; overflow: visible; }
+.sketch .paper { fill: var(--surface); stroke: var(--hairline-strong); stroke-width: 1; }
+.sketch .ink { fill: none; stroke: var(--cobalt); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 320; stroke-dashoffset: 0; }
+.motion .sketch .ink { animation: drawOn 2.2s ease-out both; }
+@keyframes drawOn { from { stroke-dashoffset: 320; } }
+
+/* Held props: a clapperboard that claps, a trophy, a book whose page turns. */
+.clapBoard { fill: var(--ink); stroke: var(--ink); stroke-width: 1; }
+.clapLine { fill: none; stroke: #fff; stroke-width: 1; opacity: 0.6; }
+.clapStripe { fill: #fff; stroke: var(--ink); stroke-width: 1; }
+.clapBar { fill: none; stroke: var(--ink); stroke-width: 1.6; }
+.clapTop { transform-box: view-box; transform-origin: 65px 5px; transform: rotate(-24deg); transition: transform 0.12s ease-in; }
+.clap .clapTop { transform: rotate(0deg); }
+.onDark .clapBoard { stroke: #E4E7EE; }
+.cup { fill: #FFD36B; stroke: var(--ink); stroke-width: 1.2; }
+.handles { fill: none; stroke: var(--ink); stroke-width: 1.4; }
+.onDark .cup, .onDark .handles { stroke: #E4E7EE; }
+.motion .trophy { transform-box: view-box; transform-origin: 74px 19px; animation: gleam 0.5s ease-in-out infinite alternate; }
+@keyframes gleam { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+.page { fill: #fff; stroke: var(--ink); stroke-width: 1.2; stroke-linejoin: round; }
+.pageLines { fill: none; stroke: #8C9099; stroke-width: 0.9; stroke-linecap: round; }
+.onDark .page { stroke: #E4E7EE; }
+.turn { opacity: 0; }
+.motion .turn { transform-box: view-box; transform-origin: 40px 72px; animation: turnPage 1.6s ease-in-out 0.6s infinite; }
+@keyframes turnPage { 0% { opacity: 1; transform: scaleX(1); } 45% { opacity: 1; transform: scaleX(-1); } 46%, 100% { opacity: 0; transform: scaleX(-1); } }
 .swing, .idle { transform-box: view-box; transform-origin: 40px 11px; }
 
 /* Drawing: white shell and ink outline, so it reads on the light page and the dark bands. */
@@ -97,6 +175,24 @@
 .motion .light { animation: pulse 2.4s ease-in-out infinite; }
 @keyframes pulse { 50% { fill: var(--cobalt-on-night); } }
 
+/* Side view (walking and climbing): the far arm and leg sit behind, a little faded; an ear bolt
+   on the side of his head; arms swing against the legs as he walks. */
+.far { opacity: 0.6; }
+.ear { fill: #fff; stroke: var(--ink); stroke-width: 1.8; }
+.earDot { fill: var(--cobalt); }
+.onDark .ear { stroke: #E4E7EE; }
+.motion .walking.sideLegs .legA { transform-origin: 38px 86px; }
+.motion .walking.sideLegs .legB { transform-origin: 44px 86px; }
+.motion .swingNear, .motion .swingFar { transform-box: view-box; animation: armSwing 0.36s ease-in-out infinite alternate; }
+.motion .swingNear { transform-origin: 43px 72px; }
+.motion .swingFar { transform-origin: 40px 72px; animation-delay: -0.18s; }
+@keyframes armSwing { from { transform: rotate(-24deg); } to { transform: rotate(24deg); } }
+
+/* On the floor he stands still: no sway from the rope, no dangling legs. Walking bobs him. */
+.motion.grounded .idle, .motion.grounded .legs { animation: none; }
+.motion .bob { animation: bob 0.18s ease-in-out infinite alternate; }
+@keyframes bob { to { transform: translateY(-1.6px); } }
+
 /* Slipping and falling: a free arm that flails, and a nervous shake. */
 .motion .flailB { transform-box: view-box; transform-origin: 67px 45px; animation: flailB 0.32s ease-in-out infinite alternate; }
 @keyframes flailB { from { transform: rotate(-16deg); } to { transform: rotate(14deg); } }
@@ -149,7 +245,7 @@
 .bubble {
   position: absolute;
   top: var(--by, 0px);
-  left: calc(var(--fx, 0px) + 82px * var(--s, 1) + 6px);
+  left: var(--bl, calc(var(--fx, 0px) + 82px * var(--s, 1) + 6px));
   width: max-content;
   max-width: 230px;
   padding: 8px 12px;
@@ -173,6 +269,8 @@
   background: var(--surface);
   transform: rotate(45deg);
 }
+/* Near the right edge of the screen the bubble opens to his left. */
+.flipBubble .bubble::before { left: auto; right: -6px; transform: rotate(225deg); }
 /* The full line reserves the bubble's size; the typed part is drawn over it. */
 .ghost { visibility: hidden; }
 .typed { position: absolute; top: 8px; left: 12px; right: 12px; }

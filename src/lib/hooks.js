@@ -13,6 +13,19 @@ export function useReducedMotion() {
   return reduced;
 }
 
+// True while the media query matches, e.g. useMediaQuery('(min-width: 1440px)'). Updates live.
+export function useMediaQuery(query) {
+  const [matches, setMatches] = useState(() => window.matchMedia(query).matches);
+  useEffect(() => {
+    const mq = window.matchMedia(query);
+    const onChange = () => setMatches(mq.matches);
+    onChange();
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, [query]);
+  return matches;
+}
+
 // Becomes true once the element has been on screen. Used to start an
 // explanatory animation when it can actually be seen, and only once.
 export function useInView(threshold = 0.35) {

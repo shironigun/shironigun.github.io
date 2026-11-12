@@ -174,7 +174,7 @@ function Block({ block, n }) {
       </figure>
     );
   }
-  if (block.family) return <Family parent={block.family} />;
+  if (block.family) return <div className={styles.wide}><Family parent={block.family} /></div>;
   if (block.cards) {
     return (
       <figure className={`${styles.figure} ${styles.wide}`}>
@@ -269,7 +269,10 @@ function Block({ block, n }) {
 }
 
 // Group the body into sections at each h2, so each section can be linked and the rope agent can
-// comment on it.
+// comment on it. Each section has a rail (its number and heading) and a flow (its blocks). In a
+// narrow column the rail sits above the flow; in a wide one it sits beside it and the heading
+// stays in view while its chapter is read, while figures still span the whole column.
+const pad = (n) => String(n).padStart(2, '0');
 export default function ArticleBody({ body }) {
   const figs = figureNumbers(body);
   const sections = [];
@@ -288,10 +291,19 @@ export default function ArticleBody({ body }) {
     <div className={styles.body}>
       {sections.map((s, i) => {
         const id = s.heading ? `s-${slugify(s.heading)}` : undefined;
+        // Chapters count from 01, as in the chapter list; the opening before the first one is 00.
+        const number = sections[0].heading ? i + 1 : i;
         return (
-          <section key={id || `intro-${i}`} className={styles.section} aria-labelledby={id}>
-            {s.heading && <h2 id={id}>{s.heading}</h2>}
-            {s.blocks.map((b, j) => <Block key={j} block={b} n={figs.get(b)} />)}
+          <section key={id || `intro-${i}`} className={`${styles.section} ${s.heading ? '' : styles.opening}`} aria-labelledby={id}>
+            <div className={styles.rail}>
+              <div className={styles.railInner}>
+                <span className={styles.chapNo} aria-hidden="true">{pad(number)}</span>
+                {s.heading ? <h2 id={id}>{s.heading}</h2> : <span className={styles.railLabel} aria-hidden="true">Opening</span>}
+              </div>
+            </div>
+            <div className={styles.flow}>
+              {s.blocks.map((b, j) => <Block key={j} block={b} n={figs.get(b)} />)}
+            </div>
           </section>
         );
       })}

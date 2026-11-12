@@ -45,7 +45,7 @@ Layout: `.container` is 1240 px wide plus gutters (`clamp(20px, 3vw, 40px)`). In
 | `/` | none (the rope agent is the visual) | Hero with the diagram carousel, recognition, highlights, talks and events band, six roles, journey timeline, featured case studies, achievements glance, operating model, testimonials |
 | `/projects` (old `/work` links redirect) | Sprint board, one card moving | A full-width projects board: kanban columns by workflow state, cards with a headline number, owner, tags and a quarter strip; a Roadmap tab with lanes by discipline and quarters by year. Any card opens the project in a popup (arrow keys step through, `/projects#slug` links straight to one) |
 | `/case-studies` | Case files under a magnifier | Long-form case studies, filterable |
-| `/case-studies/:slug` | By first tag: AI neural network, Quality gates, Design wireframe, Product roadmap | An article: headline, standfirst, the documents it produced (first thing a reader can open), byline with role, period and reading time, then prose sections with figures, photos (open full size), tables and pull quotes |
+| `/case-studies/:slug` | By first tag: AI neural network, Quality gates, Design wireframe, Product roadmap | An article: headline, standfirst, the documents it produced (first thing a reader can open), byline with role, period and reading time, then prose sections with figures, photos (open full size), tables and pull quotes. From 1,200 px the chapter list sticks beside the story; from 1,500 px it reads in three columns: every case study, the story, and the illustration with its chapters |
 | `/journey` (old `/achievements` links redirect) | Winding path with milestones | Recognition (undated awards), then every typed node since 2021, filterable: roles, projects, achievements, certifications, talks, workshops, events and courses |
 | `/about` | Skills radar | A profile record: a sticky panel (avatar, title, key fields, open-to-roles status, discipline tags, email, LinkedIn, résumé) and tabs: Overview (summary, headline numbers, product, activity from the journey highlights), Experience (career bar, expandable role records), Roles and skills (four pillars, skill and tool chips), Recognition (awards, certifications, education). The tab is kept in the hash (`/about#experience`). Testimonials follow below |
 | `/how-i-work` | Pipeline lighting stage by stage | Operating model, requirements example, design review, AI practice, principles, articles |
@@ -63,7 +63,7 @@ Every page except Contact ends with the call-to-action band, then the footer.
 | `PageHeader` | Breadcrumbs, title, lead, optional `art` illustration |
 | `HeaderArt` | The per-page illustrations; paused off screen, still under reduced motion |
 | `HeroCarousel` | Node diagrams, 3 s auto-advance, pause on hover, AI agents slide first (`src/content/heroSlides.js`) |
-| `Testimonials` | One verbatim quote per slide, 8 s, pause on hover |
+| `Testimonials` | Every verbatim quote side by side from 1,440 px; below that, one per slide, 8 s, pause on hover |
 | `CareerTimeline` | Journey highlights on Home |
 | `OperatingModel` | The six-stage model on How I work |
 | `ArticleBody` | Renders a case study article: sections at each h2, paragraphs, lists, figures, photos, tables, quotes |
@@ -92,7 +92,7 @@ Every page except Contact ends with the call-to-action band, then the footer.
 
 Lives in the app shell (`src/App.jsx`), so it appears on every page. Code: `src/components/RopeAgent.jsx` (behaviour), `AgentFigure.jsx` (drawing), `RopeAgent.module.css`. Lines: `src/content/agent.js`.
 
-**Placement.** It hangs in the free strip left of the content. Its size comes from the strip width, and it is hidden when the strip is too narrow (below about 1,350 px). The rope runs from under the header; its length follows scroll progress, from 24% to 60% of the window height.
+**Placement.** It hangs in the free strip left of the content. Its size comes from the strip width, and it is hidden when the strip is too narrow (below 1,100 px). The rope runs from under the header; its length follows scroll progress, from 24% to 60% of the window height.
 
 **Always-on behaviour.**
 
@@ -106,6 +106,37 @@ Lives in the app shell (`src/App.jsx`), so it appears on every page. Code: `src/
 | Theme switch | To dark: “Who turned off the lights?”, hides to just his eyes, jumps out with “BOO!”. To light: squints, “Ah! Too bright!” |
 | Dark background | Outline, limbs and rope turn light over any dark section or in dark mode; eyes glow in dark mode |
 | Scroll settles beside a section | Says that section’s line, once per section per visit, at most one line every 5 s |
+
+**His break.** Left alone for 3 s (no pointer movement, scrolling or typing) while on his rope, he says he is off ("Stretch break!"), swings onto the left wall, climbs down hand over hand and hops to the floor at the bottom of the window. His rope stays hanging where he left it. Then he does 4 to 6 activities, each picked at random and never twice in a row, before climbing back up on his own; after that he stays on the rope for at least 25 s.
+
+| Activity | What he does |
+|---|---|
+| Directing agents | Three mini AI agents pop up and trail behind him as he walks, then hop when he stops ("I direct. The agents build.") |
+| Roadmap | Puts up three sticky notes above his head, left to right: Now, Next, Later ("Now, next, later. Sorted.") |
+| Sketch | Reaches out and a wireframe draws itself beside him ("Sketch it before we build it.") |
+| Promo film | Raises a clapperboard, claps it ("Action!"), walks a slow tracking shot ("Cut! That's the one.") |
+| Handbook | Sits down with an open book whose pages turn ("Page 92 of 183. Good handbook.") |
+| Trophy | Raises the hackathon trophy with star eyes and two hops ("First of eleven teams!") |
+| Stroll | Walks 180 to 520 px towards the side with more room, sometimes with a line ("Walking the roadmap.") |
+| Hop, dance | Two hops ("Promoted in under two years. Boing!"); a side-to-side dance with arms up ("Launch day dance!") |
+| Sit, nap | Sits for a few seconds; after 30 s without pointer movement he may nap instead ("Five more minutes…") |
+| Peek | Climbs the nearer wall to 42% of the window height for the big picture, then jumps down |
+| Away | Walks off the right edge "to check the other screens" and comes back in from the left |
+
+His games act out Mahmood's current work (directing AI agents, roadmaps, design first, the promo films, the Claude handbook, the hackathon win), never QA chores. In development, `window.__rope.play('crew')` runs any one of them on demand (`crew`, `roadmap`, `sketch`, `film`, `read`, `trophy`, `stroll`, `hop`, `dance`, `sit`, `peek`, `away`, `comment`).
+
+| While on his break | Reaction |
+|---|---|
+| A fast swipe of the pointer near him (over 1.4 px/ms within 120 px) | Dodges 180 px, laughing ("Can't catch me!"); at most every 2.5 s |
+| A slow approach, hovering him | Waves from the floor ("Hi down here!"), at most every 8 s |
+| A click | "Break's over? Fine.", walks to the left wall, climbs up and grabs his rope again |
+| Scrolling | Someone is reading: he walks into the nearest side lane, sits, and carries on 6 s after the scrolling stops |
+| A page change | Carries on where he is ("New page! Let's look around."); the jump to the top of the new page doesn't count as scrolling |
+| A reload in the same tab | Starts on the floor where he was ("Still down here. Hi again!"); his state is kept in `sessionStorage` for 30 minutes |
+
+While walking, kicking or climbing a wall he is drawn side-on, a three-quarter view facing where he is going (his face screen turned that way, an ear bolt on the far side of his head, a near and a far arm and leg; mirrored to face left). Climbing, he faces the wall with his hands on it. Standing, sitting, waving, hopping and dancing he faces the viewer.
+
+Reduced motion, or a window too narrow for him, keeps him on his rope.
 
 **Clicks.** Every part of him is clickable. On the head, one unhurried click waits 300 ms and then he says a fact about Mahmood (`facts` in `src/content/agent.js`); clicks under 300 ms apart count towards the animations below. A pause of 3.5 s ends a streak.
 
@@ -147,6 +178,15 @@ Head clicks:
 | Documents and images | `public/documents/`, `public/certifications/`, `public/images/` |
 | Interactive exhibits (open in the viewer) | `public/labs/`: self-contained HTML, scrubbed of product names before it is added |
 
+## Résumés
+
+`node resume/build.mjs` rebuilds every résumé from `src/content` (experience, skills, tools, certifications, recognition and the live hours), so they never drift from the site:
+
+- `public/resumes/Mahmood_Ahmad_Resume_Light.pdf` and `_Dark.pdf`: A4, two pages, printed by headless Chrome (or Edge; set `CHROME_PATH` if neither is found). `Mahmood_Ahmad_Resume.pdf` is a copy of the light one for older links.
+- `resume/Mahmood_Ahmad_Resume.tex`: one page on Jake's Resume template. Its bullets are shorter than the site's and live in the script. Compile it in Overleaf (New Project, Upload Project) with pdfLaTeX.
+
+Rebuild after changing the experience, and never add a phone number or a location.
+
 ## Quality checks
 
-`scripts/qa-sweep.browser.js` checks every route at four widths. With the dev server running, open the site, paste the script into the browser console, and wait for `QA sweep` to print. It reports page overflow, h1 count, heading order, duplicate ids, missing alt text, unnamed controls, text under 12 px, raw document links, and any word listed in `docs/private/blocked-words.txt` (kept out of the public repo, one per line).
+`scripts/qa-sweep.browser.js` checks every route at five widths (360, 768, 1100, 1440 and 1920 px). With the dev server running, open the site, paste the script into the browser console, and wait for `QA sweep` to print. It reports page overflow, h1 count, heading order, duplicate ids, missing alt text, unnamed controls, text under 12 px, raw document links, and any word listed in `docs/private/blocked-words.txt` (kept out of the public repo, one per line).

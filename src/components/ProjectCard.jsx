@@ -22,9 +22,10 @@ export default function ProjectCard({ project }) {
   );
 }
 
-export function ProjectGrid({ projects }) {
+// `dense` adds a fourth column on very wide screens, for long lists such as the case studies page.
+export function ProjectGrid({ projects, dense }) {
   return (
-    <ul className={styles.grid}>
+    <ul className={`${styles.grid} ${dense ? styles.dense : ''}`}>
       {projects.map((p) => <li key={p.slug}><ProjectCard project={p} /></li>)}
     </ul>
   );

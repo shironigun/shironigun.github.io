@@ -27,6 +27,7 @@ const ARMS = {
   sit: [['M14 48 C14 66 30 74 48 74', 48, 74], ['M66 48 C66 66 50 76 32 76', 32, 76]],
 };
 const WAVE = ['M67 44 C76 39 76 28 72 20', 72, 18];
+const WAVE_STANDING = ['M66 48 C76 42 78 32 74 24', 74, 22];
 const LEGS = {
   hang: [['M34 86 Q33 94 31 99', 30, 100.5], ['M46 86 Q47 94 49 99', 50, 100.5]],
   fall: [['M34 86 Q30 93 25 97', 24, 98.5], ['M46 86 Q50 93 55 97', 56, 98.5]],
@@ -134,10 +135,79 @@ function Limb({ d, hx, hy, className = '' }) {
   );
 }
 
+// Side view, for walking and climbing: he faces where he is going (right; the figure is mirrored
+// to face left), with his face screen turned towards it, an ear bolt on the far side of his head,
+// and a near and a far arm and leg. The far ones sit behind his body.
+const SIDE = {
+  // [far arm, near arm] as [path, hand x, hand y]; [far leg, near leg] as [path, foot x, foot y]
+  stand: {
+    arms: [['M40 72 C39 77 39 82 40 86', 40, 88], ['M43 72 C44 77 44 82 43 86', 43, 88]],
+    legs: [['M38 86 Q38 93 37 99', 40, 100.5], ['M44 86 Q44 93 43 99', 46, 100.5]],
+  },
+  // Hands reach past his head to the wall (at x = 80), so his head never touches it.
+  wall: {
+    arms: [['M40 72 C54 66 66 56 75 44', 76, 42], ['M43 72 C56 70 67 62 75 52', 76, 50]],
+    legs: [['M38 86 Q47 92 55 96', 57, 97], ['M44 86 Q53 90 61 92', 63, 93]],
+  },
+};
+const FACE_TURN = 'translate(52 0) scale(0.68 1) translate(-40 0)'; // the front face, turned towards the right
+
+function SideBody({ pose, mood, blink, flags, refs }) {
+  const { arms, legs } = pose === 'wall' ? SIDE.wall : SIDE.stand;
+  const walking = flags.walking && pose !== 'wall';
+  const cheeks = ['hello', 'happy', 'love', 'starry', 'relieved', 'laugh'].includes(mood);
+  const climb = flags.climbing ? styles.climbing : '';
+  return (
+    <>
+      <g className={`${styles.far} ${walking ? styles.swingFar : ''} ${climb}`}>
+        <path className={styles.limb} d={arms[0][0]} />
+        <circle className={styles.hand} cx={arms[0][1]} cy={arms[0][2]} r="3.4" />
+      </g>
+      <g className={`${styles.legs} ${styles.sideLegs} ${walking ? styles.walking : ''} ${flags.kick ? styles.kick : ''}`}>
+        {legs.map(([d, fx, fy], i) => (
+          <g key={i} className={`${i ? styles.legB : styles.legA} ${i ? '' : styles.far}`}>
+            <path className={styles.limb} d={d} />
+            <ellipse className={styles.foot} cx={fx} cy={fy} rx="4.6" ry="2.6" />
+          </g>
+        ))}
+      </g>
+      <rect className={styles.torso} x="31" y="70" width="21" height="18" rx="8" />
+      <circle className={styles.badge} cx="46" cy="79" r="2.2" />
+      <g className={`${walking ? styles.swingNear : ''} ${climb} ${flags.climbing ? styles.climbB : ''}`}>
+        <path className={styles.limb} d={arms[1][0]} />
+        <circle className={styles.hand} cx={arms[1][1]} cy={arms[1][2]} r="3.8" />
+      </g>
+      <g className={styles.head}>
+        <rect className={styles.shell} x="15" y="22" width="56" height="48" rx="18" />
+        <circle className={styles.ear} cx="24" cy="46" r="5" />
+        <circle className={styles.earDot} cx="24" cy="46" r="1.8" />
+        <rect ref={refs.screen} className={styles.screen} x="37" y="27" width="30" height="37" rx="12" />
+        <circle className={styles.light} cx="46" cy="24.6" r="1.6" />
+        <g transform={FACE_TURN}>
+          <ellipse className={`${styles.cheek} ${cheeks ? styles.cheekOn : ''}`} cx="23.5" cy="53" rx="3.2" ry="2" />
+          <ellipse className={`${styles.cheek} ${cheeks ? styles.cheekOn : ''}`} cx="56.5" cy="53" rx="3.2" ry="2" />
+          <g className={styles.eyes}><Eyes mood={mood} blink={blink} /></g>
+          <Brows mood={mood} />
+          <g className={flags.talking ? styles.talking : ''}><Mouth mood={mood} /></g>
+        </g>
+      </g>
+      {mood === 'sleepy' && (
+        <g className={styles.zs}>
+          <text x="66" y="30">z</text>
+          <text x="72" y="22">z</text>
+        </g>
+      )}
+    </>
+  );
+}
+
 export default function AgentFigure({ pose, mood, blink, flags, refs, onPart, onEnter, onLeave }) {
-  const waving = pose === 'grip' && (mood === 'hello' || mood === 'happy');
+  // A raised hand holds a prop (a clapperboard, a trophy) or reaches to put up a note; otherwise
+  // he waves when happy, from the rope or standing on the floor (not mid-stride).
+  const raised = pose === 'stand' && (flags.clapper || flags.trophy || flags.reach);
+  const waving = !raised && (pose === 'grip' || (pose === 'stand' && !flags.walking)) && (mood === 'hello' || mood === 'happy');
   const [left, right] = ARMS[pose] || ARMS.grip;
-  const shownRight = waving ? WAVE : right;
+  const shownRight = raised ? WAVE_STANDING : waving ? (pose === 'stand' ? WAVE_STANDING : WAVE) : right;
   const legKind = pose === 'fall' || pose === 'wall' ? 'fall' : pose === 'sit' || pose === 'slump' ? 'sit' : 'hang';
   const legs = LEGS[legKind];
   const cheeks = ['hello', 'happy', 'love', 'starry', 'relieved', 'laugh'].includes(mood);
@@ -155,7 +225,12 @@ export default function AgentFigure({ pose, mood, blink, flags, refs, onPart, on
       <g ref={refs.swing} className={styles.swing}>
         <g className={styles.idle}>
           <g className={`${flags.shake ? styles.shake : ''} ${flags.laughing ? styles.laughing : ''}`}>
-            <g className={`${styles.main} ${flags.lurk ? styles.dim : ''} ${flags.pop ? styles.pop : ''}`}>
+            {flags.side ? (
+              <g className={`${styles.main} ${flags.walking ? styles.bob : ''}`}>
+                <SideBody pose={pose} mood={mood} blink={blink} flags={flags} refs={refs} />
+              </g>
+            ) : (
+            <g className={`${styles.main} ${flags.lurk ? styles.dim : ''} ${flags.pop ? styles.pop : ''} ${flags.walking ? styles.bob : ''}`}>
               <g className={`${styles.legs} ${flags.walking ? styles.walking : ''} ${flags.kick ? styles.kick : ''}`}>
                 {legs.map(([d, fx, fy], i) => (
                   <g key={i} className={i ? styles.legB : styles.legA}>
@@ -193,6 +268,34 @@ export default function AgentFigure({ pose, mood, blink, flags, refs, onPart, on
                 )}
               </g>
 
+              {/* Props for his games on the floor. */}
+              {flags.clapper && pose === 'stand' && (
+                <g className={flags.clap ? styles.clap : ''}>
+                  <rect className={styles.clapBoard} x="65" y="6" width="21" height="12" rx="1.5" />
+                  <path className={styles.clapLine} d="M68 11 H83 M68 14.5 H79" />
+                  <g className={styles.clapTop}>
+                    <rect className={styles.clapStripe} x="65" y="0.5" width="21" height="4.6" rx="1" />
+                    <path className={styles.clapBar} d="M69 0.5 L66.5 5.1 M74 0.5 L71.5 5.1 M79 0.5 L76.5 5.1 M84 0.5 L81.5 5.1" />
+                  </g>
+                </g>
+              )}
+              {flags.trophy && pose === 'stand' && (
+                <g className={styles.trophy}>
+                  <path className={styles.cup} d="M68 3 H80 V7 A6 6 0 0 1 68 7 Z" />
+                  <path className={styles.handles} d="M68 4.5 Q64.5 4.5 65 7.5 Q65.5 10 68.4 9.6 M80 4.5 Q83.5 4.5 83 7.5 Q82.5 10 79.6 9.6" />
+                  <rect className={styles.cup} x="73" y="12.6" width="2" height="4" />
+                  <rect className={styles.cup} x="70" y="16.4" width="8" height="2.6" rx="1" />
+                </g>
+              )}
+              {flags.book && pose === 'sit' && (
+                <g className={styles.book}>
+                  <path className={styles.page} d="M40 69 Q34 66.5 28.5 68.5 V78 Q34 76 40 78.6 Z" />
+                  <path className={styles.page} d="M40 69 Q46 66.5 51.5 68.5 V78 Q46 76 40 78.6 Z" />
+                  <path className={styles.pageLines} d="M31 71.5 Q34 70.6 37.5 71.6 M31 74.5 Q34 73.6 37.5 74.6 M42.5 71.6 Q46 70.6 49 71.5 M42.5 74.6 Q46 73.6 49 74.5" />
+                  <path className={`${styles.page} ${styles.turn}`} d="M40 69 Q46 66.5 51.5 68.5 V78 Q46 76 40 78.6 Z" />
+                </g>
+              )}
+
               {(mood === 'stressed' || mood === 'relieved' || mood === 'wince') && <path className={styles.sweat} d="M65 23 Q68.6 28.6 65 30.8 Q61.4 28.6 65 23 Z" />}
               {mood === 'dizzy' && (
                 <g className={styles.orbit}>
@@ -222,6 +325,7 @@ export default function AgentFigure({ pose, mood, blink, flags, refs, onPart, on
                 </g>
               )}
             </g>
+            )}
 
             {/* In the dark he hides, all but his eyes. */}
             {flags.lurk && (
@@ -231,6 +335,11 @@ export default function AgentFigure({ pose, mood, blink, flags, refs, onPart, on
               </g>
             )}
 
+            {flags.side ? (
+              <g className={styles.hits} onPointerEnter={onEnter} onPointerLeave={onLeave}>
+                <rect className={styles.hit} x="12" y="20" width="62" height="84" rx="16" onClick={part('head')} />
+              </g>
+            ) : (
             <g className={styles.hits} onPointerEnter={onEnter} onPointerLeave={onLeave}>
               <rect className={styles.hit} x={lx} y={ly} width={lw} height={lh} onClick={part('leg')} />
               <rect className={styles.hit} x="26" y="68" width="28" height="22" onClick={part('belly')} />
@@ -244,6 +353,7 @@ export default function AgentFigure({ pose, mood, blink, flags, refs, onPart, on
                 <circle className={styles.hit} cx={shownRight[1]} cy={shownRight[2]} r="7" />
               </g>
             </g>
+            )}
           </g>
         </g>
       </g>

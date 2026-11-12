@@ -39,7 +39,6 @@ His role on each project, exactly as the site records it. Promise Tracker (led; 
 ## Not on the site, worth keeping
 
 - The AI QA hackathon (organised for the QA team, with the design team included): sessions covered AI fundamentals, the Claude ecosystem, Skills, MCP servers, agents, tooling, workflows and plugins, with a live example on Azure DevOps MCP servers, and a Skill he wrote that drafts test cases in his own house style.
-- Résumé PDFs in `public/resumes/` still print his city; replace them with versions that leave it out.
 
 ---
 
@@ -68,9 +67,8 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 - Email: mehmood4129@gmail.com
 - LinkedIn: https://www.linkedin.com/in/shironigun
 - GitHub: https://github.com/shironigun
-- WhatsApp: https://wa.me/923147369673
 - Public plugin marketplace: https://github.com/shironigun/claude-marketplace
-- Résumés: `public/resumes/Mahmood_Ahmad_Resume_Light.pdf`, `public/resumes/Mahmood_Ahmad_Resume_Dark.pdf`
+- Résumés: `public/resumes/Mahmood_Ahmad_Resume_Light.pdf`, `public/resumes/Mahmood_Ahmad_Resume_Dark.pdf`, and a one-page LaTeX version on Jake's Resume template, `resume/Mahmood_Ahmad_Resume.tex`, all built by `node resume/build.mjs` from the site's content (no phone number, no location)
 
 ## The product he works on (as described publicly)
 

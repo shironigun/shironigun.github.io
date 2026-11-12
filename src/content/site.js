@@ -16,7 +16,6 @@ export const person = {
 export const contact = {
   email: 'mehmood4129@gmail.com',
   linkedin: 'https://www.linkedin.com/in/shironigun',
-  whatsapp: 'https://wa.me/923147369673',
   github: 'https://github.com/shironigun',
   pluginRepo: 'https://github.com/shironigun/claude-marketplace',
   resumeLight: '/resumes/Mahmood_Ahmad_Resume_Light.pdf',

@@ -217,6 +217,19 @@
 
 .photo { width: 100%; max-width: 560px; height: 220px; object-fit: cover; object-position: center 25%; margin-top: var(--s-1); border-radius: var(--radius); border: 1px solid var(--night-line); }
 
+/* Wide screens: the text takes a longer line, and a photo sits beside it instead of under it. The
+   last row takes any spare height, so the text stays together at the top. */
+@media (min-width: 1280px) {
+  .detail { max-width: 78ch; }
+  .card:has(> .photo) {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 38%);
+    grid-template-rows: repeat(5, auto) 1fr;
+    column-gap: var(--s-6);
+  }
+  .card:has(> .photo) > :not(.photo) { grid-column: 1; }
+  .card:has(> .photo) > .photo { grid-column: 2; grid-row: 1 / span 6; max-width: none; height: 100%; min-height: 180px; margin-top: 0; }
+}
+
 /* Responsive */
 @media (max-width: 1100px) {
   .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }

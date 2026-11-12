@@ -1,16 +1,34 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { useReducedMotion } from '../lib/hooks';
+import { useMediaQuery, useReducedMotion } from '../lib/hooks';
 import { testimonials } from '../content/profile';
 import { ChevronIcon } from './Icons';
 import styles from './Testimonials.module.css';
 
-// A plain testimonial carousel: one card at a time, sliding sideways, with the height following
-// the card in view. Arrows, dots and swipe move it; it also advances every eight seconds, except
-// while hovered, focused, paused or with reduced motion. Quotes are verbatim and complete.
+// Testimonials. On wide screens every card shows at once, side by side. Otherwise it is a plain
+// carousel: one card at a time, sliding sideways, with the height following the card in view.
+// Arrows, dots and swipe move it; it also advances every eight seconds, except while hovered,
+// focused, paused or with reduced motion. Quotes are verbatim and complete.
 const INTERVAL = 8000;
+
+function Card({ t }) {
+  return (
+    <figure className={styles.card}>
+      <svg className={styles.mark} viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V22C0 9.6 6.4 2.3 19.2 0l2 4.8C13.9 6.7 10.4 10.8 10 17h9v19H0Zm27 0V22C27 9.6 33.4 2.3 46.2 0l1.8 4.8C40.9 6.7 37.4 10.8 37 17h9v19H27Z" /></svg>
+      <blockquote className={styles.quote}>{t.quote}</blockquote>
+      <figcaption className={styles.author}>
+        <img src={t.photo} alt="" width="44" height="44" loading="lazy" />
+        <span>
+          <strong>{t.name}</strong>
+          <span>{t.role}</span>
+        </span>
+      </figcaption>
+    </figure>
+  );
+}
 
 export default function Testimonials() {
   const reduced = useReducedMotion();
+  const wall = useMediaQuery('(min-width: 1440px)');
   const count = testimonials.length;
   const [index, setIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
@@ -21,7 +39,7 @@ export default function Testimonials() {
   const touchX = useRef(null);
 
   const go = (i) => setIndex(((i % count) + count) % count);
-  const running = !reduced && !paused && !hovered && !focused;
+  const running = !wall && !reduced && !paused && !hovered && !focused;
 
   useEffect(() => {
     if (!running) return;
@@ -38,7 +56,15 @@ export default function Testimonials() {
     const ro = new ResizeObserver(measure);
     ro.observe(el);
     return () => ro.disconnect();
-  }, [index]);
+  }, [index, wall]);
+
+  if (wall) {
+    return (
+      <ul className={styles.wall} style={{ '--n': count }} aria-label="Recommendations from colleagues">
+        {testimonials.map((t) => <li key={t.name}><Card t={t} /></li>)}
+      </ul>
+    );
+  }
 
   return (
     <section
@@ -73,17 +99,7 @@ export default function Testimonials() {
               aria-hidden={i !== index}
               inert={i !== index}
             >
-              <figure className={styles.card}>
-                <svg className={styles.mark} viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V22C0 9.6 6.4 2.3 19.2 0l2 4.8C13.9 6.7 10.4 10.8 10 17h9v19H0Zm27 0V22C27 9.6 33.4 2.3 46.2 0l1.8 4.8C40.9 6.7 37.4 10.8 37 17h9v19H27Z" /></svg>
-                <blockquote className={styles.quote}>{t.quote}</blockquote>
-                <figcaption className={styles.author}>
-                  <img src={t.photo} alt="" width="44" height="44" loading="lazy" />
-                  <span>
-                    <strong>{t.name}</strong>
-                    <span>{t.role}</span>
-                  </span>
-                </figcaption>
-              </figure>
+              <Card t={t} />
             </li>
           ))}
         </ul>

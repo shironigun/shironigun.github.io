@@ -55,8 +55,10 @@
   --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
   --section-y: clamp(56px, 3vw + 36px, 96px);
 
-  /* Layout */
+  /* Layout. From 1100px wide, content takes the whole width except a strip each side just
+     wide enough for the rope agent (RopeAgent.jsx), so the page uses the screen. */
   --container: 1240px;
+  --rope: 96px;
   --gutter: clamp(20px, 3vw, 40px);
   --prose: 68ch;
 
@@ -172,6 +174,10 @@ ul, ol { margin: 0; padding: 0; }
 }
 
 ::selection { background: var(--cobalt-wash); color: var(--ink); }
+
+@media (min-width: 1100px) {
+  :root { --container: min(2400px, calc(100vw - 2 * var(--rope))); }
+}
 
 /* ─── Utilities ──────────────────────────────────────────────────── */
 .container {

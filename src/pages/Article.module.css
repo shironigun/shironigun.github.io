@@ -39,3 +39,38 @@
 .article { position: relative; isolation: isolate; }
 .art { top: 0 !important; right: 0 !important; height: 300px !important; width: min(40%, 460px) !important; }
 @media (max-width: 900px) { .art { display: none; } }
+
+/* The other perspectives, after the text (beside it on wide screens). */
+.aside { margin-top: var(--s-8); }
+.more { max-width: var(--prose); padding: var(--s-5); border: 1px solid var(--hairline); border-radius: var(--radius-lg); background: var(--surface); }
+.more h2 { font-family: var(--font-body); font-size: var(--text-md); font-weight: 650; letter-spacing: 0; color: var(--ink); }
+.more ul { list-style: none; display: grid; gap: var(--s-4); margin-top: var(--s-4); padding: 0; }
+.more a { font-family: var(--font-display); font-size: var(--text-base); font-weight: 600; line-height: 1.35; color: var(--ink); text-decoration: none; }
+.more a:hover { color: var(--cobalt-text); text-decoration: underline; text-underline-offset: 3px; }
+.more span { display: block; margin-top: 4px; font-size: var(--text-sm); color: var(--quiet); }
+
+/* Wide screens: text on the left, the illustration and the other perspectives beside it, sticking
+   while the text scrolls. */
+@media (min-width: 1280px) {
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 760px) minmax(320px, 600px);
+    justify-content: space-between;
+    column-gap: clamp(48px, 6vw, 120px);
+    align-items: start;
+  }
+  .aside { position: sticky; top: 96px; margin-top: var(--s-5); }
+  .art {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 640 / 400;
+    margin-bottom: var(--s-5);
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+  .more { max-width: none; }
+}
+@media (min-width: 1700px) {
+  .body p { font-size: 1.125rem; }
+}

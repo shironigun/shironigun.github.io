@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useDocumentTitle } from '../lib/router';
 import { parentOf, projectPages } from '../content/projects';
 import { useStudy } from '../content/caseStudies';
@@ -11,13 +11,55 @@ import { BookIcon, ChevronIcon } from '../components/Icons';
 import NotFound from './NotFound';
 import styles from './CaseStudy.module.css';
 
+// Every case study, with each plugin under the marketplace that owns it. Wide screens only: it fills
+// the left of the page and lets a reader move between stories without going back to the list.
+function CaseShelf({ current }) {
+  const box = useRef(null);
+  // Bring the open story into view inside the list, without moving the page.
+  useEffect(() => {
+    const here = box.current?.querySelector('[aria-current="page"]');
+    if (here) box.current.scrollTop = Math.max(0, here.offsetTop - box.current.clientHeight / 3);
+  }, [current]);
+  const kids = (slug) => projectPages.filter((p) => p.parent === slug);
+  const item = (p) => (
+    <Link to={`/case-studies/${p.slug}`} aria-current={p.slug === current ? 'page' : undefined}>{p.name}</Link>
+  );
+  return (
+    <nav ref={box} className={styles.shelf} aria-labelledby="shelf-title">
+      <h2 id="shelf-title" className={styles.tocTitle}>Case studies</h2>
+      <ul className={styles.shelfList}>
+        {projectPages.filter((p) => !p.parent).map((p) => (
+          <li key={p.slug}>
+            {item(p)}
+            {kids(p.slug).length > 0 && <ul>{kids(p.slug).map((c) => <li key={c.slug}>{item(c)}</li>)}</ul>}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
 // A case study is an article: headline and standfirst, then any documents it produced (so a
 // presentation or report is the first thing a reader can open), the byline, and the story itself.
+// On wide screens it reads in three columns: every case study, the story, and its chapters.
 export default function Project({ slug }) {
   const index = projectPages.findIndex((p) => p.slug === slug);
   const project = projectPages[index];
   const { study, loading, failed } = useStudy(project ? slug : null);
   useDocumentTitle(project ? `${project.name}: Mahmood Ahmad` : 'Page not found: Mahmood Ahmad');
+  // The chapter in view, so the sidebar can show where the reader is.
+  const [activeChapter, setActiveChapter] = useState(null);
+  useEffect(() => {
+    if (!study) return undefined;
+    const heads = [...document.querySelectorAll('article h2[id^="s-"]')];
+    if (!heads.length) return undefined;
+    const io = new IntersectionObserver((entries) => {
+      const hit = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (hit) setActiveChapter(hit.target.id);
+    }, { rootMargin: '-80px 0px -65% 0px' });
+    heads.forEach((h) => io.observe(h));
+    return () => io.disconnect();
+  }, [study]);
   // The story arrives after the router has already tried the address's chapter link, so try it again.
   useEffect(() => {
     if (!study || !window.location.hash) return;
@@ -27,17 +69,17 @@ export default function Project({ slug }) {
   if (!study) {
     return (
       <article className={styles.article}>
-        <header className={styles.header}>
-          <div className={`container ${styles.headInner}`}>
+        <div className={`container ${styles.layout}`}>
+          <header className={styles.header}>
             <p className={styles.kicker}><span className={styles.kickerName}>{project.name}</span></p>
             <h1 className={styles.title}>{project.question}</h1>
             <p className={styles.standfirst}>{project.page.lead}</p>
+          </header>
+          <div className={styles.main}>
+            <p role="status" className={styles.loading}>
+              {failed ? 'This story didn’t load. Check your connection and refresh the page.' : 'Loading the story…'}
+            </p>
           </div>
-        </header>
-        <div className={`container ${styles.bodyWrap}`}>
-          <p role="status" className={styles.loading}>
-            {failed ? 'This story didn’t load. Check your connection and refresh the page.' : 'Loading the story…'}
-          </p>
         </div>
       </article>
     );
@@ -54,12 +96,12 @@ export default function Project({ slug }) {
   const toc = chapters(study.body);
   // A plugin belongs to the marketplace: the breadcrumb and kicker say so, and its siblings follow the story.
   const parent = parentOf(project);
+  const hasToc = toc.length >= 4;
 
   return (
     <article className={styles.article}>
-      <header className={styles.header}>
-        <HeaderArt kind={artForTags(project.tags)} className={styles.art} />
-        <div className={`container ${styles.headInner}`}>
+      <div className={`container ${styles.layout} ${hasToc ? styles.withToc : ''}`}>
+        <header className={styles.header}>
           <nav aria-label="Breadcrumb" className={styles.crumbs}>
             <ol>
               <li><Link to="/">Home</Link></li>
@@ -116,24 +158,34 @@ export default function Project({ slug }) {
               <a href={project.href} target="_blank" rel="noopener" className="btn btn-secondary">View on GitHub<ChevronIcon width="16" height="16" /></a>
             </p>
           )}
-        </div>
-      </header>
+        </header>
 
-      <div className={`container ${styles.bodyWrap}`}>
-        {toc.length >= 4 && (
-          <nav className={styles.toc} aria-labelledby="toc-title">
-            <h2 id="toc-title" className={styles.tocTitle}>In this story</h2>
-            <ol className={styles.tocList}>
-              {toc.map((c) => <li key={c.id}><Link to={`/case-studies/${slug}#${c.id}`}>{c.title}</Link></li>)}
-            </ol>
-          </nav>
-        )}
-        <ArticleBody body={study.body} />
-        {parent && (
-          <aside className={styles.siblings} aria-label={`More from the ${parent.name}`}>
-            <Family parent={parent.slug} current={slug} title={`More from the ${parent.name}`} />
-          </aside>
-        )}
+        <div className={styles.side}>
+          <HeaderArt kind={artForTags(project.tags)} className={styles.art} />
+          {hasToc && (
+            <nav className={styles.toc} aria-labelledby="toc-title">
+              <h2 id="toc-title" className={styles.tocTitle}>In this story</h2>
+              <ol className={styles.tocList}>
+                {toc.map((c) => (
+                  <li key={c.id}>
+                    <Link to={`/case-studies/${slug}#${c.id}`} aria-current={activeChapter === c.id ? 'location' : undefined}>{c.title}</Link>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+        </div>
+
+        <div className={styles.main}>
+          <ArticleBody body={study.body} />
+          {parent && (
+            <aside className={styles.siblings} aria-label={`More from the ${parent.name}`}>
+              <Family parent={parent.slug} current={slug} title={`More from the ${parent.name}`} />
+            </aside>
+          )}
+        </div>
+
+        <CaseShelf current={slug} />
       </div>
 
       <nav className={styles.pager} aria-label="More case studies">

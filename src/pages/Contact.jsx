@@ -1,7 +1,7 @@
 import { Link, useDocumentTitle } from '../lib/router';
 import PageHeader from '../components/PageHeader';
 import { DocButton } from '../components/DocumentViewer';
-import { DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon, WhatsAppIcon } from '../components/Icons';
+import { DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon } from '../components/Icons';
 import { contact, person } from '../content/site';
 import styles from './Pages.module.css';
 
@@ -18,7 +18,6 @@ export default function Contact() {
             <div className={styles.contactActions}>
               <a href={`mailto:${contact.email}`} className="btn btn-primary"><MailIcon />Email me</a>
               <a href={contact.linkedin} target="_blank" rel="noopener" className="btn btn-secondary"><LinkedInIcon />LinkedIn</a>
-              <a href={contact.whatsapp} target="_blank" rel="noopener" className="btn btn-secondary"><WhatsAppIcon />WhatsApp</a>
             </div>
             <p className={styles.muted}>{contact.email}</p>
           </div>

@@ -1,6 +1,6 @@
 /* The plugins of a parent project. Classes are doubled where an article's list and link rules would
    otherwise win. */
-.family { width: min(960px, calc(100vw - 2 * var(--gutter))); margin-left: 50%; transform: translateX(-50%); }
+.family { width: 100%; }
 .title {
   margin: 0 0 var(--s-4);
   font-family: var(--font-display);
@@ -10,7 +10,7 @@
 }
 .grid.grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: var(--s-4);
   padding: 0;
   list-style: none;
@@ -42,5 +42,3 @@
 .kpi strong { font-family: var(--font-display); font-size: 1.125rem; color: var(--cobalt-text); }
 .more { display: inline-flex; align-items: center; gap: 4px; margin-top: 4px; font-size: var(--text-sm); font-weight: 600; color: var(--cobalt-text); }
 
-@media (max-width: 900px) { .grid.grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .grid.grid { grid-template-columns: minmax(0, 1fr); } }
