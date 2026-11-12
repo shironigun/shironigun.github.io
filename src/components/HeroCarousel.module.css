@@ -41,7 +41,9 @@
 .caption { margin-top: 2px; color: var(--graphite); font-size: var(--text-sm); line-height: 1.5; max-width: 46ch; }
 .slideFoot :global(.link-quiet) { flex: none; font-size: var(--text-sm); }
 
-/* Stage: a fixed 560 x 360 drawing that scales with the card. */
+/* Stage: a 560 x 360 drawing that scales with the card. Nodes sit at percentages and the wires
+   stretch with the stage (strokes keep their width), so the stage can take any shape: on wide
+   screens it fills whatever height the hero text sets. */
 .stage {
   position: relative;
   aspect-ratio: 560 / 360;
@@ -51,6 +53,7 @@
     linear-gradient(180deg, var(--surface), var(--paper));
 }
 .wires { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.wires * { vector-effect: non-scaling-stroke; }
 .orbit { fill: none; stroke: var(--hairline-strong); stroke-width: 1.2; stroke-dasharray: 2 6; }
 .wire { fill: none; stroke: var(--hairline-strong); stroke-width: 1.4; }
 .flow { fill: none; stroke: #9AABEE; stroke-width: 1.6; stroke-dasharray: 5 6; animation: march 1.1s linear infinite; }
@@ -194,6 +197,15 @@
 @container (max-width: 420px) {
   .card { display: none; }
   .nodeText small, .hub small, .typing { display: none; }
+}
+
+/* Wide screens: the carousel is exactly as tall as the hero text beside it; the stage gives or
+   takes the difference. */
+@media (min-width: 1280px) {
+  .carousel { height: 100%; grid-template-rows: minmax(0, 1fr) auto; }
+  .viewport { min-height: 0; grid-template-rows: minmax(0, 1fr); }
+  .slide { grid-template-rows: auto minmax(0, 1fr) auto; }
+  .stage { aspect-ratio: auto; min-height: 240px; }
 }
 
 @media (max-width: 600px) {

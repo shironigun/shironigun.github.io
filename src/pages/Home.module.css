@@ -233,7 +233,8 @@
 /* Wide screens: the hero's words grow with the screen, so the left column carries as much weight
    as the carousel beside it, and the gap between them stays even. */
 @media (min-width: 1280px) {
-  .heroGrid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); column-gap: clamp(56px, 4.5vw, 96px); }
+  .heroGrid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); column-gap: clamp(56px, 4.5vw, 96px); align-items: stretch; }
+  .heroText { align-content: center; }
   .heroText { gap: clamp(20px, 1.6vw, 32px); }
   .heroTitle { max-width: 12.5ch; font-size: clamp(3.5rem, 0.5rem + 3.7vw, 5.5rem); }
   .heroSupport { max-width: 32em; font-size: clamp(1.125rem, 0.72rem + 0.5vw, 1.4rem); }

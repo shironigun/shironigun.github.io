@@ -84,7 +84,7 @@ function Diagram({ slide, animate }) {
   );
   return (
     <div className={`${styles.stage} ${slide.cycle ? styles.cycle : ''}`} aria-hidden="true">
-      <svg className={styles.wires} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet">
+      <svg className={styles.wires} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none">
         {slide.orbit && <ellipse className={styles.orbit} cx={slide.orbit.cx} cy={slide.orbit.cy} rx={slide.orbit.rx} ry={slide.orbit.ry} />}
         {slide.loop && <path className={styles.flow} d={slide.loop} />}
         {(slide.paths || []).map((d) => <path key={d} className={styles.flow} d={d} />)}

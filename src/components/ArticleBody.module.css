@@ -191,41 +191,20 @@
 }
 .further a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-/* A wide story column: each chapter's number and heading sit in a rail on the left and stay in
-   view while the chapter is read; the text fills the rest. Figures, tables and films run across
-   the rail too, so they keep the whole width, and pass over the heading as they scroll by. */
+/* A wide story column: every chapter fills it. The number and heading sit above the text, the
+   text runs the whole width, and a hairline separates one chapter from the next. The type steps up
+   as the column widens, so long lines stay comfortable to read. */
 @container story (min-width: 880px) {
-  .section {
-    --rail: clamp(180px, 25cqi, 300px);
-    --gap: clamp(32px, 4.5cqi, 64px);
-    display: grid;
-    grid-template-columns: var(--rail) minmax(0, 1fr);
-    column-gap: var(--gap);
-  }
   .section + .section { margin-top: clamp(44px, 5cqi, 64px); padding-top: clamp(32px, 4cqi, 44px); border-top: 1px solid var(--hairline); }
   .rail, .flow > *, .wide figcaption { max-width: none; margin-inline: 0; }
-  .rail + .flow, .opening .rail + .flow { margin-top: 0; }
-  .opening .rail { display: block; }
-  .railInner { position: sticky; top: 92px; padding-top: 4px; }
-  .chapNo { margin-bottom: 8px; font-size: 0.875rem; }
-  .flow > .wide {
-    position: relative;
-    z-index: 1;
-    width: auto;
-    margin-left: calc(-1 * (var(--rail) + var(--gap)));
-    background: var(--paper);
-    box-shadow: 0 0 0 12px var(--paper);
-  }
-  .flow > .wide:first-child { margin-left: 0; }
-  .wide figcaption { max-width: var(--measure); }
+  .chapNo { margin-bottom: 6px; font-size: 0.875rem; }
+  .section p, .section li { font-size: 1.125rem; line-height: 1.75; }
+}
+@container story (min-width: 1040px) {
+  .section p, .section li { font-size: 1.1875rem; }
+  .section h2 { font-size: 1.875rem; }
 }
 
-/* Big screens: slightly larger type, so the reading column grows with the screen while each line
-   keeps the same number of words. */
-@media (min-width: 1700px) {
-  .body { --measure: 780px; }
-  .section p, .section li { font-size: 1.125rem; }
-}
 
 @media (max-width: 640px) {
   .pair { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); }

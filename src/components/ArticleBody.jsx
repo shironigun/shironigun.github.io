@@ -269,9 +269,8 @@ function Block({ block, n }) {
 }
 
 // Group the body into sections at each h2, so each section can be linked and the rope agent can
-// comment on it. Each section has a rail (its number and heading) and a flow (its blocks). In a
-// narrow column the rail sits above the flow; in a wide one it sits beside it and the heading
-// stays in view while its chapter is read, while figures still span the whole column.
+// comment on it. Each section has a rail (its number and heading) above a flow (its blocks). In a
+// wide column both fill the whole width.
 const pad = (n) => String(n).padStart(2, '0');
 export default function ArticleBody({ body }) {
   const figs = figureNumbers(body);
