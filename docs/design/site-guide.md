@@ -42,7 +42,7 @@ Layout: `.container` is 1240 px wide plus gutters (`clamp(20px, 3vw, 40px)`). In
 
 | Route | Header illustration | What it holds |
 |---|---|---|
-| `/` | none (the rope agent is the visual) | Hero with the diagram carousel, recognition, highlights, talks and events band, six roles, journey timeline, featured case studies, achievements glance, operating model, testimonials |
+| `/` | none (the rope agent is the visual) | Hero with his cut-out photo, recognition, highlights, Selected work (the diagram carousel with its slide list), talks and events band, six roles, journey timeline, featured case studies, achievements glance, operating model, testimonials |
 | `/projects` (old `/work` links redirect) | Sprint board, one card moving | A full-width projects board: kanban columns by workflow state, cards with a headline number, owner, tags and a quarter strip; a Roadmap tab with lanes by discipline and quarters by year. Any card opens the project in a popup (arrow keys step through, `/projects#slug` links straight to one) |
 | `/case-studies` | Case files under a magnifier | Long-form case studies, filterable |
 | `/case-studies/:slug` | By first tag: AI neural network, Quality gates, Design wireframe, Product roadmap | An article: headline, standfirst, the documents it produced (first thing a reader can open), byline with role, period and reading time, then prose sections with figures, photos (open full size), tables and pull quotes. From 1,200 px the chapter list sticks beside the story; from 1,500 px it reads in three columns: every case study, the story, and the illustration with its chapters |
@@ -62,7 +62,7 @@ Every page except Contact ends with the call-to-action band, then the footer.
 | `Nav` | Sticky header with a reading-progress bar; résumé opens in the viewer |
 | `PageHeader` | Breadcrumbs, title, lead, optional `art` illustration |
 | `HeaderArt` | The per-page illustrations; paused off screen, still under reduced motion |
-| `HeroCarousel` | Node diagrams, 3 s auto-advance, pause on hover, AI agents slide first (`src/content/heroSlides.js`) |
+| `WorkCarousel` | Node diagrams, 3 s auto-advance, pause on hover, AI agents slide first (`src/content/workSlides.js`); takes `index`, `onIndexChange` and `hold` so the Selected work list on the home page can drive it |
 | `Testimonials` | Every verbatim quote side by side from 1,440 px; below that, one per slide, 8 s, pause on hover |
 | `CareerTimeline` | Journey highlights on Home |
 | `OperatingModel` | The six-stage model on How I work |
@@ -175,7 +175,7 @@ Head clicks:
 | Talks, events, achievements (Home and footer) | `src/content/achievements.js`; the Journey timeline is `src/content/journey.js` |
 | Operating model, principles, AI practice | `src/content/method.js` |
 | Agent lines | `src/content/agent.js` |
-| Documents and images | `public/documents/`, `public/certifications/`, `public/images/` |
+| Documents and images | `public/documents/`, `public/certifications/`, `public/images/` (event photos in `events/`, his hero cut-out in `portrait/`) |
 | Interactive exhibits (open in the viewer) | `public/labs/`: self-contained HTML, scrubbed of product names before it is added |
 
 ## Résumés

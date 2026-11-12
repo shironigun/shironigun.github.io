@@ -1,12 +1,10 @@
-/* Hero carousel: a card holding one node diagram at a time, in the style of the QA plugin deck. */
+/* Work carousel: a card holding one node diagram at a time, in the style of the QA plugin deck. */
 .carousel {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   min-width: 0;
   gap: var(--s-3);
-  animation: rise var(--dur-slow) var(--ease) both;
-  animation-delay: 160ms;
 }
 
 .viewport { display: grid; grid-template-columns: minmax(0, 1fr); }
@@ -42,8 +40,7 @@
 .slideFoot :global(.link-quiet) { flex: none; font-size: var(--text-sm); }
 
 /* Stage: a 560 x 360 drawing that scales with the card. Nodes sit at percentages and the wires
-   stretch with the stage (strokes keep their width), so the stage can take any shape: on wide
-   screens it fills whatever height the hero text sets. */
+   stretch with the stage (strokes keep their width). */
 .stage {
   position: relative;
   aspect-ratio: 560 / 360;
@@ -197,15 +194,6 @@
 @container (max-width: 420px) {
   .card { display: none; }
   .nodeText small, .hub small, .typing { display: none; }
-}
-
-/* Wide screens: the carousel is exactly as tall as the hero text beside it; the stage gives or
-   takes the difference. */
-@media (min-width: 1280px) {
-  .carousel { height: 100%; grid-template-rows: minmax(0, 1fr) auto; }
-  .viewport { min-height: 0; grid-template-rows: minmax(0, 1fr); }
-  .slide { grid-template-rows: auto minmax(0, 1fr) auto; }
-  .stage { aspect-ratio: auto; min-height: 240px; }
 }
 
 @media (max-width: 600px) {

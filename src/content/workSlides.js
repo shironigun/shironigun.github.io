@@ -1,4 +1,4 @@
-// Slides for the hero carousel. Each one is a small node diagram of a project, drawn on a
+// Slides for the work carousel on the home page. Each one is a small node diagram of a project, drawn on a
 // 560 x 360 stage. Coordinates are stage pixels; the stage scales with its container.
 //
 // node kinds: pill (default), accent (gated or key step), person
@@ -6,7 +6,7 @@
 // edges: [fromId, toId, { curve, flow }]   flow = animated dashes
 import { hoursText } from './hours';
 
-export const heroSlides = [
+export const workSlides = [
   {
     id: 'marketplace',
     label: 'Public on GitHub',

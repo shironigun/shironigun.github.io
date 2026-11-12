@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from '../lib/router';
 import { useReducedMotion } from '../lib/hooks';
-import { heroSlides } from '../content/heroSlides';
+import { workSlides } from '../content/workSlides';
 import { CheckIcon, ChevronIcon, PersonIcon } from './Icons';
-import styles from './HeroCarousel.module.css';
+import styles from './WorkCarousel.module.css';
 
-// The hero carousel: one node diagram per project. A slide advances every three seconds,
+// The work carousel on the home page: one node diagram per project. Pass `index` and
+// `onIndexChange` to drive it from outside (the list beside it); otherwise it keeps its own
+// place. A slide advances every three seconds,
 // timed by the progress bar's own animation so that pausing (hover, keyboard focus, the pause
 // button or the carousel leaving the screen) resumes exactly where it stopped. With reduced
 // motion nothing moves on its own. Diagrams are decorative; each slide's title and caption
@@ -126,15 +128,17 @@ function Diagram({ slide, animate }) {
   );
 }
 
-export default function HeroCarousel() {
+export default function WorkCarousel({ index: controlled, onIndexChange, hold = false }) {
   const reduced = useReducedMotion();
-  const [index, setIndex] = useState(0);
+  const [own, setOwn] = useState(0);
+  const index = controlled ?? own;
+  const setIndex = onIndexChange ?? setOwn;
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [paused, setPaused] = useState(false);
   const [onScreen, setOnScreen] = useState(true);
   const rootRef = useRef(null);
-  const count = heroSlides.length;
+  const count = workSlides.length;
 
   useEffect(() => {
     const el = rootRef.current;
@@ -144,7 +148,7 @@ export default function HeroCarousel() {
     return () => io.disconnect();
   }, []);
 
-  const running = !reduced && !paused && !hovered && !focused && onScreen;
+  const running = !reduced && !paused && !hovered && !focused && !hold && onScreen;
   const go = (i) => setIndex((i + count) % count);
 
   return (
@@ -159,7 +163,7 @@ export default function HeroCarousel() {
       onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false); }}
     >
       <div className={styles.viewport} aria-live={running ? 'off' : 'polite'}>
-        {heroSlides.map((s, i) => (
+        {workSlides.map((s, i) => (
           <div
             key={s.id}
             className={styles.slide}
@@ -191,7 +195,7 @@ export default function HeroCarousel() {
           <ChevronIcon width="18" height="18" style={{ transform: 'rotate(180deg)' }} />
         </button>
         <div className={styles.dots}>
-          {heroSlides.map((s, i) => (
+          {workSlides.map((s, i) => (
             <button
               key={s.id}
               type="button"

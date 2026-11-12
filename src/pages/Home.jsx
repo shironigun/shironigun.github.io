@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useDocumentTitle } from '../lib/router';
 import { hero, highlights, pillars, recognition } from '../content/site';
 import { featuredProjects } from '../content/projects';
@@ -5,7 +6,8 @@ import { achievements, domainLeadership, events, recentEvents } from '../content
 import { stages } from '../content/method';
 import { ProjectGrid } from '../components/ProjectCard';
 import CareerTimeline from '../components/CareerTimeline';
-import HeroCarousel from '../components/HeroCarousel';
+import WorkCarousel from '../components/WorkCarousel';
+import { workSlides } from '../content/workSlides';
 import Testimonials from '../components/Testimonials';
 import CountUp from '../components/CountUp';
 import { SubjectIcon } from '../components/Icons';
@@ -32,6 +34,9 @@ const splitWhen = (when) => {
 
 export default function Home() {
   useDocumentTitle('Mahmood Ahmad: AI Product Analyst');
+  // The selected-work list and the carousel share one slide; pointing at the list holds the rotation.
+  const [slide, setSlide] = useState(0);
+  const [holdTour, setHoldTour] = useState(false);
 
   return (
     <>
@@ -56,7 +61,19 @@ export default function Home() {
             </div>
           </div>
 
-          <HeroCarousel />
+          {/* His cut-out fills the right of the hero and runs down behind the Recognition panel,
+              which hides the cut at his waist. His thumb points across at the text, as on his
+              LinkedIn banner. */}
+          <div className={styles.portrait}>
+            <img
+              src="/images/portrait/mahmood-presenting.webp"
+              alt="Mahmood Ahmad on stage with a microphone, pointing towards the text."
+              width="820"
+              height="954"
+              fetchPriority="high"
+              decoding="async"
+            />
+          </div>
         </div>
 
         <div className="container">
@@ -91,6 +108,35 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="tour-title">
+        <div className={`container ${styles.tourGrid}`}>
+          <div className={styles.tourIntro}>
+            <div className="section-head">
+              <h2 id="tour-title">Selected work</h2>
+              <p>Six projects, each drawn as the flow it runs on. Choose one, or let them play through.</p>
+            </div>
+            <ul
+              className={styles.tourList}
+              onMouseEnter={() => setHoldTour(true)}
+              onMouseLeave={() => setHoldTour(false)}
+              onFocus={() => setHoldTour(true)}
+              onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setHoldTour(false); }}
+            >
+              {workSlides.map((s, i) => (
+                <li key={s.id}>
+                  <button type="button" aria-current={i === slide ? 'true' : undefined} onClick={() => setSlide(i)}>
+                    <span className={styles.tourLabel}>{s.label}</span>
+                    <span className={styles.tourTitle}>{s.title}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <Link to="/case-studies" className="link-quiet">All case studies</Link>
+          </div>
+          <WorkCarousel index={slide} onIndexChange={setSlide} hold={holdTour} />
         </div>
       </section>
 

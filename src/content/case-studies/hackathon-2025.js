@@ -139,11 +139,12 @@ export default {
     { lead: 'Prototypes next.', p: 'I designed the UI and UX prototypes for both solutions. A prototype gives a team something concrete to build towards, and gives judges something they can see rather than imagine.' },
     { lead: 'Then the build.', p: 'As Scrum Master, I ran the team to keep delivery on track against the clock, while the team built both solutions on the shared foundation.' },
     { lead: 'The pitch last.', p: 'I prepared and delivered the final presentation to the judges and the other participants. A pitch is where the requirements, the prototypes and the build have to come together in one story.' },
-    { photo: '/images/events/hackathon-presenting.jpg', width: 800, height: 800, alt: 'Collage from the hackathon: Mahmood presenting with a microphone, a group photo of the participants, and the audience in the session room.', caption: 'Presenting the solution to the judges and participants.' },
+    { photo: '/images/events/hackathon-final-presentation.jpg', width: 1600, height: 901, alt: 'Mahmood presenting with a microphone at the AI hackathon, his team standing behind him.', caption: 'Presenting our solution to the judges and participants, with the team behind me.' },
 
     { h2: 'The result' },
     { p: 'We placed 1st of 11 teams in a division-wide AI hackathon, with two AI solutions for customer retention and employee performance.' },
     { numbers: [['1st', 'of 11 teams, division-wide']] },
+    { photo: '/images/events/hackathon-presenting.jpg', width: 800, height: 800, alt: 'Collage from the hackathon: Mahmood presenting with a microphone, a group photo of the participants, and the audience in the session room.', caption: 'The day in three photos: the pitch, the participants and the session room.' },
 
     { h2: 'What I learned' },
     { quote: 'A hackathon is a product problem with an unforgiving deadline.' },

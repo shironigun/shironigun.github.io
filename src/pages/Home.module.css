@@ -34,9 +34,29 @@
   100% { box-shadow: 0 0 0 0 rgba(36, 70, 219, 0); }
 }
 
+/* His portrait: the right of the hero is only him. The photo is as tall as the hero text plus the
+   gap below it plus --tuck, so its lower edge (the cut at his waist) runs behind the Recognition
+   panel, which sits above it. It never sets the hero's height; the text does. Where the column is
+   too narrow for that height, the photo fits the width and stays on the bottom edge. */
+.hero { --glance-gap: clamp(24px, 3vw, 36px); --tuck: 44px; }
+.portrait { position: relative; align-self: stretch; min-width: 0; }
+.portrait img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + var(--glance-gap) + var(--tuck));
+  object-fit: contain;
+  object-position: left bottom;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* Recognition at a glance, under the hero */
 .glance {
-  margin-top: clamp(24px, 3vw, 36px);
+  position: relative;
+  z-index: 1;
+  margin-top: var(--glance-gap);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-lg);
   background: var(--surface);
@@ -72,6 +92,32 @@
 .latest a { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--hairline-strong); text-underline-offset: 4px; }
 .latest a:hover { color: var(--cobalt-text); text-decoration-color: var(--cobalt-text); }
 .latestWhen { color: var(--quiet); font-size: var(--text-sm); }
+
+/* ─── Selected work: a list of the slides beside the carousel ────── */
+.tourGrid { display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); gap: clamp(32px, 4.5vw, 88px); align-items: center; }
+.tourIntro { display: grid; gap: var(--s-4); align-content: center; justify-items: start; }
+.tourIntro :global(.section-head) { margin-bottom: var(--s-2); }
+.tourList { list-style: none; display: grid; width: 100%; border-top: 1px solid var(--hairline); }
+.tourList li { border-bottom: 1px solid var(--hairline); }
+.tourList button {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: var(--s-3) var(--s-3) var(--s-3) var(--s-4);
+  border: 0;
+  border-left: 2px solid transparent;
+  background: none;
+  color: var(--graphite);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+}
+.tourList button:hover { color: var(--ink); background: var(--surface); }
+.tourList button[aria-current] { border-left-color: var(--cobalt); color: var(--ink); background: var(--surface); }
+.tourLabel { color: var(--quiet); font-size: var(--text-sm); }
+.tourList button[aria-current] .tourLabel { color: var(--cobalt-text); }
+.tourTitle { font-family: var(--font-display); font-size: var(--text-h4); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; }
 
 /* ─── Highlights ─────────────────────────────────────────────────── */
 .highlights { border-block: 1px solid var(--hairline); background: var(--surface); }
@@ -244,6 +290,11 @@
 
 @media (max-width: 1024px) {
   .heroGrid { grid-template-columns: minmax(0, 1fr); }
+  /* Stacked: he stands under the text, to the right, pointing back across the page. */
+  .portrait { height: clamp(300px, 62vw, 520px); }
+  .portrait img { object-position: right bottom; }
+  .tourGrid { grid-template-columns: minmax(0, 1fr); }
+  .tourList { display: none; }
   .heroTitle { max-width: 16ch; }
   .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .highlightList { grid-template-columns: repeat(2, minmax(0, 1fr)); }

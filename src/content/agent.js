@@ -99,6 +99,7 @@ export const roamLines = {
 const PAGES = {
   '/': {
     'highlights-title': 'These numbers round down, never up.',
+    'tour-title': 'Hover the list and I’ll hold the slides.',
     'events-band-title': 'He teaches too. I took notes.',
     'roles-title': 'One title, six jobs. Busy person.',
     'path-title': 'Quite a climb. I know a thing about climbing.',
