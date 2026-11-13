@@ -1,12 +1,8 @@
-/* Projects board: a full-width kanban board and a quarter roadmap. Discipline colours mark each
-   project card, like a ticket's type colour: on the card edge, the tags, the filters and the popup. */
+/* Projects board: a full-width kanban board and a quarter roadmap. Discipline colours (--c-*, in
+   base.css) mark each project card, like a ticket's type colour: on the card edge, the tags, the
+   filters and the popup. */
 
 .wrap {
-  --c-product: #2446DB;
-  --c-design: #7A3FD1;
-  --c-ai: #0B7A6E;
-  --c-quality: #A35C00;
-  --c-personal: #5B6070;
   /* Wider than the content column, but clear of the rope agent, which hangs in the middle of the
      free strip on the left (see laneWidth in RopeAgent.jsx). */
   --lane-strip: calc((100vw - var(--container)) / 2);
@@ -14,13 +10,6 @@
   max-width: 2000px;
   margin-inline: auto;
   padding-inline: max(var(--gutter), min(var(--lane-strip), calc(var(--lane-strip) / 2 + 60px)));
-}
-:global(:root[data-theme='dark']) .wrap {
-  --c-product: #8FA3FF;
-  --c-design: #C3A2FF;
-  --c-ai: #4FD1C0;
-  --c-quality: #E8A84E;
-  --c-personal: #B4B8C0;
 }
 
 /* ─── Toolbar ─────────────────────────────────────────────────────── */

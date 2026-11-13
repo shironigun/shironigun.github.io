@@ -289,6 +289,7 @@ const allProjects = [
         { label: 'Status', value: 'Public on GitHub, version 0.8.1' },
         { label: 'Size', value: '16 skills, 4 agents and 9 commands' },
         { label: 'Runs in', value: 'Terminal, Claude desktop app, VS Code' },
+        { label: 'Event', value: 'Presented at an AI workshop on Claude skills, 13 October 2026' },
       ],
     },
   },

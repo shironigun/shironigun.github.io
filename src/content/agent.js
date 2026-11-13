@@ -100,7 +100,7 @@ const PAGES = {
   '/': {
     'highlights-title': 'These numbers round down, never up.',
     'tour-title': 'Hover the list and I’ll hold the slides.',
-    'events-band-title': 'He teaches too. I took notes.',
+    'events-band-title': 'He teaches too. Each ticket opens the project behind it.',
     'roles-title': 'One title, six jobs. Busy person.',
     'path-title': 'Quite a climb. I know a thing about climbing.',
     'work-title': 'Pick any. They’re all good reads.',

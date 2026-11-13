@@ -52,7 +52,8 @@ would place them correctly:
 - [ ] Domain training programme: start and end
 - [ ] Quality Gates: introduced, and when the third team adopted it
 - [x] AI hackathon win (May 2025)
-- [ ] AI automation workshops, Skills Evals Lab, Playwright course
+- [x] AI workshop on Claude skills (13 Oct 2026; was “AI automation workshops”)
+- [ ] Skills Evals Lab, Playwright course
 
 ## Entries still to collect
 

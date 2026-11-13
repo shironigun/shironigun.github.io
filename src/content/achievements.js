@@ -68,7 +68,7 @@ export const events = [
     items: [
       { title: 'Domain training programme', when: '2024–2025', date: '2024-07', detail: `120+ live sessions and ${hoursText.junior} hours of training for development, QA, operations and business analysts, with weekly Q&A office hours.`, to: '/case-studies/domain-knowledge-base' },
       { title: 'Quality Gates sessions', when: '2024–2025', date: '2024-08', detail: 'Four facilitated sessions that introduced the framework to the team.', to: '/case-studies/quality-gates' },
-      { title: 'AI automation workshops', when: '2026', date: '2026-07', detail: 'Taught a mostly manual QA team how to automate testing with AI, using our own framework as the worked example.' },
+      { title: 'AI workshop on Claude skills', when: 'Oct 2026', date: '2026-10', detail: 'A hands-on workshop with our division’s R&D director, who presented skills for reverse-engineering the context of our products. I led the QA and product part: I presented my QA Engineering plugin, and every QA in the room, most of them manual testers, tried it on their own day-to-day work.', to: '/case-studies/qa-plugin' },
     ],
   },
   {

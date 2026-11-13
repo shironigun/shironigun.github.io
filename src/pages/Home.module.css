@@ -136,22 +136,144 @@
 .eventPhoto figcaption strong { font-family: var(--font-display); font-size: var(--text-h4); font-weight: 600; }
 .eventPhoto figcaption span { color: var(--on-night); }
 .eventCards { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4); }
+
+/* Each event is a ticket: a dark stub with the date, notches where it would tear off, the event,
+   and at the foot the project it belongs to, in that project's discipline colour (--lane, set
+   per card). The shadow sits on the list item so it follows the notched shape. A ticket with a
+   project opens it in the project popup; one without stays a plain card. */
 .eventCard {
+  --stub: 60px;
+  --notch: 9px;
+  --ticket-shadow: drop-shadow(0 1px 1px rgba(20, 22, 27, 0.06)) drop-shadow(0 12px 16px rgba(20, 22, 27, 0.08));
+  --ticket-shadow-up: drop-shadow(0 2px 2px rgba(20, 22, 27, 0.06)) drop-shadow(0 22px 26px rgba(20, 22, 27, 0.16));
   display: grid;
-  grid-template-rows: auto 1fr;
+  filter: var(--ticket-shadow);
+  transition: translate var(--dur) var(--ease-out), rotate var(--dur) var(--ease-out), filter var(--dur) var(--ease);
+}
+:global(:root[data-theme='dark']) .eventCard {
+  --ticket-shadow: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5)) drop-shadow(0 12px 16px rgba(0, 0, 0, 0.35));
+  --ticket-shadow-up: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5)) drop-shadow(0 22px 26px rgba(0, 0, 0, 0.5));
+}
+.ticket {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* long project names truncate instead of widening it */
+  grid-template-rows: var(--stub) 1fr auto;
   border: 1px solid var(--hairline);
   border-radius: var(--radius-lg);
   background: var(--surface);
   overflow: hidden;
-  box-shadow: 0 1px 2px rgba(20, 22, 27, 0.04), 0 16px 36px -28px rgba(20, 22, 27, 0.35);
+  /* The two notches, one per half, centred on the line between the stub and the event. */
+  --cut: calc(var(--stub) + 1px);
+  -webkit-mask:
+    radial-gradient(circle var(--notch) at 0 var(--cut), #0000 96%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--notch) at 100% var(--cut), #0000 96%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle var(--notch) at 0 var(--cut), #0000 96%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle var(--notch) at 100% var(--cut), #0000 96%, #000) right / 51% 100% no-repeat;
 }
-.eventDate { display: flex; align-items: baseline; gap: var(--s-2); padding: var(--s-4) var(--s-5); border-bottom: 1px solid var(--hairline); background: var(--night); color: #fff; }
+.eventDate {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: baseline;
+  gap: var(--s-2);
+  padding: 0 var(--s-5);
+  background: var(--night);
+  color: #fff;
+}
+/* A glow in the project's colour, brighter when the ticket is picked up. */
+.eventDate::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(85% 170% at 100% 0%, color-mix(in srgb, var(--lane) 62%, transparent), transparent 70%);
+  opacity: 0.5;
+  transition: opacity var(--dur) var(--ease);
+}
+/* The tear line along the bottom of the stub. */
+.eventDate::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--notch) + 6px);
+  right: calc(var(--notch) + 6px);
+  bottom: 0;
+  border-bottom: 2px dashed rgba(243, 243, 239, 0.28);
+}
 .eventBig { font-family: var(--font-display); font-size: 1.625rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1; }
 .eventSmall { color: var(--on-night-muted); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
-.eventBody { display: grid; align-content: start; gap: var(--s-2); padding: var(--s-4) var(--s-5) var(--s-5); }
-.eventType { display: inline-flex; align-items: center; gap: 6px; justify-self: start; padding: 3px 10px; border-radius: 999px; background: var(--cobalt-wash); color: var(--cobalt-text); font-size: var(--text-sm); font-weight: 600; }
+.eventType {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--on-night);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+.eventBody { display: grid; align-content: start; gap: var(--s-2); padding: var(--s-4) var(--s-5) var(--s-4); }
 .eventBody h3 { font-family: var(--font-body); font-size: var(--text-base); font-weight: 600; letter-spacing: 0; line-height: 1.35; }
 .eventDetail { color: var(--graphite); font-size: var(--text-md); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+/* Another event of the same project, such as the talk that opened the hackathon. */
+.eventAlso {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  margin-top: var(--s-1);
+  padding-top: var(--s-2);
+  border-top: 1px dashed var(--hairline-strong);
+  color: var(--graphite);
+  font-size: var(--text-md);
+}
+.eventAlso svg { flex: none; margin-top: 3px; color: var(--cobalt-text); }
+.eventAlso strong { margin-right: 2px; color: var(--ink); font-weight: 600; }
+
+/* The title is the button; its hit area stretches over the whole ticket. */
+.eventOpen {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.eventOpen::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.eventOpen:focus-visible { outline: none; }
+.eventCard:has(.eventOpen:focus-visible) .ticket { outline: 2px solid var(--cobalt); outline-offset: -2px; }
+
+/* The project it opens: its discipline icon, name and key, like a linked ticket. */
+.eventProject {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin: 0 var(--s-3) var(--s-3);
+  padding: 8px var(--s-3) 8px 8px;
+  border: 1px solid color-mix(in srgb, var(--lane) 22%, var(--hairline));
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--lane) 6%, var(--surface));
+  font-size: var(--text-md);
+  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.eventProjectIcon { display: grid; place-items: center; flex: none; width: 26px; height: 26px; border-radius: 7px; background: var(--lane); color: var(--surface); }
+.eventProjectName { flex: 1; min-width: 0; overflow: hidden; color: var(--ink); font-weight: 600; white-space: nowrap; text-overflow: ellipsis; }
+.eventProjectKey { flex: none; color: var(--quiet); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.eventProjectGo { flex: none; color: var(--lane); transition: translate var(--dur) var(--ease-out); }
+
+@media (hover: hover) {
+  .eventLinked:hover { translate: 0 -4px; rotate: -0.5deg; filter: var(--ticket-shadow-up); }
+  .eventLinked:nth-child(even):hover { rotate: 0.5deg; }
+  .eventLinked:hover .eventDate::after { opacity: 1; }
+  .eventLinked:hover .eventProject { border-color: color-mix(in srgb, var(--lane) 45%, var(--hairline)); background: color-mix(in srgb, var(--lane) 12%, var(--surface)); }
+  .eventLinked:hover .eventProjectGo { translate: 3px 0; }
+}
+.eventLinked:active { translate: 0 -1px; }
 
 /* ─── Bands ──────────────────────────────────────────────────────── */
 .white { background: var(--surface); }
@@ -308,6 +430,7 @@
   /* Phones: the events become a swipeable row. */
   .eventCards { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--s-3); scrollbar-width: thin; }
   .eventCard { scroll-snap-align: start; }
+  .eventProjectKey { display: none; } /* the project's name needs the room */
 }
 
 @media (max-width: 600px) {

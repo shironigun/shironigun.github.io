@@ -10,10 +10,29 @@ import WorkCarousel from '../components/WorkCarousel';
 import { workSlides } from '../content/workSlides';
 import Testimonials from '../components/Testimonials';
 import CountUp from '../components/CountUp';
-import { SubjectIcon } from '../components/Icons';
+import { ChevronIcon, SubjectIcon } from '../components/Icons';
+import { findItem, laneVar } from '../components/board/model';
+import { DisciplineIcon } from '../components/board/parts';
+import ProjectDialog from '../components/board/ProjectDialog';
 import styles from './Home.module.css';
 
 const eventCount = events.reduce((n, g) => n + g.items.length, 0);
+
+// The latest events as four tickets, one per project, each with the project it belongs to (found
+// from its case-study link). When two events share a project, such as the hackathon he organised
+// and the talk that opened it, the first leads the ticket and the other is listed on it. An event
+// without a project stays a plain ticket.
+const projectOf = (e) => (e.to?.startsWith('/case-studies/') ? findItem(e.to.slice('/case-studies/'.length)) : null);
+const homeEvents = [];
+for (const e of recentEvents) {
+  if (homeEvents.length === 4) break;
+  const project = projectOf(e);
+  const ticket = project && homeEvents.find((t) => t.project?.slug === project.slug);
+  if (ticket) ticket.also.push(e);
+  else homeEvents.push({ ...e, project, also: [] });
+}
+// The popup's previous and next step through these projects, in card order, each once.
+const eventProjects = [...new Set(homeEvents.map((e) => e.project?.slug).filter(Boolean))];
 
 const featuredAchievements = [
   'Quality framework adopted by 3 teams',
@@ -37,6 +56,10 @@ export default function Home() {
   // The selected-work list and the carousel share one slide; pointing at the list holds the rotation.
   const [slide, setSlide] = useState(0);
   const [holdTour, setHoldTour] = useState(false);
+  // The project open in the popup, by slug.
+  const [openProject, setOpenProject] = useState(null);
+  const projectIndex = eventProjects.indexOf(openProject);
+  const stepProject = (d) => setOpenProject(eventProjects[(projectIndex + d + eventProjects.length) % eventProjects.length]);
 
   return (
     <>
@@ -145,7 +168,7 @@ export default function Home() {
           <div className={styles.rowHead}>
             <div className="section-head">
               <h2 id="events-band-title">Talks, workshops and events</h2>
-              <p>Sessions I have delivered, events I have organised and the hackathon my team won.</p>
+              <p>Sessions I have delivered, events I have organised and the hackathon my team won. Open an event to see the project behind it.</p>
             </div>
             <Link to="/journey" className="link-quiet">All talks, events and courses</Link>
           </div>
@@ -154,19 +177,56 @@ export default function Home() {
               <img src="/images/events/hackathon-presenting.jpg" alt="Mahmood presenting with a microphone at the AI hackathon, with a group photo of the participants and the audience in the session room." width="800" height="800" loading="lazy" />
               <figcaption><strong>On stage</strong><span>Presenting at the division-wide AI hackathon, 2025</span></figcaption>
             </figure>
+            {/* Each event is a ticket: the date on a stub, the event below, and the project it
+                belongs to at the foot. The whole ticket opens that project in the popup. */}
             <ol className={styles.eventCards} data-stagger>
-            {recentEvents.slice(0, 4).map((e) => {
+            {homeEvents.map((e, i) => {
               const [big, small] = splitWhen(e.when);
+              const p = e.project;
               return (
-                <li key={e.title} className={styles.eventCard}>
-                  <p className={styles.eventDate}>
-                    <span className={styles.eventBig}>{big}</span>
-                    {small && <span className={styles.eventSmall}>{small}</span>}
-                  </p>
-                  <div className={styles.eventBody}>
-                    <p className={styles.eventType}><SubjectIcon name={e.icon} width="14" height="14" />{e.label}</p>
-                    <h3>{e.title}</h3>
-                    <p className={styles.eventDetail}>{e.detail}</p>
+                <li
+                  key={e.title}
+                  className={`${styles.eventCard} ${p ? styles.eventLinked : ''}`}
+                  style={{ '--lane': p ? laneVar(p.lane) : 'var(--cobalt)' }}
+                >
+                  <div className={styles.ticket}>
+                    <p className={styles.eventDate}>
+                      <span className={styles.eventBig}>{big}</span>
+                      {small && <span className={styles.eventSmall}>{small}</span>}
+                      <span className={styles.eventType}><SubjectIcon name={e.icon} width="14" height="14" />{e.label}</span>
+                    </p>
+                    <div className={styles.eventBody}>
+                      <h3>
+                        {p ? (
+                          <button
+                            type="button"
+                            className={styles.eventOpen}
+                            aria-haspopup="dialog"
+                            aria-describedby={`event-project-${i}`}
+                            onClick={() => setOpenProject(p.slug)}
+                          >
+                            {e.title}
+                          </button>
+                        ) : e.title}
+                      </h3>
+                      <p className={styles.eventDetail}>{e.detail}</p>
+                      {e.also.map((a) => (
+                        <p key={a.title} className={styles.eventAlso}>
+                          <SubjectIcon name={a.icon} width="14" height="14" />
+                          <span><strong>{a.label}</strong> {a.title}</span>
+                        </p>
+                      ))}
+                    </div>
+                    {p && (
+                      <p id={`event-project-${i}`} className={styles.eventProject}>
+                        <span className={styles.eventProjectIcon} aria-hidden="true"><DisciplineIcon tag={p.lane} /></span>
+                        <span className={styles.eventProjectName}>
+                          <span className="visually-hidden">Opens the project: </span>{p.name}
+                        </span>
+                        <span className={styles.eventProjectKey} aria-hidden="true">{p.id}</span>
+                        <ChevronIcon className={styles.eventProjectGo} width="16" height="16" aria-hidden="true" />
+                      </p>
+                    )}
                   </div>
                 </li>
               );
@@ -175,6 +235,18 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* The same popup as the Projects page; its "Read the case study" goes on to the article. */}
+      {openProject && (
+        <ProjectDialog
+          item={findItem(openProject)}
+          position={projectIndex + 1}
+          total={eventProjects.length}
+          onClose={() => setOpenProject(null)}
+          onPrev={() => stepProject(-1)}
+          onNext={() => stepProject(1)}
+        />
+      )}
 
       <section className="section" aria-labelledby="roles-title">
         <div className="container">

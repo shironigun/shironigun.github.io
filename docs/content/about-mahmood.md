@@ -182,12 +182,12 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **Apr 2026** · Project · Full UI and UX revamp. Seven product areas redesigned and rebuilt through agentic coding, each reviewed against the component library.
 - **Jul 2026** · Project · AI product prototyping. Working prototypes that let the team evaluate AI ideas before committing to build.
 - **Jul 2026** · Participated · DIS AI Foundations program. Completed a five-day, cross-division AI hackathon and built the AI QA Workbench in four days.
-- **2026** · Workshop · AI automation workshops. Taught a largely manual QA team to automate testing with AI.
 - **Aug 2026** · Event organised · Organised the AI Foundations hackathon. Briefed nine real-world AI projects for the QA and design team, taught the foundations and mentored every team to a working demonstration.
 - **Aug 2026** · Talk · AI Foundations: From Doing to Directing. Opening session of the AI Foundations hackathon, from Claude Projects and Skills to MCP servers, agents and workflows.
 - **Aug 2026** · Course authored · Working with Claude: The Eleven Building Blocks. A 183-page practical handbook for continued learning across the division.
 - **2026** · Course authored · Skills Evals Lab. A 14-module interactive course on evaluating AI skills.
 - **2026** · Course authored · Playwright automation course. A self-paced course inside the QA plugin that remembers where each learner stopped.
+- **Oct 2026** · Workshop · AI workshop on Claude skills (13 Oct). With the division’s R&D director, who presented skills for reverse-engineering the context of our products. He led the QA and product part: presented his QA Engineering plugin, and every QA in the room, most of them manual testers, tried it on their own day-to-day work. Links to the QA plugin case study.
 - **Oct 2026** · Project · Published my Claude Code marketplace. Plugins built one at a time, brought together in one public repo; every one asks before it writes.
 - **Nov 2026** · Project · AI feature heading to production. Led its product definition, from discovery and requirements to design, evaluation and launch readiness.
 
@@ -261,7 +261,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 
 - **Domain training programme** (2024–2025): 120+ live sessions and the live Junior SQA hours of training (3,920) for development, QA, operations and business analysts, with weekly Q&A office hours.
 - **Quality Gates sessions** (2024–2025): Four facilitated sessions that introduced the framework to the team.
-- **AI automation workshops** (2026): Taught a mostly manual QA team how to automate testing with AI, using our own framework as the worked example.
+- **AI workshop on Claude skills** (13 Oct 2026): A hands-on workshop with the division’s R&D director, who presented skills for reverse-engineering the context of our products. He led the QA and product part: he presented his QA Engineering plugin, and every QA in the room, most of them manual testers, tried it on their own day-to-day work. Source: his LinkedIn post on publishing the marketplace. Say “public”, not “open source”.
 
 ### Courses I wrote
 

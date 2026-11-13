@@ -31,6 +31,7 @@ Defined in `src/styles/base.css`.
 | `--cobalt` | `#2446DB` | The only brand colour: links, markers, accents |
 | `--night` | `#14161B` | Dark bands: journey timeline, call to action, footer |
 | `--cobalt-on-night` | `#A9B8F8` | Accent on dark |
+| `--c-product`, `--c-design`, `--c-ai`, `--c-quality`, `--c-personal` | `#2446DB`, `#7A3FD1`, `#0B7A6E`, `#A35C00`, `#5B6070` | Discipline colours: project cards, tags, the project popup and the event tickets (`laneVar` in `board/model.js` picks one) |
 | `--font-display` | Schibsted Grotesk | Headings |
 | `--font-body` | Inter | Text |
 
@@ -42,7 +43,7 @@ Layout: `.container` is 1240 px wide plus gutters (`clamp(20px, 3vw, 40px)`). In
 
 | Route | Header illustration | What it holds |
 |---|---|---|
-| `/` | none (the rope agent is the visual) | Hero with his cut-out photo, recognition, highlights, Selected work (the diagram carousel with its slide list), talks and events band, six roles, journey timeline, featured case studies, achievements glance, operating model, testimonials |
+| `/` | none (the rope agent is the visual) | Hero with his cut-out photo, recognition, highlights, Selected work (the diagram carousel with its slide list), talks and events band (event tickets that open their project in the project popup), six roles, journey timeline, featured case studies, achievements glance, operating model, testimonials |
 | `/projects` (old `/work` links redirect) | Sprint board, one card moving | A full-width projects board: kanban columns by workflow state, cards with a headline number, owner, tags and a quarter strip; a Roadmap tab with lanes by discipline and quarters by year. Any card opens the project in a popup (arrow keys step through, `/projects#slug` links straight to one) |
 | `/case-studies` | Case files under a magnifier | Long-form case studies, filterable |
 | `/case-studies/:slug` | By first tag: AI neural network, Quality gates, Design wireframe, Product roadmap | An article: headline, standfirst, the documents it produced (first thing a reader can open), byline with role, period and reading time, then prose sections with figures, photos (open full size), tables and pull quotes. From 1,200 px the chapter list sticks beside the story; from 1,500 px it reads in three columns: every case study, the story, and the illustration with its chapters |
@@ -67,7 +68,7 @@ Every page except Contact ends with the call-to-action band, then the footer.
 | `CareerTimeline` | Journey highlights on Home |
 | `OperatingModel` | The six-stage model on How I work |
 | `ArticleBody` | Renders a case study article: sections at each h2, paragraphs, lists, figures, photos, tables, quotes |
-| `ProjectBoard` + `board/` | The Projects page: kanban board and quarter roadmap (`board/model.js`), card parts and quarter strips (`board/parts.jsx`), the project popup (`board/ProjectDialog.jsx`) |
+| `ProjectBoard` + `board/` | The Projects page: kanban board and quarter roadmap (`board/model.js`), card parts and quarter strips (`board/parts.jsx`), the project popup (`board/ProjectDialog.jsx`, also opened by the home page's event tickets) |
 | `DocumentViewer` + `PdfStage` | In-site viewer for every PDF and image document (`DocButton`) |
 | `CtaBand`, `Footer` | Closing call to action and the dark footer |
 | `RopeAgent` + `AgentFigure` | The rope agent (below) |
