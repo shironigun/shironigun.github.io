@@ -26,7 +26,7 @@ If `docs/private/memory-full.md` exists on this machine, read it too. It is the 
 npm install
 npm run dev      # http://localhost:5173 (also ".claude/launch.json", entry "dev")
 npm run build    # dist/, plus dist/404.html for GitHub Pages
-node resume/build.mjs   # the light and dark résumé PDFs and the LaTeX résumé, from src/content
+node resume/build.mjs   # the Jake's-template résumé (.tex, compiled to the main PDF with Tectonic) and the dark PDF, from src/content
 ```
 
 Publish by pushing to `main`; the **Deploy to GitHub Pages** workflow runs on every push. With several `gh` accounts on the machine, push as `shironigun`:

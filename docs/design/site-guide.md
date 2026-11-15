@@ -183,8 +183,11 @@ Head clicks:
 
 `node resume/build.mjs` rebuilds every résumé from `src/content` (experience, skills, tools, certifications, recognition and the live hours), so they never drift from the site:
 
-- `public/resumes/Mahmood_Ahmad_Resume_Light.pdf` and `_Dark.pdf`: A4, two pages, printed by headless Chrome (or Edge; set `CHROME_PATH` if neither is found). `Mahmood_Ahmad_Resume.pdf` is a copy of the light one for older links.
-- `resume/Mahmood_Ahmad_Resume.tex`: one page on Jake's Resume template. Its bullets are shorter than the site's and live in the script. Compile it in Overleaf (New Project, Upload Project) with pdfLaTeX.
+- `resume/Mahmood_Ahmad_Resume.tex`: the full résumé (two pages) on Jake's Resume template, tuned for applicant tracking systems: every experience highlight, skill and tool group, certification and award from `src/content`. Both résumés start at SQA Trainee (Dec 2023), with only the Perseus Group roles; the earlier WordPress and UX roles stay on the site (About and Journey). It also compiles in Overleaf (New Project, Upload Project) with pdfLaTeX.
+- `public/resumes/Mahmood_Ahmad_Resume_Light.pdf`: that `.tex` compiled with [Tectonic](https://tectonic-typesetting.github.io) (`scoop install tectonic`). Every Résumé button opens it. `Mahmood_Ahmad_Resume.pdf` is a copy for older links.
+- `public/resumes/Mahmood_Ahmad_Resume_Dark.pdf`: A4, printed from HTML by headless Chrome (or Edge; set `CHROME_PATH` if neither is found). It's the "dark version" link on Contact; Jake's template has no dark edition.
+
+**ATS rules the LaTeX follows** (researched Nov 2026): one column; standard headings in the usual order (Summary, Experience, Projects, Skills, Certifications, Awards, Education); contact details in the body, not a header or footer; no tables for alignment (title and dates share a line with `\hfill`), no small caps, no icons; a Unicode text layer (`glyphtounicode` on pdfLaTeX, Latin Modern with ligatures off on XeTeX, so words like "official" extract letter by letter); bullets that lead with an action and an outcome backed by a real number; the official title next to the public one. After a change, check what a parser sees with `pdftotext -layout public/resumes/Mahmood_Ahmad_Resume.pdf -`.
 
 Rebuild after changing the experience, and never add a phone number or a location.
 

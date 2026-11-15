@@ -3,12 +3,14 @@
 //   node resume/build.mjs
 //
 // Writes:
-//   public/resumes/Mahmood_Ahmad_Resume_Light.pdf   A4, light
-//   public/resumes/Mahmood_Ahmad_Resume_Dark.pdf    A4, dark
-//   public/resumes/Mahmood_Ahmad_Resume.pdf         a copy of the light one, for older links
 //   resume/Mahmood_Ahmad_Resume.tex                 one page on Jake's Resume template, for Overleaf
+//   public/resumes/Mahmood_Ahmad_Resume_Light.pdf   that .tex compiled: the résumé every button opens
+//   public/resumes/Mahmood_Ahmad_Resume.pdf         a copy of it, for older links
+//   public/resumes/Mahmood_Ahmad_Resume_Dark.pdf    A4, dark, printed from HTML (no Jake's equivalent)
 //
-// The PDFs are printed by Chrome (or Edge) in headless mode; no dev server is needed. The experience,
+// The main résumé is the Jake's-template .tex compiled with Tectonic (scoop install tectonic), the
+// same output Overleaf gives. The dark PDF is printed by Chrome (or Edge) in headless mode; no dev
+// server is needed. The experience,
 // skills, tools, certifications and recognition come from src/content; only the short summary and
 // the one-page LaTeX bullets are written here. Never add a phone number or a location: the site
 // doesn't say where he is based, and neither may the résumé.
@@ -25,9 +27,12 @@ process.chdir(root);
 // ── Content, loaded through Vite so the site's own modules resolve as they do in the browser ──
 const vite = await createServer({ root, server: { middlewareMode: true, hmr: false }, appType: 'custom', logLevel: 'error' });
 const { experience, skills, education, certifications } = await vite.ssrLoadModule('/src/content/profile.js');
-const { person, contact, recognition, tools } = await vite.ssrLoadModule('/src/content/site.js');
+const { person, contact, recognition, tools, tenure } = await vite.ssrLoadModule('/src/content/site.js');
 const { hoursText } = await vite.ssrLoadModule('/src/content/hours.js');
 await vite.close();
+// The résumé starts at SQA Trainee (Dec 2023): only the Perseus Group roles. The site's Journey and
+// About still show the earlier design roles.
+const resumeRoles = experience.filter((r) => r.start >= '2023-12');
 
 const links = [
   { text: contact.email, href: `mailto:${contact.email}` },
@@ -114,7 +119,7 @@ h3 { font-size: 10.6pt; font-weight: 650; }
 </header>
 <p class="summary">${esc(summary)}</p>
 
-<section><h2>Experience</h2>${experience.map(role).join('')}</section>
+<section><h2>Experience</h2>${resumeRoles.map(role).join('')}</section>
 
 <section><h2>Recognition</h2>
   <ul class="list">${recognition.map((r) => `<li><span>${esc(r.title)}</span><span>${esc(r.detail || '')}</span></li>`).join('')}</ul>
@@ -156,10 +161,11 @@ function findBrowser() {
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'resume-'));
 const browser = findBrowser();
 fs.mkdirSync('public/resumes', { recursive: true });
-for (const theme of ['light', 'dark']) {
+// The light résumé is compiled from the LaTeX further down; only the dark one is printed here.
+for (const theme of ['dark']) {
   const page = path.join(tmp, `${theme}.html`);
   fs.writeFileSync(page, html(theme));
-  const out = path.resolve(`public/resumes/Mahmood_Ahmad_Resume_${theme === 'light' ? 'Light' : 'Dark'}.pdf`);
+  const out = path.resolve('public/resumes/Mahmood_Ahmad_Resume_Dark.pdf');
   execFileSync(browser, [
     '--headless=new', '--disable-gpu', '--disable-extensions', '--no-first-run', '--no-pdf-header-footer',
     `--user-data-dir=${path.join(tmp, 'profile')}`, '--virtual-time-budget=10000',
@@ -167,11 +173,16 @@ for (const theme of ['light', 'dark']) {
   ], { stdio: 'ignore' });
   console.log(`✓ ${path.relative(root, out)}`);
 }
-fs.copyFileSync('public/resumes/Mahmood_Ahmad_Resume_Light.pdf', 'public/resumes/Mahmood_Ahmad_Resume.pdf');
-console.log('✓ public/resumes/Mahmood_Ahmad_Resume.pdf (copy of the light one)');
 
 // ── LaTeX, on Jake's Resume template (github.com/jakegut/resume, MIT), for Overleaf ──
-// One page, so the bullets are shorter than the site's. Facts match src/content/profile.js.
+// The full résumé (two pages is fine). Facts match src/content. Tuned for applicant tracking systems (Nov 2026 research):
+//   - single column, standard headings in the usual order: Summary, Experience, Projects, Skills,
+//     Certifications and Awards, Education;
+//   - no tables for alignment (title and dates sit on one line with \hfill), no small caps, no icons;
+//   - Unicode mapping on pdfLaTeX (glyphtounicode), so the text layer reads back as written;
+//   - bullets lead with an action and an outcome backed by a real number;
+//   - the official title appears next to the public one, so either matches a recruiter's search.
+// Check the text layer after a change:  pdftotext -layout public/resumes/Mahmood_Ahmad_Resume.pdf -
 const tex = (s) => String(s)
   .replace(/\\/g, '\\textbackslash{}')
   .replace(/([&%$#_{}])/g, '\\$1')
@@ -183,52 +194,30 @@ const tex = (s) => String(s)
   .replace(/”/g, "''")
   .replace(/ – /g, ' -- ')
   .replace(/–/g, '--');
-const range = (period) => tex(dates(period)).replace(' -- Present', ' -- Present');
+const range = (period) => tex(dates(period));
 
-// About one line each, so the whole résumé fits one page on Jake's template.
-const bullets = {
-  'Product Quality Analyst': [
-    'Lead AI feature definition for the most successful product in a 200+ person division; took Promise Tracker, an AI feature, from concept to production readiness.',
-    'Led the rebuild of 7 product areas by directing Claude Code agents, each reviewed against the component library and business rules.',
-    'Shape the roadmap and AI feature decisions with the Product Owner in Aha! and Azure DevOps, backed by quantitative analysis.',
-    'Organised the AI Foundations hackathon (9 participants, 9 working demos) and wrote a 183-page handbook on working with Claude.',
-    'Own release readiness; introduced the API automation framework and onboarded 3 analysts.',
-  ],
-  'Junior SQA Analyst': [
-    'Designed the Strict Quality Gates framework, adopted by 3 other teams: about 40% less defect leakage, zero critical defects in 6 sprints.',
-    'Took over QA of a critical release mid-cycle without a handover and shipped it on time; covered a 3-month BA vacancy.',
-    `Delivered ${hoursText.junior} hours of domain training and trained 2 non-technical hires to independent sprint work.`,
-    'Ran the Postman proof of concept adopted across 5+ teams; 1st of 11 teams in a division-wide AI hackathon.',
-  ],
-  'SQA Trainee': ["Initiated and wrote the organisation's first global UI standards document."],
-  'WordPress Designer': ['Built responsive WordPress websites from client brand requirements, turning PSD designs into Elementor builds.'],
-  'UX Designer, intern': ['Refined the web interface and prototyped UI concepts for stakeholder review before engineering started.'],
-};
+const headline = 'AI Product Analyst | Business Analysis | Product Ownership | AI Product Development';
+const summaryTex = `AI Product Analyst (official title: Product Quality Analyst) with ${tenure} years on enterprise dealership SaaS at Perseus Group, part of Constellation Software. Business analyst and associate product owner: discovery, requirements, the roadmap and AI feature definition. Certified ScrumMaster and QA lead; I prototype by directing AI agents with Claude Code.`;
+
 const projects = [
   {
     name: 'Claude Code marketplace', note: 'public on GitHub', when: 'Jul 2026 -- Present',
-    text: 'A public marketplace of 7 plugins and 30 skills for QA and product work; every plugin asks a person before it writes.',
+    text: '7 plugins and 30 skills for QA and product work; every plugin asks a person before it writes.',
   },
   {
     name: 'AI evaluation and the Skills Evals Lab', note: 'AI quality', when: 'Sep 2026 -- Present',
-    text: 'A repeatable way to test AI features (each case run 3 times, counted only when all 3 pass), and a course on evaluating AI skills.',
+    text: 'A repeatable AI test (3 runs, counted only if all pass) and a 14-module course on evaluating AI skills.',
   },
   {
     name: 'AI QA Workbench', note: 'DIS AI Foundations program', when: 'Jul 2026',
-    text: 'Takes a user story to test cases, automation, pipeline runs and structured bug reports.',
+    text: '16 specialised AI agents take a user story to test cases, automation, pipeline runs and bug reports.',
   },
 ];
-// Shorter than the site's lists, for the same reason.
-const skillLines = [
-  ['Product', 'Discovery and definition, user stories and acceptance criteria, stakeholder management (RACI/RASCI), roadmapping'],
-  ['AI product work', 'AI feature design, AI skill writing, evaluating AI output, agentic workflows, prototyping with AI'],
-  ['Quality', 'Test strategy, functional, API and acceptance testing, quality gates, release readiness, defect management'],
-  ['Ways of working', 'Scrum (CSM®), Kanban, workshop facilitation, root-cause analysis (5 Whys), risk and escalation management'],
-  ['Tools', 'Azure DevOps, Jira, Aha!, Figma Make, Claude Code, MCP servers, Playwright, Postman, TestRail'],
-  ['Certifications', 'Certified ScrumMaster® (CSM®); ISTQB® CTFL; Business Analysis Fundamentals, Microsoft; AI Foundations: From Developer to Orchestrator, Dealer Information Systems'],
-  ['Recognition', recognition.slice(0, 3).map((r) => r.title).join('; ')],
-];
-const skillTex = skillLines.map(([k, v]) => `     \\textbf{${tex(k)}}{: ${tex(v)}}`).join(' \\\\\n');
+// The full lists from src/content: every skill group, every tool group, every certification and award.
+const skillTex = [...skills, ...tools.map((g) => ({ ...g, group: `${g.group} tools` }))]
+  .map((g) => `     \\textbf{${tex(g.group)}}{: ${tex(g.items.join(', '))}}`).join(' \\\\\n');
+const certTex = certifications.map((c) => `      \\resumeItem{${tex(c.title)}, ${tex(c.issuer)}, ${tex(c.year)}}`).join('\n');
+const awardTex = recognition.map((r) => `      \\resumeItem{\\textbf{${tex(r.title)}}${r.detail ? `: ${tex(r.detail)}` : ''}}`).join('\n');
 
 const latex = String.raw`%-------------------------
 % Resume in Latex
@@ -236,7 +225,8 @@ const latex = String.raw`%-------------------------
 % Based off of: https://github.com/sb2nov/resume
 % License : MIT
 %------------------------
-% Mahmood Ahmad's résumé on Jake's template. Generated by resume/build.mjs from the portfolio's
+% Mahmood Ahmad's full résumé on Jake's template, tuned for applicant tracking systems (single column,
+% standard headings, no tables or small caps). Generated by resume/build.mjs from the portfolio's
 % content: edit the content there and rebuild, rather than editing this file by hand.
 % Open it in Overleaf (New Project, Upload Project) and compile with pdfLaTeX.
 
@@ -245,18 +235,20 @@ const latex = String.raw`%-------------------------
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
-\usepackage{tabularx}
-\input{glyphtounicode}
+% Unicode mapping so the text layer reads back as written. pdfLaTeX only (Overleaf); XeTeX, which
+% Tectonic uses, maps Unicode itself.
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
+% On XeTeX (Tectonic): the same Latin Modern look, with ligatures off, so words such as
+% official extract letter by letter and match a keyword search.
+\ifdefined\XeTeXrevision\usepackage{fontspec}\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf, ItalicFont=lmroman10-italic.otf, BoldItalicFont=lmroman10-bolditalic.otf, Ligatures={NoCommon}]\fi
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -265,89 +257,55 @@ const latex = String.raw`%-------------------------
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\topmargin}{-.55in}
+\addtolength{\textheight}{1.1in}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
-\setlength{\tabcolsep}{0in}
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+% Sections: plain bold headings (no small caps), with Jake's rule underneath.
+\titleformat{\section}{\vspace{-5pt}\bfseries\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
 
 %-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
+% Custom commands. Title and dates share one line with \hfill instead of a table, so parsers read
+% title, dates, organisation, then the bullets, in that order.
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2.5pt}}}
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-2pt}\item \textbf{#1} \hfill #2 \\
+  \textit{\small #3} \hfill \textit{\small #4} \vspace{-6pt}}
+\newcommand{\resumeProjectHeading}[2]{\item \small #1 \hfill #2 \vspace{-6pt}}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=3pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \begin{document}
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape ${tex(person.name)}} \\ \vspace{1pt}
-    \small ${tex(person.title)}, ${tex(person.product.replace(/^Enterprise/, 'enterprise'))} at ${tex(person.company)} \\ \vspace{1pt}
+    {\Huge \textbf{${tex(person.name)}}} \\ \vspace{3pt}
+    \small ${tex(headline)} \\ \vspace{2pt}
     \small ${links.map((l) => `\\href{${l.href}}{\\underline{${tex(l.text)}}}`).join(' $|$ ')}
 \end{center}
 
+%-----------SUMMARY-----------
+\section{Summary}
+\small{${tex(summaryTex)}}
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-${experience.map((r) => `
+${resumeRoles.map((r) => `
     \\resumeSubheading
       {${tex(r.role)}}{${range(r.period)}}
       {${tex(r.company)}}{}
       \\resumeItemListStart
-${(bullets[r.role] || []).map((b) => `        \\resumeItem{${tex(b)}}`).join('\n')}
+${r.highlights.map((h) => `        \\resumeItem{\\textbf{${tex(h.label)}:} ${tex(h.text)}}`).join('\n')}
       \\resumeItemListEnd`).join('\n')}
-
   \resumeSubHeadingListEnd
-
 
 %-----------PROJECTS-----------
 \section{Projects}
@@ -359,16 +317,6 @@ ${projects.map((p) => `      \\resumeProjectHeading
           \\resumeItemListEnd`).join('\n')}
     \resumeSubHeadingListEnd
 
-
-%-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {${tex(education.school)}}{}
-      {${tex(education.degree)}}{${range(education.period)}}
-  \resumeSubHeadingListEnd
-
-
 %-----------SKILLS-----------
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
@@ -377,8 +325,42 @@ ${skillTex}
     }}
  \end{itemize}
 
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+  \resumeSubHeadingListStart
+    \item
+    \resumeItemListStart
+${certTex}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------AWARDS-----------
+\section{Awards}
+  \resumeSubHeadingListStart
+    \item
+    \resumeItemListStart
+${awardTex}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {${tex(education.school)}}{${range(education.period)}}
+      {${tex(education.degree)}}{}
+  \resumeSubHeadingListEnd
+
 \end{document}
 `;
 fs.writeFileSync('resume/Mahmood_Ahmad_Resume.tex', latex);
 console.log('✓ resume/Mahmood_Ahmad_Resume.tex');
+
+// ── The main résumé: that .tex compiled with Tectonic, so the site serves Jake's template ──
+const texOut = path.join(tmp, 'tex');
+fs.mkdirSync(texOut, { recursive: true });
+execFileSync('tectonic', ['-X', 'compile', '--outdir', texOut, 'resume/Mahmood_Ahmad_Resume.tex'], { stdio: 'inherit' });
+fs.copyFileSync(path.join(texOut, 'Mahmood_Ahmad_Resume.pdf'), 'public/resumes/Mahmood_Ahmad_Resume_Light.pdf');
+fs.copyFileSync(path.join(texOut, 'Mahmood_Ahmad_Resume.pdf'), 'public/resumes/Mahmood_Ahmad_Resume.pdf');
+console.log('✓ public/resumes/Mahmood_Ahmad_Resume_Light.pdf and Mahmood_Ahmad_Resume.pdf (Jake\'s template)');
 fs.rmSync(tmp, { recursive: true, force: true });

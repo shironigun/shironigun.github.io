@@ -357,7 +357,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 
 ## Testimonials (verbatim, never edited)
 
-### Richard Pineault, R&D Manager, Perseus Group, Constellation Software Inc.
+### Richard Pineault, R&D Director, Perseus Group, Constellation Software Inc.
 
 *Managed me directly*
 

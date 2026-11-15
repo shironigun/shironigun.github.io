@@ -114,7 +114,7 @@ export const testimonials = [
     quote:
       "Mahmood has displayed great commitment to TargetCRM since I have joined. When Sehar left our team, Mahmood stepped up to play a crucial role in our QA. He knows the application very well, and has ensured that our release quality is always High. What I really appreciate with Mahmood is that he is always thinking about the overall quality of the application. His focus goes beyond the items he is working on. He has recommended UI changes to make the application more usable and consistent, he has recommended performance updates ensure a Dealers have a great experience and as also pointed out areas where the application logic was not doing what a dealer would expect. I want to thank him for going above and beyond his role to ensure that the TargetCRM product is as good as possible. I'm happy to have him on my team, and am looking forward to see him grow in experience and leadership.",
     name: 'Richard Pineault',
-    role: 'R&D Manager, Perseus Group, Constellation Software Inc.',
+    role: 'R&D Director, Perseus Group, Constellation Software Inc.',
     photo: '/testimonial-profiles/Richard-Pineault.jpeg',
     relationship: 'Managed me directly',
   },
