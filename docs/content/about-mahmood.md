@@ -9,7 +9,7 @@ Related: [content rules](content-rules.md), [journey inputs still to collect](jo
 ## Summary
 
 - **Who:** an AI Product Analyst in enterprise dealership SaaS at Perseus Group, part of Constellation Software. Official HR title: Product Quality Analyst. Joined 14 December 2023.
-- **What he does:** business analysis and associate product ownership (discovery, roadmap, epics, user stories with acceptance criteria), design collaboration and design review, AI feature definition and prototyping, Scrum Master duties, and leading the QA team.
+- **What he does:** business analysis and associate product ownership (discovery, roadmap, epics, user stories with acceptance criteria), design collaboration and design review, AI feature definition and prototyping, Scrum Master duties, and leading the QA team (3 QA analysts have reported to him directly since October 2026).
 - **How he builds:** by directing AI agents (Claude Code). The decisions, specifications and accountability are his; he does not hand-write code, so programming languages are never listed as his skills.
 - **Career direction:** AI and agentic product work. Open to Product Owner, Product Analyst and AI Product Manager roles.
 - **Emphasis when describing him:** product, then design, then AI, then quality.
@@ -86,7 +86,7 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 - **Product** (Business analyst, Operator and strategist): I run discovery, turn the product vision into a roadmap, epics and user stories, and work through product decisions with the Product Owner. *Proof:* 70 user stories and the 2026 roadmap structure this year; covered a three-month BA vacancy with no gap in delivery.
 - **Design** (Design collaborator): I brief the designer on the business rules, review every design against the component library before development, and prototype ideas that people can click. *Proof:* Introduced a structured design phase into delivery; revamped seven product areas.
 - **AI** (AI prototyper): I design AI features, write the AI skills behind them, and build working software by directing AI agents with Claude Code. *Proof:* AI prototypes such as Promise Tracker; a public Claude Code marketplace with 30 skills.
-- **Quality and delivery** (QA lead, Scrum master): I lead the QA team, run the sprint board and ceremonies, and set the quality bar every feature ships with. *Proof:* Quality Gates adopted by 3 teams: about 40% less defect leakage, zero critical defects across 6 sprints.
+- **Quality and delivery** (QA lead, Scrum master): I lead the QA team of 3 QA analysts who report to me, run the sprint board and ceremonies, and set the quality bar every feature ships with. *Proof:* Quality Gates adopted by 3 teams: about 40% less defect leakage, zero critical defects across 6 sprints.
 
 ## Experience
 
@@ -94,12 +94,13 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 
 *Jan 2026 to present*
 
-On our dealership SaaS products I work as the team’s business analyst and associate product owner, collaborate on design, run the sprint as Scrum Master, prototype AI features and lead the QA team.
+On our dealership SaaS products I work as the team’s business analyst and associate product owner, collaborate on design, run the sprint as Scrum Master, prototype AI features and lead the QA team, with 3 QA analysts reporting to me.
 
 - **AI product ownership:** Lead AI feature definition for the most successful product in a 200+ person division: customer-engagement SaaS for automotive, agricultural and equipment dealerships. Took Promise Tracker, an AI feature that surfaces what a dealership still owes its customers, from concept to production readiness. Promoted from Junior SQA Analyst in under two years.
 - **AI-native product revamp:** Led the rebuild of 7 product areas of our dealership CRM, directing Claude Code agents from specification to review against the component library and business rules.
 - **Roadmap and product strategy:** Shape the roadmap and AI feature decisions with the Product Owner and Initiative Manager in Aha! and Azure DevOps, backing priorities with quantitative analysis (regression, trend and break-even), SWOT and 5 Whys.
 - **AI enablement at scale:** Organised the AI Foundations hackathon for 9 participants across QA and design, with 9 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page handbook on working with Claude.
+- **People leadership:** Manage 3 QA analysts who report to me directly (since October 2026), growing each toward AI-assisted testing, AI evaluation and automation.
 - **Public AI tooling:** Published a public Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and created the AI QA Workbench in 4 days at the DIS AI Foundations program.
 - **Delivery and insight:** Own release readiness, introduced the API automation framework and onboarded 3 analysts; set up Power BI and Power Platform dashboards tracking release cadence, change failure rate and post-launch outcomes.
 - **Recognition:** Certificate of Appreciation for organising and delivering the AI Foundations initiative; Certificate of Completion, AI Foundations: From Developer to Orchestrator (Dealer Information Systems).

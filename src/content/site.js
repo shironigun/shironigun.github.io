@@ -99,7 +99,7 @@ export const pillars = [
     name: 'Quality and delivery',
     icon: 'shield',
     roles: ['QA lead', 'Scrum master'],
-    body: 'I lead the QA team, run the sprint board and ceremonies, and set the quality bar every feature ships with.',
+    body: 'I lead the QA team of 3 QA analysts who report to me, run the sprint board and ceremonies, and set the quality bar every feature ships with.',
     proof: 'Quality Gates adopted by 3 teams: about 40% less defect leakage, zero critical defects across 6 sprints.',
     link: { to: '/case-studies/quality-gates', text: 'Quality Gates' },
   },

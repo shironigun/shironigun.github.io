@@ -271,7 +271,7 @@ export default {
     },
 
     { h2: 'Holding the bar' },
-    { p: 'The gates are part of how the team works, and three other teams across the division have adopted them. I now lead the QA team. I trained two QA hires from non-IT backgrounds to independent sprint work, and onboarded three new analysts in 2026.' },
+    { p: 'The gates are part of how the team works, and three other teams across the division have adopted them. I now lead the QA team, and since October 2026 three QA analysts report to me directly. I trained two QA hires from non-IT backgrounds to independent sprint work, and onboarded three new analysts in 2026.' },
     { h3: 'Mid-cycle, no handover' },
     { p: 'The gates also held under pressure. I took over QA for a critical release mid-cycle, without a handover, and it shipped on time with no drop in quality.' },
     { h3: 'Tools for testers' },
@@ -284,7 +284,7 @@ export default {
       { when: 'Within two quarters', title: 'About 40% less leakage', detail: 'By my own weekly tracking, with the framework refined every two sprints.' },
       { when: '2024 to 2025', title: 'A release taken over mid-cycle', detail: 'QA for a critical release, with no handover. It shipped on time with no drop in quality.' },
       { when: '2025', title: 'Three more teams', detail: 'Three other teams across the division adopted the framework.' },
-      { when: '2026', title: 'Leading the QA team', detail: 'I lead the team that works to the gates, and onboarded three new analysts.' },
+      { when: '2026', title: 'Leading the QA team', detail: 'I lead the team that works to the gates: three QA analysts report to me, and I onboarded three new analysts.' },
     ], caption: 'From root cause to the QA team I lead.' },
 
     { h2: 'What I learned' },
