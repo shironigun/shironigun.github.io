@@ -37,6 +37,19 @@ Drafts are in `docs/private/linkedin/` (not in git), including `profile-update.m
 - Numbers matter: ~40% less defect leakage, the live training hours, 1st of 11 teams, 30 skills across 7 plugins, 9 briefs and 9 demos, a 183-page handbook.
 - The About is enterprise-level and selling, and covers the whole journey (UX intern 2021, WordPress designer, SQA, then product and AI), the projects, wins and current interests, within 2,600 characters.
 
+## Résumé
+
+Built by `node resume/build.mjs` from `src/content`; never edit the PDFs or the `.tex` by hand. The [site guide](design/site-guide.md) has the details.
+
+- **Template:** Jake's Resume (Overleaf), generated as `resume/Mahmood_Ahmad_Resume.tex` and compiled with Tectonic. Every Résumé button opens that PDF. The dark PDF is still printed from HTML.
+- **ATS first:** one column; standard headings in this order: Summary, Experience, Projects, Skills, Certifications, Awards, Education. Contact details go in the body. No tables for alignment, no small caps, no icons. Keep ligatures off so words like "official" extract letter by letter.
+- **Summary names both titles:** "AI Product Analyst (official title: Product Quality Analyst)".
+- **Full content, two pages is fine.** Every highlight of every listed role, every skill and tool group, every certification and award. Don't cut it to fit one page.
+- **Experience starts at SQA Trainee.** The résumé leaves out the UX internship and the WordPress role. The portfolio keeps the whole journey.
+- **Never a phone number or a location.** Keep Power BI, Visio, SQL and Python off the tool lists.
+- **Bullets lead with an action and an outcome**, backed by a real number where there is one.
+- **Check what a parser sees** after every change, with `pdftotext -enc UTF-8 -layout public/resumes/Mahmood_Ahmad_Resume.pdf -`.
+
 ## Design taste
 
 - **Wants rich, experience-led pages.** Rejects plain listings and tables, walls of text, and generic card-heavy layouts.
