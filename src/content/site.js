@@ -107,7 +107,7 @@ export const pillars = [
 
 // Dated, verifiable milestones.
 export const log2026 = [
-  { date: 'Nov', text: 'Led an AI feature from concept to production readiness.' },
+  { date: 'Nov', text: 'Led an AI feature from concept to production readiness. Wrote a how-to standard and the first complete feature guide for dealers, revised with the support team.' },
   { date: 'Oct', text: 'Published my Claude Code marketplace on GitHub.' },
   { date: 'Aug', text: 'Organised and led the AI Foundations hackathon, opened it with “AI Foundations: From Doing to Directing”, and wrote a 183-page Claude handbook for the division.' },
   { date: 'Jul', text: 'Completed the DIS AI Foundations program, taking the AI QA Workbench there and extending it.' },

@@ -165,7 +165,52 @@ function EvalsThumb() {
   );
 }
 
+// The standard's three-part step, on a fictional shop's setting.
+function GuidesThumb() {
+  return (
+    <div className={styles.thumbList}>
+      {[['Step', 'Turn off Weekend delivery'], ['You’ll see', 'Saved, beside the switch'], ['Why', 'No weekend slots at checkout']].map(([s, t]) => (
+        <div key={s} className={styles.thumbRow}>
+          <span className={`${styles.thumbTag} ${styles.thumbTagWide}`}>{s}</span>
+          <span>{t}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// The build tool's style check, as it reports a fictional draft.
+function StyleCheckThumb() {
+  return (
+    <div className={styles.thumbList}>
+      {[['Pass', 'Every section present'], ['Fix', 'A task with 12 steps'], ['Fix', '“Click”: use “select”']].map(([s, t]) => (
+        <div key={t} className={styles.thumbRow}>
+          <span className={s === 'Pass' ? styles.thumbOk : styles.thumbFix}>{s}</span>
+          <span>{t}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// The dealer guide's contents, in order.
+function GuideContentsThumb() {
+  return (
+    <div className={styles.thumbList}>
+      {['Before you begin', 'How it works', 'Each task, step by step', 'If something goes wrong'].map((t) => (
+        <div key={t} className={styles.thumbRow}><span>{t}</span></div>
+      ))}
+    </div>
+  );
+}
+
+const GuideNumbersThumb = () => <NumbersThumb items={[['8', 'page standard'], ['22', 'cover designs'], ['12', 'page guide, down from 18']]} />;
+
 const THUMBS = {
+  guides: GuidesThumb,
+  styleCheck: StyleCheckThumb,
+  guideContents: GuideContentsThumb,
+  guideNumbers: GuideNumbersThumb,
   evals: EvalsThumb,
   decisions: DecisionsThumb,
   films: FilmsThumb,

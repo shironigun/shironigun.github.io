@@ -250,6 +250,7 @@ export default {
     { h2: 'Where it is now' },
     { p: 'Promise Tracker is in pilot, pre-production. It is not released yet. The developers are building the production feature from the handover, and I support them and the first users.' },
     { p: 'The next step is written down as honestly as the rest: re-checking a conversation as each new message arrives, so a kept promise closes sooner. The plan says what that would fix, what it wouldn’t, and what blocks it.' },
+    { p: 'I also wrote the feature’s first complete guide for dealers: what the AI does on its own and what it doesn’t, each task step by step, and what to do when something looks wrong. It is in review with our support team and not published yet.' },
     { p: 'The story film walks through the feature in TargetCRM, from a promise made in a chat to a manager making sure it is kept, with demo data.' },
     { video: '/videos/promise-tracker-targetcrm.mp4', title: 'Promise Tracker story film', poster: '/videos/promise-tracker-targetcrm-poster.jpg', caption: 'Promise Tracker in TargetCRM, also offered as Notify360. 2 min 14 s, demo data.' },
 
@@ -260,6 +261,7 @@ export default {
     { p: 'And the manager’s click is part of the design, not a safety net added at the end. Keeping a person in control shaped every screen and every action in the feature.' },
     { link: { to: '/case-studies/ai-evaluation', text: 'How I evaluate AI features' } },
     { link: { to: '/case-studies/ai-prototyping', text: 'The prototype it grew out of' } },
+    { link: { to: '/case-studies/feature-guides', text: 'The dealer guide I wrote for it' } },
     { link: { to: '/case-studies/promo-films', text: 'The story film and how it was made' } },
   ],
 };

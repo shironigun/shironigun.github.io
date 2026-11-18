@@ -16,7 +16,7 @@ const haystack = (p) => [p.name, p.summary, p.role, p.id, ...p.tags, ...(p.deliv
 
 function Card({ p, onOpen }) {
   const state = STATUS[p.status];
-  const documents = useStudy(p.page ? p.slug : null).study?.documents || [];
+  const documents = useStudy(p.page ? p.slug : null).study?.documents || p.documents || [];
   return (
     <button type="button" className={styles.card} style={{ '--lane': laneVar(p.lane) }} aria-haspopup="dialog" onClick={() => onOpen(p.slug)}>
       <span className={styles.cardTop}>

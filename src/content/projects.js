@@ -20,6 +20,15 @@ export const STATUS = {
   completed: { label: 'Completed', tone: 'neutral' },
 };
 
+// A document a project with no case study of its own can show in its popup (`documents` on the record).
+// The how-to standard's public copy also opens at the top of the feature guides case study.
+export const howToStandardPdf = {
+  title: 'How to write a feature how-to guide for dealers',
+  meta: 'The standard, public copy, 8 pages, November 2026',
+  href: '/documents/how-to-guide-standard.pdf',
+  action: 'Read the standard',
+};
+
 const allProjects = [
   {
     slug: 'promise-tracker',
@@ -614,6 +623,107 @@ const allProjects = [
     },
   },
   {
+    slug: 'feature-guides',
+    name: 'Feature guides for dealers',
+    summary: 'A how-to standard, a build tool that checks every guide against it, and a complete guide for an AI feature, revised with the support team that writes our knowledge base.',
+    question: 'How do you give a dealer the whole feature in one guide they will actually read?',
+    role: 'Wrote the standard and the first guide',
+    status: 'ongoing',
+    year: '2026',
+    when: 'Nov 2026 to now',
+    quarters: ['2026-Q4', '2026-Q4'],
+    kpi: ['3', 'of support’s product questions answered from the code'],
+    delivered: [
+      'Wrote a how-to standard from global documentation practice and our own house voice',
+      'Specified a build tool that turns a written guide into a branded PDF and checks it against the standard',
+      'Wrote a complete guide for an AI feature, checked it against the code and cut it from 18 pages to 12 after review',
+    ],
+    tags: ['Product', 'Design', 'Quality'],
+    thumb: 'guideNumbers',
+    page: {
+      lead: 'Dealers learn a feature from short help articles and from sales material, and neither shows the whole feature in one place. I wrote a standard for complete feature guides, had a build tool made that checks every guide against it, and wrote the first guide, for an AI feature. Then I asked the support team who write our knowledge base to review it, and took their changes.',
+      facts: [
+        { label: 'My role', value: 'Wrote the standard and the first guide; specified the build tool' },
+        { label: 'When', value: 'November 2026 to now' },
+        { label: 'Readers', value: 'Dealers; reviewed by our support team' },
+        { label: 'Status', value: 'Standard revised after review; the first guide is in review, not published yet' },
+        { label: 'Tools', value: 'Claude Code' },
+      ],
+    },
+  },
+  // The three parts of the feature guides. No case study of their own: each card's popup leads to the
+  // parent's story, which tells all three together.
+  {
+    slug: 'how-to-standard',
+    parent: 'feature-guides',
+    name: 'How-to guide standard',
+    summary: 'One standard for every feature guide: the sections, a three-part step, rules for AI features, words to use and a checklist before publishing.',
+    role: 'Wrote it; directed the research',
+    status: 'completed',
+    year: '2026',
+    when: 'Nov 2026',
+    quarters: ['2026-Q4', '2026-Q4'],
+    kpi: ['8', 'pages: sections, steps, words and checks'],
+    delivered: [
+      'Joined global documentation practice with how we already speak to dealers',
+      'Set the three-part step: what to do, what you’ll see, and why',
+      'Revised it after the support team’s review, taking their rules where they served dealers better',
+    ],
+    tags: ['Product', 'Quality'],
+    thumb: 'guides',
+    documents: [howToStandardPdf],
+    details: [
+      'I directed research into how the best documentation teams write task help (task topics, the Microsoft and Google style guides, Diátaxis and minimalism) and set it beside our own knowledge base, release notes and sales material.',
+      'The standard sets the sections every guide must have, a three-part step, how to cover features that work differently with each dealer-management system, how to write about AI features, a screenshot policy, words to use and a checklist before publishing. After the support team’s review I took several of their rules and changed mine where theirs served dealers better.',
+    ],
+  },
+  {
+    slug: 'guide-build-tool',
+    parent: 'feature-guides',
+    name: 'Guide build tool',
+    summary: 'One command turns a written guide into a branded PDF and checks it against the standard as it builds, with a catalog of 22 covers.',
+    role: 'Specified it; Claude Code built it',
+    status: 'ongoing',
+    year: '2026',
+    when: 'Nov 2026',
+    quarters: ['2026-Q4', '2026-Q4'],
+    kpi: ['22', 'cover designs, brochure styles first'],
+    delivered: [
+      'A branded PDF with a cover, contents, numbered figures and callouts, from one command',
+      'A style check that flags missing sections, long tasks, figures with no caption and banned words',
+      'A catalog of 22 covers, with four brochure designs drawn around a product screen',
+    ],
+    tags: ['Design', 'AI'],
+    thumb: 'styleCheck',
+    details: [
+      'Every PDF used to be formatted by hand. I specified a tool, and Claude Code built it, that turns a guide written in plain text into a branded PDF, tagged for screen readers, with headers and footers on every page.',
+      'As it builds, it reads the guide against the standard, so reviewers spend their time on what matters. A catalog mode prints every cover side by side; the reviewers will choose the final one.',
+    ],
+  },
+  {
+    slug: 'promise-tracker-guide',
+    parent: 'feature-guides',
+    name: 'Promise Tracker dealer guide',
+    summary: 'The first guide written to the standard: what the AI does on its own and what it doesn’t, every task step by step, and what to do when something looks wrong.',
+    role: 'Wrote it',
+    status: 'ongoing',
+    year: '2026',
+    when: 'Nov 2026',
+    quarters: ['2026-Q4', '2026-Q4'],
+    kpi: ['12', 'pages, down from 18 after support’s review'],
+    delivered: [
+      'The whole feature in one guide, with screens from demo data only',
+      'Its claims checked against the code, answering three of support’s product questions',
+      'Cut from 18 pages to 12 after the support team’s review',
+    ],
+    tags: ['Product', 'AI'],
+    thumb: 'guideContents',
+    details: [
+      'A complete guide for the AI feature whose product definition I led: before you begin, how it works, each task step by step, tips, questions dealers ask, and what to do when something goes wrong.',
+      'It is in review with our support team and not published yet. It goes out once Product settles the open questions the code check raised.',
+    ],
+  },
+  {
     slug: 'promo-films',
     name: 'Product promo films',
     summary: 'Promo films for TargetCRM, also offered as Notify360: an enterprise promo, an app-store cut and a Promise Tracker story film, rebuilt from the real product UI with demo data.',
@@ -747,6 +857,10 @@ const ORDER = [
   'quality-gates',
   'domain-knowledge-base',
   'product-documentation',
+  'feature-guides',
+  'how-to-standard',
+  'guide-build-tool',
+  'promise-tracker-guide',
   'ai-prototyping',
   'claude-marketplace',
   'release-notes-suite',

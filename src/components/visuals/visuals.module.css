@@ -307,6 +307,7 @@
 .thumbStats strong { font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); letter-spacing: -0.02em; margin-right: var(--s-2); }
 
 .thumbTag { flex: none; padding: 2px 8px; border-radius: 4px; background: var(--cobalt-wash); color: var(--cobalt-text); font-size: 0.8125rem; font-weight: 600; }
+.thumbTagWide { min-width: 84px; text-align: center; }
 .thumbTrophy { display: grid; gap: var(--s-1); }
 .thumbTrophy strong { font-family: var(--font-display); font-size: 3rem; line-height: 1; letter-spacing: -0.04em; }
 .thumbTrophy span { color: var(--graphite); }

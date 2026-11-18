@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from '../../lib/router';
-import { STATUS } from '../../content/projects';
+import { STATUS, parentOf } from '../../content/projects';
 import { useStudy } from '../../content/caseStudies';
 import Status from '../Status';
 import Thumb from '../visuals/Thumbs';
@@ -52,9 +52,12 @@ export default function ProjectDialog({ item, position, total, onClose, onPrev, 
 
   const facts = item.page ? item.page.facts.filter((f) => !['My role', 'When', 'Status'].includes(f.label)) : [];
   const { study } = useStudy(item.page ? item.slug : null);
-  const documents = study?.documents || [];
+  const documents = study?.documents || item.documents || [];
   const numbers = study?.body.find((b) => b.numbers)?.numbers || [item.kpi];
   const kind = item.page ? 'Case study' : 'Project';
+  // A part with no case study of its own (the feature guides' parts) is told in its parent's story.
+  const parent = parentOf(item);
+  const story = item.page ? item : parent?.page ? parent : null;
 
   return (
     <div className={styles.overlay} onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
@@ -97,8 +100,8 @@ export default function ProjectDialog({ item, position, total, onClose, onPrev, 
             <span className={styles.tags}>
               {item.tags.map((t) => <span key={t} style={{ '--tag': laneVar(t) }}>{t}</span>)}
             </span>
-            {item.page && (
-              <Link to={`/case-studies/${item.slug}`} className={`btn btn-primary ${styles.headCta}`}>
+            {story && (
+              <Link to={`/case-studies/${story.slug}`} className={`btn btn-primary ${styles.headCta}`}>
                 <BookIcon width="16" height="16" />Read the case study
               </Link>
             )}
@@ -160,11 +163,11 @@ export default function ProjectDialog({ item, position, total, onClose, onPrev, 
               <section className={styles.block}>
                 <h3>Related work</h3>
                 <ul className={styles.related}>
-                  {item.page && (
+                  {story && (
                     <li>
-                      <Link to={`/case-studies/${item.slug}`} className={styles.relatedLink}>
+                      <Link to={`/case-studies/${story.slug}`} className={styles.relatedLink}>
                         <span className={styles.relatedIcon}><BookIcon width="16" height="16" /></span>
-                        <span><strong>Case study</strong><span>The full story, as an article</span></span>
+                        <span><strong>Case study</strong><span>{story === item ? 'The full story, as an article' : `Told in ${story.name}`}</span></span>
                       </Link>
                     </li>
                   )}
@@ -184,7 +187,7 @@ export default function ProjectDialog({ item, position, total, onClose, onPrev, 
                       </a>
                     </li>
                   )}
-                  {!item.page && !documents.length && !item.href && (
+                  {!story && !documents.length && !item.href && (
                     <li className={styles.none}>No write-up yet. The description covers it.</li>
                   )}
                 </ul>
