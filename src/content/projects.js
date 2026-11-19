@@ -814,7 +814,7 @@ const allProjects = [
     delivered: [
       'Designed a repeatable way to release AI features',
       'Used it on the AI features my team builds, and held my own QA plugin to the same bar',
-      'Wrote the Skills Evals Lab: 16 associate lessons and a 4-lesson eval-lead track',
+      'Wrote the Skills Evals Lab: a 17-lesson beginner course with six hands-on labs',
     ],
     quarters: ['2026-Q4', '2026-Q4'],
     page: {
@@ -823,7 +823,7 @@ const allProjects = [
         { label: 'My role', value: 'Designed the evaluations; wrote the course' },
         { label: 'When', value: 'Oct 2026 to now' },
         { label: 'Used on', value: 'The AI features my team builds, and my own QA plugin' },
-        { label: 'Deliverables', value: 'An evaluation method, release gates and a 16-lesson course' },
+        { label: 'Deliverables', value: 'An evaluation method, release gates and a 17-lesson beginner course' },
       ],
     },
   },

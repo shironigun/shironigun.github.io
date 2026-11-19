@@ -206,7 +206,7 @@ const projects = [
   },
   {
     name: 'AI evaluation and the Skills Evals Lab', note: 'AI quality', when: 'Sep 2026 -- Present',
-    text: 'A repeatable AI test (3 runs, counted only if all pass) and a 14-module course on evaluating AI skills.',
+    text: 'A repeatable AI test (3 runs, counted only if all pass) and a 17-lesson course on evaluating AI skills.',
   },
   {
     name: 'AI QA Workbench', note: 'DIS AI Foundations program', when: 'Jul 2026',

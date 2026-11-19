@@ -155,7 +155,7 @@ function StandardsThumb() {
 function EvalsThumb() {
   return (
     <div className={styles.thumbList}>
-      {[['Rule', 'One test per rule'], ['Gate', 'All 3 runs must pass'], ['Course', '16 lessons, 5 labs']].map(([s, t]) => (
+      {[['Rule', 'One test per rule'], ['Gate', 'All 3 runs must pass'], ['Course', '17 lessons, 6 labs']].map(([s, t]) => (
         <div key={t} className={styles.thumbRow}>
           <span className={styles.thumbTag}>{s}</span>
           <span>{t}</span>

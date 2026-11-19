@@ -77,7 +77,7 @@ export const events = [
     icon: 'book',
     items: [
       { title: 'Working with Claude: The Eleven Building Blocks', when: 'Aug 2026', date: '2026-08', detail: 'A 183-page practical handbook I created for continued learning across the division, from Projects and Skills to MCP servers, agents and workflows.', links: [{ text: 'Read the handbook', href: '/documents/working-with-claude-eleven-building-blocks.pdf' }] },
-      { title: 'Skills Evals Lab', when: 'Oct 2026', date: '2026-10', detail: 'A 14-module interactive course on how to test AI skills, from what makes a good skill to graders and live labs.', to: '/case-studies/ai-evaluation' },
+      { title: 'Skills Evals Lab', when: 'Oct 2026', date: '2026-10', detail: 'A 17-lesson beginner course on how to test AI skills, from what changes when you test AI to six hands-on labs.', to: '/case-studies/ai-evaluation' },
       { title: 'Playwright course in the QA plugin', when: '2026', date: '2026-09', detail: 'A self-paced automation course that remembers where each learner stopped.', to: '/case-studies/qa-plugin' },
     ],
   },

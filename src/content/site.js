@@ -118,7 +118,7 @@ export const log2026 = [
 export const teaching = [
   { title: 'AI Foundations: From Doing to Directing', detail: 'Opening session of the AI Foundations hackathon I organised.' },
   { title: 'AI Foundations hackathon', detail: 'Organised and led it for the QA and design team, with a project brief for every participant.' },
-  { title: 'Skills Evals Lab', detail: 'A 14-module interactive course I wrote on how to test AI skills.' },
+  { title: 'Skills Evals Lab', detail: 'A 17-lesson beginner course I wrote on how to test AI skills.' },
   { title: 'Domain training', detail: `${hoursText.total} hours across development, QA, operations and business analysis, with knowledge transfer into the public product knowledge base.` },
   { title: 'People', detail: 'Trained two QA hires from non-IT backgrounds and onboarded three new QA analysts.' },
 ];

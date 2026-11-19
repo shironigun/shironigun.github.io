@@ -186,7 +186,7 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **Aug 2026** · Event organised · Organised the AI Foundations hackathon. Briefed nine real-world AI projects for the QA and design team, taught the foundations and mentored every team to a working demonstration.
 - **Aug 2026** · Talk · AI Foundations: From Doing to Directing. Opening session of the AI Foundations hackathon, from Claude Projects and Skills to MCP servers, agents and workflows.
 - **Aug 2026** · Course authored · Working with Claude: The Eleven Building Blocks. A 183-page practical handbook for continued learning across the division.
-- **2026** · Course authored · Skills Evals Lab. A 14-module interactive course on evaluating AI skills.
+- **2026** · Course authored · Skills Evals Lab. A 17-lesson beginner course on evaluating AI skills.
 - **2026** · Course authored · Playwright automation course. A self-paced course inside the QA plugin that remembers where each learner stopped.
 - **Oct 2026** · Workshop · AI workshop on Claude skills (13 Oct). With the division’s R&D director, who presented skills for reverse-engineering the context of our products. He led the QA and product part: presented his QA Engineering plugin, and every QA in the room, most of them manual testers, tried it on their own day-to-day work. Links to the QA plugin case study.
 - **Oct 2026** · Project · Published my Claude Code marketplace. Plugins built one at a time, brought together in one public repo; every one asks before it writes.
@@ -216,7 +216,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 - **Product promo films** (2026; Designed and produced; status: Completed; Design) → /case-studies/promo-films. Promo films for TargetCRM, also offered as Notify360: an enterprise promo (2:09, expo cut), an app-store cut (28 s, not exported yet) and a Promise Tracker story film (2:14). Product screens rebuilt in code from the real interface, with a fictional dealership and demo data. He wrote the stories, art-directed every scene and reviewed each cut; Claude built the films under his direction. The two exported films play on the promo films page (`public/videos/`), and the Promise Tracker film also plays on its case study.
 - **UI standards documentation** (2023–2024; Initiated and wrote; status: Completed; Design). The organisation’s first shared reference for components, interaction patterns and accessibility.
 - **Delivery analytics dashboards** (2026; Creator; status: Completed; Personal builds). Release cadence, change failure rate and items needing attention, from Azure DevOps activity.
-- **AI evaluation and the Skills Evals Lab** (Sep 2026 to now; Designed the evaluations; wrote the course; status: Ongoing; AI, Quality) → /case-studies/ai-evaluation. Company work, so only what he did and the problem it solved. Problem: an AI feature answers differently each run, so one passing test proves little and there is no clear bar for release. What he did: designed a repeatable evaluation method (one test per rule the model can get wrong, a format check first, every case run 3 times and counted only when all 3 pass, written grading criteria, hidden-instruction cases), used it on the AI features his team builds and on his own QA plugin (9 behavioural evaluations, 83.3% suite score on 13 Oct 2026, 7 of 9 cases perfect), and wrote the Skills Evals Lab (16 associate lessons and a 4-lesson eval-lead track), hosted at /labs/skills-evals-lab.html with fictional examples only. Learning: preparing for ISTQB CT-AI and CT-GenAI.
+- **AI evaluation and the Skills Evals Lab** (Sep 2026 to now; Designed the evaluations; wrote the course; status: Ongoing; AI, Quality) → /case-studies/ai-evaluation. Company work, so only what he did and the problem it solved. Problem: an AI feature answers differently each run, so one passing test proves little and there is no clear bar for release. What he did: designed a repeatable evaluation method (one test per rule the model can get wrong, a format check first, every case run 3 times and counted only when all 3 pass, written grading criteria, hidden-instruction cases), used it on the AI features his team builds and on his own QA plugin (9 behavioural evaluations, 83.3% suite score on 13 Oct 2026, 7 of 9 cases perfect), and wrote the Skills Evals Lab (a beginner course since 19 Nov 2026: 17 lessons, about three hours, six labs, no maths; the eval-lead track was removed), hosted at /labs/skills-evals-lab.html with fictional examples only. Learning: preparing for ISTQB CT-AI and CT-GenAI.
 
 ## Achievements
 
@@ -271,14 +271,14 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 ### Courses I wrote
 
 - **Working with Claude: The Eleven Building Blocks** (Aug 2026): A 183-page practical handbook I created for continued learning across the division, from Projects and Skills to MCP servers, agents and workflows. [Read the handbook]
-- **Skills Evals Lab** (2026): A 14-module interactive course on how to test AI skills, from what makes a good skill to graders and live labs.
+- **Skills Evals Lab** (2026): A 17-lesson beginner course on how to test AI skills, from what changes when you test AI to six hands-on labs.
 - **Playwright course in the QA plugin** (2026): A self-paced automation course that remembers where each learner stopped.
 
 ## Teaching
 
 - **AI Foundations: From Doing to Directing**: Opening session of the AI Foundations hackathon I organised.
 - **AI Foundations hackathon**: Organised and led it for the QA and design team, with a project brief for every participant.
-- **Skills Evals Lab**: A 14-module interactive course I wrote on how to test AI skills.
+- **Skills Evals Lab**: A 17-lesson beginner course I wrote on how to test AI skills.
 - **Domain training**: the live overall Perseus hours (6,064 on 10 Nov 2026) across development, QA, operations and business analysis, with knowledge transfer into the public product knowledge base.
 - **People**: Trained two QA hires from non-IT backgrounds and onboarded three new QA analysts.
 
@@ -331,7 +331,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 - **Test-case drafting skill:** Drafts test cases in my house style, learned from hundreds of test cases I had written.
 - **Claude Code marketplace:** 30 skills across seven plugins, each built alone for one job; the QA Engineering plugin is the flagship.
 - **AI feature behaviour:** The rules an AI feature follows: what it detects, when it acts and what it must never say.
-- **Skills Evals Lab:** A 14-module interactive course on evaluating AI skills.
+- **Skills Evals Lab:** A 17-lesson beginner course on evaluating AI skills.
 - **Working with Claude handbook:** A 183-page practical guide to the eleven building blocks of Claude, written for the division.
 
 ### Personas used in stories

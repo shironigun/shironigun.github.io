@@ -5,13 +5,13 @@
 // campaign evaluation: he assisted and built the evaluation) and §4 (the Lab); platform-design-learning.md
 // §1–3 (orientation guides compiled at his direction: documentation, not his builds); chat-exports/merged.md
 // §2, §8, §10; me-full-search.md (E18: the Lab dated 23–25 Oct 2026). The Lab's structure is read from the
-// public copy, public/labs/skills-evals-lab.html: 16 associate lessons (about 2¾ h), 4 eval-lead lessons
-// (about 80 min), six Practice labs and two eval-lead labs. Its "14 modules" and "Five labs" lines are stale
-// placeholders, so neither is repeated here. Plugin eval figures: the run of 13 Oct 2026 (see qa-plugin.js).
+// public copy, public/labs/skills-evals-lab.html. Since 19 Nov 2026 it is a beginner course at his request:
+// 17 lessons (about three hours) in three parts, Learn, Practise and Ship, with six labs and no formulas.
+// The eval-lead track was removed, and the person who signs off is "your QA lead". Plugin eval figures: the run of 13 Oct 2026 (see qa-plugin.js).
 export default {
   updated: 'November 2026',
   documents: [
-    { title: 'Skills Evals Lab', meta: 'Interactive course, October 2026: 16 lessons, about 2¾ hours, plus an eval-lead track', href: '/labs/skills-evals-lab.html', action: 'Open the course', primary: true },
+    { title: 'Skills Evals Lab', meta: 'Beginner course, October 2026, reworked November 2026: 17 lessons, about three hours, no maths', href: '/labs/skills-evals-lab.html', action: 'Open the course', primary: true },
   ],
   documentsNote: 'Written for our QA and product teams. Every example in it is fictional. It runs in your browser and keeps your progress on your device.',
   body: [
@@ -24,9 +24,9 @@ export default {
       'I have the system mapped first: what it must do, must never do, and what only looks like a bug.',
       'I write one test for every rule the AI can get wrong, check the format first, run every case three times, and count it only when all three runs pass.',
       'I set a release gate: a failed critical case blocks the release, and a new version ships only if it is no worse than the last.',
-      'I wrote a course, the Skills Evals Lab, so QA and product associates can run evaluations themselves.',
+      'I wrote a course, the Skills Evals Lab, so anyone on our QA and product teams, even someone new to AI, can run evaluations themselves.',
     ] },
-    { numbers: [['3 of 3', 'runs must pass before a case counts'], ['9', 'behavioural evaluations on my own plugin'], ['16', 'lessons on the course’s associate track']] },
+    { numbers: [['3 of 3', 'runs must pass before a case counts'], ['9', 'behavioural evaluations on my own plugin'], ['17', 'short lessons in the beginner course']] },
 
     { h2: 'One green run proves nothing' },
     { p: 'Picture Dana, a QA associate, testing an AI feature that drafts replies to customers. She runs her test case once. The draft is polite, accurate and in the right format, so she marks it passed. The next morning a manager forwards her a draft from the same feature that promises a delivery date nobody agreed.' },
@@ -181,13 +181,13 @@ export default {
       { title: 'Uplift', tag: 'is it better than nothing?', body: 'The same tasks with and without the skill, or against the last version. If the difference is zero, delete the skill.' },
       { title: 'Reliability', tag: 'does it work every time?', body: 'Count the tasks that worked on every run. Customer-facing work needs consistency, not one lucky run.' },
     ], columns: 2, caption: 'The four tests of a skill, from the course. A perfect skill that never fires is worth nothing.' },
-    { p: 'Follow an associate from the first lesson to a first real evaluation, and watch where the eval lead takes over.' },
+    { p: 'Follow a newcomer from the first lesson to a first real evaluation, and see where the QA lead takes over.' },
     {
       graph: {
         lanes: [
-          { name: 'Associate', note: 'QA or product' },
+          { name: 'Learner', note: 'QA, BA or product' },
           { name: 'The course', note: 'in your browser' },
-          { name: 'Eval lead', note: 'signs off' },
+          { name: 'QA lead', note: 'signs off' },
         ],
         phases: [
           { name: 'Learn', row: 0 },
@@ -196,14 +196,13 @@ export default {
           { name: 'Sign off', row: 5 },
         ],
         nodes: [
-          { id: 'start', name: 'Pick a track', sub: 'associate: no formulas', lane: 0, row: 0, kind: 'human', detail: 'Associates take the main track: 16 lessons, about two and three-quarter hours, no formulas.' },
-          { id: 'learn', name: 'Learn the ideas', sub: 'from LLMs to the checklist', lane: 1, row: 1, kind: 'store', detail: 'How a language model picks its words, what a good skill looks like, evals in QA language, the four tests and the checks that are never optional.' },
+          { id: 'start', name: 'Start lesson 1', sub: 'no coding, no maths', lane: 0, row: 0, kind: 'human', detail: 'Anyone new to AI starts with what changes when you test it. 17 short lessons, about three hours in all.' },
+          { id: 'learn', name: 'Learn the ideas', sub: 'from the basics to the checklist', lane: 1, row: 1, kind: 'store', detail: 'What changes when you test AI, how a language model picks its words, what a good skill looks like, evals in QA language, the four tests and the checks that are never optional.' },
           { id: 'labs', name: 'Practise in the labs', sub: 'every number live', lane: 1, row: 2, kind: 'external', detail: 'Check a skill’s files, test whether it fires, measure whether it beats no skill, grade an output, check its format and build a test set, all from rows you edit.' },
           { id: 'ship', name: 'Safety, then a quiz', sub: '13 questions', lane: 1, row: 3, kind: 'check', detail: 'Three ways an attack gets in and three ways harm gets out, then a knowledge check where every answer explains why.' },
           { id: 'first', name: 'First real eval', sub: 'two weeks, one real skill', lane: 0, row: 4, kind: 'human', detail: 'Week one: pick a skill, write ten requests and five to ten tasks, and run each three times with and without it. Week two: read every transcript and grade.' },
           { id: 'sheet', name: 'Evidence sheet', sub: 'critical failures by case', lane: 0, row: 5, kind: 'output', detail: 'Results per request and per task, every critical failure listed by case, and the test set saved next to the skill.' },
-          { id: 'lead', name: 'Eval-lead track', sub: '4 lessons, about 80 minutes', lane: 2, row: 5, kind: 'store', detail: 'For whoever signs off: the formulas behind every number, error bars, checking a judge against people, and gates in CI.' },
-          { id: 'decide', name: 'Release decision', sub: 'is the evidence strong enough?', lane: 2, row: 6, kind: 'gate', detail: 'The eval lead decides. The bar: zero critical failures, every critical task three for three, and an improvement over no skill that clears its error bars, or an honest “not shown”.' },
+          { id: 'decide', name: 'Release decision', sub: 'is the evidence strong enough?', lane: 2, row: 6, kind: 'gate', detail: 'The QA lead decides. The bar: zero critical failures, every critical task three for three, and a clear improvement over no skill.' },
         ],
         edges: [
           { from: 'start', to: 'learn', label: 'the basics' },
@@ -212,7 +211,6 @@ export default {
           { from: 'ship', to: 'first', label: 'ready' },
           { from: 'first', to: 'sheet', label: 'graded runs' },
           { from: 'sheet', to: 'decide', label: 'the sheet' },
-          { from: 'lead', to: 'decide', label: 'statistics' },
         ],
       },
       caption: 'The route through the Skills Evals Lab, from the first lesson to a release decision.',
@@ -287,7 +285,7 @@ export default {
 
     { h2: 'Where it is now' },
     { p: 'The method is how I evaluate the AI features my team builds and my own AI tooling.' },
-    { p: 'The Skills Evals Lab has two tracks: 16 lessons for associates, about two and three-quarter hours, and 4 for eval leads, about 80 minutes. Open it from the top of this page.' },
+    { p: 'The Skills Evals Lab is now a beginner course: 17 short lessons, about three hours, with no coding or maths needed. In November 2026 I reworked it so anyone new to AI can start from zero. Open it from the top of this page.' },
 
     { h2: 'Still learning' },
     { p: 'Evaluation is the part of AI product work I’m going deepest on. I’m preparing for the ISTQB AI Testing (CT-AI) and Testing with Generative AI (CT-GenAI) certifications, and working through my own roadmap of evaluation, retrieval and agent topics.' },

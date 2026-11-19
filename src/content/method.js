@@ -124,7 +124,7 @@ export const skillsWritten = [
   { title: 'Test-case drafting skill', body: 'Drafts test cases in my house style, learned from hundreds of test cases I had written.' },
   { title: 'QA Engineering Plugin', body: '30 skills across seven plugins, from story analysis to filed bugs.' },
   { title: 'AI feature behaviour', body: 'The rules an AI feature follows: what it detects, when it acts and what it must never say.' },
-  { title: 'Skills Evals Lab', body: 'A 14-module interactive course on evaluating AI skills.' },
+  { title: 'Skills Evals Lab', body: 'A 17-lesson beginner course on evaluating AI skills.' },
   { title: 'Working with Claude handbook', body: 'A 183-page practical guide to the eleven building blocks of Claude, written for the division.' },
 ];
 
