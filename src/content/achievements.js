@@ -58,6 +58,7 @@ export const events = [
     icon: 'mic',
     items: [
       { title: 'Postman API testing: proof of concept', when: '2025', date: '2025-04', detail: 'Presented a 35-slide evaluation of Postman to the QA and engineering teams: the capabilities, plan limits, strengths and limitations, and a recommendation adopted by 5+ teams.', to: '/case-studies/postman-evaluation', links: [{ text: 'Present the slides', href: '/documents/postman-poc-presentation.pdf' }, { text: 'Read the evaluation', href: '/documents/postman-api-testing-evaluation.pdf' }] },
+      { title: 'The Lift: Why AI isn’t about 10x', when: 'Jun 2026', date: '2026-06', detail: 'Perseus Group’s AI Pulse session, alongside our R&D director: AI is a lift, not a multiplier. Context and clarity limit it, not coding ability, so domain knowledge is what turns AI into working solutions.' },
       { title: 'AI Foundations: From Doing to Directing', when: 'Aug 2026', date: '2026-08', detail: 'Opening session of the AI Foundations hackathon: Claude Projects, Skills, MCP servers, connectors, agents and workflows, with activities for each role and a live example on Azure DevOps MCP servers.', to: '/case-studies/ai-foundations-hackathon' },
     ],
   },

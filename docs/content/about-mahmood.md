@@ -183,6 +183,7 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **Jul 2026** · Project · AI product prototyping. Working prototypes that let the team evaluate AI ideas before committing to build.
 - **Jul 2026** · Participated · DIS AI Foundations program. Completed a five-day, cross-division AI hackathon and built the AI QA Workbench in four days.
 - **Aug 2026** · Event organised · Organised the AI Foundations hackathon. Briefed nine real-world AI projects for the QA and design team, taught the foundations and mentored every team to a working demonstration.
+- **Jun 2026** · Talk · The Lift: Why AI isn’t about 10x, AI Pulse, Perseus Group. Perseus Group’s AI Pulse session (Jun 2026), alongside the division’s R&D director and another presenter, for two divisions: AI isn’t a multiplier, it’s a lift; context and clarity limit it, not coding ability, so domain knowledge is what turns AI into working solutions. Source: his LinkedIn post of 15 Jun 2026 (slide: “The Lift. Why AI isn’t about 10×”, AI Pulse 2026). Co-presenters and division names stay off the site.
 - **Aug 2026** · Talk · AI Foundations: From Doing to Directing. Opening session of the AI Foundations hackathon, from Claude Projects and Skills to MCP servers, agents and workflows.
 - **Aug 2026** · Course authored · Working with Claude: The Eleven Building Blocks. A 183-page practical handbook for continued learning across the division.
 - **2026** · Course authored · Skills Evals Lab. A 17-lesson beginner course on evaluating AI skills.
@@ -259,6 +260,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 
 ### Talks
 
+- **The Lift: Why AI isn’t about 10x** (Jun 2026): Perseus Group’s AI Pulse session (Jun 2026), alongside the division’s R&D director and another presenter, for two divisions: AI isn’t a multiplier, it’s a lift; context and clarity limit it, not coding ability, so domain knowledge is what turns AI into working solutions. Source: his LinkedIn post of 15 Jun 2026 (slide: “The Lift. Why AI isn’t about 10×”, AI Pulse 2026). Co-presenters and division names stay off the site.
 - **Postman API testing: proof of concept** (2025): Presented a 35-slide evaluation of Postman to the QA and engineering teams: the capabilities, plan limits, strengths and limitations, and a recommendation adopted by 5+ teams.
 - **AI Foundations: From Doing to Directing** (Aug 2026): Opening session of the AI Foundations hackathon: Claude Projects, Skills, MCP servers, connectors, agents and workflows, with activities for each role and a live example on Azure DevOps MCP servers.
 
@@ -287,6 +289,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 - **Nov:** Led an AI feature from concept to production readiness. Wrote a how-to standard and the first complete feature guide for dealers, revised with the support team.
 - **Oct:** Published my Claude Code marketplace on GitHub.
 - **Aug:** Organised and led the AI Foundations hackathon, opened it with “AI Foundations: From Doing to Directing”, and wrote a 183-page Claude handbook for the division.
+- **Jun:** Presented “The Lift: Why AI isn’t about 10x” at Perseus Group’s AI Pulse session.
 - **Jul:** Completed the DIS AI Foundations program and built the AI QA Workbench in four days.
 - **Apr:** Started a full UI and UX revamp of our dealership CRM through agentic coding.
 - **Jan:** Promoted to Product Quality Analyst.
