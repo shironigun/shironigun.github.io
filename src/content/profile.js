@@ -20,10 +20,9 @@ export const experience = [
       { label: 'AI-native product revamp', text: 'Led the rebuild of 7 product areas of our dealership CRM, directing Claude Code agents from specification to review against the component library and business rules.' },
       { label: 'Roadmap and product strategy', text: 'Shape the roadmap and AI feature decisions with the Product Owner and Initiative Manager in Aha! and Azure DevOps, backing priorities with quantitative analysis (regression, trend and break-even), SWOT and 5 Whys.' },
       { label: 'AI enablement at scale', text: 'Organised the AI Foundations hackathon for 9 participants across QA and design, with 9 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page handbook on working with Claude.' },
-      { label: 'People leadership', text: 'Manage 3 QA analysts who report to me directly (since October 2026), growing each toward AI-assisted testing, AI evaluation and automation.' },
+      { label: 'People leadership', text: 'Manage 3 QA analysts who report to me directly (since October 2026), growing each toward AI-assisted testing, AI evaluation and automation; completed six-month Manager Essentials Training.' },
       { label: 'Public AI tooling', text: 'Published a public Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and built the AI QA Workbench, which I took to the DIS AI Foundations program and extended there.' },
       { label: 'Delivery and insight', text: 'Own release readiness, introduced the API automation framework and onboarded 3 analysts; set up Power BI and Power Platform dashboards tracking release cadence, change failure rate and post-launch outcomes.' },
-      { label: 'Recognition', text: 'Certificate of Appreciation for organising and delivering the AI Foundations initiative; Certificate of Completion, AI Foundations: From Developer to Orchestrator (Dealer Information Systems).' },
     ],
   },
   {
@@ -86,6 +85,7 @@ export const product = {
 export const skills = [
   { group: 'Product and analysis', items: ['Product discovery and definition', 'User stories and acceptance criteria', 'Stakeholder management (RACI/RASCI)', 'Process modelling', 'Roadmapping'] },
   { group: 'AI product work', items: ['AI feature design', 'AI skill writing and refinement', 'Evaluating AI output', 'Agentic workflows', 'Prototyping with AI'] },
+  { group: 'People leadership', items: ['Coaching and feedback', 'Delegation', 'Development planning', 'Conflict resolution', 'Team enablement'] },
   { group: 'Quality', items: ['Test strategy and planning', 'Functional, API and acceptance testing', 'Quality gates', 'Release readiness', 'Defect management'] },
   { group: 'Ways of working', items: ['Scrum (CSM®)', 'Kanban', 'Workshop facilitation', 'Root-cause analysis (5 Whys)', 'Risk and escalation management'] },
 ];
@@ -97,6 +97,8 @@ export const education = {
 };
 
 export const certifications = [
+  { title: 'Manager Essentials Training', issuer: 'Perseus Group', year: '2026', file: '/certifications/manager-essentials-certificate.jpg' },
+  { title: 'Certificate of Appreciation, AI Foundations organiser', issuer: 'Perseus Group', year: '2026', file: '/certifications/ai-foundations-organiser-certificate.jpg' },
   { title: 'AI Foundations: From Developer to Orchestrator', issuer: 'Dealer Information Systems', year: '2026', file: '/certifications/dis-ai-foundations-certificate.jpg' },
   { title: 'Business Analysis Fundamentals', issuer: 'Microsoft', year: '2026', file: '/certifications/Business-Analysis-Fundamentals.pdf' },
   { title: 'Certified ScrumMaster® (CSM®)', issuer: 'Scrum Alliance', year: '2024', file: '/certifications/CSM.jpeg' },

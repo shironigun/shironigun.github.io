@@ -100,10 +100,9 @@ On our dealership SaaS products I work as the team’s business analyst and asso
 - **AI-native product revamp:** Led the rebuild of 7 product areas of our dealership CRM, directing Claude Code agents from specification to review against the component library and business rules.
 - **Roadmap and product strategy:** Shape the roadmap and AI feature decisions with the Product Owner and Initiative Manager in Aha! and Azure DevOps, backing priorities with quantitative analysis (regression, trend and break-even), SWOT and 5 Whys.
 - **AI enablement at scale:** Organised the AI Foundations hackathon for 9 participants across QA and design, with 9 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page handbook on working with Claude.
-- **People leadership:** Manage 3 QA analysts who report to me directly (since October 2026), growing each toward AI-assisted testing, AI evaluation and automation.
+- **People leadership:** Manage 3 QA analysts who report to me directly (since October 2026), growing each toward AI-assisted testing, AI evaluation and automation; completed six-month Manager Essentials Training.
 - **Public AI tooling:** Published a public Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and created the AI QA Workbench in 4 days at the DIS AI Foundations program.
 - **Delivery and insight:** Own release readiness, introduced the API automation framework and onboarded 3 analysts; set up Power BI and Power Platform dashboards tracking release cadence, change failure rate and post-launch outcomes.
-- **Recognition:** Certificate of Appreciation for organising and delivering the AI Foundations initiative; Certificate of Completion, AI Foundations: From Developer to Orchestrator (Dealer Information Systems).
 
 ### Junior SQA Analyst, Contour Software, Perseus Group (Constellation Software)
 
@@ -190,6 +189,7 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **2026** · Course authored · Playwright automation course. A self-paced course inside the QA plugin that remembers where each learner stopped.
 - **Oct 2026** · Workshop · AI workshop on Claude skills (13 Oct). With the division’s R&D director, who presented skills for reverse-engineering the context of our products. He led the QA and product part: presented his QA Engineering plugin, and every QA in the room, most of them manual testers, tried it on their own day-to-day work. Links to the QA plugin case study.
 - **Oct 2026** · Project · Published my Claude Code marketplace. Plugins built one at a time, brought together in one public repo; every one asks before it writes.
+- **Jun to Nov 2026** · Certification · Manager Essentials Training, Perseus Group. 18 hours of leadership training (shown as the card's metric), with the Certificate of Achievement (Nov 2026). The R&D director enrolled him in this six-month leadership programme on DDI’s frontline-leader curriculum: communication, coaching, delegation, developing people and resolving workplace conflict, over six live workshops (24 Jun to 19 Nov) and peer learning sessions. Course materials are DDI’s and stay off the site.
 - **Nov 2026** · Project · AI feature heading to production. Led its product definition, from discovery and requirements to design, evaluation and launch readiness.
 
 ## Projects (all, in site order)
@@ -295,6 +295,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 
 - **Product and analysis:** Product discovery and definition, User stories and acceptance criteria, Stakeholder management (RACI/RASCI), Process modelling, Roadmapping
 - **AI product work:** AI feature design, AI skill writing and refinement, Evaluating AI output, Agentic workflows, Prototyping with AI
+- **People leadership:** Coaching and feedback, Delegation, Development planning, Conflict resolution, Team enablement
 - **Quality:** Test strategy and planning, Functional, API and acceptance testing, Quality gates, Release readiness, Defect management
 - **Ways of working:** Scrum (CSM®), Kanban, Workshop facilitation, Root-cause analysis (5 Whys), Risk and escalation management
 
@@ -348,6 +349,8 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 
 ## Certifications
 
+- Manager Essentials Training, Perseus Group, 2026 (`public/certifications/manager-essentials-certificate.jpg`)
+- Certificate of Appreciation, AI Foundations organiser, Perseus Group, 2026 (`public/certifications/ai-foundations-organiser-certificate.jpg`)
 - AI Foundations: From Developer to Orchestrator, Dealer Information Systems, 2026 (`public/certifications/dis-ai-foundations-certificate.jpg`)
 - Business Analysis Fundamentals, Microsoft, 2026 (`public/certifications/Business-Analysis-Fundamentals.pdf`)
 - Certified ScrumMaster® (CSM®), Scrum Alliance, 2024 (`public/certifications/CSM.jpeg`)

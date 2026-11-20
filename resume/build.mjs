@@ -28,6 +28,8 @@ process.chdir(root);
 const vite = await createServer({ root, server: { middlewareMode: true, hmr: false }, appType: 'custom', logLevel: 'error' });
 const { experience, skills, education, certifications } = await vite.ssrLoadModule('/src/content/profile.js');
 const { person, contact, recognition, tools, tenure } = await vite.ssrLoadModule('/src/content/site.js');
+// Both résumés list the tool groups under Skills, named "Product tools" and so on.
+const skillGroups = [...skills, ...tools.map((g) => ({ ...g, group: `${g.group} tools` }))];
 const { hoursText } = await vite.ssrLoadModule('/src/content/hours.js');
 const { recentEvents } = await vite.ssrLoadModule('/src/content/achievements.js');
 await vite.close();
@@ -97,10 +99,10 @@ h1 { font-size: 25pt; font-weight: 700; line-height: 1.02; letter-spacing: -0.02
 .links { margin: 0; padding: 0; list-style: none; text-align: right; font-size: 8.8pt; line-height: 1.62; }
 .links a { color: ${t.ink}; }
 .summary { margin: 4.2mm 0 0; font-size: 9.8pt; line-height: 1.55; color: ${t.ink}; }
-section { margin-top: 3mm; }
+section { margin-top: 2.4mm; }
 h2 { break-after: avoid; display: flex; align-items: center; gap: 3mm; margin-bottom: 1.2mm; font-size: 11.5pt; font-weight: 650; letter-spacing: -0.005em; }
 h2::after { content: ''; flex: 1; border-top: 0.75pt solid ${t.line}; }
-.role { margin-top: 2.4mm; }
+.role { margin-top: 2mm; }
 .roleHead { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; break-after: avoid; }
 h3 { font-size: 10.6pt; font-weight: 650; }
 .period { flex: none; font-size: 8.8pt; color: ${t.quiet}; font-variant-numeric: tabular-nums; }
@@ -109,10 +111,10 @@ h3 { font-size: 10.6pt; font-weight: 650; }
 .points li { margin: 0.4mm 0; padding-left: 0.6mm; break-inside: avoid; }
 .points li::marker { color: ${t.accent}; }
 .points strong { font-weight: 600; color: ${t.ink}; }
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4mm 9mm; margin-top: 1.4mm; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 9mm; margin-top: 1.4mm; }
 .group { break-inside: avoid; }
 .group b { display: block; font-weight: 600; color: ${t.ink}; }
-.list { margin: 1.2mm 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2mm 7mm; }
+.list { margin: 1.2mm 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8mm 7mm; }
 .list.wide { grid-template-columns: 1fr 1fr; }
 .list li { display: grid; gap: 0.2mm; padding-top: 1mm; border-top: 0.5pt solid ${t.line}; break-inside: avoid; }
 .list li span:first-child { color: ${t.ink}; font-weight: 500; line-height: 1.35; }
@@ -146,11 +148,7 @@ h3 { font-size: 10.6pt; font-weight: 650; }
 </section>
 
 <section><h2>Skills</h2>
-  <div class="two">${skills.map((g) => `<div class="group"><b>${esc(g.group)}</b>${esc(g.items.join(', '))}</div>`).join('')}</div>
-</section>
-
-<section><h2>Tools</h2>
-  <div class="two">${tools.map((g) => `<div class="group"><b>${esc(g.group)}</b>${esc(g.items.join(', '))}</div>`).join('')}</div>
+  <div class="two">${skillGroups.map((g) => `<div class="group"><b>${esc(g.group)}</b>${esc(g.items.join(', '))}</div>`).join('')}</div>
 </section>
 
 <section><h2>Education</h2>
@@ -217,7 +215,7 @@ const tex = (s) => String(s)
 const range = (period) => tex(dates(period));
 
 // The full lists from src/content: every skill group, every tool group, every certification and award.
-const skillTex = [...skills, ...tools.map((g) => ({ ...g, group: `${g.group} tools` }))]
+const skillTex = skillGroups
   .map((g) => `     \\textbf{${tex(g.group)}}{: ${tex(g.items.join(', '))}}`).join(' \\\\\n');
 const certTex = certifications.map((c) => `      \\resumeItem{${tex(c.title)}, ${tex(c.issuer)}, ${tex(c.year)}}`).join('\n');
 const awardTex = recognition.map((r) => `      \\resumeItem{\\textbf{${tex(r.title)}}${r.detail ? `: ${tex(r.detail)}` : ''}}`).join('\n');
