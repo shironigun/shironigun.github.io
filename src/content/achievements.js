@@ -10,7 +10,7 @@ export const domainLeadership = `${hoursText.junior} hours of domain leadership`
 
 export const achievements = [
   { icon: 'trophy', title: '1st place, division-wide AI hackathon', detail: 'Product Owner, Scrum Master and QA lead: I led the requirements, the UI prototypes and the final pitch. We placed 1st of 11 teams.', year: '2025', to: '/case-studies/hackathon-2025' },
-  { icon: 'award', title: 'VP Award', detail: 'For contributions tied to multimillion-dollar business goals across a 200+ person division.' },
+  { icon: 'award', title: 'VP Award', detail: 'For contributions tied to multimillion-dollar business goals across a 200+ person division.', year: '2025' },
   { icon: 'shield', title: 'Quality framework adopted by 3 teams', detail: 'The Strict Quality Gates framework I designed: about 40% less defect leakage and zero critical defects across 6 sprints.', year: '2025', to: '/case-studies/quality-gates' },
   { icon: 'book', title: domainLeadership, detail: 'A self-initiated training programme, the most comprehensive in the division’s history, with knowledge transfer that fed the public knowledge base.', year: '2024–2025', to: '/case-studies/domain-knowledge-base' },
   { icon: 'pen', title: 'Introduced the design phase', detail: 'A structured design step in delivery, now part of how the team works.', to: '/case-studies/design-phase' },
@@ -18,7 +18,7 @@ export const achievements = [
   { icon: 'briefcase', title: 'Covered a 3-month BA vacancy', detail: 'Wrote the user stories and acceptance criteria with the Product Owner, with no gap in delivery.' },
   { icon: 'trend', title: 'Promoted to Product Quality Analyst', detail: 'From Junior SQA Analyst in under two years, into a product-analyst role.', year: '2026' },
   { icon: 'users', title: 'Built QA talent from the ground up', detail: 'Trained two QA hires from non-IT backgrounds to independent sprint work, and onboarded three new analysts in 2026.' },
-  { icon: 'spark', title: 'AI Innovator of the Month' },
+  { icon: 'spark', title: 'AI Innovator of the Month', detail: 'For the UI and UX revamp and new features, delivered through agentic development and product thinking.', year: '2026', to: '/case-studies/design-phase' },
   { icon: 'plug', title: 'Published a Claude Code marketplace', detail: '7 plugins and 30 skills, each built for one real job.', year: '2026', to: '/case-studies/claude-marketplace' },
   { icon: 'calendar', title: 'Organised the AI Foundations hackathon', detail: 'Briefed, taught and mentored the QA and design team to working demonstrations, and was recognised with a certificate of appreciation.', year: '2026', to: '/case-studies/ai-foundations-hackathon' },
   { icon: 'badge', title: 'Completed the DIS AI Foundations program', detail: 'Took the AI QA Workbench I had started a month earlier to a five-day, cross-division AI hackathon and extended it there.', year: '2026', to: '/case-studies/ai-qa-workbench' },

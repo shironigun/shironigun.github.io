@@ -178,6 +178,10 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **2024 to 2025** · Achievement · Built QA talent from the ground up. Trained two QA hires from non-technical backgrounds to independent sprint work.
 - **Jan 2026** · Promotion · Product Quality Analyst, Contour Software, Perseus Group. A product role spanning business analysis, design collaboration, AI prototyping, Scrum and QA leadership.
 - **Feb 2026** · Certification · Business Analysis Fundamentals, Microsoft
+- **Jan 2025** · Achievement · VP Award, Contour Software, Perseus Group. For contributions tied to multimillion-dollar business goals across a 200+ person division.
+- **Jan 2025** · Achievement · Division All-Hands Recognition. Recognised at the division all-hands for quality and process improvements.
+- **Jun 2025** · Achievement · Annual Special Thanks.
+- **Jun 2026** · Achievement · AI Innovator of the Month. For the UI and UX revamp and new features, delivered through agentic development and product thinking. Links to the design phase case study.
 - **2026** · Achievement · Onboarded three new analysts. Ran the QA hiring evaluation and brought three analysts up to speed.
 - **Apr 2026** · Project · Full UI and UX revamp. Seven product areas redesigned and rebuilt through agentic coding, each reviewed against the component library.
 - **Jul 2026** · Project · AI product prototyping. Working prototypes that let the team evaluate AI ideas before committing to build.
@@ -222,7 +226,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 ## Achievements
 
 - **1st place, division-wide AI hackathon** (2025): Product Owner, Scrum Master and QA lead: led the requirements, the UI prototypes and the final pitch. 1st of 11 teams.
-- **VP Award**: For contributions tied to multimillion-dollar business goals across a 200+ person division.
+- **VP Award** (Jan 2025): For contributions tied to multimillion-dollar business goals across a 200+ person division.
 - **Quality framework adopted by 3 teams** (2025): The Strict Quality Gates framework I designed: about 40% less defect leakage and zero critical defects across 6 sprints.
 - **Junior SQA hours of domain leadership** (live; 3,920) (2024–2025): A self-initiated training programme, the most comprehensive in the division’s history, with knowledge transfer that fed the public knowledge base.
 - **Introduced the design phase**: A structured design step in delivery, now part of how the team works.
@@ -230,7 +234,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 - **Covered a 3-month BA vacancy**: Wrote the user stories and acceptance criteria with the Product Owner, with no gap in delivery.
 - **Promoted to Product Quality Analyst** (2026): From Junior SQA Analyst in under two years, into a product-analyst role.
 - **Built QA talent from the ground up**: Trained two QA hires from non-IT backgrounds to independent sprint work, and onboarded three new analysts in 2026.
-- **AI Innovator of the Month**
+- **AI Innovator of the Month** (Jun 2026): For the UI and UX revamp and new features, delivered through agentic development and product thinking.
 - **Published a Claude Code marketplace** (2026): 7 plugins and 30 skills, each built for one real job.
 - **Organised the AI Foundations hackathon** (2026): Briefed, taught and mentored the QA and design team to working demonstrations, and was recognised with a certificate of appreciation.
 - **Completed the DIS AI Foundations program** (2026): Built the AI QA Workbench in four days at a five-day, cross-division AI hackathon.
@@ -238,11 +242,13 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 
 ## Recognition
 
-- **VP Award**: Contributions tied to multimillion-dollar business goals
-- **AI Innovator of the Month**
-- **1st of 11 teams, AI hackathon**: As Product Owner, Scrum Master and QA lead
-- **Division All-Hands Recognition**
-- **Annual Special Thanks**
+Dates from his LinkedIn Honors section (20 Nov 2026). His LinkedIn credits the All-Hands recognition with helping cut team attrition to 13%; that internal figure stays off the site.
+
+- **VP Award** (Jan 2025): Contributions tied to multimillion-dollar business goals
+- **AI Innovator of the Month** (Jun 2026)
+- **1st of 11 teams, AI hackathon** (May 2025): As Product Owner, Scrum Master and QA lead
+- **Division All-Hands Recognition** (Jan 2025): Quality and process improvements
+- **Annual Special Thanks** (Jun 2025)
 
 ## Talks, workshops, events and courses
 

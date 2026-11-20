@@ -71,7 +71,7 @@ Built by `node resume/build.mjs` from `src/content`; never edit the PDFs or the 
 ## Open items
 
 - Confirm two inferred quarter ranges on the Projects board: product decisions (Q1 to Q4 2026) and promo films (Q3 to Q4 2026).
-- Dates still needed in [content/journey-inputs.md](content/journey-inputs.md): VP Award, AI Innovator of the Month, Division All-Hands Recognition, Annual Special Thanks, and several approximate months.
+- Dates still needed in [content/journey-inputs.md](content/journey-inputs.md): several approximate months. (The four honors got their dates from his LinkedIn on 20 Nov 2026.)
 - The public knowledge base link points at a domain that contains the product's name.
 - Deep links such as `/projects` are served with HTTP 404 by the GitHub Pages fallback, although they render normally.
 - His LinkedIn may still list tools he asked to keep off the portfolio (Visio, Power BI, SQL, Python); he may want to update it.

@@ -36,10 +36,10 @@ names, version numbers, environments, ticket IDs, customer or partner names.
 
 These are on the site but have no date, so they are not on the timeline yet:
 
-- [ ] VP Award: month and year
-- [ ] AI Innovator of the Month: month and year
-- [ ] Division All-Hands Recognition: month and year
-- [ ] Annual Special Thanks: year
+- [x] VP Award: Jan 2025 (from his LinkedIn, 20 Nov 2026)
+- [x] AI Innovator of the Month: Jun 2026
+- [x] Division All-Hands Recognition: Jan 2025
+- [x] Annual Special Thanks: Jun 2025
 
 These are on the timeline with an approximate position; an exact month
 would place them correctly:
