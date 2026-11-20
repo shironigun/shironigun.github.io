@@ -83,11 +83,12 @@ export const product = {
 };
 
 export const skills = [
-  { group: 'Product and analysis', items: ['Product discovery and definition', 'User stories and acceptance criteria', 'Stakeholder management (RACI/RASCI)', 'Process modelling', 'Roadmapping'] },
-  { group: 'AI product work', items: ['AI feature design', 'AI skill writing and refinement', 'Evaluating AI output', 'Agentic workflows', 'Prototyping with AI'] },
-  { group: 'People leadership', items: ['Coaching and feedback', 'Delegation', 'Development planning', 'Conflict resolution', 'Team enablement'] },
-  { group: 'Quality', items: ['Test strategy and planning', 'Functional, API and acceptance testing', 'Quality gates', 'Release readiness', 'Defect management'] },
-  { group: 'Ways of working', items: ['Scrum (CSM®)', 'Kanban', 'Workshop facilitation', 'Root-cause analysis (5 Whys)', 'Risk and escalation management'] },
+  { group: 'Product and analysis', items: ['Product management', 'Product strategy', 'Product discovery', 'Product roadmapping', 'Business analysis', 'Software requirements', 'Stakeholder management', 'Project management'] },
+  { group: 'Design', items: ['Product design', 'User experience (UX)', 'User interface design', 'User interface prototyping'] },
+  { group: 'AI product work', items: ['Artificial intelligence (AI)', 'Generative AI', 'AI agents', 'LLM evaluation', 'Prompt engineering', 'Rapid prototyping'] },
+  { group: 'People leadership', items: ['Leadership', 'People development', 'Coaching', 'Mentoring', 'Delegation', 'Conflict resolution'] },
+  { group: 'Quality', items: ['Product quality', 'Software quality assurance', 'Test planning', 'Test management', 'Test estimation', 'Test automation', 'API testing', 'Functional testing', 'Regression testing', 'User acceptance testing', 'Agile testing', 'Defect triage'] },
+  { group: 'Ways of working', items: ['Scrum (CSM®)', 'Kanban', 'Agile methodologies', 'Sprint planning', 'Workshop facilitation'] },
 ];
 
 export const education = {

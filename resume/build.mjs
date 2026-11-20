@@ -113,10 +113,13 @@ h3 { font-size: 10.6pt; font-weight: 650; }
 .points strong { font-weight: 600; color: ${t.ink}; }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 9mm; margin-top: 1.4mm; }
 .group { break-inside: avoid; }
+/* Skills flow down two balanced columns, so a short group never sits beside a tall one's empty space. */
+.cols { column-count: 2; column-gap: 9mm; margin-top: 1.4mm; }
+.cols .group { margin-bottom: 1.4mm; }
 .group b { display: block; font-weight: 600; color: ${t.ink}; }
-.list { margin: 1.2mm 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8mm 7mm; }
+.list { margin: 1.2mm 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5mm 7mm; }
 .list.wide { grid-template-columns: 1fr 1fr; }
-.list li { display: grid; gap: 0.2mm; padding-top: 1mm; border-top: 0.5pt solid ${t.line}; break-inside: avoid; }
+.list li { display: grid; gap: 0.2mm; padding-top: 0.7mm; border-top: 0.5pt solid ${t.line}; break-inside: avoid; }
 .list li span:first-child { color: ${t.ink}; font-weight: 500; line-height: 1.35; }
 .list li span:last-child { color: ${t.quiet}; font-size: 8.4pt; line-height: 1.35; }
 .edu { display: flex; justify-content: space-between; align-items: baseline; margin-top: 1.4mm; }
@@ -148,7 +151,7 @@ h3 { font-size: 10.6pt; font-weight: 650; }
 </section>
 
 <section><h2>Skills</h2>
-  <div class="two">${skillGroups.map((g) => `<div class="group"><b>${esc(g.group)}</b>${esc(g.items.join(', '))}</div>`).join('')}</div>
+  <div class="cols">${skillGroups.map((g) => `<div class="group"><b>${esc(g.group)}</b>${esc(g.items.join(', '))}</div>`).join('')}</div>
 </section>
 
 <section><h2>Education</h2>

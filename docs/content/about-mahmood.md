@@ -293,11 +293,14 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 
 ## Skills
 
-- **Product and analysis:** Product discovery and definition, User stories and acceptance criteria, Stakeholder management (RACI/RASCI), Process modelling, Roadmapping
-- **AI product work:** AI feature design, AI skill writing and refinement, Evaluating AI output, Agentic workflows, Prototyping with AI
-- **People leadership:** Coaching and feedback, Delegation, Development planning, Conflict resolution, Team enablement
-- **Quality:** Test strategy and planning, Functional, API and acceptance testing, Quality gates, Release readiness, Defect management
-- **Ways of working:** Scrum (CSM®), Kanban, Workshop facilitation, Root-cause analysis (5 Whys), Risk and escalation management
+Mirrors his LinkedIn skills (cleaned up on 20 Nov 2026), in the site's sentence case.
+
+- **Product and analysis:** Product management, Product strategy, Product discovery, Product roadmapping, Business analysis, Software requirements, Stakeholder management, Project management
+- **Design:** Product design, User experience (UX), User interface design, User interface prototyping
+- **AI product work:** Artificial intelligence (AI), Generative AI, AI agents, LLM evaluation, Prompt engineering, Rapid prototyping
+- **People leadership:** Leadership, People development, Coaching, Mentoring, Delegation, Conflict resolution
+- **Quality:** Product quality, Software quality assurance, Test planning, Test management, Test estimation, Test automation, API testing, Functional testing, Regression testing, User acceptance testing, Agile testing, Defect triage
+- **Ways of working:** Scrum (CSM®), Kanban, Agile methodologies, Sprint planning, Workshop facilitation
 
 ## How he works
 
