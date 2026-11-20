@@ -13,14 +13,15 @@ export default {
   documentsNote: 'As presented in 2025. Postman’s plans and limits have changed since; the tables in this article are current as of November 2026.',
   body: [
     { p: 'Every tester on the team had Postman installed. Almost nobody used more than its Send button.' },
-    { p: 'In early 2025 our QA team used Postman for basic API checks, while its automation, performance and security features sat unexplored. I evaluated the full feature set, mapped it plan by plan, and presented the findings to the QA and engineering teams. The recommendation made Postman the standard API testing tool across more than five teams.' },
+    { p: 'In early 2025 our QA team used Postman for basic API checks, while its automation, performance and security features sat unexplored. I evaluated the full feature set, mapped it plan by plan, reviewed the findings in a session with Postman’s support team, and in May 2025 presented them to the entire division during our onshore team’s visit. I also ran collections on Postman Cloud from Jenkins pipelines and the Newman CLI, on cron schedules with email reports, as a first step towards API tests in CI. The recommendation made Postman the standard API testing tool across more than five teams.' },
     { p: 'In November 2026 I rechecked it against Postman’s official documentation. The original presentation and written evaluation are at the top of this page, as presented.' },
 
     { h2: 'At a glance' },
     { ol: [
       'I scoped the question: features, cost, integrations, strengths and limits, and whether whole teams could adopt the tool.',
       'I evaluated every capability and mapped each one against Postman’s plans, limits and add-on prices.',
-      'I wrote a 10-page evaluation and presented a 35-slide recommendation to the QA and engineering teams.',
+      'I wrote a 10-page evaluation, reviewed it with Postman’s support team and presented a 35-slide recommendation to the entire division.',
+      'I ran collections from Jenkins pipelines and the Newman CLI on a schedule, with email reports, to show the tests could run in CI.',
       'In November 2026 I rechecked every finding against the current product, and kept the 2025 documents as they were presented.',
     ] },
     { numbers: [['15', 'capabilities evaluated and explained'], ['4', 'plans mapped feature by feature'], ['5+', 'teams adopted it as the standard API tool'], ['16', 'strengths and limitations documented']] },

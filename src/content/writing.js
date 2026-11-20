@@ -91,7 +91,7 @@ export const articles = [
       },
       {
         "type": "paragraph",
-        "text": "At Contour Software, I moved from filing bugs to asking 'why does this feature exist?' in sprint planning. That single question changed my trajectory. Suddenly I was in requirement workshops, mapping user journeys, and defining acceptance criteria that prevented bugs instead of catching them."
+        "text": "At Perseus Group, I moved from filing bugs to asking 'why does this feature exist?' in sprint planning. That single question changed my trajectory. Suddenly I was in requirement workshops, mapping user journeys, and defining acceptance criteria that prevented bugs instead of catching them."
       },
       {
         "type": "heading",

@@ -9,7 +9,7 @@ Related: [content rules](content-rules.md), [journey inputs still to collect](jo
 ## Summary
 
 - **Who:** an AI Product Analyst in enterprise dealership SaaS at Perseus Group, part of Constellation Software. Official HR title: Product Quality Analyst. Joined 14 December 2023.
-- **What he does:** business analysis and associate product ownership (discovery, roadmap, epics, user stories with acceptance criteria), design collaboration and design review, AI feature definition and prototyping, Scrum Master duties, and leading the QA team (3 QA analysts have reported to him directly since October 2026).
+- **What he does:** business analysis and product work with the Product Owner (discovery, roadmap, epics, user stories with acceptance criteria), design collaboration and design review, AI feature definition and prototyping, Scrum Master duties, and leading the QA team (3 QA analysts have reported to him directly since October 2026).
 - **How he builds:** by directing AI agents (Claude Code). The decisions, specifications and accountability are his; he does not hand-write code, so programming languages are never listed as his skills.
 - **Career direction:** AI and agentic product work. Open to Product Owner, Product Analyst and AI Product Manager roles.
 - **Emphasis when describing him:** product, then design, then AI, then quality.
@@ -68,7 +68,7 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 - LinkedIn: https://www.linkedin.com/in/shironigun
 - GitHub: https://github.com/shironigun
 - Public plugin marketplace: https://github.com/shironigun/claude-marketplace
-- Résumés: `public/resumes/Mahmood_Ahmad_Resume_Light.pdf`, `public/resumes/Mahmood_Ahmad_Resume_Dark.pdf`, and a one-page LaTeX version on Jake's Resume template, `resume/Mahmood_Ahmad_Resume.tex`, all built by `node resume/build.mjs` from the site's content (no phone number, no location)
+- Resumes: `public/resumes/Mahmood_Ahmad_Resume_Light.pdf`, `public/resumes/Mahmood_Ahmad_Resume_Dark.pdf`, and a one-page LaTeX version on Jake's Resume template, `resume/Mahmood_Ahmad_Resume.tex`, all built by `node resume/build.mjs` from the site's content (no phone number, no location)
 
 ## The product he works on (as described publicly)
 
@@ -90,21 +90,21 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 
 ## Experience
 
-### Product Quality Analyst, Contour Software, Perseus Group (Constellation Software)
+### Product Quality Analyst, Perseus Group (Constellation Software)
 
 *Jan 2026 to present*
 
-On our dealership SaaS products I work as the team’s business analyst and associate product owner, collaborate on design, run the sprint as Scrum Master, prototype AI features and lead the QA team, with 3 QA analysts reporting to me.
+On our dealership SaaS products I do the team’s business analysis and shape the roadmap with the Product Owner, collaborate on design, run the sprint as Scrum Master, prototype AI features and lead the QA team, with 3 QA analysts reporting to me.
 
-- **AI product ownership:** Lead AI feature definition for the most successful product in a 200+ person division: customer-engagement SaaS for automotive, agricultural and equipment dealerships. Took Promise Tracker, an AI feature that surfaces what a dealership still owes its customers, from concept to production readiness. Promoted from Junior SQA Analyst in under two years.
+- **AI product definition:** Lead AI feature definition for the most successful product in a 200+ person division: customer-engagement SaaS for automotive, agricultural and equipment dealerships. Took Promise Tracker, an AI feature that surfaces what a dealership still owes its customers, from concept to production readiness. Promoted from Junior SQA Analyst in under two years.
 - **AI-native product revamp:** Led the rebuild of 7 product areas of our dealership CRM, directing Claude Code agents from specification to review against the component library and business rules.
 - **Roadmap and product strategy:** Shape the roadmap and AI feature decisions with the Product Owner and Initiative Manager in Aha! and Azure DevOps, backing priorities with quantitative analysis (regression, trend and break-even), SWOT and 5 Whys.
-- **AI enablement at scale:** Organised the AI Foundations hackathon for 9 participants across QA and design, with 9 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page Claude handbook.
+- **AI enablement at scale:** Organised the AI Foundations hackathon for 10 participants across QA and design, with 10 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page Claude handbook.
 - **People leadership:** Manage 3 QA analysts who report to me directly (since October 2026), growing each toward AI-assisted testing, AI evaluation and automation; completed six-month Manager Essentials Training.
-- **Public AI tooling:** Published a Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and built the AI QA Workbench, extended at the DIS AI Foundations program.
-- **Delivery and insight:** Own release readiness, introduced the API automation framework and onboarded 3 analysts; set up Power BI and Power Platform dashboards tracking release cadence, change failure rate and post-launch outcomes.
+- **Public AI tooling:** Published a Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and built the AI QA Workbench in the DIS AI Foundations cohort.
+- **Delivery and insight:** Own release readiness, introduced the API automation framework and onboarded 3 analysts.
 
-### Junior SQA Analyst, Contour Software, Perseus Group (Constellation Software)
+### Junior SQA Analyst, Perseus Group (Constellation Software)
 
 *Feb 2024 to Dec 2025*
 
@@ -113,16 +113,16 @@ Owned QA for an enterprise dealership CRM and grew into business analysis and de
 - **Division-wide quality framework:** Designed the Strict Quality Gates framework, adopted by 3 other teams: about 40% less defect leakage and zero critical defects across 6 consecutive sprints.
 - **Delivery under pressure:** Took over a million-dollar CRM mid-cycle when the senior QA left without notice and shipped the critical release on time; covered a 3-month BA vacancy, owning requirements with the Product Owner, with no gap in delivery.
 - **Domain enablement:** Delivered the live Junior SQA hours of domain training (3,920 on 10 Nov 2026), the most comprehensive programme in the division’s history, contributed to the public product knowledge base through training and knowledge transfer, and trained 2 non-technical hires to independent sprint work within their first quarter.
-- **Design and tooling standards:** Led the design phase for the dealership mobile app with the UX designer, and ran the Postman proof of concept that made Postman the standard API testing tool across 5+ teams.
+- **Design and tooling standards:** Led the design phase for the dealership mobile app with the UX designer, and ran the Postman proof of concept, presented to the whole division, that made Postman the standard API testing tool across 5+ teams.
 - **AI hackathon winner:** 1st of 11 teams in a division-wide AI hackathon (2025) as Product Owner, Scrum Master and QA lead, building AI for customer retention and employee performance; delivered the final pitch.
 
-### SQA Trainee, Contour Software
+### SQA Trainee, Perseus Group (Constellation Software)
 
 *Dec 2023 to Feb 2024*
 
 Learned the product, the domain and the sprint, and started improving them.
 
-- **Standards from day one:** Initiated and wrote the organisation’s first global UI standards document, covering component consistency, interaction patterns and accessibility baselines.
+- **Standards from day one:** Initiated and wrote the organisation’s first global UI standards document, covering component consistency, interaction patterns and accessibility baselines, and improved it into a 12-page style guide in January 2024.
 - **Domain immersion:** Spent the live SQA Trainee hours (376, shown as 370+) with the Product Owner, Initiative Manager, development and operations, and ran acceptance, functional, API and cross-platform testing with workarounds that cut regression effort.
 - **Automation guide:** Published a 13-page Selenium WebDriver guide in C# for automation testers. (Published 31 Dec 2023, during the traineeship, not the Junior SQA role.)
 
@@ -149,7 +149,7 @@ Interface design, prototypes and marketing materials.
 Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (Project), initiative (Initiative), achievement (Achievement), certification (Certification), exam (Exam passed), education (Education), workshop (Workshop), talk (Talk), event (Event organised), participated (Participated), course (Course authored).
 
 - Chapter: **2021 to 2023**, UX and web design, Arfa Software Technology Park, Media Solutions
-- Chapter: **2023 to 2025**, Software quality, Contour Software, Perseus Group
+- Chapter: **2023 to 2025**, Software quality, Perseus Group
 - Chapter: **2026 to now**, AI product analysis, Perseus Group, Constellation Software
 
 - **Oct 2021** · Role · UX Designer, intern, Arfa Software Technology Park. Interface concepts, prototypes and client materials, reviewed with stakeholders before engineering began.
@@ -159,10 +159,11 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **Apr 2023** · Certification · Foundations of Project Management, Google
 - **Aug 2023** · Certification · Agile with Atlassian Jira, Atlassian
 - **2023** · Education · B.S. Information Technology, University of the Punjab. Completed the degree, 2019 to 2023.
-- **Dec 2023** · Role · SQA Trainee, Contour Software, Perseus Group. Joined enterprise dealership SaaS at Constellation Software.
+- **Dec 2023** · Role · SQA Trainee, Perseus Group. Joined enterprise dealership SaaS at Constellation Software.
 - **Dec 2023** · Initiative · First organisation-wide UI standards. Audited the product UI and authored the shared standard for components, interaction patterns and accessibility.
+- **Jan 2024** · Initiative · Improved the UI style guide. Expanded the UI standards into a 12-page style guide (18 Jan 2024): form validation, date and time formats, form filling, branding in light and dark mode, alerts, pagination, cursor, hover, spacing, overflow and icon rules, and a grammar guide for interface text. The PDF names the product and a colleague, so it stays off the site; only this summary is public.
 - **Dec 2023** · Project · Selenium WebDriver notes in C#. Wrote and published a 13-page guide to browser automation in C# for other automation testers; links to the public PDF.
-- **Feb 2024** · Promotion · Junior SQA Analyst, Contour Software, Perseus Group. Took ownership of quality for an enterprise dealership CRM.
+- **Feb 2024** · Promotion · Junior SQA Analyst, Perseus Group. Took ownership of quality for an enterprise dealership CRM.
 - **Jul 2024** · Certification · Certified Tester Foundation Level, ISTQB®
 - **Dec 2024** · Certification · Certified ScrumMaster® (CSM®), Scrum Alliance. Certified at 24.
 - **Aug 2024** · Certification · Introduction to SQL Server, DataCamp
@@ -172,23 +173,23 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **Q1 2025** · Project · Postman API testing evaluation. A proof of concept that standardised API testing across teams.
 - **2024 to 2025** · Achievement · Shipped a critical release solo. Took over QA mid-cycle without a handover and delivered the release on time.
 - **2024 to 2025** · Achievement · Covered a three-month BA vacancy. Owned user stories and acceptance criteria with the Product Owner, with no gap in delivery.
-- **2025** · Talk · Postman proof-of-concept presentation. Presented the evaluation that made Postman the standard API testing tool across teams.
-- **Mar 2025** · Certification · Introduction to Python, DataCamp
+- **May 2025** · Talk · Postman proof-of-concept presentation. Presented the evaluation to the entire division during the onshore team’s visit; it made Postman the standard API testing tool across teams. The proof of concept closed with a session with Postman’s support team, and he ran collections from Jenkins pipelines and the Newman CLI on schedules with email reports.
+- **Aug 2024** · Certification · Introduction to Python, DataCamp (certificate dated 31 Aug 2024)
 - **Apr 2025** · Certification · Intermediate Python, DataCamp
 - **2025** · Achievement · 1st of 11 teams, division-wide AI hackathon. Product Owner, Scrum Master and QA lead: led the requirements, the UI prototypes and the final pitch.
 - **2025** · Achievement · Quality Gates adopted by three teams. A framework built on root-cause analysis: zero critical defects across six sprints.
 - **2024 to 2025** · Achievement · Built QA talent from the ground up. Trained two QA hires from non-technical backgrounds to independent sprint work.
-- **Jan 2026** · Promotion · Product Quality Analyst, Contour Software, Perseus Group. A product role spanning business analysis, design collaboration, AI prototyping, Scrum and QA leadership.
+- **Jan 2026** · Promotion · Product Quality Analyst, Perseus Group. A product role spanning business analysis, design collaboration, AI prototyping, Scrum and QA leadership.
 - **Feb 2026** · Certification · Business Analysis Fundamentals, Microsoft
-- **Jan 2025** · Achievement · VP Award, Contour Software, Perseus Group. For contributions tied to multimillion-dollar business goals across a 200+ person division.
+- **Jan 2025** · Achievement · VP Award, Perseus Group. For contributions tied to multimillion-dollar business goals across a 200+ person division.
 - **Jan 2025** · Achievement · Division All-Hands Recognition. Recognised at the division all-hands for quality and process improvements.
-- **Jun 2025** · Achievement · Annual Special Thanks.
+- **Jun 2025** · Achievement · Annual Special Thanks. Recognised for the second year running (his post of 27 Jun 2025); no post names the 2024 recognition, so it is not listed.
 - **Jun 2026** · Achievement · AI Innovator of the Month. For the UI and UX revamp and new features, delivered through agentic development and product thinking. Links to the design phase case study.
 - **2026** · Achievement · Onboarded three new analysts. Ran the QA hiring evaluation and brought three analysts up to speed.
 - **Apr 2026** · Project · Full UI and UX revamp. Seven product areas redesigned and rebuilt through agentic coding, each reviewed against the component library.
 - **Jul 2026** · Project · AI product prototyping. Working prototypes that let the team evaluate AI ideas before committing to build.
-- **Jul 2026** · Participated · DIS AI Foundations program. Completed a five-day, cross-division AI hackathon and built the AI QA Workbench in four days.
-- **Aug 2026** · Event organised · Organised the AI Foundations hackathon. Briefed nine real-world AI projects for the QA and design team, taught the foundations and mentored every team to a working demonstration.
+- **Jul 2026** · Participated · DIS AI Foundations program. Completed a five-day, cross-division AI hackathon and built the AI QA Workbench in the cohort.
+- **Aug 2026** · Event organised · Organised the AI Foundations hackathon. Briefed nine real-world AI projects for ten people across QA and design, taught the foundations and mentored every team to a working demonstration.
 - **Jun 2026** · Talk · The Lift: Why AI isn’t about 10x, AI Pulse, Perseus Group. Perseus Group’s AI Pulse session (Jun 2026), alongside the division’s R&D director and another presenter, for two divisions: AI isn’t a multiplier, it’s a lift; context and clarity limit it, not coding ability, so domain knowledge is what turns AI into working solutions. Source: his LinkedIn post of 15 Jun 2026 (slide: “The Lift. Why AI isn’t about 10×”, AI Pulse 2026). Co-presenters and division names stay off the site.
 - **Aug 2026** · Talk · AI Foundations: From Doing to Directing. Opening session of the AI Foundations hackathon, from Claude Projects and Skills to MCP servers, agents and workflows.
 - **Aug 2026** · Course authored · Working with Claude: The Eleven Building Blocks. A 183-page practical handbook for continued learning across the division.
@@ -214,15 +215,15 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 - **Postman API testing evaluation** (2025; Researched, wrote and presented; status: Completed; Quality) → /case-studies/postman-evaluation. A proof of concept that made Postman the standard API testing tool across 5+ teams, updated against Postman’s current documentation. *Question:* How a Postman proof of concept standardised API testing across 5+ teams
 - **AI Promise Tracker** (2026; Led product definition; status: Heading to production; AI, Product, Design) → /case-studies/promise-tracker. An AI feature that finds what a dealership still owes its customers and puts the most urgent items in front of a manager. *Question:* How do you stop a dealership forgetting what it promised a customer?
 - **API test automation and the audit** (2026; Built by directing AI agents; status: Ongoing; Quality, AI) → /case-studies/ai-test-suite-audit. API test automation built by directing AI agents, then audited to find tests that passed with nothing behind them. *Question:* Would this test fail if the feature broke?
-- **AI QA workbench** (2026; Creator; status: Completed; AI, Quality) → /case-studies/ai-qa-workbench. Built in four days at a cross-division AI hackathon: a workbench that takes a user story to test cases, automation, pipeline runs and structured bug reports. *Question:* If developers are becoming AI reviewers and orchestrators, why shouldn’t QA?
-- **Product decisions and research** (2026; Business analyst; status: Ongoing; Product). Decision workshops with the Product Owner, research briefs, packaging rules and AI cost modelling.
+- **AI QA workbench** (2026; Creator; status: Completed; AI, Quality) → /case-studies/ai-qa-workbench. Built in the DIS AI Foundations cohort, a cross-division AI hackathon: a workbench that takes a user story to test cases, automation, pipeline runs and structured bug reports. *Question:* If developers are becoming AI reviewers and orchestrators, why shouldn’t QA?
+- **Product decisions and research** (2026; Business analysis; status: Ongoing; Product). Decision workshops with the Product Owner, research briefs, packaging rules and AI cost modelling.
 - **Feature guides for dealers** (Nov 2026 to now; Wrote the standard and the first guide; status: Ongoing; Product, Design, Quality) → /case-studies/feature-guides. Company work, so only what he did and the problem it solved. Problem: dealers had short help articles and high-level sales material, but no single guide to a whole feature, and every PDF was formatted by hand. What he did (17 to 18 Nov 2026): directed research into global documentation practice (task topics, the Microsoft and Google style guides, Diátaxis, minimalism) and wrote an 8-page how-to standard in the house voice (required sections, a three-part step: action, “You’ll see”, why; rules for AI features and for features that differ by dealer-management system; a screenshot policy; words to use; a publishing checklist); specified a build tool that Claude Code built, which prints every guide as a branded PDF and flags missing sections, tasks over 10 steps, uncaptioned figures and banned words, with a catalog of 22 cover designs; wrote the first complete guide, for Promise Tracker, with demo-data screens only; asked the support team who write the knowledge base to review it, answered three of their product questions from the code, and cut the guide from 18 pages to 12 (target about 10 after the cover). Status: the guide is a draft in review, not published; Product decides the open questions; no cover chosen yet. Not on the site: the reviewer's name and quotes, product behaviour, the gaps found, version numbers. It is a parent project with three parts on the board, each with no case study of its own (their popups lead to this story):
   - **How-to guide standard** (Nov 2026; Wrote it; directed the research; status: Completed; Product, Quality). 8 pages. Proof: a public copy at `public/documents/how-to-guide-standard.pdf` (8 pages), on the case study and the card's popup. Built 18 Nov 2026 from the current revision with the brand theme, logo and help line removed; the product name, the dealer management systems, feature names, the knowledge base domain and internal source names replaced with general wording; the rules unchanged. Source and build in `docs/private/working-notes/how-to-standard-public/`.
   - **Guide build tool** (Nov 2026; Specified it; Claude Code built it; status: Ongoing; Design, AI). 22 cover designs; the document-type list is unfinished.
   - **Promise Tracker dealer guide** (Nov 2026; Wrote it; status: Ongoing, in review; Product, AI). 12 pages, down from 18.
 - **Product promo films** (2026; Designed and produced; status: Completed; Design) → /case-studies/promo-films. Promo films for TargetCRM, also offered as Notify360: an enterprise promo (2:09, expo cut), an app-store cut (28 s, not exported yet) and a Promise Tracker story film (2:14). Product screens rebuilt in code from the real interface, with a fictional dealership and demo data. He wrote the stories, art-directed every scene and reviewed each cut; Claude built the films under his direction. The two exported films play on the promo films page (`public/videos/`), and the Promise Tracker film also plays on its case study.
 - **Selenium WebDriver notes in C#** (Dec 2023; Wrote and published; status: Public; Quality, Personal builds). A 13-page guide to browser automation with Selenium WebDriver in C#: web elements, dynamic waits, browser drivers with WebDriverManager, each with a scenario. Published on LinkedIn on 31 Dec 2023; he confirmed he built it (20 Nov 2026). The PDF he sent is published as `public/documents/selenium-csharp-notes.pdf`, unchanged except the page footer: his old LinkedIn handle (Mahmood6666, now a dead link) is replaced by two icons with no labels, LinkedIn and GitHub (both shironigun), each a link, in the footer's own colour, and a hidden stray header string is removed.
-- **UI standards documentation** (2023–2024; Initiated and wrote; status: Completed; Design). The organisation’s first shared reference for components, interaction patterns and accessibility.
+- **UI standards documentation** (Dec 2023 to Jan 2024; Initiated and wrote; status: Completed; Design). The organisation’s first shared reference for components, interaction patterns and accessibility, improved on 18 Jan 2024 into a 12-page style guide (form validation, date and time formats, form filling, branding in light and dark mode, alerts, pagination, cursor, hover, spacing, overflow and icon rules, and a grammar guide for interface text).
 - **Delivery analytics dashboards** (2026; Creator; status: Completed; Personal builds). Release cadence, change failure rate and items needing attention, from Azure DevOps activity.
 - **AI evaluation and the Skills Evals Lab** (Sep 2026 to now; Designed the evaluations; wrote the course; status: Ongoing; AI, Quality) → /case-studies/ai-evaluation. Company work, so only what he did and the problem it solved. Problem: an AI feature answers differently each run, so one passing test proves little and there is no clear bar for release. What he did: designed a repeatable evaluation method (one test per rule the model can get wrong, a format check first, every case run 3 times and counted only when all 3 pass, written grading criteria, hidden-instruction cases), used it on the AI features his team builds and on his own QA plugin (9 behavioural evaluations, 83.3% suite score on 13 Oct 2026, 7 of 9 cases perfect), and wrote the Skills Evals Lab (a beginner course since 19 Nov 2026: 17 lessons, about three hours, six labs, no maths; the eval-lead track was removed), hosted at /labs/skills-evals-lab.html with fictional examples only. Learning: preparing for ISTQB CT-AI and CT-GenAI.
 
@@ -240,7 +241,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 - **AI Innovator of the Month** (Jun 2026): For the UI and UX revamp and new features, delivered through agentic development and product thinking.
 - **Published a Claude Code marketplace** (2026): 7 plugins and 30 skills, each built for one real job.
 - **Organised the AI Foundations hackathon** (2026): Briefed, taught and mentored the QA and design team to working demonstrations, and was recognised with a certificate of appreciation.
-- **Completed the DIS AI Foundations program** (2026): Built the AI QA Workbench in four days at a five-day, cross-division AI hackathon.
+- **Completed the DIS AI Foundations program** (2026): Built the AI QA Workbench in the cohort of a five-day, cross-division AI hackathon.
 - **Certified ScrumMaster® at 24** (2024): Alongside ISTQB® CTFL and Microsoft Business Analysis Fundamentals.
 
 ## Recognition
@@ -261,7 +262,7 @@ Dates from his LinkedIn Honors section (20 Nov 2026). His LinkedIn credits the A
 
 ### Organised
 
-- **AI Foundations hackathon** (Aug 2026): Organised and led an AI hackathon for the QA and design team: foundations sessions, a real-world project brief for each of the nine participants, and mentoring through to working demonstrations. [View certificate]
+- **AI Foundations hackathon** (Aug 2026): Organised and led an AI hackathon for the QA and design team: foundations sessions, nine real-world project briefs for ten participants (one brief, with two problem statements, was split between two people), and mentoring through to working demonstrations. [View certificate]
 
 ### Participated
 
@@ -299,7 +300,7 @@ Dates from his LinkedIn Honors section (20 Nov 2026). His LinkedIn credits the A
 - **Oct:** Published my Claude Code marketplace on GitHub.
 - **Aug:** Organised and led the AI Foundations hackathon, opened it with “AI Foundations: From Doing to Directing”, and wrote a 183-page Claude handbook for the division.
 - **Jun:** Presented “The Lift: Why AI isn’t about 10x” at Perseus Group’s AI Pulse session.
-- **Jul:** Completed the DIS AI Foundations program and built the AI QA Workbench in four days.
+- **Jul:** Completed the DIS AI Foundations program and built the AI QA Workbench in the cohort.
 - **Apr:** Started a full UI and UX revamp of our dealership CRM through agentic coding.
 - **Jan:** Promoted to Product Quality Analyst.
 
@@ -371,7 +372,7 @@ Mirrors his LinkedIn skills (cleaned up on 20 Nov 2026), in the site's sentence 
 - Certified ScrumMaster® (CSM®), Scrum Alliance, 2024 (`public/certifications/CSM.jpeg`)
 - Certified Tester Foundation Level, ISTQB®, 2024 (`public/certifications/ISTQB-Certificate.jpeg`)
 - Intermediate Python, DataCamp, 2025 (`public/certifications/Intermediate-Python.pdf`)
-- Introduction to Python, DataCamp, 2025 (`public/certifications/Introduction-to-Python.pdf`)
+- Introduction to Python, DataCamp, 2024 (`public/certifications/Introduction-to-Python.pdf`)
 - Introduction to SQL Server, DataCamp, 2024 (`public/certifications/Introduction-to-SQL-Server.pdf`)
 - Agile with Atlassian Jira, Atlassian, 2023 (`public/certifications/Agile-with-Atlassian-Jira.pdf`)
 - Foundations of Project Management, Google, 2023 (`public/certifications/Foundations-of-Project-Management.pdf`)

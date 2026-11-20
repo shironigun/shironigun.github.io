@@ -21,7 +21,7 @@ export const achievements = [
   { icon: 'spark', title: 'AI Innovator of the Month', detail: 'For the UI and UX revamp and new features, delivered through agentic development and product thinking.', year: '2026', to: '/case-studies/design-phase' },
   { icon: 'plug', title: 'Published a Claude Code marketplace', detail: '7 plugins and 30 skills, each built for one real job.', year: '2026', to: '/case-studies/claude-marketplace' },
   { icon: 'calendar', title: 'Organised the AI Foundations hackathon', detail: 'Briefed, taught and mentored the QA and design team to working demonstrations, and was recognised with a certificate of appreciation.', year: '2026', to: '/case-studies/ai-foundations-hackathon' },
-  { icon: 'badge', title: 'Completed the DIS AI Foundations program', detail: 'Took the AI QA Workbench I had started a month earlier to a five-day, cross-division AI hackathon and extended it there.', year: '2026', to: '/case-studies/ai-qa-workbench' },
+  { icon: 'badge', title: 'Completed the DIS AI Foundations program', detail: 'Built the AI QA Workbench in the cohort of a five-day, cross-division AI hackathon.', year: '2026', to: '/case-studies/ai-qa-workbench' },
   { icon: 'badge', title: 'Certified ScrumMaster® at 24', detail: 'Alongside ISTQB® CTFL and Microsoft Business Analysis Fundamentals.', year: '2024' },
 ];
 
@@ -41,7 +41,7 @@ export const events = [
     label: 'Organised',
     icon: 'calendar',
     items: [
-      { title: 'AI Foundations hackathon', when: 'Aug 2026', date: '2026-08', detail: 'Organised and led an AI hackathon for the QA and design team: foundations sessions, a real-world project brief for each of the nine participants, and mentoring through to working demonstrations.', to: '/case-studies/ai-foundations-hackathon', links: [{ text: 'View certificate', href: '/certifications/ai-foundations-organiser-certificate.jpg' }] },
+      { title: 'AI Foundations hackathon', when: 'Aug 2026', date: '2026-08', detail: 'Organised and led an AI hackathon for the QA and design team: foundations sessions, nine real-world project briefs for ten participants, and mentoring through to working demonstrations.', to: '/case-studies/ai-foundations-hackathon', links: [{ text: 'View certificate', href: '/certifications/ai-foundations-organiser-certificate.jpg' }] },
     ],
   },
   {
@@ -49,7 +49,7 @@ export const events = [
     label: 'Participated',
     icon: 'badge',
     items: [
-      { title: 'DIS AI Foundations program: From Developer to Orchestrator', when: 'Jul 2026', date: '2026-07', detail: 'A five-day AI hackathon run jointly by our division and other Perseus Group divisions: a day of sessions, then four days to frame a problem, design a solution and build a working prototype. I brought the AI QA Workbench, started a month earlier, and extended it.', to: '/case-studies/ai-qa-workbench', links: [{ text: 'View certificate', href: '/certifications/dis-ai-foundations-certificate.jpg' }] },
+      { title: 'DIS AI Foundations program: From Developer to Orchestrator', when: 'Jul 2026', date: '2026-07', detail: 'A five-day AI hackathon run jointly by our division and other Perseus Group divisions: a day of sessions, then four days to frame a problem, design a solution and build a working prototype. I built the AI QA Workbench in the cohort.', to: '/case-studies/ai-qa-workbench', links: [{ text: 'View certificate', href: '/certifications/dis-ai-foundations-certificate.jpg' }] },
     ],
   },
   {

@@ -29,7 +29,7 @@ src/
 ├── pages/            Home, Work, CaseStudies, Project, Journey, About, Achievements, HowIWork, Article, Contact, NotFound
 ├── lib/              Router and hooks (in-view, reduced motion)
 └── styles/base.css   Design tokens and base styles
-public/               Résumés, certificates, testimonial photos, llms.txt
+public/               Resumes, certificates, testimonial photos, llms.txt
 docs/private/         Working notes and personal files (git-ignored, never pushed)
 ```
 

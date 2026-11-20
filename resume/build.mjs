@@ -1,19 +1,19 @@
-// Builds the résumés from the site's own content, so they never drift from it.
+// Builds the resumes from the site's own content, so they never drift from it.
 //
 //   node resume/build.mjs
 //
 // Writes:
-//   resume/Mahmood_Ahmad_Resume.tex                 the full résumé on Jake's Resume template, for Overleaf
-//   public/resumes/Mahmood_Ahmad_Resume_Light.pdf   that .tex compiled: the résumé every button opens
+//   resume/Mahmood_Ahmad_Resume.tex                 the full resume on Jake's Resume template, for Overleaf
+//   public/resumes/Mahmood_Ahmad_Resume_Light.pdf   that .tex compiled: the resume every button opens
 //   public/resumes/Mahmood_Ahmad_Resume.pdf         a copy of it, for older links
 //   public/resumes/Mahmood_Ahmad_Resume_Dark.pdf    A4, dark, printed from HTML (no Jake's equivalent)
 //
-// The main résumé is the Jake's-template .tex compiled with Tectonic (scoop install tectonic), the
+// The main resume is the Jake's-template .tex compiled with Tectonic (scoop install tectonic), the
 // same output Overleaf gives. The dark PDF is printed by Chrome (or Edge) in headless mode; no dev
 // server is needed. The experience,
 // skills, tools, certifications and recognition come from src/content; only the short summary and
 // the one-page LaTeX bullets are written here. Never add a phone number or a location: the site
-// doesn't say where he is based, and neither may the résumé.
+// doesn't say where he is based, and neither may the resume.
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -28,12 +28,12 @@ process.chdir(root);
 const vite = await createServer({ root, server: { middlewareMode: true, hmr: false }, appType: 'custom', logLevel: 'error' });
 const { experience, skills, education, certifications } = await vite.ssrLoadModule('/src/content/profile.js');
 const { person, contact, recognition, tools, tenure } = await vite.ssrLoadModule('/src/content/site.js');
-// Both résumés list the tool groups under Skills, named "Product tools" and so on.
+// Both resumes list the tool groups under Skills, named "Product tools" and so on.
 const skillGroups = [...skills, ...tools.map((g) => ({ ...g, group: `${g.group} tools` }))];
 const { hoursText } = await vite.ssrLoadModule('/src/content/hours.js');
 const { recentEvents } = await vite.ssrLoadModule('/src/content/achievements.js');
 await vite.close();
-// The résumé starts at SQA Trainee (Dec 2023): only the Perseus Group roles. The site's Journey and
+// The resume starts at SQA Trainee (Dec 2023): only the Perseus Group roles. The site's Journey and
 // About still show the earlier design roles.
 const resumeRoles = experience.filter((r) => r.start >= '2023-12');
 
@@ -45,8 +45,8 @@ const links = [
 ];
 // Written here, used by both PDFs; everything else comes from src/content. Projects follow the portfolio,
 // with no product name (the content rules); the experience already covers Promise Tracker and the revamp.
-const headline = 'AI Product Analyst | Business Analysis | Product Ownership | AI Product Development';
-const summary = `AI Product Analyst with ${tenure} years on enterprise dealership SaaS at Perseus Group, part of Constellation Software. Business analyst and associate product owner: discovery, requirements, the roadmap and AI feature definition. Certified ScrumMaster leading 3 QA analysts; I prototype by directing AI agents with Claude Code.`;
+const headline = 'AI Product Analyst | Business Analysis | Product Strategy | AI Product Development';
+const summary = `AI Product Analyst with ${tenure} years on enterprise dealership SaaS at Perseus Group, part of Constellation Software. I run discovery, requirements and AI feature definition, and shape the roadmap with the Product Owner. Certified ScrumMaster leading 3 QA analysts; I prototype by directing AI agents with Claude Code.`;
 const projects = [
   { name: 'Claude Code marketplace', note: 'public on GitHub', when: 'Jul 2026 – Present', text: '7 plugins and 30 skills for QA and product work; every plugin asks a person before it writes.' },
   { name: 'AI evaluation and the Skills Evals Lab', note: 'AI quality', when: 'Sep 2026 – Present', text: 'A repeatable AI test (3 runs, counted only if all pass) and a 17-lesson beginner course on evaluating AI skills.' },
@@ -182,7 +182,7 @@ function findBrowser() {
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'resume-'));
 const browser = findBrowser();
 fs.mkdirSync('public/resumes', { recursive: true });
-// The light résumé is compiled from the LaTeX further down; only the dark one is printed here.
+// The light resume is compiled from the LaTeX further down; only the dark one is printed here.
 for (const theme of ['dark']) {
   const page = path.join(tmp, `${theme}.html`);
   fs.writeFileSync(page, html(theme));
@@ -196,7 +196,7 @@ for (const theme of ['dark']) {
 }
 
 // ── LaTeX, on Jake's Resume template (github.com/jakegut/resume, MIT), for Overleaf ──
-// The full résumé (two pages is fine). Facts match src/content. Tuned for applicant tracking systems (Nov 2026 research):
+// The full resume (two pages is fine). Facts match src/content. Tuned for applicant tracking systems (Nov 2026 research):
 //   - single column, standard headings in the usual order: Summary, Experience, Projects, Skills,
 //     Certifications, Awards, Talks and Events, Education;
 //   - no tables for alignment (title and dates sit on one line with \hfill), no small caps, no icons;
@@ -229,7 +229,7 @@ const latex = String.raw`%-------------------------
 % Based off of: https://github.com/sb2nov/resume
 % License : MIT
 %------------------------
-% Mahmood Ahmad's full résumé on Jake's template, tuned for applicant tracking systems (single column,
+% Mahmood Ahmad's full resume on Jake's template, tuned for applicant tracking systems (single column,
 % standard headings, no tables or small caps). Generated by resume/build.mjs from the portfolio's
 % content: edit the content there and rebuild, rather than editing this file by hand.
 % Open it in Overleaf (New Project, Upload Project) and compile with pdfLaTeX.
@@ -369,7 +369,7 @@ ${talks.map((e) => `      \\resumeItem{\\textbf{${tex(e.title)}}: ${tex(e.role)}
 fs.writeFileSync('resume/Mahmood_Ahmad_Resume.tex', latex);
 console.log('✓ resume/Mahmood_Ahmad_Resume.tex');
 
-// ── The main résumé: that .tex compiled with Tectonic, so the site serves Jake's template ──
+// ── The main resume: that .tex compiled with Tectonic, so the site serves Jake's template ──
 const texOut = path.join(tmp, 'tex');
 fs.mkdirSync(texOut, { recursive: true });
 execFileSync('tectonic', ['-X', 'compile', '--outdir', texOut, 'resume/Mahmood_Ahmad_Resume.tex'], { stdio: 'inherit' });

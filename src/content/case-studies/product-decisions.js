@@ -11,7 +11,7 @@ export default {
   updated: 'November 2026',
   body: [
     { p: 'The morning subscription plans go live, Dana, a rep at a dealership, opens her menu and something she used yesterday has gone. Is it broken? Did someone remove it? Nothing on the screen says.' },
-    { p: 'Some product questions have to be settled before anyone builds the answer. As the team’s business analyst, the person who turns a fuzzy need into rules a team can build and test, I frame the question, lay out the options, recommend one, and check the result against what ships. Here are three: feature-access rules I analysed and specified, a decision tool I built for a new email channel, and research I commissioned and directed on measuring rep performance without a score.' },
+    { p: 'Some product questions have to be settled before anyone builds the answer. I do the team’s business analysis, turning a fuzzy need into rules a team can build and test: I frame the question, lay out the options, recommend one, and check the result against what ships. Here are three: feature-access rules I analysed and specified, a decision tool I built for a new email channel, and research I commissioned and directed on measuring rep performance without a score.' },
 
     { h2: 'At a glance' },
     { ol: [

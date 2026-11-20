@@ -14,25 +14,25 @@ export default {
     { title: 'Working with Claude: The Eleven Building Blocks', meta: 'Practical handbook, 183 pages', href: '/documents/working-with-claude-eleven-building-blocks.pdf', action: 'Read the handbook', primary: true },
   ],
   body: [
-    { p: 'Nine people, four days, and one rule: nobody writes code by hand. Each of them would direct AI agents to build a tool for a problem from their own week.' },
+    { p: 'Ten people, four days, and one rule: nobody writes code by hand. Each of them would direct AI agents to build a tool for a problem from their own week.' },
     { p: 'That was the AI Foundations hackathon. In August 2026 I organised and led it for the QA team, with the design team alongside. I designed the format, wrote a brief for every participant, taught the foundations, mentored each team to a working demonstration, and created and compiled a handbook so the learning would continue.' },
     { p: 'AI was changing how software gets built, and in our QA team there was still hesitation about using it in our own work. I wanted every QA in the division to get past that the practical way.' },
 
     { h2: 'At a glance' },
     { ol: [
       'I proposed the hackathon to the line managers, with the R&D director as sponsor, and designed a four-day format.',
-      'I wrote a brief for each of the nine participants, tied to a real problem in their own work.',
+      'I wrote nine briefs for the ten participants, each tied to a real problem in their own work; one brief covered two problems and was split between two people.',
       'I taught the foundations, then mentored every team through the build days to a working demonstration.',
       'I created and compiled a 183-page handbook, so the learning continues after the event.',
     ] },
-    { numbers: [['9', 'project briefs, one per participant'], ['4', 'days, from keynote to team demos'], ['183', 'pages in the handbook']] },
+    { numbers: [['9', 'project briefs for 10 participants'], ['4', 'days, from keynote to team demos'], ['183', 'pages in the handbook']] },
 
     { h2: 'Sam’s least favourite chore' },
     { p: 'Picture Sam, a fictional QA engineer. Every release, Sam reads the new stories and writes a regression checklist by hand, then checks each item against the screens. Sam has heard AI could take on part of that, tried a chat window once, and went back to doing it by hand.' },
     { p: 'A talk about AI doesn’t change Sam’s week. Building something for that exact chore, with help close by, does. So every participant would direct AI agents to build a tool for a problem they actually have, with no hand-coding.' },
 
     { h2: 'Where it came from' },
-    { p: 'The idea grew out of a cross-division AI Foundations program that July, where people learned to build by directing AI agents. There was no QA presence. I asked for QA to be included, and took along a tool I had been building for a month: the AI QA Workbench.' },
+    { p: 'The idea grew out of a cross-division AI Foundations program that July, where people learned to build by directing AI agents. QA joined that program at my request, and I built the AI QA Workbench in its cohort.' },
     { p: 'It showed what one QA could build by directing AI. The next question was whether every QA in the division could, and that became my proposal in late July.' },
 
     { h2: 'Four days, end to end' },
@@ -62,7 +62,7 @@ export default {
           { id: 'mentor', name: 'Mentor and unblock', sub: 'every team', lane: 0, row: 6, kind: 'human', detail: 'I guided every team from idea to a minimum viable product, and unblocked them when they got stuck.' },
           { id: 'direct', name: 'Direct the build', sub: 'no hand-coding', lane: 2, row: 6, kind: 'human', detail: 'Participants describe what they want, review what comes back and decide what changes.' },
           { id: 'code', name: 'Write the code', sub: 'to each participant’s direction', lane: 3, row: 7, kind: 'ai', detail: 'AI agents write the code, and rework it when the participant says it is wrong.' },
-          { id: 'demo', name: 'Working demos', sub: 'all nine', lane: 2, row: 8, kind: 'output', detail: 'Each team presented what it did and learned, its challenges, and the future of its tool.' },
+          { id: 'demo', name: 'Working demos', sub: 'all ten', lane: 2, row: 8, kind: 'output', detail: 'Each team presented what it did and learned, its challenges, and the future of its tool.' },
           { id: 'book', name: 'The handbook', sub: '183 pages, for afterwards', lane: 0, row: 9, kind: 'store', detail: 'Created and compiled so the learning continues after the event.' },
           { id: 'cert', name: 'Certificate', sub: '13 August 2026', lane: 1, row: 9, kind: 'output', detail: 'The R&D director recognised the initiative with a certificate of appreciation for organising and delivering it.' },
           { id: 'follow', name: 'Follow-on support', sub: 'about two months, as pitched', lane: 0, row: 10, kind: 'human', detail: 'The pitch committed to about two months of hands-on support, to grow each tool into a full automation framework.' },
@@ -78,7 +78,7 @@ export default {
           { from: 'direct', to: 'code', label: 'directions' },
           { from: 'code', to: 'direct', label: 'draft, rework' },
           { from: 'code', to: 'demo', label: 'working tool' },
-          { from: 'demo', to: 'cert', label: 'nine demos' },
+          { from: 'demo', to: 'cert', label: 'ten demos' },
           { from: 'demo', to: 'follow', label: 'tools to grow' },
           { from: 'book', to: 'follow', label: 'the reference' },
         ],
@@ -88,7 +88,7 @@ export default {
 
     { h2: 'A brief for every person' },
     { p: 'Each brief was a full specification, so every participant would start the build days knowing what to make: the mission, the architecture, functional requirements, deliverables with acceptance criteria, guardrails and a phased roadmap.' },
-    { p: 'The nine projects spanned several product areas: five on testing and quality, three on knowledge and delivery insight, and one on design. Briefs took on problems like flagging gaps in a story before testing starts, spotting likely duplicate defects, and turning a support report into a defect a developer can reproduce.' },
+    { p: 'The ten projects spanned several product areas: six on testing and quality, three on knowledge and delivery insight, and one on design. Briefs took on problems like flagging gaps in a story before testing starts, spotting likely duplicate defects, and turning a support report into a defect a developer can reproduce.' },
     { story: {
       persona: 'Sam, QA engineer (fictional)',
       status: 'Recreation, fictional brief',
@@ -191,13 +191,13 @@ export default {
     { h2: 'How I approached it' },
     { stages: [
       { name: 'Proposal', part: 'Pitched to the line managers, with a sponsor', by: 'me' },
-      { name: 'Briefs', part: 'One per participant, tied to a real problem', by: 'me' },
+      { name: 'Briefs', part: 'Nine, each tied to a real problem; one split between two people', by: 'me' },
       { name: 'Keynote', part: '“From Doing to Directing”, open to the division', by: 'me' },
       { name: 'Build', part: 'Participants directed AI agents; I mentored', by: 'ai' },
       { name: 'Demos', part: 'Every team presented a working tool', by: 'proved' },
     ], caption: 'From the proposal to the team demonstrations, with who carried each stage.' },
     { lead: 'Build days.', p: 'I guided every team through ideation, implementation and delivery of a minimum viable product, and unblocked them along the way.' },
-    { lead: 'Demos.', p: 'Each team presented its challenges and how it overcame them, not just its wins. All nine reached a working demonstration.' },
+    { lead: 'Demos.', p: 'Each team presented its challenges and how it overcame them, not just its wins. All ten reached a working demonstration.' },
 
     { h2: 'The calls I made' },
     { decisions: [

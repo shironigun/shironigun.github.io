@@ -20,7 +20,7 @@ What may and may not appear on the site and in this repository. The repository i
 - Exact ownership words: **led**, **built**, **introduced**, **assisted**. Exact status words: “Heading to production” is not “Released”.
 - Real numbers only, rounded down. Tenure is worked out live from 14 December 2023.
 - Lead with product, then design, then AI, then quality.
-- Name the employer as Perseus Group, part of Constellation Software (Contour Software where a company line needs it).
+- Name the employer as Perseus Group, part of Constellation Software, on every company line, and no other company name (his instruction, 21 Nov 2026); only the testimonial attributions keep their own wording.
 
 ## Checks before publishing
 

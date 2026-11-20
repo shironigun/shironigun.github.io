@@ -1,6 +1,6 @@
 // The AI QA workbench, rewritten 11 Nov 2026 in the round-2 voice. It is ADO_Tester, his own tool (his
-// decision, 11 Nov 2026): started June 2026, re-platformed from a Python FastAPI prototype to .NET 8, taken
-// to the DIS AI Foundations program in July 2026 and extended there. Never the old four-day build phrase.
+// decision, 11 Nov 2026): a June 2026 Python FastAPI prototype re-platformed to .NET 8; the workbench itself
+// Built in the DIS AI Foundations cohort (July 2026), his wording of 20 Nov 2026. Never "four days" or "started a month earlier".
 // Sources, all read-only: the ADO_Tester repo (README, backend/README phase log B0 to B5+, CLAUDE.md,
 // docs/tool-concept-and-blueprint.md, the migration spec in git history at fcceba2, golden_capture.py,
 // feature docs, git log to 30 Jul 2026, agent classes counted on disk), chat-exports/merged.md §2, §6, §8,
@@ -15,15 +15,15 @@ export default {
   updated: 'November 2026',
   body: [
     { p: 'A new story lands in the sprint. Dana reads it, types two dozen test cases in the team’s format, runs them by hand, and copies two failures into two bug reports. Next sprint the story changes, and she does it all again.' },
-    { p: 'In June 2026 I started building a tool so that Dana could spend that time reviewing and deciding instead. The AI QA workbench is that tool, and it is my own; in its repository it is called ADO_Tester. Working against Azure DevOps, sixteen specialised AI agents analyse a story, write test cases and automation, run the tests, sort the failures and draft the bugs, while a person reviews and approves the drafts before they are pushed.' },
-    { p: 'I re-platformed it from a Python prototype to .NET with byte-for-byte parity tests, then took it to the DIS AI Foundations program in July 2026 and extended it there. Below: the loop, the agents, the rewrite nobody was meant to notice, and the one place the yes was missing.' },
+    { p: 'In the DIS AI Foundations cohort I built a tool so that Dana could spend that time reviewing and deciding instead. The AI QA workbench is that tool, and it is my own; in its repository it is called ADO_Tester. Working against Azure DevOps, sixteen specialised AI agents analyse a story, write test cases and automation, run the tests, sort the failures and draft the bugs, while a person reviews and approves the drafts before they are pushed.' },
+    { p: 'I built it in the DIS AI Foundations cohort in July 2026, on a Python prototype I had moved to .NET with byte-for-byte parity tests. Below: the loop, the agents, the rewrite nobody was meant to notice, and the one place the yes was missing.' },
 
     { h2: 'At a glance' },
     { ol: [
       'I framed the problem as a trap: manual testing eats the time you would need to automate, so the next regression is manual too.',
       'I designed a tool that turns a story into house-style test cases, automation and bug drafts, with a person reviewing the drafts before they are pushed.',
       'I re-platformed it from Python to .NET, and proved the rewrite with golden-file tests and adversarial audits before retiring the original.',
-      'I took it to the DIS AI Foundations program and extended it into a full loop: scan, generate, run, triage, and rerun only what a change affects.',
+      'In the DIS AI Foundations cohort I built it into a full loop: scan, generate, run, triage, and rerun only what a change affects.',
     ] },
     { numbers: [['16', 'specialised AI agents, counted in the code'], ['9', 'pages, from a story to a weekly report'], ['3', 'levels of API test, each paired with its test case'], ['367', 'behaviours checked before the rewrite began']] },
 
@@ -144,7 +144,7 @@ export default {
     { lead: 'A Python prototype.', p: 'The first version authored tests, found bugs, kept a knowledge base and wrote a weekly board report. It proved the idea: an Analyst reads the story, a Tester writes house-style cases, and a person approves before anything is pushed.' },
     { lead: 'The plan, audited first.', p: 'Within weeks the prototype was worth keeping, so I decided to move it onto the stack our engineering teams already run and host. I had its plan audited against the live prototype before the rewrite began.' },
     { lead: 'Proving the rewrite.', p: 'The live prototype was the source of truth, and nothing was to be “improved” on the way. The next section tells it in full.' },
-    { lead: 'At the program.', p: 'I extended the workbench into the QA loop: scan, generate, run, triage, file, and rerun only what a build affects.' },
+    { lead: 'In the cohort.', p: 'I built the workbench into the QA loop: scan, generate, run, triage, file, and rerun only what a build affects.' },
     { lead: 'After the program.', p: 'Test authoring learned to check the existing test plan, so it stops proposing cases the team already has, and a UI phase added manual screen cases and browser scripts. Each feature followed one method: a design, a blueprint, a task list with acceptance criteria, then a build loop that takes one task at a time and commits only verified work.' },
     { timeline: [
       { when: '3 Jun 2026', title: 'First commit', detail: 'A Python prototype: author tests, find bugs, a knowledge base, a weekly report.' },
@@ -238,7 +238,7 @@ export default {
     },
 
     { h2: 'Bringing QA to the hackathon' },
-    { p: 'The DIS AI Foundations program was a five-day AI hackathon run jointly by our division and other Perseus Group divisions: a day of AI sessions, then four days to build. There was no QA presence, so I asked my manager to bring QA in. I had already been building the workbench for a month.' },
+    { p: 'The DIS AI Foundations program was a five-day AI hackathon run jointly by our division and other Perseus Group divisions: a day of AI sessions, then four days to build. QA joined the program at my request, and I built the workbench in that cohort.' },
     { p: 'Most teams built product features; I extended the workbench for the people testing them, with the QA loop: scan a module of the product’s API, mark each surface covered or gap, generate tests at three levels with their test cases, run them, record the run in the tracker, sort each failure, draft bugs for the real ones and post a summary to the team’s chat.' },
     { p: 'The watcher closes the loop. On every new build it asks an agent which tests the changed files affect, runs only those, and says why.' },
     { photo: '/certifications/dis-ai-foundations-certificate.jpg', width: 1600, height: 1131, alt: 'Certificate of completion from Dealer Information Systems certifying that Mahmood Ahmad completed AI Foundations: From Developer to Orchestrator, dated 3 July 2026.', caption: 'Certificate of completion, AI Foundations: From Developer to Orchestrator, July 2026.' },

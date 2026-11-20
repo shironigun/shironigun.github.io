@@ -110,7 +110,7 @@ export const log2026 = [
   { date: 'Nov', text: 'Led an AI feature from concept to production readiness. Wrote a how-to standard and the first complete feature guide for dealers, revised with the support team.' },
   { date: 'Oct', text: 'Published my Claude Code marketplace on GitHub.' },
   { date: 'Aug', text: 'Organised and led the AI Foundations hackathon, opened it with “AI Foundations: From Doing to Directing”, and wrote a 183-page Claude handbook for the division.' },
-  { date: 'Jul', text: 'Completed the DIS AI Foundations program, taking the AI QA Workbench there and extending it.' },
+  { date: 'Jul', text: 'Completed the DIS AI Foundations program and built the AI QA Workbench in the cohort.' },
   { date: 'Apr', text: 'Started a full UI and UX revamp of our dealership CRM through agentic coding.' },
   { date: 'Jan', text: 'Promoted to Product Quality Analyst.' },
 ];

@@ -48,7 +48,7 @@ Layout: `.container` is 1240 px wide plus gutters (`clamp(20px, 3vw, 40px)`). In
 | `/case-studies` | Case files under a magnifier | Long-form case studies, filterable |
 | `/case-studies/:slug` | By first tag: AI neural network, Quality gates, Design wireframe, Product roadmap | An article: headline, standfirst, the documents it produced (first thing a reader can open), byline with role, period and reading time, then prose sections with figures, photos (open full size), tables and pull quotes. From 1,200 px the chapter list sticks beside the story; from 1,500 px it reads in three columns: every case study, the story, and the illustration with its chapters |
 | `/journey` (old `/achievements` links redirect) | Winding path with milestones | Recognition (undated awards), then every typed node since 2021, filterable: roles, projects, achievements, certifications, talks, workshops, events and courses |
-| `/about` | Skills radar | A profile record: a sticky panel (avatar, title, key fields, open-to-roles status, discipline tags, email, LinkedIn, résumé) and tabs: Overview (summary, headline numbers, product, activity from the journey highlights), Experience (career bar, expandable role records), Roles and skills (four pillars, skill and tool chips), Recognition (awards, certifications, education). The tab is kept in the hash (`/about#experience`). Testimonials follow below |
+| `/about` | Skills radar | A profile record: a sticky panel (avatar, title, key fields, open-to-roles status, discipline tags, email, LinkedIn, resume) and tabs: Overview (summary, headline numbers, product, activity from the journey highlights), Experience (career bar, expandable role records), Roles and skills (four pillars, skill and tool chips), Recognition (awards, certifications, education). The tab is kept in the hash (`/about#experience`). Testimonials follow below |
 | `/how-i-work` | Pipeline lighting stage by stage | Operating model, requirements example, design review, AI practice, principles, articles |
 | `/contact` | Signal ripples | Contact options and a hiring-manager panel |
 | `/writing/:slug` | Lines of text | Articles |
@@ -60,7 +60,7 @@ Every page except Contact ends with the call-to-action band, then the footer.
 
 | Component | Notes |
 |---|---|
-| `Nav` | Sticky header with a reading-progress bar; résumé opens in the viewer |
+| `Nav` | Sticky header with a reading-progress bar; resume opens in the viewer |
 | `PageHeader` | Breadcrumbs, title, lead, optional `art` illustration |
 | `HeaderArt` | The per-page illustrations; paused off screen, still under reduced motion |
 | `WorkCarousel` | Node diagrams, 3 s auto-advance, pause on hover, AI agents slide first (`src/content/workSlides.js`); takes `index`, `onIndexChange` and `hold` so the Selected work list on the home page can drive it |
@@ -179,12 +179,12 @@ Head clicks:
 | Documents and images | `public/documents/`, `public/certifications/`, `public/images/` (event photos in `events/`, his hero cut-out in `portrait/`) |
 | Interactive exhibits (open in the viewer) | `public/labs/`: self-contained HTML, scrubbed of product names before it is added |
 
-## Résumés
+## Resumes
 
-`node resume/build.mjs` rebuilds every résumé from `src/content` (experience, skills, tools, certifications, recognition and the live hours), so they never drift from the site:
+`node resume/build.mjs` rebuilds every resume from `src/content` (experience, skills, tools, certifications, recognition and the live hours), so they never drift from the site:
 
-- `resume/Mahmood_Ahmad_Resume.tex`: the full résumé (two pages) on Jake's Resume template, tuned for applicant tracking systems: every experience highlight, skill and tool group, certification and award from `src/content`. Both résumés start at SQA Trainee (Dec 2023), with only the Perseus Group roles; the earlier WordPress and UX roles stay on the site (About and Journey). It also compiles in Overleaf (New Project, Upload Project) with pdfLaTeX.
-- `public/resumes/Mahmood_Ahmad_Resume_Light.pdf`: that `.tex` compiled with [Tectonic](https://tectonic-typesetting.github.io) (`scoop install tectonic`). Every Résumé button opens it. `Mahmood_Ahmad_Resume.pdf` is a copy for older links.
+- `resume/Mahmood_Ahmad_Resume.tex`: the full resume (two pages) on Jake's Resume template, tuned for applicant tracking systems: every experience highlight, skill and tool group, certification and award from `src/content`. Both resumes start at SQA Trainee (Dec 2023), with only the Perseus Group roles; the earlier WordPress and UX roles stay on the site (About and Journey). It also compiles in Overleaf (New Project, Upload Project) with pdfLaTeX.
+- `public/resumes/Mahmood_Ahmad_Resume_Light.pdf`: that `.tex` compiled with [Tectonic](https://tectonic-typesetting.github.io) (`scoop install tectonic`). Every Resume button opens it. `Mahmood_Ahmad_Resume.pdf` is a copy for older links.
 - `public/resumes/Mahmood_Ahmad_Resume_Dark.pdf`: A4, printed from HTML by headless Chrome (or Edge; set `CHROME_PATH` if neither is found). It's the "dark version" link on Contact; Jake's template has no dark edition.
 
 **ATS rules the LaTeX follows** (researched Nov 2026): one column; standard headings in the usual order (Summary, Experience, Projects, Skills, Certifications, Awards, Education); contact details in the body, not a header or footer; no tables for alignment (title and dates share a line with `\hfill`), no small caps, no icons; a Unicode text layer (`glyphtounicode` on pdfLaTeX, Latin Modern with ligatures off on XeTeX, so words like "official" extract letter by letter); bullets that lead with an action and an outcome backed by a real number; the official title next to the public one. After a change, check what a parser sees with `pdftotext -layout public/resumes/Mahmood_Ahmad_Resume.pdf -`.
