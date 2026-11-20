@@ -844,7 +844,7 @@ const allProjects = [
     when: 'Dec 2023',
     tags: ['Quality', 'Personal builds'],
     thumb: 'notes',
-    // Public copy: his original, with the footer's old LinkedIn handle (now a dead link) replaced by his current LinkedIn and GitHub, both clickable.
+    // Public copy: his original, with the footer's old LinkedIn handle (now a dead link) replaced by LinkedIn and GitHub icons (no labels), each linking to shironigun.
     documents: [{ title: 'Selenium C# Notes', meta: 'The guide, 13 pages, December 2023', href: '/documents/selenium-csharp-notes.pdf', action: 'Read the notes' }],
     details: [
       'A personal guide I wrote and published on LinkedIn on 31 December 2023, for anyone automating browser tests with Selenium in C#.',
