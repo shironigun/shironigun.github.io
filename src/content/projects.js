@@ -828,6 +828,30 @@ const allProjects = [
     },
   },
   {
+    slug: 'selenium-csharp-notes',
+    name: 'Selenium WebDriver notes in C#',
+    summary: 'A 13-page guide to browser automation with Selenium WebDriver in C#, written and shared publicly for other automation testers.',
+    role: 'Wrote and published',
+    status: 'live',
+    year: '2023',
+    quarters: ['2023-Q4', '2023-Q4'],
+    kpi: ['13', 'pages'],
+    delivered: [
+      'Collected the Selenium WebDriver methods and techniques for C# in one guide',
+      'Covered web elements, dynamic waits and browser-driver management with WebDriverManager',
+      'Wrote a description and a complete scenario for each, and shared it publicly on LinkedIn',
+    ],
+    when: 'Dec 2023',
+    tags: ['Quality', 'Personal builds'],
+    thumb: 'notes',
+    // Public copy: his original, with the footer's old LinkedIn handle (now a dead link) replaced by his current LinkedIn and GitHub, both clickable.
+    documents: [{ title: 'Selenium C# Notes', meta: 'The guide, 13 pages, December 2023', href: '/documents/selenium-csharp-notes.pdf', action: 'Read the notes' }],
+    details: [
+      'A personal guide I wrote and published on LinkedIn on 31 December 2023, for anyone automating browser tests with Selenium in C#.',
+      'It works as a cheat sheet: how to handle every kind of web element, dynamic waits, and managing browser drivers with WebDriverManager, each with a description and a complete scenario.',
+    ],
+  },
+  {
     slug: 'ui-standards',
     name: 'UI standards documentation',
     summary: 'The organisation’s first shared reference for components, interaction patterns and accessibility.',
@@ -880,6 +904,7 @@ const ORDER = [
   'product-decisions',
   'promo-films',
   'ui-standards',
+  'selenium-csharp-notes',
   'delivery-dashboards',
   'ai-evaluation',
 ];

@@ -204,6 +204,17 @@ function GuideContentsThumb() {
   );
 }
 
+// The Selenium notes' topics, in order.
+function NotesThumb() {
+  return (
+    <div className={styles.thumbList}>
+      {['Web elements', 'Dynamic waits', 'Browser drivers', 'Complete scenarios'].map((t) => (
+        <div key={t} className={styles.thumbRow}><span>{t}</span></div>
+      ))}
+    </div>
+  );
+}
+
 const GuideNumbersThumb = () => <NumbersThumb items={[['8', 'page standard'], ['22', 'cover designs'], ['12', 'page guide, down from 18']]} />;
 
 const THUMBS = {
@@ -211,6 +222,7 @@ const THUMBS = {
   styleCheck: StyleCheckThumb,
   guideContents: GuideContentsThumb,
   guideNumbers: GuideNumbersThumb,
+  notes: NotesThumb,
   evals: EvalsThumb,
   decisions: DecisionsThumb,
   films: FilmsThumb,
