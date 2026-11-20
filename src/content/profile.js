@@ -19,9 +19,9 @@ export const experience = [
       { label: 'AI product ownership', text: 'Lead AI feature definition for the most successful product in a 200+ person division: customer-engagement SaaS for automotive, agricultural and equipment dealerships. Took Promise Tracker, an AI feature that surfaces what a dealership still owes its customers, from concept to production readiness. Promoted from Junior SQA Analyst in under two years.' },
       { label: 'AI-native product revamp', text: 'Led the rebuild of 7 product areas of our dealership CRM, directing Claude Code agents from specification to review against the component library and business rules.' },
       { label: 'Roadmap and product strategy', text: 'Shape the roadmap and AI feature decisions with the Product Owner and Initiative Manager in Aha! and Azure DevOps, backing priorities with quantitative analysis (regression, trend and break-even), SWOT and 5 Whys.' },
-      { label: 'AI enablement at scale', text: 'Organised the AI Foundations hackathon for 9 participants across QA and design, with 9 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page handbook on working with Claude.' },
+      { label: 'AI enablement at scale', text: 'Organised the AI Foundations hackathon for 9 participants across QA and design, with 9 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page Claude handbook.' },
       { label: 'People leadership', text: 'Manage 3 QA analysts who report to me directly (since October 2026), growing each toward AI-assisted testing, AI evaluation and automation; completed six-month Manager Essentials Training.' },
-      { label: 'Public AI tooling', text: 'Published a public Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and built the AI QA Workbench, which I took to the DIS AI Foundations program and extended there.' },
+      { label: 'Public AI tooling', text: 'Published a Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and built the AI QA Workbench, extended at the DIS AI Foundations program.' },
       { label: 'Delivery and insight', text: 'Own release readiness, introduced the API automation framework and onboarded 3 analysts; set up Power BI and Power Platform dashboards tracking release cadence, change failure rate and post-launch outcomes.' },
     ],
   },
@@ -50,6 +50,7 @@ export const experience = [
     highlights: [
       { label: 'Standards from day one', text: 'Initiated and wrote the organisation’s first global UI standards document, covering component consistency, interaction patterns and accessibility baselines.' },
       { label: 'Domain immersion', text: `Spent ${hoursText.trainee} hours with the Product Owner, Initiative Manager, development and operations, and ran acceptance, functional, API and cross-platform testing with workarounds that cut regression effort.` },
+      { label: 'Automation guide', text: 'Published a 13-page Selenium WebDriver guide in C# for automation testers.' },
     ],
   },
   {

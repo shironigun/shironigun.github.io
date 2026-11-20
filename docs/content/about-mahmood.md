@@ -99,9 +99,9 @@ On our dealership SaaS products I work as the team’s business analyst and asso
 - **AI product ownership:** Lead AI feature definition for the most successful product in a 200+ person division: customer-engagement SaaS for automotive, agricultural and equipment dealerships. Took Promise Tracker, an AI feature that surfaces what a dealership still owes its customers, from concept to production readiness. Promoted from Junior SQA Analyst in under two years.
 - **AI-native product revamp:** Led the rebuild of 7 product areas of our dealership CRM, directing Claude Code agents from specification to review against the component library and business rules.
 - **Roadmap and product strategy:** Shape the roadmap and AI feature decisions with the Product Owner and Initiative Manager in Aha! and Azure DevOps, backing priorities with quantitative analysis (regression, trend and break-even), SWOT and 5 Whys.
-- **AI enablement at scale:** Organised the AI Foundations hackathon for 9 participants across QA and design, with 9 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page handbook on working with Claude.
+- **AI enablement at scale:** Organised the AI Foundations hackathon for 9 participants across QA and design, with 9 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page Claude handbook.
 - **People leadership:** Manage 3 QA analysts who report to me directly (since October 2026), growing each toward AI-assisted testing, AI evaluation and automation; completed six-month Manager Essentials Training.
-- **Public AI tooling:** Published a public Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and created the AI QA Workbench in 4 days at the DIS AI Foundations program.
+- **Public AI tooling:** Published a Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and built the AI QA Workbench, extended at the DIS AI Foundations program.
 - **Delivery and insight:** Own release readiness, introduced the API automation framework and onboarded 3 analysts; set up Power BI and Power Platform dashboards tracking release cadence, change failure rate and post-launch outcomes.
 
 ### Junior SQA Analyst, Contour Software, Perseus Group (Constellation Software)
@@ -123,7 +123,8 @@ Owned QA for an enterprise dealership CRM and grew into business analysis and de
 Learned the product, the domain and the sprint, and started improving them.
 
 - **Standards from day one:** Initiated and wrote the organisation’s first global UI standards document, covering component consistency, interaction patterns and accessibility baselines.
-- **Domain immersion:** Spent the live SQA Trainee hours (360) with the Product Owner, Initiative Manager, development and operations, and ran acceptance, functional, API and cross-platform testing with workarounds that cut regression effort.
+- **Domain immersion:** Spent the live SQA Trainee hours (376, shown as 370+) with the Product Owner, Initiative Manager, development and operations, and ran acceptance, functional, API and cross-platform testing with workarounds that cut regression effort.
+- **Automation guide:** Published a 13-page Selenium WebDriver guide in C# for automation testers. (Published 31 Dec 2023, during the traineeship, not the Junior SQA role.)
 
 ### WordPress Designer, Media Solutions
 
@@ -160,6 +161,7 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **2023** · Education · B.S. Information Technology, University of the Punjab. Completed the degree, 2019 to 2023.
 - **Dec 2023** · Role · SQA Trainee, Contour Software, Perseus Group. Joined enterprise dealership SaaS at Constellation Software.
 - **Dec 2023** · Initiative · First organisation-wide UI standards. Audited the product UI and authored the shared standard for components, interaction patterns and accessibility.
+- **Dec 2023** · Project · Selenium WebDriver notes in C#. Wrote and published a 13-page guide to browser automation in C# for other automation testers; links to the public PDF.
 - **Feb 2024** · Promotion · Junior SQA Analyst, Contour Software, Perseus Group. Took ownership of quality for an enterprise dealership CRM.
 - **Jul 2024** · Certification · Certified Tester Foundation Level, ISTQB®
 - **Dec 2024** · Certification · Certified ScrumMaster® (CSM®), Scrum Alliance. Certified at 24.
