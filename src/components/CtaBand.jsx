@@ -19,7 +19,7 @@ export default function CtaBand() {
         <div className={styles.actions}>
           <a href={`mailto:${contact.email}`} className="btn btn-light"><MailIcon />Email me</a>
           <a href={contact.linkedin} target="_blank" rel="noopener" className="btn btn-ghost-night"><LinkedInIcon />LinkedIn</a>
-          <DocButton src={contact.resumeLight} title="Résumé" download className="btn btn-ghost-night"><DownloadIcon />Résumé</DocButton>
+          <DocButton src={contact.resumeLight} title="Resume" download className="btn btn-ghost-night"><DownloadIcon />Resume</DocButton>
           <Link to="/contact" className={styles.more}>All contact options</Link>
         </div>
       </div>

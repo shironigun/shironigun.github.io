@@ -77,8 +77,8 @@ export default function Nav() {
             </Link>
           ))}
           {themeButton}
-          <DocButton src={contact.resumeLight} title="Résumé" download className={`btn btn-secondary ${styles.resume}`}>
-            Résumé
+          <DocButton src={contact.resumeLight} title="Resume" download className={`btn btn-secondary ${styles.resume}`}>
+            Resume
           </DocButton>
         </nav>
 
@@ -110,7 +110,7 @@ export default function Nav() {
                 {l.label}
               </Link>
             ))}
-            <DocButton src={contact.resumeLight} title="Résumé" download className={styles.mobileLink} onClick={() => setOpen(false)}>Résumé</DocButton>
+            <DocButton src={contact.resumeLight} title="Resume" download className={styles.mobileLink} onClick={() => setOpen(false)}>Resume</DocButton>
             {person.available && (
               <p className={styles.mobileAvailable}>
                 <span className={styles.dot} aria-hidden="true" />

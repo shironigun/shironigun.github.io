@@ -70,7 +70,7 @@ export default function Footer() {
             <h2 className={styles.colTitle}>About</h2>
             <ul>
               {ABOUT.map((l) => <li key={l.to}><Link to={l.to}>{l.label}</Link></li>)}
-              <li><DocButton src={contact.resumeLight} title="Résumé" download className={styles.linkButton}>Résumé</DocButton></li>
+              <li><DocButton src={contact.resumeLight} title="Resume" download className={styles.linkButton}>Resume</DocButton></li>
             </ul>
           </div>
           <div className={styles.featured}>

@@ -204,7 +204,7 @@ export default function About() {
                 <div className={styles.actions}>
                   <a href={`mailto:${contact.email}`} className="btn btn-primary"><MailIcon />Email me</a>
                   <a href={contact.linkedin} target="_blank" rel="noopener" className="btn btn-secondary"><LinkedInIcon />LinkedIn</a>
-                  <DocButton src={contact.resumeLight} title="Résumé" download className="btn btn-secondary"><DownloadIcon />Résumé</DocButton>
+                  <DocButton src={contact.resumeLight} title="Resume" download className="btn btn-secondary"><DownloadIcon />Resume</DocButton>
                 </div>
               </div>
             </aside>

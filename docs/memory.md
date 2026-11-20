@@ -23,6 +23,7 @@ The full list is [content/content-rules.md](content/content-rules.md). The ones 
 - **No internal detail:** version numbers, test or dev environments, internal counts, ticket IDs, partner or integration names, dealer data, pricing, security findings, and colleagues' names (except the verbatim testimonials).
 - **Testimonials are verbatim and complete.** Never trim or reword them.
 - **Professional, plain wording.** Real numbers matter, rounded down. Check every verb against what he actually did.
+- **Spell it "Resume", never "Résumé"** (his call, 20 Nov 2026): plain letters, no accents, in every label a reader sees, on the site and on LinkedIn.
 - **Copy style:** no em dashes, no AI stock words; LinkedIn drafts are checked with the humanizer (PASS at 70+).
 
 ## LinkedIn

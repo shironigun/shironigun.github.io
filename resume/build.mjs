@@ -81,7 +81,7 @@ function html(theme) {
     </article>`;
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<title>Mahmood Ahmad, résumé</title>
+<title>Mahmood Ahmad, resume</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=block" rel="stylesheet">
 <style>
