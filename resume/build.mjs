@@ -3,7 +3,7 @@
 //   node resume/build.mjs
 //
 // Writes:
-//   resume/Mahmood_Ahmad_Resume.tex                 one page on Jake's Resume template, for Overleaf
+//   resume/Mahmood_Ahmad_Resume.tex                 the full résumé on Jake's Resume template, for Overleaf
 //   public/resumes/Mahmood_Ahmad_Resume_Light.pdf   that .tex compiled: the résumé every button opens
 //   public/resumes/Mahmood_Ahmad_Resume.pdf         a copy of it, for older links
 //   public/resumes/Mahmood_Ahmad_Resume_Dark.pdf    A4, dark, printed from HTML (no Jake's equivalent)
@@ -29,6 +29,7 @@ const vite = await createServer({ root, server: { middlewareMode: true, hmr: fal
 const { experience, skills, education, certifications } = await vite.ssrLoadModule('/src/content/profile.js');
 const { person, contact, recognition, tools, tenure } = await vite.ssrLoadModule('/src/content/site.js');
 const { hoursText } = await vite.ssrLoadModule('/src/content/hours.js');
+const { recentEvents } = await vite.ssrLoadModule('/src/content/achievements.js');
 await vite.close();
 // The résumé starts at SQA Trainee (Dec 2023): only the Perseus Group roles. The site's Journey and
 // About still show the earlier design roles.
@@ -40,8 +41,22 @@ const links = [
   { text: 'github.com/shironigun', href: contact.github },
   { text: 'shironigun.github.io', href: 'https://shironigun.github.io' },
 ];
-const summary = 'Business analyst and associate product owner on enterprise dealership SaaS. I define and prototype AI features, run the sprint as Scrum Master and lead the QA team. I build working software by directing AI agents, and the tools I build wait for a person’s approval before they write.';
+// Written here, used by both PDFs; everything else comes from src/content. Projects follow the portfolio,
+// with no product name (the content rules); the experience already covers Promise Tracker and the revamp.
+const headline = 'AI Product Analyst | Business Analysis | Product Ownership | AI Product Development';
+const summary = `AI Product Analyst with ${tenure} years on enterprise dealership SaaS at Perseus Group, part of Constellation Software. Business analyst and associate product owner: discovery, requirements, the roadmap and AI feature definition. Certified ScrumMaster leading 3 QA analysts; I prototype by directing AI agents with Claude Code.`;
+const projects = [
+  { name: 'Claude Code marketplace', note: 'public on GitHub', when: 'Jul 2026 – Present', text: '7 plugins and 30 skills for QA and product work; every plugin asks a person before it writes.' },
+  { name: 'AI evaluation and the Skills Evals Lab', note: 'AI quality', when: 'Sep 2026 – Present', text: 'A repeatable AI test (3 runs, counted only if all pass) and a 17-lesson beginner course on evaluating AI skills.' },
+  { name: 'Feature guides for dealers', note: 'customer documentation', when: 'Nov 2026 – Present', text: 'Wrote a how-to standard and the first complete guide for an AI feature, and specified a build tool that checks every guide against the standard; cut the guide from 18 pages to 12 after the support team’s review.' },
+  { name: 'Product documentation', note: 'business analysis', when: 'Aug 2026 – Present', text: 'Reference manuals and a support runbook that let product, QA and support act on how a subsystem really works, with every claim tagged verified, not built or inferred.' },
+  { name: 'Product promo films', note: 'product marketing', when: 'Nov 2026', text: 'Directed 3 promo films, 2 published, with the real product screens rebuilt in code and demo data only.' },
+  { name: 'AI QA Workbench', note: 'DIS AI Foundations program', when: 'Jul 2026', text: '16 specialised AI agents take a user story to test cases, automation, pipeline runs and bug reports.' },
+];
 const dates = (period) => period.replace(' to present', ' – Present').replace(' to ', ' – ');
+// Talks and events from the site, newest first, with his role in each. The hackathon win is under Awards.
+const ROLE = { Talk: 'Speaker', Workshop: 'Presenter', Organised: 'Organiser', Participated: 'Participant' };
+const talks = recentEvents.filter((e) => ROLE[e.label]).map((e) => ({ title: e.title, role: ROLE[e.label], when: e.when }));
 
 // ── The PDFs ──
 // Straight apostrophes in the PDFs: some applicant-tracking systems misread the curly one.
@@ -68,11 +83,11 @@ function html(theme) {
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=block" rel="stylesheet">
 <style>
-@page { size: A4; margin: 13mm 0 12mm; background: ${t.bg}; }
+@page { size: A4; margin: 10mm 0 9mm; background: ${t.bg}; }
 * { box-sizing: border-box; }
 html, body { margin: 0; background: ${t.bg}; color: ${t.body}; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-body { font: 400 9.1pt/1.46 Inter, system-ui, sans-serif; }
-.sheet { padding: 0 15mm; }
+body { font: 400 8.9pt/1.35 Inter, system-ui, sans-serif; }
+.sheet { padding: 0 12mm; }
 a { color: inherit; text-decoration: none; }
 h1, h2, h3 { margin: 0; color: ${t.ink}; font-family: 'Schibsted Grotesk', Inter, sans-serif; }
 header { display: grid; grid-template-columns: 1fr auto; gap: 6mm; align-items: end; padding-bottom: 4.5mm; border-bottom: 1.5pt solid ${t.accent}; }
@@ -82,29 +97,26 @@ h1 { font-size: 25pt; font-weight: 700; line-height: 1.02; letter-spacing: -0.02
 .links { margin: 0; padding: 0; list-style: none; text-align: right; font-size: 8.8pt; line-height: 1.62; }
 .links a { color: ${t.ink}; }
 .summary { margin: 4.2mm 0 0; font-size: 9.8pt; line-height: 1.55; color: ${t.ink}; }
-section { margin-top: 4.4mm; }
-h2 { display: flex; align-items: center; gap: 3mm; margin-bottom: 1.2mm; font-size: 11.5pt; font-weight: 650; letter-spacing: -0.005em; }
+section { margin-top: 3mm; }
+h2 { break-after: avoid; display: flex; align-items: center; gap: 3mm; margin-bottom: 1.2mm; font-size: 11.5pt; font-weight: 650; letter-spacing: -0.005em; }
 h2::after { content: ''; flex: 1; border-top: 0.75pt solid ${t.line}; }
-.role { margin-top: 2.9mm; }
+.role { margin-top: 2.4mm; }
 .roleHead { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; break-after: avoid; }
 h3 { font-size: 10.6pt; font-weight: 650; }
 .period { flex: none; font-size: 8.8pt; color: ${t.quiet}; font-variant-numeric: tabular-nums; }
 .company { margin: 0.3mm 0 0; font-size: 9pt; font-weight: 500; color: ${t.accent}; break-after: avoid; }
 .points { margin: 1.2mm 0 0; padding-left: 4mm; }
-.points li { margin: 0.6mm 0; padding-left: 0.6mm; break-inside: avoid; }
+.points li { margin: 0.4mm 0; padding-left: 0.6mm; break-inside: avoid; }
 .points li::marker { color: ${t.accent}; }
 .points strong { font-weight: 600; color: ${t.ink}; }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4mm 9mm; margin-top: 1.4mm; }
 .group { break-inside: avoid; }
 .group b { display: block; font-weight: 600; color: ${t.ink}; }
-.list { margin: 1.2mm 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.6mm 7mm; }
-.list li { display: grid; gap: 0.2mm; padding-top: 1.4mm; border-top: 0.5pt solid ${t.line}; break-inside: avoid; }
+.list { margin: 1.2mm 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2mm 7mm; }
+.list.wide { grid-template-columns: 1fr 1fr; }
+.list li { display: grid; gap: 0.2mm; padding-top: 1mm; border-top: 0.5pt solid ${t.line}; break-inside: avoid; }
 .list li span:first-child { color: ${t.ink}; font-weight: 500; line-height: 1.35; }
 .list li span:last-child { color: ${t.quiet}; font-size: 8.4pt; line-height: 1.35; }
-.certs { margin: 1.2mm 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.9mm 9mm; }
-.certs li { break-inside: avoid; }
-.certs li span:first-child { color: ${t.ink}; font-weight: 500; }
-.certs li span:last-child { color: ${t.quiet}; font-size: 8.4pt; }
 .edu { display: flex; justify-content: space-between; align-items: baseline; margin-top: 1.4mm; }
 .edu b { color: ${t.ink}; font-weight: 600; }
 </style></head>
@@ -121,8 +133,16 @@ h3 { font-size: 10.6pt; font-weight: 650; }
 
 <section><h2>Experience</h2>${resumeRoles.map(role).join('')}</section>
 
+<section><h2>Projects</h2>
+  <ul class="list wide">${projects.map((p) => `<li><span>${esc(p.name)}</span><span>${esc(p.when)}. ${esc(p.text)}</span></li>`).join('')}</ul>
+</section>
+
 <section><h2>Recognition</h2>
   <ul class="list">${recognition.map((r) => `<li><span>${esc(r.title)}</span><span>${esc(r.detail || '')}</span></li>`).join('')}</ul>
+</section>
+
+<section><h2>Talks and events</h2>
+  <ul class="list">${talks.map((e) => `<li><span>${esc(e.title)}</span><span>${esc(e.role)}, ${esc(e.when)}</span></li>`).join('')}</ul>
 </section>
 
 <section><h2>Skills</h2>
@@ -138,7 +158,7 @@ h3 { font-size: 10.6pt; font-weight: 650; }
 </section>
 
 <section><h2>Certifications</h2>
-  <ul class="certs">${certifications.map((c) => `<li><span>${esc(c.title)}</span> <span>${esc(c.issuer)}, ${esc(c.year)}</span></li>`).join('')}</ul>
+  <ul class="list">${certifications.map((c) => `<li><span>${esc(c.title)}</span><span>${esc(c.issuer)}, ${esc(c.year)}</span></li>`).join('')}</ul>
 </section>
 </div></body></html>`;
 }
@@ -177,11 +197,11 @@ for (const theme of ['dark']) {
 // ── LaTeX, on Jake's Resume template (github.com/jakegut/resume, MIT), for Overleaf ──
 // The full résumé (two pages is fine). Facts match src/content. Tuned for applicant tracking systems (Nov 2026 research):
 //   - single column, standard headings in the usual order: Summary, Experience, Projects, Skills,
-//     Certifications and Awards, Education;
+//     Certifications, Awards, Talks and Events, Education;
 //   - no tables for alignment (title and dates sit on one line with \hfill), no small caps, no icons;
 //   - Unicode mapping on pdfLaTeX (glyphtounicode), so the text layer reads back as written;
 //   - bullets lead with an action and an outcome backed by a real number;
-//   - the official title appears next to the public one, so either matches a recruiter's search.
+//   - the summary uses the public title only; the official title is the role name in Experience.
 // Check the text layer after a change:  pdftotext -layout public/resumes/Mahmood_Ahmad_Resume.pdf -
 const tex = (s) => String(s)
   .replace(/\\/g, '\\textbackslash{}')
@@ -196,23 +216,6 @@ const tex = (s) => String(s)
   .replace(/–/g, '--');
 const range = (period) => tex(dates(period));
 
-const headline = 'AI Product Analyst | Business Analysis | Product Ownership | AI Product Development';
-const summaryTex = `AI Product Analyst (official title: Product Quality Analyst) with ${tenure} years on enterprise dealership SaaS at Perseus Group, part of Constellation Software. Business analyst and associate product owner: discovery, requirements, the roadmap and AI feature definition. Certified ScrumMaster and QA lead; I prototype by directing AI agents with Claude Code.`;
-
-const projects = [
-  {
-    name: 'Claude Code marketplace', note: 'public on GitHub', when: 'Jul 2026 -- Present',
-    text: '7 plugins and 30 skills for QA and product work; every plugin asks a person before it writes.',
-  },
-  {
-    name: 'AI evaluation and the Skills Evals Lab', note: 'AI quality', when: 'Sep 2026 -- Present',
-    text: 'A repeatable AI test (3 runs, counted only if all pass) and a 17-lesson course on evaluating AI skills.',
-  },
-  {
-    name: 'AI QA Workbench', note: 'DIS AI Foundations program', when: 'Jul 2026',
-    text: '16 specialised AI agents take a user story to test cases, automation, pipeline runs and bug reports.',
-  },
-];
 // The full lists from src/content: every skill group, every tool group, every certification and award.
 const skillTex = [...skills, ...tools.map((g) => ({ ...g, group: `${g.group} tools` }))]
   .map((g) => `     \\textbf{${tex(g.group)}}{: ${tex(g.items.join(', '))}}`).join(' \\\\\n');
@@ -270,7 +273,7 @@ const latex = String.raw`%-------------------------
 %-------------------------
 % Custom commands. Title and dates share one line with \hfill instead of a table, so parsers read
 % title, dates, organisation, then the bullets, in that order.
-\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2.5pt}}}
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-3.5pt}}}
 \newcommand{\resumeSubheading}[4]{%
   \vspace{-2pt}\item \textbf{#1} \hfill #2 \\
   \textit{\small #3} \hfill \textit{\small #4} \vspace{-6pt}}
@@ -293,7 +296,7 @@ const latex = String.raw`%-------------------------
 
 %-----------SUMMARY-----------
 \section{Summary}
-\small{${tex(summaryTex)}}
+\small{${tex(summary)}}
 
 %-----------EXPERIENCE-----------
 \section{Experience}
@@ -311,7 +314,7 @@ ${r.highlights.map((h) => `        \\resumeItem{\\textbf{${tex(h.label)}:} ${tex
 \section{Projects}
     \resumeSubHeadingListStart
 ${projects.map((p) => `      \\resumeProjectHeading
-          {\\textbf{${tex(p.name)}} $|$ \\emph{${tex(p.note)}}}{${p.when}}
+          {\\textbf{${tex(p.name)}} $|$ \\emph{${tex(p.note)}}}{${tex(p.when)}}
           \\resumeItemListStart
             \\resumeItem{${tex(p.text)}}
           \\resumeItemListEnd`).join('\n')}
@@ -340,6 +343,15 @@ ${certTex}
     \item
     \resumeItemListStart
 ${awardTex}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------TALKS AND EVENTS-----------
+\section{Talks and Events}
+  \resumeSubHeadingListStart
+    \item
+    \resumeItemListStart
+${talks.map((e) => `      \\resumeItem{\\textbf{${tex(e.title)}}: ${tex(e.role)}, ${tex(e.when)}}`).join('\n')}
     \resumeItemListEnd
   \resumeSubHeadingListEnd
 
