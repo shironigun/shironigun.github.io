@@ -43,7 +43,7 @@ const P = {
   book: ({ c, w, d }) => (
     <>
       <path d="M100 62 C78 50 50 50 26 58 V156 C50 148 78 148 100 160 Z" fill={w} stroke={c} strokeWidth="5" strokeLinejoin="round" />
-      <path d="M100 62 C122 50 150 50 174 58 V156 C150 148 122 148 100 160 Z" fill="#FFFFFF" stroke={c} strokeWidth="5" strokeLinejoin="round" />
+      <path d="M100 62 C122 50 150 50 174 58 V156 C150 148 122 148 100 160 Z" fill={w} stroke={c} strokeWidth="5" strokeLinejoin="round" />
       {[80, 96, 112].map((y) => <line key={y} x1="122" y1={y} x2="156" y2={y - 3} stroke={c} strokeWidth="4" strokeLinecap="round" opacity="0.5" />)}
       <path d="M150 14 L156 30 L172 36 L156 42 L150 58 L144 42 L128 36 L144 30 Z" fill={d} />
     </>
@@ -62,7 +62,7 @@ const P = {
   // A guide with numbered steps.
   guide: ({ c, w }) => (
     <>
-      <path d="M52 24 H128 L152 48 V176 H52 Z" fill="#FFFFFF" stroke={c} strokeWidth="5" strokeLinejoin="round" />
+      <path d="M52 24 H128 L152 48 V176 H52 Z" fill={w} stroke={c} strokeWidth="5" strokeLinejoin="round" />
       <path d="M128 24 V48 H152" fill={w} stroke={c} strokeWidth="5" strokeLinejoin="round" />
       {[78, 112, 146].map((y, i) => (
         <g key={y}>
@@ -76,14 +76,17 @@ const P = {
   // A beacon light.
   beacon: ({ c, w, d }) => (
     <>
-      <path d="M100 66 L30 36 M100 66 L26 82 M100 66 L170 36 M100 66 L174 82" stroke={c} strokeWidth="5" strokeLinecap="round" opacity="0.45" />
-      <path d="M84 176 L90 86 H110 L116 176 Z" fill="#FFFFFF" stroke={d} strokeWidth="5" strokeLinejoin="round" />
-      <path d="M88 116 H112 M86 146 H114" stroke={c} strokeWidth="10" />
-      <rect x="86" y="58" width="28" height="28" rx="4" fill={c} />
-      <path d="M82 58 L100 40 L118 58 Z" fill={d} />
-      <rect x="70" y="174" width="60" height="8" rx="4" fill={d} />
+      <circle cx="100" cy="66" r="46" fill={c} opacity="0.12" />
+      <path d="M100 66 L24 40 M100 66 L20 86 M100 66 L176 40 M100 66 L180 86" stroke={c} strokeWidth="7" strokeLinecap="round" opacity="0.5" />
+      <path d="M82 178 L89 86 H111 L118 178 Z" fill={c} />
+      <path d="M86 118 H114 M84 150 H116" stroke="#FFFFFF" strokeWidth="9" />
+      <rect x="84" y="56" width="32" height="30" rx="5" fill={d} />
+      <rect x="91" y="62" width="18" height="18" rx="3" fill="#FFE8A3" />
+      <path d="M80 56 L100 36 L120 56 Z" fill={d} />
+      <rect x="66" y="174" width="68" height="10" rx="5" fill={d} />
     </>
   ),
+
   // AI agents: a friendly robot with a passing check.
   robot: ({ c, w, d }) => (
     <>
@@ -101,7 +104,7 @@ const P = {
   // A promise in a message, still owed.
   promise: ({ c, w, d }) => (
     <>
-      <path d="M30 44 H150 A14 14 0 0 1 164 58 V112 A14 14 0 0 1 150 126 H74 L46 150 V126 H30 A14 14 0 0 1 16 112 V58 A14 14 0 0 1 30 44 Z" fill="#FFFFFF" stroke={c} strokeWidth="5" strokeLinejoin="round" />
+      <path d="M30 44 H150 A14 14 0 0 1 164 58 V112 A14 14 0 0 1 150 126 H74 L46 150 V126 H30 A14 14 0 0 1 16 112 V58 A14 14 0 0 1 30 44 Z" fill={w} stroke={c} strokeWidth="5" strokeLinejoin="round" />
       <rect x="38" y="70" width="96" height="10" rx="5" fill={c} opacity="0.35" />
       <rect x="38" y="92" width="64" height="10" rx="5" fill={c} opacity="0.35" />
       <circle cx="150" cy="140" r="30" fill={c} />
@@ -118,7 +121,7 @@ const P = {
   // Design: a frame being reviewed with a pen.
   design: ({ c, w, d }) => (
     <>
-      <rect x="28" y="40" width="112" height="120" rx="10" fill="#FFFFFF" stroke={c} strokeWidth="5" />
+      <rect x="28" y="40" width="112" height="120" rx="10" fill={w} stroke={c} strokeWidth="5" />
       <rect x="42" y="56" width="60" height="12" rx="6" fill={c} opacity="0.5" />
       <rect x="42" y="78" width="84" height="34" rx="6" fill={w} />
       <rect x="42" y="124" width="44" height="18" rx="6" fill={c} />
@@ -148,7 +151,7 @@ const P = {
   // Try it before it's built: a pointer on a prototype.
   prototype: ({ c, w, d }) => (
     <>
-      <rect x="24" y="36" width="134" height="104" rx="12" fill="#FFFFFF" stroke={c} strokeWidth="5" />
+      <rect x="24" y="36" width="134" height="104" rx="12" fill={w} stroke={c} strokeWidth="5" />
       <rect x="40" y="56" width="70" height="12" rx="6" fill={c} opacity="0.5" />
       <rect x="40" y="80" width="100" height="10" rx="5" fill={w} />
       <rect x="40" y="104" width="54" height="20" rx="8" fill={c} />
@@ -168,7 +171,7 @@ const P = {
   docs: ({ c, w }) => (
     <>
       <rect x="64" y="30" width="96" height="124" rx="10" fill={w} stroke={c} strokeWidth="4" />
-      <rect x="40" y="48" width="96" height="124" rx="10" fill="#FFFFFF" stroke={c} strokeWidth="5" />
+      <rect x="40" y="48" width="96" height="124" rx="10" fill={w} stroke={c} strokeWidth="5" />
       {[76, 96, 116, 136].map((y, i) => <rect key={y} x="56" y={y} width={i % 2 ? 48 : 64} height="9" rx="4.5" fill={c} opacity="0.4" />)}
     </>
   ),
@@ -237,7 +240,7 @@ const P = {
   // Browser automation: a browser window and a cursor.
   browser: ({ c, w, d }) => (
     <>
-      <rect x="24" y="40" width="152" height="118" rx="12" fill="#FFFFFF" stroke={c} strokeWidth="5" />
+      <rect x="24" y="40" width="152" height="118" rx="12" fill={w} stroke={c} strokeWidth="5" />
       <path d="M24 66 H176" stroke={c} strokeWidth="5" />
       {[40, 54, 68].map((x) => <circle key={x} cx={x} cy="53" r="4" fill={c} />)}
       <path d="M70 92 L52 108 L70 124 M130 92 L148 108 L130 124 M110 86 L90 130" fill="none" stroke={d} strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
@@ -247,8 +250,8 @@ const P = {
   components: ({ c, w, d }) => (
     <>
       <rect x="28" y="40" width="64" height="28" rx="8" fill={c} />
-      <rect x="104" y="40" width="68" height="28" rx="8" fill="#FFFFFF" stroke={c} strokeWidth="4" />
-      <rect x="28" y="84" width="144" height="28" rx="8" fill="#FFFFFF" stroke={c} strokeWidth="4" />
+      <rect x="104" y="40" width="68" height="28" rx="8" fill={w} stroke={c} strokeWidth="4" />
+      <rect x="28" y="84" width="144" height="28" rx="8" fill={w} stroke={c} strokeWidth="4" />
       <rect x="28" y="128" width="54" height="30" rx="15" fill={c} opacity="0.5" />
       <circle cx="67" cy="143" r="11" fill="#FFFFFF" />
       <rect x="98" y="128" width="30" height="30" rx="6" fill={d} />
@@ -257,14 +260,14 @@ const P = {
   ),
 };
 
-// Colours per discipline: main, wash, dark.
+// Colours per discipline: main, wash, dark, tint (the strong end of the card's gradient).
 const PALETTE = {
-  product: ['#2446DB', '#EEF1FD', '#1A33A6'],
-  design: ['#7A3FD1', '#F3EEFB', '#57299C'],
-  ai: ['#0B7A6E', '#E6F4F2', '#075A51'],
-  quality: ['#A35C00', '#FDF3E3', '#7A4400'],
-  postman: ['#E8590C', '#FFF1EA', '#B5440A'],
-  personal: ['#5B6070', '#EFF0F3', '#3F434F'],
+  product: ['#2446DB', '#EEF1FD', '#1A33A6', '#C9D4FA'],
+  design: ['#7A3FD1', '#F3EEFB', '#57299C', '#DCCBF6'],
+  ai: ['#0B7A6E', '#E6F4F2', '#075A51', '#BFE5DF'],
+  quality: ['#A35C00', '#FDF3E3', '#7A4400', '#F4D9AE'],
+  postman: ['#E8590C', '#FFF1EA', '#B5440A', '#FFCDB0'],
+  personal: ['#5B6070', '#EFF0F3', '#3F434F', '#D5D8E0'],
 };
 
 // slug → [picture, palette]
@@ -304,7 +307,7 @@ const MAP = {
 
 export function pictureFor(slug) {
   const [name, pal] = MAP[slug] || ['docs', 'product'];
-  const [c, w, d] = PALETTE[pal];
+  const [c, w, d, t] = PALETTE[pal];
   const Pic = P[name];
-  return { wash: w, accent: c, svg: <svg viewBox="0 0 200 200" width="340" height="340" aria-hidden="true"><Pic c={c} w={w} d={d} /></svg> };
+  return { wash: w, accent: c, tint: t, svg: <svg viewBox="0 0 200 200" width="236" height="236" aria-hidden="true"><Pic c={c} w={w} d={d} /></svg> };
 }

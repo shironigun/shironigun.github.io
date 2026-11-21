@@ -1,4 +1,5 @@
-/* A fixed 1200x627 link-preview card. Always the light theme: previews are shown on other sites. */
+/* A fixed 1200x627 link-preview card. Always the light theme: previews are shown on other sites.
+   The project's colour runs in from the right and fades to paper on the left. */
 .card {
   position: fixed;
   inset: 0 auto auto 0;
@@ -6,64 +7,46 @@
   height: 627px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 700px 1fr;
-  background: #FAFAF7;
+  grid-template-columns: 640px 1fr;
+  background: linear-gradient(270deg, var(--tint) 0%, var(--wash) 42%, #FAFAF7 72%);
   color: #14161B;
   font-family: var(--font-body);
   color-scheme: light;
 }
 
 .text {
-  padding: 60px 48px 44px 72px;
+  padding: 72px 40px 52px 76px;
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
 
-.tags {
-  display: flex;
-  gap: 22px;
-  margin: 0 0 26px;
-  padding: 0;
-  list-style: none;
-  font-size: 18px;
-  font-weight: 500;
-  color: #4E525A;
-}
-
-.tags li {
+.tag {
+  margin: 0 0 22px;
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
 }
 
-.tags li::before {
+.tag::before {
   content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  background: var(--tag);
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--accent);
 }
 
 .title {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 58px;
-  line-height: 1.04;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 68px;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
   text-wrap: balance;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.summary {
-  margin: 20px 0 0;
-  font-size: 21px;
-  line-height: 1.45;
-  color: #4E525A;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -80,44 +63,80 @@
 .value {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 60px;
+  font-size: 76px;
   line-height: 1;
   letter-spacing: -0.03em;
   color: var(--accent);
 }
 
 .label {
-  max-width: 26ch;
-  font-size: 19px;
-  line-height: 1.3;
-  color: #63676F;
+  max-width: 20ch;
+  font-size: 22px;
+  line-height: 1.25;
+  color: #4E525A;
 }
 
-.role {
+.line {
   margin: auto 0 0;
-  max-width: 32ch;
-  font-size: 20px;
-  line-height: 1.4;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.15;
   color: var(--accent);
-  font-weight: 500;
 }
 
 .foot {
-  margin: 26px 0 0;
-  padding-top: 18px;
-  border-top: 1px solid #E3E3DD;
-  font-size: 16px;
+  margin: 30px 0 0;
+  font-size: 17px;
   color: #63676F;
 }
 
 .foot strong {
   color: #14161B;
   font-weight: 600;
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 .art {
+  position: relative;
   display: grid;
   place-items: center;
-  background: var(--wash);
 }
+
+.halo {
+  position: absolute;
+  width: 470px;
+  height: 470px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 68%);
+}
+
+.halo::after {
+  content: '';
+  position: absolute;
+  inset: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0.14;
+}
+
+.tile {
+  position: relative;
+  width: 330px;
+  height: 330px;
+  display: grid;
+  place-items: center;
+  background: #FFFFFF;
+  border-radius: 76px;
+  box-shadow: 0 2px 6px rgba(20, 22, 27, 0.05), 0 40px 80px -28px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.d1 { width: 18px; height: 18px; top: 118px; right: 92px; opacity: 0.55; }
+.d2 { width: 12px; height: 12px; bottom: 120px; left: 70px; opacity: 0.4; }
+.d3 { width: 26px; height: 26px; bottom: 96px; right: 70px; opacity: 0.22; }
