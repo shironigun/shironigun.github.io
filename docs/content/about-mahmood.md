@@ -52,7 +52,7 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 - **Joined:** 14 December 2023 (tenure on the site is worked out live from this date, rounded down to a tenth of a year)
 - **Availability:** not shown on the site (21 Nov 2026). The contact line reads "Happy to talk about AI product work, quality and agentic delivery."
 - **Home page headline:** “I shape AI products from idea to launch.”
-- **Home page support line:** AI Product Analyst. I help product teams move from business problems to AI features that hold up, with clearer requirements, design direction, working prototypes, and a repeatable approach to evaluation and QA.
+- **Home page support line:** I connect AI product definition, design direction, agent-led prototyping, evaluation and QA leadership, turning business problems into clear requirements and AI features that hold up after launch.
 - **Now:** Leading AI feature definition, prototyping and evaluation, alongside the QA team.
 
 ### Headline numbers

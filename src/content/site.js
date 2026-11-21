@@ -33,7 +33,7 @@ export const nav = [
 export const hero = {
   headline: 'I shape AI products from idea to launch.',
   support:
-    'AI Product Analyst. I help product teams move from business problems to AI features that hold up, with clearer requirements, design direction, working prototypes, and a repeatable approach to evaluation and QA.',
+    'I connect AI product definition, design direction, agent-led prototyping, evaluation and QA leadership, turning business problems into clear requirements and AI features that hold up after launch.',
   now: 'Leading AI feature definition, prototyping and evaluation, alongside the QA team.',
 };
 
