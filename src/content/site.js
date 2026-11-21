@@ -33,8 +33,8 @@ export const nav = [
 export const hero = {
   headline: 'I shape AI products from idea to launch.',
   support:
-    'AI Product Analyst at Perseus Group, Constellation Software. I work across discovery, requirements, design direction, AI prototyping, delivery and quality.',
-  now: 'Leading AI feature definition and prototyping for dealership SaaS, alongside the QA function.',
+    'AI Product Analyst. I help product teams move from business problems to AI features that hold up, with clearer requirements, design direction, working prototypes, and a repeatable approach to evaluation and QA.',
+  now: 'Leading AI feature definition, prototyping and evaluation, alongside the QA team.',
 };
 
 // Time since joining on 12 December 2023, worked out when the page loads: whole tenths of a

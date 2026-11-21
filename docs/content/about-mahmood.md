@@ -52,8 +52,8 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 - **Joined:** 14 December 2023 (tenure on the site is worked out live from this date, rounded down to a tenth of a year)
 - **Availability:** not shown on the site (21 Nov 2026). The contact line reads "Happy to talk about AI product work, quality and agentic delivery."
 - **Home page headline:** “I shape AI products from idea to launch.”
-- **Home page support line:** AI Product Analyst at Perseus Group, Constellation Software. I work across discovery, requirements, design direction, AI prototyping, delivery and quality.
-- **Now:** Leading AI feature definition and prototyping for dealership SaaS, alongside the QA function.
+- **Home page support line:** AI Product Analyst. I help product teams move from business problems to AI features that hold up, with clearer requirements, design direction, working prototypes, and a repeatable approach to evaluation and QA.
+- **Now:** Leading AI feature definition, prototyping and evaluation, alongside the QA team.
 
 ### Headline numbers
 
