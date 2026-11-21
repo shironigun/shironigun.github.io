@@ -140,3 +140,10 @@
 .d1 { width: 18px; height: 18px; top: 118px; right: 92px; opacity: 0.55; }
 .d2 { width: 12px; height: 12px; bottom: 120px; left: 70px; opacity: 0.4; }
 .d3 { width: 26px; height: 26px; bottom: 96px; right: 70px; opacity: 0.22; }
+
+/* Long names (a full event title) get a smaller size so they show in full. */
+.title.long {
+  font-size: 54px;
+  line-height: 1.06;
+  -webkit-line-clamp: 4;
+}

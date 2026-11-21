@@ -3,6 +3,7 @@ import { Link } from '../lib/router';
 import { useReducedMotion } from '../lib/hooks';
 import { chapterOf, chapters, journey, nodeTypes } from '../content/journey';
 import { SubjectIcon } from './Icons';
+import ProjectChip from './ProjectChip';
 import styles from './CareerTimeline.module.css';
 
 // The highlighted steps of the career journey, in order.
@@ -103,6 +104,7 @@ export default function CareerTimeline() {
                 </p>
                 <h3 className={styles.title}>{m.to ? <Link to={m.to}>{m.title}</Link> : m.title}</h3>
                 <p className={styles.detail}>{m.detail}</p>
+                {m.to && <span className={styles.project}><ProjectChip to={m.to} tone="night" /></span>}
                 {m.photo && <img className={styles.photo} src={m.photo} alt={m.photoAlt || ''} loading="lazy" />}
               </div>
             </li>

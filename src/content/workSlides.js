@@ -4,7 +4,6 @@
 // node kinds: pill (default), accent (gated or key step), person
 // card kinds: terminal, approval, checklist, stats, chips
 // edges: [fromId, toId, { curve, flow }]   flow = animated dashes
-import { hoursText } from './hours';
 
 export const workSlides = [
   {
@@ -32,8 +31,8 @@ export const workSlides = [
   {
     id: 'delivery',
     label: 'AI product delivery',
-    title: 'AI features, from idea to launch',
-    caption: 'Discovery, requirements, design, prototyping, evaluation and launch readiness.',
+    title: 'AI features, from idea to release readiness',
+    caption: 'Discovery, requirements, design, prototyping, evaluation and release readiness.',
     to: '/case-studies/promise-tracker',
     cycle: true,
     orbit: { cx: 280, cy: 172, rx: 176, ry: 118 },
@@ -75,7 +74,7 @@ export const workSlides = [
   {
     id: 'design',
     label: 'Design phase',
-    title: 'Every design reviewed before build',
+    title: 'Designs reviewed before build',
     caption: 'A structured design phase: business rules briefed, designs reviewed against the component library, then handed off.',
     to: '/case-studies/design-phase',
     nodes: [
@@ -104,20 +103,20 @@ export const workSlides = [
       { id: 's', x: 80, y: 96, label: 'Story', sub: 'Ready' },
       { id: 'c', x: 180, y: 96, label: 'Criteria', sub: 'Complete' },
       { id: 'b', x: 280, y: 96, label: 'Built', sub: 'Tested' },
-      { id: 'g', x: 380, y: 96, label: 'Gate', sub: 'Automated', kind: 'accent' },
+      { id: 'g', x: 380, y: 96, label: 'Gate', sub: 'Checked', kind: 'accent' },
       { id: 'r', x: 480, y: 96, label: 'Release', sub: 'Approved' },
     ],
     edges: [['s', 'c', { flow: true }], ['c', 'b', { flow: true }], ['b', 'g', { flow: true }], ['g', 'r', { flow: true }]],
     cards: [
       { kind: 'stats', x: 40, y: 168, w: 480, items: [['~40%', 'less defect leakage'], ['0', 'critical defects in 6 sprints'], ['3', 'teams adopted it']] },
-      { kind: 'chips', x: 60, y: 302, w: 440, items: ['Root-cause analysis', 'Facilitated sessions', 'Automated pipeline checks', 'Retrospectives'] },
+      { kind: 'chips', x: 60, y: 302, w: 440, items: ['Root-cause analysis', 'Facilitated sessions', 'Gate checklists', 'Retrospectives'] },
     ],
   },
   {
     id: 'knowledge',
-    label: 'Domain leadership',
+    label: 'Domain training',
     title: 'Knowledge that scales the team',
-    caption: 'A self-initiated training programme for every function, with knowledge transfer that fed the public product knowledge base.',
+    caption: 'A self-initiated training programme for development, QA, operations and business analysts, and contributions to the public product knowledge base.',
     to: '/case-studies/domain-knowledge-base',
     hub: { x: 280, y: 150, label: 'Product', sub: 'Knowledge' },
     nodes: [
@@ -129,7 +128,7 @@ export const workSlides = [
     ],
     edges: [['hub', 'dev', { flow: true }], ['hub', 'qa', { flow: true }], ['hub', 'ops', { flow: true }], ['hub', 'ba', { flow: true }], ['hub', 'kb', { flow: true }]],
     cards: [
-      { kind: 'chips', x: 120, y: 306, w: 320, dark: true, items: [`${hoursText.junior} hours`, '120+ sessions', '60+ SOPs'] },
+      { kind: 'chips', x: 120, y: 306, w: 320, dark: true, items: ['120+ sessions', '60+ SOPs', '4 audiences'] },
     ],
   },
 ];

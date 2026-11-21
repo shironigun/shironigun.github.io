@@ -5,6 +5,7 @@ import PageHeader from '../components/PageHeader';
 import { DocButton } from '../components/DocumentViewer';
 import CountUp from '../components/CountUp';
 import { SubjectIcon } from '../components/Icons';
+import ProjectChip, { projectFor } from '../components/ProjectChip';
 import { journey, nodeGroups, nodeTypes } from '../content/journey';
 import { recognition } from '../content/site';
 import { achievements } from '../content/achievements';
@@ -45,7 +46,7 @@ function Milestone({ m }) {
         {m.photo && <img className={styles.photo} src={m.photo} alt={m.photoAlt || ''} loading="lazy" />}
         {(m.to || m.file) && (
           <p className={styles.links}>
-            {m.to && <Link to={m.to} className="link-quiet">Read the case study</Link>}
+            {m.to && (projectFor(m.to) ? <ProjectChip to={m.to} /> : <Link to={m.to} className="link-quiet">Read the case study</Link>)}
             {m.file && <DocButton src={m.file} title={m.title}>{m.fileLabel || 'View certificate'}</DocButton>}
           </p>
         )}

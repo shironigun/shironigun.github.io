@@ -326,9 +326,9 @@ function colourFor(slug) {
   return [`hsl(${hue} 68% ${light}%)`, `hsl(${hue} 70% 96%)`, `hsl(${hue} 72% ${light - 12}%)`, `hsl(${hue} 70% 84%)`];
 }
 
-export function pictureFor(slug) {
+export function pictureFor(slug, size = 236) {
   const [name] = MAP[slug] || ['docs'];
   const [c, w, d, t] = colourFor(slug);
   const Pic = P[name];
-  return { wash: w, accent: c, tint: t, svg: <svg viewBox="0 0 200 200" width="236" height="236" aria-hidden="true"><Pic c={c} w={w} d={d} /></svg> };
+  return { wash: w, accent: c, tint: t, svg: <svg viewBox="0 0 200 200" width={size} height={size} aria-hidden="true"><Pic c={c} w={w} d={d} /></svg> };
 }

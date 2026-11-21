@@ -8,7 +8,7 @@
 export default {
   updated: 'November 2026',
   body: [
-    { p: 'It’s Wednesday, and Maya, a QA analyst, has until Friday to test a feature she has never seen: customers of a coffee-subscription app can now pause their deliveries. She asks Jordan, the developer, how it works. He sends a link to a pull request. Product sends a story with three acceptance criteria. The help centre has a page from March. (Maya is fictional. You have met her anyway.)' },
+    { p: 'It’s Wednesday, and Maya, a QA analyst, has until Friday to test a feature she has never seen: customers of a coffee-subscription app can now pause their deliveries. She asks Jordan, the developer, how it works. He sends a link to a pull request. Product sends a story with three acceptance criteria. The help centre has a page from March. (Maya is fictional.)' },
     { p: 'Feature Explainer is a Claude Code plugin I specified for exactly that moment. Maya types one line, “explain how pausing a subscription works, for QA”, and gets back a researched, multi-page explainer written for a tester: the rules as grids with their exact numbers, what to test, and the issues found, each with a date. The same research can become a page for product, design, developers, or sales and operations instead.' },
 
     { h2: 'At a glance' },

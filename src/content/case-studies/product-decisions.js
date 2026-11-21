@@ -23,7 +23,7 @@ export default {
     { numbers: [['2', 'gates: the customer’s plan, then the user’s role'], ['1', 'recommendation for every open question'], ['0', 'scores that rank a person, in any outcome']] },
 
     { h2: 'Three questions, no answers yet' },
-    { p: 'Worse, a link a colleague sent her opens “page not found”. That is what the first acceptance criterion would have done: a locked module simply vanished. A module is a part of the product with its own menu entry, such as reports or messaging.' },
+    { p: 'Worse, a link a colleague sent her opens “page not found”. An early version of the criteria would have done that: a locked module simply vanished. A module is a part of the product with its own menu entry, such as reports or messaging.' },
     { p: 'A new email channel with several people in one conversation raised its own questions: what a newly added person sees of the history, what an opt-out actually stops. And measuring a rep’s performance from conversations is easy to get wrong: unfair, unstable, easy to game and exposed in law.' },
 
     { h2: 'Two gates, one inside the other' },
@@ -59,7 +59,7 @@ export default {
 
     { h2: 'Checked against what shipped' },
     { p: 'Kickoff decisions are guesses until the code ships. Then I re-checked every one against it and recorded its status with evidence: resolved, partly resolved, superseded or open. Where the walkthrough’s earlier framing was wrong, the rebuilt version says so.' },
-    { p: 'What stayed unresolved sits on an honest list, each item with an owner: a product decision still to make, work deferred to a later phase, a QA sign-off, and a place where the build diverged from my specification.' },
+    { p: 'What stayed unresolved sits on an honest list, each item with an owner: a product decision still to make, work deferred to a later phase, a QA sign-off, and one place where the build and the specification still need to be reconciled.' },
 
     { h2: 'A recommendation on every card' },
     { p: 'The email channel’s stories couldn’t be finished until its open questions had answers. So I built a decision tool: one question per page, with short context, three concrete options, a write-in and my recommendation.' },

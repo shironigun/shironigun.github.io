@@ -1,7 +1,6 @@
 // Identity, navigation and homepage copy. Single source of truth.
 // Rules: no invented numbers; ownership words are exact (led / built / assisted);
 // no internal URLs, partner names, ticket numbers, dealer data, pricing or security findings.
-import { hoursText } from './hours';
 
 export const person = {
   name: 'Mahmood Ahmad',
@@ -9,8 +8,8 @@ export const person = {
   officialTitle: 'Product Quality Analyst',
   company: 'Perseus Group, Constellation Software',
   product: 'Enterprise dealership SaaS',
-  available: true,
-  availability: 'Open to Product Owner, Product Analyst and AI Product Manager roles.',
+  available: false,
+  availability: 'Happy to talk about AI product work, quality and agentic delivery.',
 };
 
 export const contact = {
@@ -34,7 +33,7 @@ export const nav = [
 export const hero = {
   headline: 'I shape AI products from idea to launch.',
   support:
-    'AI Product Analyst at Perseus Group, Constellation Software. I lead enterprise dealership SaaS work across discovery, requirements, design direction, AI prototyping, delivery and quality.',
+    'AI Product Analyst at Perseus Group, Constellation Software. I work across discovery, requirements, design direction, AI prototyping, delivery and quality.',
   now: 'Leading AI feature definition and prototyping for dealership SaaS, alongside the QA function.',
 };
 
@@ -46,8 +45,8 @@ export const tenure = `${tenureYears}+`;
 
 export const highlights = [
   { value: tenure, label: 'years in enterprise dealership SaaS, from QA to product analysis' },
-  { value: hoursText.total, label: 'hours of domain training and contribution' },
-  { value: '3', label: 'teams adopted my Quality Gates framework' },
+  { value: '120+', label: 'live domain training sessions delivered' },
+  { value: '3', label: 'teams adopted the Quality Gates framework I designed' },
   { value: '1st', label: 'of 11 teams in a division-wide AI hackathon' },
 ];
 
@@ -57,7 +56,7 @@ export const journey = [
   { stage: 'Requirements', artifact: 'Stories with acceptance criteria and edge cases' },
   { stage: 'Design', artifact: 'Manager view reviewed against the component library' },
   { stage: 'Prototype', artifact: 'Working prototype built by directing AI agents' },
-  { stage: 'Evaluation', artifact: 'Agreed quality criteria, met before every release' },
+  { stage: 'Evaluation', artifact: 'Agreed quality criteria, set as the release bar' },
   { stage: 'Launch', artifact: 'Developer support and the launch film' },
 ];
 
@@ -76,14 +75,14 @@ export const pillars = [
     icon: 'layers',
     roles: ['Business analyst', 'Operator and strategist'],
     body: 'I run discovery, turn the product vision into a roadmap, epics and user stories, and work through product decisions with the Product Owner.',
-    proof: '70 user stories and the 2026 roadmap structure this year; covered a three-month BA vacancy with no gap in delivery.',
+    proof: '70 user stories and the 2026 roadmap structure this year.',
     link: { to: '/how-i-work#requirements', text: 'How I write requirements' },
   },
   {
     name: 'Design',
     icon: 'pen',
     roles: ['Design collaborator'],
-    body: 'I brief the designer on the business rules, review every design against the component library before development, and prototype ideas that people can click.',
+    body: 'I brief the designer on the business rules, review each design against the component library before development, and prototype ideas that people can click.',
     proof: 'Introduced a structured design phase into delivery; revamped seven product areas.',
     link: { to: '/case-studies/design-phase', text: 'Design phase and UI revamp' },
   },
@@ -99,7 +98,7 @@ export const pillars = [
     name: 'Quality and delivery',
     icon: 'shield',
     roles: ['QA lead', 'Scrum master'],
-    body: 'I lead the QA team of 3 QA analysts who report to me, run the sprint board and ceremonies, and set the quality bar every feature ships with.',
+    body: 'I lead the QA team, run the sprint board and ceremonies, and set the quality bar features ship against.',
     proof: 'Quality Gates adopted by 3 teams: about 40% less defect leakage, zero critical defects across 6 sprints.',
     link: { to: '/case-studies/quality-gates', text: 'Quality Gates' },
   },
@@ -107,8 +106,8 @@ export const pillars = [
 
 // Dated, verifiable milestones.
 export const log2026 = [
-  { date: 'Nov', text: 'Led an AI feature from concept to production readiness. Wrote a how-to standard and the first complete feature guide for dealers, revised with the support team.' },
-  { date: 'Oct', text: 'Published my Claude Code marketplace on GitHub.' },
+  { date: 'Nov', text: 'Led an AI feature’s product definition from concept to pilot. Wrote a how-to standard and the first complete feature guide for dealers, revised with the support team.' },
+  { date: 'Oct', text: 'Published a Claude Code marketplace on GitHub.' },
   { date: 'Aug', text: 'Organised and led the AI Foundations hackathon, opened it with “AI Foundations: From Doing to Directing”, and wrote a 183-page Claude handbook for the division.' },
   { date: 'Jul', text: 'Completed the DIS AI Foundations program and built the AI QA Workbench in the cohort.' },
   { date: 'Apr', text: 'Started a full UI and UX revamp of our dealership CRM through agentic coding.' },
@@ -117,10 +116,10 @@ export const log2026 = [
 
 export const teaching = [
   { title: 'AI Foundations: From Doing to Directing', detail: 'Opening session of the AI Foundations hackathon I organised.' },
-  { title: 'AI Foundations hackathon', detail: 'Organised and led it for the QA and design team, with a project brief for every participant.' },
+  { title: 'AI Foundations hackathon', detail: 'Organised and led it for the QA and design team, with nine project briefs for ten participants.' },
   { title: 'Skills Evals Lab', detail: 'A 17-lesson beginner course I wrote on how to test AI skills.' },
-  { title: 'Domain training', detail: `${hoursText.total} hours across development, QA, operations and business analysis, with knowledge transfer into the public product knowledge base.` },
-  { title: 'People', detail: 'Trained two QA hires from non-IT backgrounds and onboarded three new QA analysts.' },
+  { title: 'Domain training', detail: '120+ live sessions across development, QA, operations and business analysis, and contributions to the public product knowledge base.' },
+  { title: 'People', detail: 'Trained two QA hires to independent sprint work and onboarded new QA analysts.' },
 ];
 
 export const tools = [

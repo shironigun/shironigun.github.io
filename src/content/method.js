@@ -26,8 +26,8 @@ export const operatingModel = [
   {
     id: 'design',
     name: 'Design',
-    summary: 'Review every design before development starts.',
-    what: 'I brief the designer on the business rules, then review every screen and state against the component library before it reaches development.',
+    summary: 'Review each design before development starts.',
+    what: 'I brief the designer on the business rules, then review the screens and states against the component library before it reaches development.',
     artifact: 'review',
     gate: 'Every state is designed and the review passes. Anything marked Fix goes back to design.',
     tools: ['Figma Make', 'Claude Design', 'Component library'],
@@ -49,8 +49,8 @@ export const operatingModel = [
     summary: 'Keep the sprint predictable and the risks visible.',
     what: 'As Scrum Master I run planning, refinement and the board, and raise risks and cross-team dependencies before they turn into delays.',
     artifact: 'board',
-    gate: 'Built to the acceptance criteria, with the automated gate checks passing in the pipeline.',
-    tools: ['Azure DevOps', 'Scrum', 'Pipeline gate checks'],
+    gate: 'Built to the acceptance criteria, with the gate checks passing.',
+    tools: ['Azure DevOps', 'Scrum', 'Gate checklists'],
     proof: { text: 'Quality Gates', to: '/case-studies/quality-gates' },
   },
   {
@@ -113,8 +113,8 @@ export const designReview = [
 ];
 
 export const aiPractice = [
-  { title: 'I decide; agents build', body: 'I own the problem, the requirements, the architecture trade-offs and what ships. AI agents write the code from my specifications.' },
-  { title: 'AI output is tested like software', body: 'Everything an agent produces is reviewed and tested. My own audit found tests in an AI-built suite that passed with the backend switched off.' },
+  { title: 'I decide; agents build', body: 'I own the problem, the requirements and the architecture trade-offs, and recommend what ships. AI agents write the code from my specifications.' },
+  { title: 'AI output is tested like software', body: 'What an agent produces is reviewed and tested before it counts. My own audit found tests in an AI-built suite that passed with the backend switched off.' },
   { title: 'Every write needs a yes', body: 'The tools I build show a dry run first and wait for explicit approval before writing to a team’s tracker.' },
   { title: 'Results come from real runs', body: 'A result counts only when a real run produced it, never because an agent reported success.' },
   { title: 'Clear ownership', body: 'Every project separates what I decided, what AI built and what the team delivered.' },
@@ -130,9 +130,9 @@ export const skillsWritten = [
 
 // Principles, each backed by a result on this site.
 export const principles = [
-  { title: 'Settle edge cases before the build', value: '68%', label: 'of leaked defects traced to incomplete acceptance criteria, before Quality Gates', to: '/case-studies/quality-gates' },
+  { title: 'Settle edge cases before the build', value: '68%', label: 'of escaped defects traced to one root cause, acceptance criteria, which Quality Gates now covers', to: '/case-studies/quality-gates' },
   { title: 'Review the design before development', value: '7', label: 'product areas revamped through the design phase', to: '/case-studies/design-phase' },
-  { title: 'Make knowledge reusable', value: '60+', label: 'SOPs and guides written for every team', to: '/case-studies/domain-knowledge-base' },
+  { title: 'Make knowledge reusable', value: '60+', label: 'SOPs and guides written for the teams the programme served', to: '/case-studies/domain-knowledge-base' },
   { title: 'Test AI output like any software', value: '4', label: 'rules set to rebuild an AI-built test suite after auditing it', to: '/case-studies/ai-test-suite-audit' },
   { title: 'Keep a person in control', value: '0', label: 'tracker writes without a person’s yes', to: '/case-studies/claude-marketplace' },
   { title: 'Standardise what works', value: '5+', label: 'teams adopted the API testing approach I evaluated', to: '/case-studies/postman-evaluation' },

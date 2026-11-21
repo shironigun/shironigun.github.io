@@ -27,10 +27,10 @@ export default {
     ] },
     { numbers: [['16', 'specialised AI agents, counted in the code'], ['9', 'pages, from a story to a weekly report'], ['3', 'levels of API test, each paired with its test case'], ['367', 'behaviours checked before the rewrite began']] },
 
-    { h2: 'The manual-first trap' },
-    { p: 'Dana’s week is repetitive, low-judgement work, and it is a trap. Manual testing eats the time she would need to automate, so the next regression is manual too. Automation, when it happens at all, is written separately, so it drifts away from the test cases it was meant to match.' },
+    { h2: 'The repetitive-work loop' },
+    { p: 'Much of Dana’s week is repetitive work. Repetitive steps take time that could go into judgement and automation, so the next regression is run by hand too. Automation, when it happens at all, is written separately, so it drifts away from the test cases it was meant to match.' },
     { p: 'Developers were already becoming reviewers of AI-written code. My goal was the same move for QA: from executing repetitive tasks to reviewing, validating and orchestrating AI-generated work.' },
-    { quote: 'Manual-first is a trap. Make automation the byproduct of testing a story, and the loop breaks.' },
+    { quote: 'Make automation the byproduct of testing a story, and the loop takes care of itself.' },
 
     { h2: 'Nine pages, one loop' },
     { p: 'The workbench is a locally hosted web app with nine pages. Each page is one stage of the QA lifecycle, and together they form a loop: a story becomes test cases, the test cases become automation, the automation runs, and the failures become bug drafts.' },
@@ -122,7 +122,7 @@ export default {
     { table: {
       columns: ['Stage', 'Me', 'AI agents', 'Team'],
       rows: [
-        ['Problem', 'Framed the manual-first trap; set the principles', '', ''],
+        ['Problem', 'Framed the repetitive-work loop; set the principles', '', ''],
         ['House style', 'Wrote my test-case and bug format as a spec', 'Encoded it in each agent’s instructions', ''],
         ['Design', 'Decided each feature’s design and acceptance criteria', 'Drafted the designs, blueprints and task lists with me', ''],
         ['Build', 'Reviewed each task against its criteria', 'Wrote the code, one verified task at a time', ''],
@@ -238,8 +238,8 @@ export default {
     },
 
     { h2: 'Bringing QA to the hackathon' },
-    { p: 'The DIS AI Foundations program was a five-day AI hackathon run jointly by our division and other Perseus Group divisions: a day of AI sessions, then four days to build. QA joined the program at my request, and I built the workbench in that cohort.' },
-    { p: 'Most teams built product features; I extended the workbench for the people testing them, with the QA loop: scan a module of the product’s API, mark each surface covered or gap, generate tests at three levels with their test cases, run them, record the run in the tracker, sort each failure, draft bugs for the real ones and post a summary to the team’s chat.' },
+    { p: 'The DIS AI Foundations program was a five-day AI hackathon run jointly by our division and other Perseus Group divisions: a day of AI sessions, then four days to build. I joined the program with the QA team and built the workbench in that cohort.' },
+    { p: 'I extended the workbench for the people testing the product, with the QA loop: scan a module of the product’s API, mark each surface covered or gap, generate tests at three levels with their test cases, run them, record the run in the tracker, sort each failure, draft bugs for the real ones and post a summary to the team’s chat.' },
     { p: 'The watcher closes the loop. On every new build it asks an agent which tests the changed files affect, runs only those, and says why.' },
     { photo: '/certifications/dis-ai-foundations-certificate.jpg', width: 1600, height: 1131, alt: 'Certificate of completion from Dealer Information Systems certifying that Mahmood Ahmad completed AI Foundations: From Developer to Orchestrator, dated 3 July 2026.', caption: 'Certificate of completion, AI Foundations: From Developer to Orchestrator, July 2026.' },
 
@@ -338,7 +338,7 @@ export default {
     { p: 'A few weeks after the program I proposed an AI hackathon for our own QA and design team, which I organised and led. Several of the workbench’s ideas reappear in the QA Engineering Plugin I later published: the house style, triage before filing, and a person approving every write.' },
 
     { h2: 'What I learned' },
-    { quote: 'Manual-first is a trap. Make automation the byproduct of testing a story, and the loop breaks.' },
+    { quote: 'Make automation the byproduct of testing a story, and the loop takes care of itself.' },
     { p: 'A rewrite is worth doing only if nobody can tell it happened. Golden files turned “it behaves the same” from a hope into a test.' },
     { p: 'Plans miss more than they admit. Checking mine against the running app caught the gaps before the switch, not after it.' },
     { p: 'And a principle in a brief is not a gate in the code. Approval is the trust contract, so it has to sit on every path that writes, not just the ones with a button. That rule now runs through every tool I build.' },

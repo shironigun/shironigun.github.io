@@ -185,16 +185,15 @@ export default function About() {
                 <span className={styles.avatar} aria-hidden="true">MA</span>
                 <p className={styles.name}>{person.name}</p>
                 <p className={styles.title}>{person.title}</p>
-                {person.available && <p className={styles.status}><span aria-hidden="true" />Open to new roles</p>}
 
                 <dl className={styles.fields}>
-                  <div><dt>HR title</dt><dd>{person.officialTitle}</dd></div>
+                  <div><dt>Title</dt><dd>{person.officialTitle}</dd></div>
                   <div><dt>Company</dt><dd>{person.company}</dd></div>
                   <div><dt>Product</dt><dd>{person.product}</dd></div>
                   <div><dt>Division</dt><dd>200+ people</dd></div>
                   <div><dt>Joined</dt><dd>Dec 2023 <span>· {tenure} years</span></dd></div>
                   <div><dt>Education</dt><dd>{education.degree}, {education.period.slice(-4)}</dd></div>
-                  <div><dt>Open to</dt><dd>Product Owner, Product Analyst and AI Product Manager roles</dd></div>
+                  <div><dt>Focus</dt><dd>AI product definition, quality and delivery</dd></div>
                 </dl>
 
                 <div className={styles.tags} aria-label="Disciplines">
@@ -235,7 +234,7 @@ export default function About() {
                     <div className={styles.block}>
                       <h3>Summary</h3>
                       <p className={styles.summary}>
-                        I’m an AI Product Analyst. For {tenure} years I’ve built enterprise dealership SaaS at Perseus Group, part of Constellation Software:
+                        I’m an AI Product Analyst. For {tenure} years I’ve worked on enterprise dealership SaaS at Perseus Group, part of Constellation Software:
                         customer engagement, messaging, a mobile app and AI features for automotive, agricultural and equipment dealerships, in a 200+ person division.
                         I came to product through design and quality, and I build by directing AI agents.
                       </p>
@@ -277,7 +276,7 @@ export default function About() {
                   <>
                     <div className={styles.block}>
                       <h3>One title, six roles</h3>
-                      <p className={styles.blockIntro}>My HR title is {person.officialTitle}. This is the work it covers, in four areas.</p>
+                      <p className={styles.blockIntro}>My title is {person.officialTitle}. This is the work it covers, in four areas.</p>
                       <ul className={styles.pillars}>
                         {pillars.map((p) => (
                           <li key={p.name}>

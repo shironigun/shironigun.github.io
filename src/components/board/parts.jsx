@@ -1,4 +1,5 @@
 import { PenIcon, PlugIcon, ShieldIcon, SparkIcon, TrendIcon } from '../Icons';
+import { pictureFor } from '../../pages/OgPictures';
 import { FIRST, qIndex } from './model';
 import styles from './parts.module.css';
 
@@ -47,6 +48,33 @@ export function QuarterTimeline({ p }) {
       <span className={styles.timelineYears} style={{ '--n': years.length }}>
         {years.map((y) => <span key={y}>{y}</span>)}
       </span>
+    </span>
+  );
+}
+
+// The project's own picture and colour, from the same set as its preview card: a cover band on a
+// board card, a small icon on a roadmap bar. Drawn, not the preview image, so it stays sharp at any
+// size and follows the theme.
+export const coverVars = (slug) => {
+  const pic = pictureFor(slug);
+  return { '--accent': pic.accent, '--wash': pic.wash, '--tint': pic.tint };
+};
+
+export function ProjectIcon({ slug, size = 'sm' }) {
+  return (
+    <span className={`${styles.icon} ${styles[`icon-${size}`]}`} style={coverVars(slug)} aria-hidden="true">
+      {pictureFor(slug, size === 'lg' ? 40 : 25).svg}
+    </span>
+  );
+}
+
+export function Cover({ slug }) {
+  return (
+    <span className={styles.cover} style={coverVars(slug)} aria-hidden="true">
+      <span className={styles.coverRing} />
+      <span className={`${styles.coverDot} ${styles.cd1}`} />
+      <span className={`${styles.coverDot} ${styles.cd2}`} />
+      <ProjectIcon slug={slug} size="lg" />
     </span>
   );
 }

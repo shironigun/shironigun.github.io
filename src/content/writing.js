@@ -1,4 +1,5 @@
-// Published writing. Bodies are kept verbatim from the original articles.
+// Published writing. Based on the original articles, softened on 21 Nov 2026 where a line overclaimed or
+// described colleagues unfairly; otherwise kept as written.
 
 export const articles = [
   {
@@ -6,11 +7,11 @@ export const articles = [
     "title": "Why \"Done\" Is Never Really Done: A QA Perspective on Acceptance Criteria",
     "date": "March 2026",
     "readTime": "4 min read",
-    "excerpt": "Most teams treat acceptance criteria as a checkbox. Here's why treating it as a conversation changes everything about how you ship quality.",
+    "excerpt": "Most teams treat acceptance criteria as a checkbox. Here's why treating it as a conversation improves how you ship quality.",
     "body": [
       {
         "type": "paragraph",
-        "text": "Every sprint retrospective has that one moment — someone says 'but the acceptance criteria were met.' And technically, they're right. The checkboxes are checked. The story is closed. But the customer is still confused, the edge case still breaks, and the team is already firefighting in the next sprint."
+        "text": "Every sprint retrospective has that one moment — someone says 'but the acceptance criteria were met.' And technically, they're right. The checkboxes are checked. The story is closed. But the customer is still confused, the edge case still breaks, and the next sprint starts with follow-up fixes."
       },
       {
         "type": "heading",
@@ -18,7 +19,7 @@ export const articles = [
       },
       {
         "type": "paragraph",
-        "text": "Acceptance criteria written as checkboxes create a false sense of completeness. When a story says 'User can reset password,' the developer builds exactly that — a reset flow. But what about the user who typos their email? The one on a 3G connection? The one who triggers the flow twice in 10 seconds?"
+        "text": "Acceptance criteria written as checkboxes create a false sense of completeness. When a story says 'User can reset password,' the story gets built exactly as written — a reset flow. But what about the user who typos their email? The one on a 3G connection? The one who triggers the flow twice in 10 seconds?"
       },
       {
         "type": "paragraph",
@@ -34,7 +35,7 @@ export const articles = [
       },
       {
         "type": "paragraph",
-        "text": "In my experience at Perseus Group, switching from static bullet points to collaborative acceptance criteria workshops reduced our defect leakage by over 40%. Not because we wrote more criteria — but because we asked better questions before writing any."
+        "text": "In my experience at Perseus Group, moving from static bullet points to collaborative acceptance criteria workshops was part of how we reduced defect leakage by about 40%. Not because we wrote more criteria — but because we asked better questions before writing any."
       },
       {
         "type": "heading",
@@ -63,11 +64,11 @@ export const articles = [
     "title": "From QA to Product: What Testing Taught Me About Building the Right Thing",
     "date": "March 2026",
     "readTime": "5 min read",
-    "excerpt": "Two years of finding bugs in other people's assumptions taught me more about product thinking than any MBA could.",
+    "excerpt": "What two years of testing taught me about product thinking.",
     "body": [
       {
         "type": "paragraph",
-        "text": "I didn't start in product. I started in QA — clicking through flows, writing test cases, and filing bugs that developers would mark 'working as intended.' That phrase haunted me. Because often, the feature was working as intended. It just wasn't working as needed."
+        "text": "I didn't start in product. I started in QA — clicking through flows, writing test cases and filing bugs — and learned that a feature can work as intended and still not work as needed."
       },
       {
         "type": "heading",
@@ -79,7 +80,7 @@ export const articles = [
       },
       {
         "type": "paragraph",
-        "text": "When I started mapping these gaps, I realised I wasn't just testing software — I was testing whether the team truly understood the problem they were solving."
+        "text": "When I started mapping these gaps, I realised I wasn't just testing software — I was testing whether we all shared the same understanding of the problem."
       },
       {
         "type": "heading",
@@ -103,7 +104,7 @@ export const articles = [
       },
       {
         "type": "paragraph",
-        "text": "It also teaches empathy. Not the soft kind — the rigorous kind. The kind where you sit with a customer support ticket for 20 minutes and realise the 'user error' was actually a UX decision your team made six months ago."
+        "text": "It also teaches empathy. Not the soft kind — the rigorous kind. The kind where you sit with a customer support ticket for 20 minutes and realise the 'user error' pointed to a design choice worth revisiting."
       },
       {
         "type": "heading",
@@ -111,7 +112,7 @@ export const articles = [
       },
       {
         "type": "paragraph",
-        "text": "You already have the hardest skill to teach: the instinct to question assumptions. Product people spend years developing that. You've been doing it every time you wrote a bug report."
+        "text": "You already practise a skill product work depends on: questioning assumptions. You do it every time you write a bug report."
       },
       {
         "type": "paragraph",
@@ -123,7 +124,7 @@ export const articles = [
       },
       {
         "type": "paragraph",
-        "text": "My path from QA to product wasn't a career change — it was a perspective shift. The best product analysts I know aren't the ones with the fanciest frameworks. They're the ones who ask 'but what happens when...' — exactly the question every good tester already knows how to ask."
+        "text": "My path from QA to product wasn't a career change — it was a perspective shift. The best product analysts I know aren't defined by their frameworks. They're the ones who ask 'but what happens when...' — exactly the question every good tester already knows how to ask."
       }
     ]
   }

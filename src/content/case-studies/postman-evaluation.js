@@ -12,8 +12,8 @@ export default {
   ],
   documentsNote: 'As presented in 2025. Postman’s plans and limits have changed since; the tables in this article are current as of November 2026.',
   body: [
-    { p: 'Every tester on the team had Postman installed. Almost nobody used more than its Send button.' },
-    { p: 'In early 2025 our QA team used Postman for basic API checks, while its automation, performance and security features sat unexplored. I evaluated the full feature set, mapped it plan by plan, reviewed the findings in a session with Postman’s support team, and in May 2025 presented them to the entire division during our onshore team’s visit. I also ran collections on Postman Cloud from Jenkins pipelines and the Newman CLI, on cron schedules with email reports, as a first step towards API tests in CI. The recommendation made Postman the standard API testing tool across more than five teams.' },
+    { p: 'Postman was already on every tester’s machine, and it could do far more than basic checks.' },
+    { p: 'In early 2025 our QA work in Postman centred on basic API checks; its automation, performance and security features had not yet been evaluated. I evaluated the full feature set, mapped it plan by plan, reviewed the findings in a session with Postman’s support team, and in May 2025 presented them to the entire division. I also ran collections on Postman Cloud from Jenkins pipelines and the Newman CLI, on cron schedules with email reports, as a first step towards API tests in CI. More than five teams adopted the recommendation, making Postman their standard API testing tool.' },
     { p: 'In November 2026 I rechecked it against Postman’s official documentation. The original presentation and written evaluation are at the top of this page, as presented.' },
 
     { h2: 'At a glance' },
@@ -26,9 +26,9 @@ export default {
     ] },
     { numbers: [['15', 'capabilities evaluated and explained'], ['4', 'plans mapped feature by feature'], ['5+', 'teams adopted it as the standard API tool'], ['16', 'strengths and limitations documented']] },
 
-    { h2: 'Copy, paste, squint' },
+    { h2: 'Room to do more' },
     { p: 'Picture Dana, a tester checking a new endpoint before a release. She pastes a token into a request, reads the JSON by eye, then copies an ID out of the response by hand to test the next call. Nothing she did is saved for the next release, and nothing runs in the pipeline.' },
-    { p: 'The QA team validated APIs by hand. There was no standard tooling for functional, performance or automated API testing, no CI integration for API tests, no structured way to chain calls or manage environments, and no view of API health. Could the tool already on our machines do more, at what cost, and where would it stop?' },
+    { p: 'API checks were mostly hands-on, which left room for standard tooling, CI integration, chained calls, shared environments and a view of API health. Could the tool already on our machines do more, at what cost, and where would it stop?' },
 
     { h2: 'Yes, with a fence around it' },
     { p: 'Postman is the right tool for functional, contract and end-to-end testing, with automation, CI/CD pipelines and team collaboration. It is not the tool for high-scale performance or deep security testing; those are best paired with dedicated tools such as JMeter, Gatling or OWASP ZAP.' },
@@ -37,7 +37,7 @@ export default {
         {
           title: 'Strengths',
           items: [
-            'Easy to adopt: manual testers can send, debug and automate requests without heavy scripting.',
+            'Easy to adopt: testers new to scripting can send, debug and automate requests.',
             'Complete functional testing: environments, chaining, scripted assertions and mocks in one tool, from a single request to an end-to-end workflow.',
             'Built for teams: shared workspaces, roles and native Git keep collections versioned and in sync.',
             'Fits the pipeline: the Postman CLI runs the same collections in CI, so API tests can gate every build.',
@@ -196,7 +196,7 @@ export default {
       },
     ], caption: 'The decisions behind the evaluation and what followed it.' },
     { call: {
-      saw: 'The team used Postman only to send requests by hand, while its automation, performance and security features sat unexplored, each with real limits.',
+      saw: 'Postman’s automation, performance and security features had not been evaluated for our work, and each had real limits.',
       decided: 'I recommended it as the standard tool for functional, contract and end-to-end testing, and said plainly where it stops.',
       why: 'Being upfront about the limits made the recommendation easier to trust.',
     } },

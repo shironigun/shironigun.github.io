@@ -10,7 +10,7 @@ export default {
   body: [
     { p: '“Absolutely! I’ll send your trade value this afternoon.” A rep types it, means it, and moves on to the next customer. Three days later the customer writes again. This time she wants an answer before the weekend.' },
     { p: 'Promise Tracker is an AI feature that catches what a dealership still owes its customers and puts the most urgent items in front of a manager. I led its product definition, from the first question to a feature that is now in pilot, ahead of its production release.' },
-    { p: 'Below: how a promise travels from a chat to a manager’s click, the brief I threw away to get here, and the gate every change must pass.' },
+    { p: 'Below: how a promise travels from a chat to a manager’s click, the brief I reframed to get here, and the gate every change must pass.' },
 
     { h2: 'At a glance' },
     { ol: [
@@ -75,7 +75,7 @@ export default {
     { p: 'Notice who never touches Maya: the AI. Everything it produces is a suggestion, checked by the product and acted on by a person.' },
 
     { h2: 'My role and the team' },
-    { p: 'I owned the product definition: the problem, the requirements, the rules the AI works within, the manager’s workflow and the quality bar. AI agents built the prototype and drafted the AI’s instructions to my specification, and I reviewed every revision. The developers are building the production feature; I support them through the build and the pilot.' },
+    { p: 'I led the product definition: the problem, the requirements, the rules the AI works within, the manager’s workflow and the quality bar. AI agents built the prototype and drafted the AI’s instructions to my specification, and I reviewed every revision. The developers are building the production feature; I support them through the build and the pilot.' },
     { table: {
       columns: ['Stage', 'Me', 'AI agents', 'Team'],
       rows: [
@@ -89,7 +89,7 @@ export default {
       ],
     }, caption: 'Who did what. Product voice throughout: I decided and specified; AI agents built to my specification; the developers own production.' },
 
-    { h2: 'The brief I threw away' },
+    { h2: 'The brief I reframed' },
     { p: 'The work began as something else: a customer-sentiment prototype. Score how each customer feels, and surface the unhappy ones.' },
     { p: 'The prototype worked. It met every acceptance criterion in its story. That wasn’t the problem.' },
     { p: 'Before building more, I asked a plainer question: would a dealer pay for this? To answer it, I had the idea checked against real conversations, masked and read-only, so no customer detail was exposed and nothing was written back.' },
@@ -106,11 +106,11 @@ export default {
           { id: 'proto', name: 'Sentiment prototype', sub: 'score how customers feel', lane: 1, row: 0, kind: 'ai', detail: 'The first brief: rate how each customer feels and surface the unhappy ones. AI agents built it to my specification, and it met every acceptance criterion in its story.' },
           { id: 'ask', name: 'Would a dealer pay?', sub: 'test it on real conversations', lane: 0, row: 1, kind: 'human', detail: 'Meeting the criteria isn’t the same as being worth building. I asked for a check against real conversations first.' },
           { id: 'sample', name: 'Read the real thing', sub: 'masked, read-only', lane: 1, row: 2, kind: 'ai', detail: 'AI agents ran the analysis I asked for, with customer details masked and nothing written back. The strongest signal wasn’t mood. It was debt.' },
-          { id: 'call', name: 'My call', sub: 'mood or debt?', lane: 0, row: 3, kind: 'gate', detail: 'A mood score says something is wrong but not what to do about it. A debt says exactly what to do today, and it can be checked. I changed the brief.' },
+          { id: 'call', name: 'My recommendation', sub: 'mood or debt?', lane: 0, row: 3, kind: 'gate', detail: 'A mood score says something is wrong but not what to do about it. A debt says exactly what to do today, and it can be checked. I recommended the change of brief.' },
           { id: 'mood', name: 'Mood score, parked', sub: 'no longer the centre', lane: 1, row: 4, kind: 'store', detail: 'The feature tracks no moods at all: no happy, neutral or angry labels. Urgency comes from things a manager can check, such as how long a customer has waited.' },
           { id: 'owe', name: 'A list of what we owe', sub: 'promises and open questions', lane: 2, row: 4, kind: 'output', detail: 'One queue a manager can work through: what the dealership said it would do, and what customers asked that nobody answered.' },
-          { id: 'cats', name: 'Categories from data', sub: 'not invented up front', lane: 0, row: 5, kind: 'human', detail: 'An invented list of categories split hairs and missed everyday cases. I replaced it with categories taken from the sample itself.' },
-          { id: 'name', name: 'Name it for the job', sub: 'Promise Tracker', lane: 0, row: 6, kind: 'human', detail: 'After two working names, I renamed the feature Promise Tracker in November 2026. The name says what it does.' },
+          { id: 'cats', name: 'Categories from data', sub: 'taken from real conversations', lane: 0, row: 5, kind: 'human', detail: 'The first category list was drafted before there was data, and it missed everyday cases. I replaced it with categories taken from the sample itself.' },
+          { id: 'name', name: 'Name it for the job', sub: 'Promise Tracker', lane: 0, row: 6, kind: 'human', detail: 'After two working names, I proposed the name Promise Tracker in November 2026. The name says what it does.' },
         ],
         edges: [
           { from: 'proto', to: 'ask', label: 'working prototype' },
@@ -135,7 +135,7 @@ export default {
       { name: 'Pilot', part: 'Supporting the developers and the first users', by: 'me', now: true },
     ], caption: 'From the first question to the pilot, with who carried each stage.' },
     { lead: 'Discovery, and a change of direction.', p: 'The fork above is where it turned. What was a sentiment feature became a queue of what we owe, before a line of production code was written.' },
-    { lead: 'Research.', p: 'An early list of categories had been invented up front. It split hairs while missing everyday cases such as repair status, deliveries and appointments. I replaced it with categories taken from a masked, read-only sample of real conversations, and I wrote down the limits of that sample next to the results, so nobody would read rough shares as exact ones.' },
+    { lead: 'Research.', p: 'The first category list was drafted before there was data, and it missed everyday cases such as repair status, deliveries and appointments. I replaced it with categories taken from a masked, read-only sample of real conversations, and I wrote down the limits of that sample next to the results, so nobody would read rough shares as exact ones.' },
     { lead: 'Requirements.', p: 'I specified what counts as owed, how urgency is rated, which actions the AI may suggest, and what it must never say. Each rule was written so a tester could check it and a developer could build it without guessing.' },
     { lead: 'Cost.', p: 'I had the running cost modelled in terms a non-engineer can follow: conversations, times the text in each, times the model’s price, with every input labelled measured or estimated. The biggest saving came from scope, not from the model: a one-way broadcast thread can’t hold a promise, so the scan skips it.' },
     { lead: 'Prototype.', p: 'I had a working prototype made with Figma Make and Claude Code from my specifications, so the team could click through the real workflow before committing development time.' },

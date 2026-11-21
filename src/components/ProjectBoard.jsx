@@ -3,7 +3,7 @@ import { useInView } from '../lib/hooks';
 import { STATUS } from '../content/projects';
 import { useStudy } from '../content/caseStudies';
 import { BookIcon, CloseIcon, LayersIcon } from './Icons';
-import { Avatar, DisciplineIcon, QuarterStrip } from './board/parts';
+import { Avatar, coverVars, Cover, DisciplineIcon, ProjectIcon, QuarterStrip } from './board/parts';
 import ProjectDialog from './board/ProjectDialog';
 import { COLUMNS, disciplines, findItem, FIRST, items, lanes, laneVar, NOW, period, quarterRange, QUARTERS, YEARS } from './board/model';
 import styles from './ProjectBoard.module.css';
@@ -19,6 +19,7 @@ function Card({ p, onOpen }) {
   const documents = useStudy(p.page ? p.slug : null).study?.documents || p.documents || [];
   return (
     <button type="button" className={styles.card} style={{ '--lane': laneVar(p.lane) }} aria-haspopup="dialog" onClick={() => onOpen(p.slug)}>
+      <span className={styles.cardCover}><Cover slug={p.slug} /></span>
       <span className={styles.cardTop}>
         <span className={styles.cardType}><DisciplineIcon tag={p.lane} />{p.id}</span>
         <span className={styles.cardPeriod}>{period(p)}</span>
@@ -94,8 +95,8 @@ function Roadmap({ matches, onOpen }) {
                 data-off={!matches(p) || undefined}
                 style={{ gridColumn: `${p.start - FIRST + 1} / ${p.end - FIRST + 2}`, '--d': `${(p.start - FIRST) * 170 + li * 70}ms` }}
               >
-                <button type="button" className={styles.rcard} aria-haspopup="dialog" onClick={() => onOpen(p.slug)}>
-                  <span className={styles.rcardName}>{p.name}</span>
+                <button type="button" className={styles.rcard} style={coverVars(p.slug)} aria-haspopup="dialog" onClick={() => onOpen(p.slug)}>
+                  <span className={styles.rcardHead}><ProjectIcon slug={p.slug} /><span className={styles.rcardName}>{p.name}</span></span>
                   <span className={styles.rcardMeta}>
                     <span className={`${styles.dot} ${styles[STATUS[p.status].tone]}`} aria-hidden="true" />
                     <span>{period(p)}</span>

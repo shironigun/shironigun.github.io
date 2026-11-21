@@ -1,24 +1,22 @@
 // What the rope agent says. Short, kind, and true to the site: no invented numbers or claims.
 // Section lines are keyed by the section's aria-labelledby id ("header" for page headers);
 // case studies and other pages fall back to matching the section heading.
-import { hoursText } from './hours';
 
 export const greeting = 'Hi!';
 
 // A single, unhurried click: something true about Mahmood, said with a wink.
 export const facts = [
   'He decides. I build.',
-  'He doesn’t write code. He tells me to. Politely.',
-  `${hoursText.total} hours of domain training and contribution. That’s a lot of slides.`,
+  'He writes the spec. I write the code.',
+  '120+ live training sessions. That’s a lot of slides.',
   'First of eleven teams in a division-wide AI hackathon. Not bad.',
-  'His Quality Gates cut defect leakage by about 40%. Bugs hate him.',
+  'His Quality Gates helped cut defect leakage by about 40%.',
   'He wrote a 183-page handbook. I read all of it. Twice.',
-  'He organised a hackathon with a project brief for every person.',
+  'He organised a hackathon and wrote nine project briefs for it.',
   'His public plugin marketplace has 30 skills. I use every one.',
-  'He asks eleven edge-case questions per story. Every. Single. One.',
+  'He runs eleven edge-case questions on his stories.',
   'UX intern in 2021, AI products now. Long rope.',
   'Certified ScrumMaster and ISTQB tester. He loves a good process.',
-  'He covered a whole BA role for three months. No gaps.',
   'Every decision on this site was his. I just type fast.',
   'Psst. The case studies are worth a look.',
 ];
@@ -79,7 +77,7 @@ export const roamLines = {
   cut: ['Cut! That’s the one.', 'And that’s a wrap.'],
   book: ['Page 92 of 183. Good handbook.', 'Rereading the Claude handbook.'],
   trophy: 'First of eleven teams!',
-  dance: ['Launch day dance!', 'Idea to launch!'],
+  dance: ['Release day dance!', 'Idea to release!'],
   hop: ['Boing!', 'Promoted in under two years. Boing!'],
   sit: ['Taking five.', 'I’ll just sit here and read along.'],
   nap: 'Five more minutes…',
@@ -98,10 +96,10 @@ export const roamLines = {
 
 const PAGES = {
   '/': {
-    'highlights-title': 'These numbers round down, never up.',
+    'highlights-title': 'The numbers, kept conservative.',
     'tour-title': 'Hover the list and I’ll hold the slides.',
     'events-band-title': 'He teaches too. Each ticket opens the project behind it.',
-    'roles-title': 'One title, six jobs. Busy person.',
+    'roles-title': 'One title, six roles. All connected.',
     'path-title': 'Quite a climb. I know a thing about climbing.',
     'work-title': 'Pick any. They’re all good reads.',
     'achievements-title': 'First of eleven teams. I cheered.',
@@ -118,7 +116,7 @@ const PAGES = {
   },
   '/journey': {
     header: 'Every step since 2021. Long rope.',
-    'recognition-title': 'All well earned.',
+    'recognition-title': 'The awards, in one place.',
     'journey-title': 'Filter by type if you’re in a hurry.',
   },
   '/about': {
@@ -126,14 +124,14 @@ const PAGES = {
     'record-title': 'His whole record. Try the tabs.',
     'tab-overview': 'The short version. Then the activity.',
     'tab-experience': 'From QA to product. Nice climb.',
-    'tab-roles': 'One title, six roles. Busy person.',
-    'tab-recognition': 'All well earned.',
+    'tab-roles': 'One title, six roles. All connected.',
+    'tab-recognition': 'The awards, in one place.',
     'testimonials-title': 'Word for word. Nobody edited these.',
   },
   '/how-i-work': {
     header: 'The playbook. I follow it too.',
     'model-title': 'Every stage has a gate. No skipping.',
-    'req-title': 'He asks all eleven questions. Every time.',
+    'req-title': 'Eleven questions before a story is ready.',
     'design-title': 'Fixing it in design is cheaper.',
     'ai-title': 'Ooh, this part is about me!',
     'principles-title': 'Every principle has proof attached.',
@@ -166,7 +164,7 @@ const HEADINGS = [
   [/recognition/i, 'Applause, please.'],
   [/where it is now/i, 'Still going strong.'],
   [/get in touch/i, 'Email is the quickest way. Go on.'],
-  [/hiring/i, 'Everything a hiring manager needs, in one place.'],
+  [/where to start/i, 'The best three things to open first.'],
   [/doesn.t exist|not found/i, 'Lost? Me too. Home is a good place to start.'],
 ];
 

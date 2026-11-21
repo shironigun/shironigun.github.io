@@ -116,7 +116,7 @@ export default function HowIWork() {
         <div className="container">
           <div className="section-head">
             <h2 id="design-title">Design review before development</h2>
-            <p>Every screen is reviewed against the component library and the business rules. Anything marked Fix goes back to design, where it is cheapest to change.</p>
+            <p>Each screen is reviewed against the component library and the business rules. Anything marked Fix goes back to design, where it is cheapest to change.</p>
           </div>
           <div className={styles.designGrid}>
             <DesignReview />

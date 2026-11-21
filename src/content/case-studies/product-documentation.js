@@ -9,7 +9,7 @@
 export default {
   updated: 'November 2026',
   body: [
-    { p: 'Every product has a document that was true once. People still act on it: they place a ticket, plan a test, change a customer’s setting. Nobody can tell which lines still hold, and the real answer sits in the code and in a few developers’ heads.' },
+    { p: 'Product documents age as the code moves on. People still act on them: they place a ticket, plan a test, change a customer’s setting, while the current answer sits in the code and with a few developers.' },
     { p: 'Since August 2026 I have documented subsystems with one method, so people who don’t read code can act on them. I directed reference manuals built from a dated, read-only reading of the code, and wrote a step-by-step runbook for our support team. The documents hold internal detail, so every example here is fictional.' },
 
     { h2: 'At a glance' },
@@ -21,10 +21,10 @@ export default {
     ] },
     { numbers: [['1', 'sentence to explain the model before any detail'], ['3', 'tags on every claim: verified, not built, inferred'], ['0', 'actions run on a live system to write them']] },
 
-    { h2: 'Documents that were true once' },
+    { h2: 'When documents age' },
     { p: 'Picture Maya, a business analyst, on a Monday. A ticket says: “The customer says the parcel arrived, but the order still shows In transit.” Is delivery broken? Is our app wrong? The only document is a year old. She can wait for a developer, or guess.' },
-    { p: 'Meanwhile Jordan in support has to change a customer’s settings in an internal admin tool. Almost every switch saves the moment it is clicked, and a few affect every customer at once. Nothing tells him which.' },
-    { p: 'The example is fictional; the shape is real. Testers and product people had no single, honest source for what the product does, and non-technical staff needed a safe way to operate an internal tool.' },
+    { p: 'Meanwhile Jordan in support has to change a customer’s settings in an internal admin tool. Almost every switch saves the moment it is clicked, and some settings have wide reach.' },
+    { p: 'The example is fictional; the shape is real. Testers and product people needed one dated reference for what the product does today, and non-technical staff needed a safe way to operate an internal tool.' },
 
     { h2: 'From code to a page you can act on' },
     { p: 'Here is the whole method as a pipeline. Watch two things: field reports enter boxed, not trusted, and the loop at the bottom sends the work back to the code when the code moves on.' },
@@ -101,7 +101,7 @@ export default {
     { p: 'Failures are grouped by where in the flow they happen, not by what the ticket says. A slow update and a lost one can read the same in a ticket and mean very different things.' },
 
     { h2: 'Writing for support' },
-    { p: 'The runbook is the one document I wrote myself, under my own name. It opens with the one rule that prevents damage: almost every click saves at once, with no undo. It explains the model in plain rules before any steps, keeps routine tasks apart from rare configuration tasks, and gives every task one template.' },
+    { p: 'The runbook is the one document I wrote myself, under my own name. It opens with the one rule that matters most: almost every click saves at once. Some settings have wide reach, so the runbook marks each one and puts a check before it. It explains the model in plain rules before any steps, keeps routine tasks apart from rare configuration tasks, and gives every task one template.' },
     { code: [
       'Pause weekend deliveries for one store',
       'Path: Admin › Stores › (store) › Delivery',
@@ -196,7 +196,7 @@ export default {
       },
     ], caption: 'The decisions behind the method, in my words.' },
     { call: {
-      saw: 'People trusted documents about our own product as if every line had been checked. Some lines described things that were never built, or no longer worked that way.',
+      saw: 'Readers couldn’t tell which lines had been checked against current code.',
       decided: 'Every claim carries a tag: verified in code, not built, or inferred. Every page is dated against the code it was read from.',
       why: 'A reader can act on a verified line, check an inferred one, and stop planning around one that isn’t built. Without the tag, all three look the same.',
     } },

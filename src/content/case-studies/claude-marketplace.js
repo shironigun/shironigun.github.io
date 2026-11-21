@@ -8,8 +8,8 @@
 export default {
   updated: 'November 2026',
   body: [
-    { p: 'July 2026. A release has just gone out, and somebody has to tell our clients what changed. That somebody is me, again, with a long list of closed tickets and a blank page.' },
-    { p: 'So I specified a helper for it. Then one for bug reports. Then one for test cases. Each was built on its own, for one job I was tired of doing by hand. By October I had a drawer full of them and a better question: what if anyone could install them with one line? This is the story of that drawer becoming a public marketplace.' },
+    { p: 'July 2026. A release has just gone out, and somebody has to tell our clients what changed. I draft it, starting from a long list of closed tickets and a blank page.' },
+    { p: 'So I specified a helper for it. Then one for bug reports. Then one for test cases. Each was built on its own, for a recurring job worth standardising. By October I had a drawer full of them and a better question: what if anyone could install them with one line? This is the story of that drawer becoming a public marketplace.' },
 
     { h2: 'At a glance' },
     {
@@ -26,9 +26,9 @@ export default {
     },
 
     { h2: 'A drawer full of helpers' },
-    { p: 'Most of a QA analyst’s week is writing. Test cases, bug reports, status updates, release notes. Each one has a right shape, and the right shape lived in my head. When I was busy, or someone else did the writing, the shape slipped.' },
+    { p: 'Most of a QA analyst’s week is writing. Test cases, bug reports, status updates, release notes. Each one has a right shape, and the right shape lived in my head. Because it wasn’t written down, the shape varied from one ticket to the next.' },
     { p: 'Claude Code skills changed that. A skill is a folder of instructions an AI agent follows when a request matches it. Write the house style down once, and every bug report gets it, whoever asks.' },
-    { p: 'So every time a job annoyed me twice, it got a plugin. None of them was planned as part of a set.' },
+    { p: 'So every time I did the same writing job twice by hand, it became a plugin. None of them was planned as part of a set.' },
     {
       table: {
         columns: ['The job', 'What kept going wrong', 'The plugin that fixed it'],
@@ -36,12 +36,12 @@ export default {
           ['Client release notes', 'A long list of closed work, for clients who only need what changes their day', 'Release-notes suite'],
           ['UI test cases', 'Steps with no expected result; scripts that drift away from their cases', 'UI Testing'],
           ['API tests', 'Tests quietly loosened until they pass', 'API Testing'],
-          ['Bugs and defects', 'Every tester writes them differently', 'CRM Bug Suite'],
+          ['Bugs and defects', 'No shared format, so reports vary', 'CRM Bug Suite'],
           ['The whole QA loop', 'A separate tool for every step, and no single place to start', 'QA Engineering'],
           ['Explaining a feature', 'One document for every reader, so it fits none of them', 'Feature Explainer'],
         ],
       },
-      caption: 'Six annoyances, six plugins. Each was built and used alone before the marketplace existed.',
+      caption: 'Six recurring jobs, six plugins. Each was built and used alone before the marketplace existed.',
     },
     { p: 'Building them one at a time was a feature, not an accident. Each plugin had to earn its keep on real work before the next one started. If one had failed, nothing else would have broken with it.' },
 
@@ -49,7 +49,7 @@ export default {
     { p: 'Here is the order they arrived in. The dates come from my notes and the public git history.' },
     {
       timeline: [
-        { when: 'Jul 2026', title: 'The release-notes suite', detail: 'Two skills: a harvester that gathers everything and a releaser that writes the note. When a seventeen-agent version was put on the table, I kept the two skills.' },
+        { when: 'Jul 2026', title: 'The release-notes suite', detail: 'Two skills: a harvester that gathers everything and a releaser that writes the note. A seventeen-agent version was considered; the two skills already worked, so they stayed.' },
         { when: 'Aug 2026', title: 'The house-style skills', detail: 'Bugs, production defects, ticket comments, UI and API test cases: my formats, written down as rules.' },
         { when: '10 Sep 2026', title: 'Feedback becomes rules', detail: 'The support team’s edits to real release notes became rules the releaser now enforces.' },
         { when: '5 to 8 Oct 2026', title: 'The flagship takes shape', detail: 'QA Engineering, specified as small sub-projects, each reviewed before the next began.' },
@@ -219,9 +219,9 @@ export default {
       caption: 'Six rules the family shares. They were learned one plugin at a time.',
     },
 
-    { h2: 'Going public without leaking' },
-    { p: 'The plugins were built on real work. Their first drafts named the product, the team’s tracker and real tickets. That is fine on my machine and not fine on the internet.' },
-    { p: 'Git remembers everything, so making the working repo public would have published every real name in its history. I chose a fresh start instead.' },
+    { h2: 'Publishing it safely' },
+    { p: 'The plugins were built on real work, so before publishing I had every product, organisation and ticket reference mapped to a placeholder and started a fresh public repository.' },
+    { p: 'Git remembers everything, so the working repo, with its full history, stayed private.' },
     {
       graph: {
         lanes: [{ name: 'The working repo' }, { name: 'Me' }, { name: 'The public repo' }],
@@ -231,19 +231,19 @@ export default {
           { id: 'check', name: 'Check before publishing', lane: 1, row: 2, kind: 'gate', detail: 'Nothing went out until the copy was checked, including that no credential had ever been committed.' },
           { id: 'clean', name: 'One clean commit', sub: '9 October 2026', lane: 2, row: 3, kind: 'output', detail: 'A new public repository that starts from a single commit. The working history, with its real names, stayed private.' },
           { id: 'prs', name: 'dev, then main', sub: '18 pull requests', lane: 2, row: 4, kind: 'store', detail: 'From then on, new work lands on the dev branch and reaches main through a pull request.' },
-          { id: 'second', name: 'A second pass', sub: 'neutral placeholders', lane: 1, row: 5, kind: 'human', detail: 'The placeholders still hint at a brand. A branch that makes them fully neutral is written and not merged yet.' },
+          { id: 'second', name: 'A second pass', sub: 'neutral placeholders', lane: 1, row: 5, kind: 'human', detail: 'A further pass works toward fully neutral placeholders.' },
         ],
         edges: [
           { from: 'work', to: 'map', label: 'everything' },
           { from: 'map', to: 'check', label: 'scrubbed copy' },
           { from: 'check', to: 'clean', label: 'approved' },
           { from: 'clean', to: 'prs', label: 'new work' },
-          { from: 'prs', to: 'second', label: 'what still leaks' },
+          { from: 'prs', to: 'second', label: 'further review' },
         ],
       },
       caption: 'How the marketplace went public. The history that named real things never left the private repo.',
     },
-    { p: 'Placeholders are not perfect. They can still hint at the industry, and a stray detail can survive a scrub. So I treat the public repo like a release: checked before it goes out, versioned, and never pushed in a hurry.' },
+    { p: 'I treat the public repo like a release: checked before it goes out, versioned, and never pushed in a hurry.' },
 
     { h2: 'My role and the team' },
     { p: 'This is my own project. I picked every job worth a plugin, wrote the rules each one follows, and reviewed everything before it shipped. AI agents wrote the files to my specifications.' },
@@ -274,7 +274,7 @@ export default {
       ],
       caption: 'The same six steps, repeated for every plugin.',
     },
-    { lead: 'Solve one job.', p: 'No plugin started as an idea for a plugin. Each started as a job I had done by hand too many times.' },
+    { lead: 'Solve one job.', p: 'No plugin started as an idea for a plugin. Each started as a recurring job worth standardising.' },
     { lead: 'Write the style down.', p: 'This is where most of my time went. A rule like “every step has an expected result” sounds obvious until you try to make an AI follow it every time.' },
     { lead: 'Build to the spec.', p: 'AI agents wrote the files: skills, references, scripts and tests. I read what they wrote and sent back what was wrong.' },
     { lead: 'Prove it on real work.', p: 'Each plugin was used on real tickets or real releases before it went anywhere near the public repo.' },
@@ -300,7 +300,7 @@ export default {
           q: 'Seventeen agents or two skills for release notes?',
           options: ['A seventeen-agent pipeline', 'Two skills with opposite jobs'],
           chose: 'Two skills with opposite jobs',
-          why: 'The two-skill suite already worked, and I could read every rule in it. I said no to the agents and kept what worked.',
+          why: 'The two-skill suite already worked, and I could read every rule in it. So the suite stayed as it was.',
         },
         {
           q: 'Product-specific plugins: publish them or keep them private?',
@@ -313,7 +313,7 @@ export default {
     },
     {
       call: {
-        saw: 'The working repo was full of real names, tickets and the product itself. Making it public would have published all of that history.',
+        saw: 'Publishing the working repo would have published its private history.',
         decided: 'Start a new public repo from one clean commit, with every product reference mapped to a placeholder, and keep the original private.',
         why: 'You can’t un-publish history. A clean start was the only version I could stand behind.',
       },
@@ -344,7 +344,7 @@ export default {
     { quote: 'Build the tool for one job first. If it earns its keep, it earns its place on the shelf.' },
     { lead: 'Small first, then together.', p: 'Every plugin that works today worked alone first. If I had designed the marketplace before the plugins, I would have built the wrong shelf.' },
     { lead: 'A house style is a product.', p: 'Writing down how I file a bug made me decide what a good bug is. The rules got better because a machine had to follow them.' },
-    { lead: 'Publishing has its own bugs.', p: 'Placeholders leak in odd places. Going public is a release like any other: checked, versioned, and never rushed.' },
+    { lead: 'Treat publishing as a release.', p: 'Publishing is a release like any other: checked, versioned, and never rushed.' },
     { link: { to: '/case-studies/qa-plugin', text: 'Read the flagship: QA Engineering' } },
     { link: { href: 'https://github.com/shironigun/claude-marketplace', text: 'See the marketplace on GitHub' } },
   ],

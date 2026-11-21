@@ -178,7 +178,7 @@ export default {
       },
     ], caption: 'The calls that shaped the films, in my words.' },
     { call: {
-      saw: 'A CRM’s real screens are full of real customers. A real dealership’s figures were even suggested as an opening hook for the Promise Tracker film.',
+      saw: 'A CRM’s real screens are full of real customers. The films are public, so every customer in them had to be fictional.',
       decided: 'I kept every customer fictional. The films use a made-up dealership with its own customers, reps, phone numbers and email addresses, and the Promise Tracker film opens on the promise itself, not on anyone’s statistics.',
       why: 'The films are public. A fictional dealership shows exactly the same product, and no customer’s data travels with it.',
     } },

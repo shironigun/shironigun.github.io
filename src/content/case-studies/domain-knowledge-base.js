@@ -4,15 +4,14 @@
 // and docs/private/chat-exports/merged.md (§7, §9, question 13: he contributed to the public product
 // knowledge base; he did not write it). Hours come from hours.js, never hard-coded. The curriculum
 // map's example topics are generic and drawn from the product areas already public on the site.
-import { hoursText } from '../hours';
 
 export default {
   updated: 'November 2026',
   body: [
     { p: 'Second week on the job. Dana, a new tester, is checking a broadcast and can’t tell whether one customer should have received it. Had the customer opted out? Does the dealer group share its settings across rooftops?' },
     { p: 'She asks a senior engineer, who stops what he is doing to explain. The next day a new developer asks him the same question.' },
-    { p: `When I joined, domain knowledge lived in the heads of three senior engineers who were also responsible for delivery. I turned it into a structured programme of live sessions, SOPs and walkthroughs, and delivered ${hoursText.junior} hours of training as a Junior SQA Analyst.` },
-    { p: 'I started the programme myself, designed it and delivered it. It reached operations, development, QA, stakeholders and customers, and the knowledge transfer around it fed the public product knowledge base, which I contributed to.' },
+    { p: `When I joined, the deepest domain knowledge sat with three senior engineers who were also responsible for delivery. I turned it into a structured programme of live sessions, SOPs and walkthroughs, and delivered more than 120 live sessions as a Junior SQA Analyst.` },
+    { p: 'I started, designed and delivered the programme. It served development, QA, operations and business analysts, and the knowledge transfer around it fed the public product knowledge base, which I contributed to.' },
 
     { h2: 'At a glance' },
     { ol: [
@@ -21,10 +20,10 @@ export default {
       'I ran the live sessions and weekly office hours, and wrote the SOPs and video walkthroughs.',
       'I kept the material current through feedback after every cohort and updates every quarter.',
     ] },
-    { numbers: [['~90%', 'less time spent on domain training'], [hoursText.junior, 'training hours delivered'], ['60+', 'SOPs and guides written'], ['5+', 'audiences, from operations to customers']] },
+    { numbers: [['120+', 'live sessions delivered'], ['60+', 'SOPs and guides written'], ['4', 'audiences: development, QA, operations, BAs']] },
 
     { h2: 'Knowledge by osmosis' },
-    { p: 'Dana’s afternoon was the everyday reality. New hires learned by osmosis over months. They asked the same questions again and again, and every question pulled a senior engineer away from their own work. There was no single source of truth.' },
+    { p: 'Dana’s afternoon was the everyday reality. New hires learned on the job over months, and the same questions came up with each one, each time pulling a senior engineer away from their own work. A shared, written source would give them that time back.' },
     { p: 'The domain makes it harder. Our product sits on top of the systems dealerships already run, so understanding it means understanding dealerships too: how they are organised, how their systems behave and which business rules apply.' },
     { p: 'Take Dana’s second question. A rooftop is one dealership, and a dealer group can own several. Whether a setting is shared across them is exactly the kind of detail that lived in someone’s head.' },
 
@@ -45,10 +44,10 @@ export default {
           { id: 'design', name: 'Design the modules', sub: 'theory, exercise, check', lane: 1, row: 3, kind: 'human', detail: 'I structured the domains into a modular path of increasing depth, adding up to 80 hours of structured content.' },
           { id: 'teach', name: 'Teach and write', sub: 'sessions, SOPs, walkthroughs', lane: 1, row: 4, kind: 'human', detail: 'Live sessions taught it, SOPs set out the steps, walkthroughs could be watched again, and weekly office hours caught the rest.' },
           { id: 'learn', name: 'Learn, then show it', sub: 'module by module', lane: 2, row: 5, kind: 'human', detail: 'Learners work through the modules, and finish each one by showing they can do it.' },
-          { id: 'kb', name: 'Public knowledge base', sub: 'contributed to, not written', lane: 3, row: 5, kind: 'external', detail: 'The sessions and the knowledge transfer around them fed the public product knowledge base. I contributed to it; I didn’t write it.' },
+          { id: 'kb', name: 'Public knowledge base', sub: 'contributed to', lane: 3, row: 5, kind: 'external', detail: 'The sessions and the knowledge transfer around them fed the public product knowledge base, which I contributed to.' },
           { id: 'feedback', name: 'Give feedback', sub: 'after every cohort', lane: 2, row: 6, kind: 'human', detail: 'Every cohort gives feedback on the material, so the next one gets better material.' },
           { id: 'update', name: 'Update the material', sub: 'every quarter', lane: 1, row: 7, kind: 'human', detail: 'I update the material every quarter, as the product changes and the feedback comes in.' },
-          { id: 'productive', name: 'Productive sooner', sub: 'time to productivity tracked', lane: 2, row: 8, kind: 'output', detail: 'About 90% less time spent on domain training, and time to productivity tracked for the people who took the programme.' },
+          { id: 'productive', name: 'Productive sooner', sub: 'time to productivity tracked', lane: 2, row: 8, kind: 'output', detail: 'New starters had a structured path instead of months of shadowing, and time to productivity was tracked for the people who took the programme.' },
           { id: 'timeback', name: 'Time back', sub: 'fewer interruptions', lane: 0, row: 8, kind: 'output', detail: 'The senior engineers got back the hours that the same questions, asked by every new hire, used to take.' },
         ],
         edges: [
@@ -64,7 +63,7 @@ export default {
           { from: 'productive', to: 'timeback', label: 'fewer questions' },
         ],
       },
-      caption: 'How knowledge moved, from three heads to every team, and how feedback kept it current. The knowledge base is the product’s, not mine: I contributed to it.',
+      caption: 'How knowledge moved, from three heads to every team, and how feedback kept it current. I contributed to the product’s knowledge base.',
     },
     { p: 'Four formats did four different jobs. Watch the tags: each one says how much of it there was.' },
     { cards: [
@@ -110,7 +109,7 @@ export default {
     },
 
     { h2: 'My role and the team' },
-    { p: 'The programme was mine from start to finish: I started it, designed it and delivered it while I was a Junior SQA Analyst. The senior engineers were my main source, and every cohort shaped the material through its feedback. The public product knowledge base is not mine: I contributed to it through the sessions and the knowledge transfer around them.' },
+    { p: 'I started, designed and delivered the programme while I was a Junior SQA Analyst. The senior engineers were my main source, and every cohort shaped the material through its feedback. I did not write the public product knowledge base: I contributed to it through the sessions and the knowledge transfer around them.' },
     { table: {
       columns: ['Stage', 'Me', 'AI agents', 'Team'],
       rows: [
@@ -121,7 +120,7 @@ export default {
         ['Iteration', 'Updated the material every quarter; tracked time to productivity', '', 'Every cohort gave feedback'],
         ['Knowledge base', 'Contributed through the sessions and knowledge transfer', '', ''],
       ],
-    }, caption: 'Who did what. I designed and delivered the programme; the public knowledge base is not mine, and I contributed to it.' },
+    }, caption: 'Who did what. I designed and delivered the programme, and contributed to the public knowledge base.' },
 
     { h2: 'Shadow first, teach second' },
     { p: 'Six stages, in the order they happened. The label on each says who carried it.' },
@@ -132,13 +131,13 @@ export default {
       { name: 'Deliver', part: 'Sessions, SOPs, walkthroughs and office hours', by: 'me' },
       { name: 'Improve', part: 'Feedback every cohort, updates every quarter', by: 'proved' },
       { name: 'Share', part: 'Contributed to the public knowledge base', by: 'me' },
-    ], caption: 'From shadowing to a programme for every team, with who carried each stage.' },
+    ], caption: 'From shadowing to a structured programme, with who carried each stage.' },
     { lead: 'Shadow.', p: 'Most of what the senior engineers knew existed nowhere else, so the first job was to write it down, not to teach it.' },
     { lead: 'Map.', p: 'The audit showed what people actually needed, before I decided what to teach: 14 critical knowledge domains.' },
     { lead: 'Design.', p: 'I structured the domains into a modular path of increasing depth, 80 hours of structured content in all.' },
-    { lead: 'Deliver.', p: 'Over 18 months I ran more than 120 live sessions, wrote over 60 SOPs and 30 video walkthroughs, and held weekly Q&A office hours. The programme reached well beyond new hires: operations, development, QA, stakeholders and customers all used it.' },
+    { lead: 'Deliver.', p: 'Over 18 months I ran more than 120 live sessions, wrote over 60 SOPs and 30 video walkthroughs, and held weekly Q&A office hours. The programme reached well beyond new hires: development, QA, operations and business analysts all used it.' },
     { lead: 'Improve.', p: 'I collected feedback after every cohort, updated the material every quarter, and tracked time to productivity.' },
-    { lead: 'Share.', p: 'The sessions and the knowledge transfer around them fed the public product knowledge base. I contributed to it; I didn’t write it.' },
+    { lead: 'Share.', p: 'The sessions and the knowledge transfer around them fed the public product knowledge base, which I contributed to.' },
 
     { h2: 'Key decisions' },
     { p: 'Five calls shaped the programme. Most of them were about what happens after the first session.' },
@@ -190,15 +189,15 @@ export default {
     ] },
 
     { h2: 'Where it landed' },
-    { p: `The programme is complete. It ran from 2024 to 2025 and delivered ${hoursText.junior} hours of training, with more than 120 live sessions, over 60 SOPs, 30 video walkthroughs and weekly office hours. It reached operations, development, QA, stakeholders and customers, and what we documented fed the public product knowledge base, which I contributed to.` },
+    { p: `The programme is complete. It ran from 2024 to 2025 and delivered more than 120 live sessions, over 60 SOPs, 30 video walkthroughs and weekly office hours. It served development, QA, operations and business analysts, and what we documented fed the public product knowledge base, which I contributed to.` },
     { p: 'By the end, a question like Dana’s had somewhere to go that wasn’t a senior engineer’s desk.' },
 
     { h2: 'What I learned' },
-    { quote: 'Writing the knowledge down showed the senior engineers how much context they had been carrying.' },
-    { p: 'The real return wasn’t only faster onboarding: it freed them from hours of interruptions every day.' },
+    { quote: 'Writing the knowledge down showed how much context the senior engineers had been carrying for everyone.' },
+    { p: 'The real return wasn’t only faster onboarding: it gave the senior engineers back the time that repeated questions used to take.' },
     { p: 'Training material is never finished while the product keeps changing. Feedback from every cohort and an update every quarter were what kept it true.' },
     { p: 'And a check beats a sign-in sheet: attendance says who was in the room, not who can do the work.' },
-    { link: { to: '/case-studies/quality-gates', text: 'Quality Gates and the QA team I lead' } },
+    { link: { to: '/case-studies/quality-gates', text: 'Quality Gates: how the team defines ready and done' } },
     { link: { to: '/case-studies/ai-foundations-hackathon', text: 'Teaching again: the AI Foundations hackathon' } },
   ],
 };

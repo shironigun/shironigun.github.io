@@ -19,12 +19,12 @@ export default {
     { numbers: [['16', 'skills'], ['4', 'agents'], ['9', 'commands, down from 14'], ['20', 'sub-projects in one week']] },
 
     { h2: 'Why a team can’t just trust a bot' },
-    { p: 'Picture Dana, a manual tester on a busy team. An AI assistant gives her a list of test cases as text, written without the comments, the history or the linked bug that changed the requirement last week. When a test fails, she has to work out alone whether the product is broken, the test is wrong or the environment is down.' },
+    { p: 'Picture Dana, a tester on a busy team. An AI assistant gives her a list of test cases as text, written without the comments, the history or the linked bug that changed the requirement last week. When a test fails, she has to work out alone whether the product is broken, the test is wrong or the environment is down.' },
     { p: 'Now let the assistant write to the tracker itself, and one wrong bulk write fills the wrong suite for the whole team. For a QA team to rely on AI help, four things had to be true.' },
     { lead: 'Context lives in the tracker.', p: 'Acceptance criteria, comments, history and linked bugs all sit in Azure DevOps. An agent has to read all of it, and say what it is guessing.' },
     { lead: 'Writes need a human gate.', p: 'Nothing goes into the tracker until a person has seen exactly what will be written and said yes.' },
     { lead: 'Generated tests have to be honest.', p: 'Asked to reach green, an AI agent will loosen a test rather than report a problem. The tool has to check its own output as strictly as a reviewer would.' },
-    { lead: 'Manual testers need a way in.', p: 'Most of a QA team tests by hand, and some products can’t be automated at all. They need a guided path, not a code dump.' },
+    { lead: 'Every tester needs a way in.', p: 'Much testing is hands-on, and some products can’t be automated. Testers need a guided path, not a code dump.' },
 
     { h2: 'Where it sits' },
     { p: 'QA Engineering is one plugin in a family of eight. The others are smaller and do one job each; this is the one that strings the jobs together. On its first day it took in the QA Toolkit’s four skills, and it borrowed ideas from the testing plugins, but it depends on none of them. Install it alone and it works.' },
@@ -145,7 +145,7 @@ export default {
       { title: '/learn-extension', tag: 'course', body: 'Six hands-on lessons on the Playwright extension for VS Code: recording, picking locators, debugging and reading traces.' },
       { title: '/qa-status', tag: 'pane', body: 'Reopens the live status pane. It is registered by the pane itself rather than shipped as a command file.' },
     ], mono: true, caption: 'The nine commands, plus the pane’s own command.' },
-    { p: 'The menu took three tries. The first command surface had 14 commands, one for every capability. Feedback from manual testers was that a wall of menu items was exactly the complexity the plugin was meant to remove, so I cut it to 7: the capability stayed, and the menu halved. Two came back for good reasons: /status, for the status board, and /learn-extension, for the editor course.' },
+    { p: 'The menu took three tries. The first command surface had 14 commands, one for every capability. Feedback from testers newer to automation was that a wall of menu items was exactly the complexity the plugin was meant to remove, so I cut it to 7: the capability stayed, and the menu halved. Two came back for good reasons: /status, for the status board, and /learn-extension, for the editor course.' },
 
     { h2: 'Sixteen skills, four agents' },
     { p: 'Sixteen skills do the work, each with one job and a clear line between reading and writing. Only two of them ever write to the tracker, and both sit behind the same two-gate pattern.' },
@@ -408,7 +408,7 @@ export default {
       { title: 'Operations', tag: '5 topics', body: 'Parallel runs, flaky tests, debugging, reporting and CI.' },
       { title: 'Mastery', tag: '2 topics', body: 'Maintaining a framework, and its architecture at scale.' },
     ], caption: 'The /learn course: 35 topics in 7 stages.' },
-    { p: 'You choose a goal and a depth, from a two-minute overview to the internals, and the course remembers where you stopped. Tracks for API first or UI first defer topics rather than drop them. The editor course adds six hands-on lessons, from installing the extension to recording a test, turning the recording into page objects and reading a trace. For workshops, I wrote a runbook with three tracks: build a framework, analyze and author without code, or the manual track. Most of a room of manual testers starts on the second or third. On 13 October I presented the plugin at an AI workshop on Claude skills with our division’s R&D director, and every QA in the room tried it on their own day-to-day work.' },
+    { p: 'You choose a goal and a depth, from a two-minute overview to the internals, and the course remembers where you stopped. Tracks for API first or UI first defer topics rather than drop them. The editor course adds six hands-on lessons, from installing the extension to recording a test, turning the recording into page objects and reading a trace. For workshops, I wrote a runbook with three tracks: build a framework, analyze and author without code, or the manual track. Most people new to automation start on the second or third. On 13 October I presented the plugin at an AI workshop on Claude skills with our division’s R&D director, and the QAs in the room tried it on their own day-to-day work.' },
 
     { h2: 'My role and the team' },
     { p: 'It’s my own work. I designed it, specified every skill and agent, wrote the evaluations and reviewed every result. Claude Code wrote the code and drafted the skills under my direction.' },
@@ -421,7 +421,7 @@ export default {
         ['Build and review', 'Reviewed every result', 'Wrote the code and drafted the skills; reviewed each sub-project independently', ''],
         ['Live test', 'Drove the whole loop against a real product', 'Fixed the gaps it found, to my direction', ''],
         ['Evaluation', 'Wrote the 9 behavioural evaluations; reviewed every result', 'Ran each one three times', ''],
-        ['Teaching', 'Wrote the workshop runbook and its three tracks', 'Built the course content to the standards', 'Manual testers took the workshop'],
+        ['Teaching', 'Wrote the workshop runbook and its three tracks', 'Built the course content to the standards', 'Testers took the workshop'],
       ],
     }, caption: 'Who did what. My design and specification; AI agents built and reviewed to it.' },
 
@@ -431,7 +431,7 @@ export default {
       { when: '7 Oct', title: 'Foundation and standards', detail: 'A self-contained base and the standards core. The dependency on another plugin was removed.' },
       { when: '8 Oct', title: 'Tutor, builder, reviewers, orchestrator', detail: 'The course, the framework builder, the two reviewers, the shared state, story analysis, gated publishing, consolidated authoring, automation, bug filing and an end-to-end rehearsal.' },
       { when: '9 Oct', title: 'Runs, code analysis, first public release', detail: 'Honest test runs and the code-analysis mirror. Version 0.1.0 published.' },
-      { when: '10 Oct', title: 'Commands, then fewer commands', detail: 'Fourteen commands, then seven, after manual testers found the menu too long. The guided /qa journey and the saved course.' },
+      { when: '10 Oct', title: 'Commands, then fewer commands', detail: 'Fourteen commands, then seven, after testers newer to automation found the menu too long. The guided /qa journey and the saved course.' },
       { when: '11 Oct', title: 'Status board, live pane, live test, knowledge base', detail: 'Driven against a real product, which surfaced ten clusters of gaps, all fixed. Versions 0.3 to 0.6.' },
       { when: '12 Oct', title: 'Deepen before relying', detail: 'Any step that relies on a module now deepens its knowledge first. Version 0.6.1.' },
       { when: '13 Oct', title: 'Manual track, editor course, evaluations', detail: 'Desktop products, the VS Code course, the workshop runbook and the evaluation suite. Version 0.8.1.' },
@@ -459,7 +459,7 @@ export default {
         why: 'Documenting everything up front is expensive and stale by day two. A stub per module maps the product fast, and deepening before relying on a module keeps the grounding honest.',
       },
       {
-        q: 'How many commands should a manual tester see?',
+        q: 'How many commands should a tester new to automation see?',
         options: ['One for every capability', 'A few, with /qa as the front door'],
         chose: 'A few, with /qa as the front door',
         why: 'Fourteen commands were the complexity the plugin was meant to remove. Seven kept every capability; two more came back only when they earned it.',
@@ -537,7 +537,7 @@ export default {
     { h2: 'What I learned' },
     { quote: 'An agent earns trust by showing what it will do before it does it.' },
     { p: 'The gates aren’t friction. They are why a team can hand real work to an agent at all.' },
-    { p: 'Designing for a manual tester changed the plugin most. Fewer commands, a course that remembers where you stopped, and a track for products no browser can reach made it a tool for the whole QA team, not just the people who already write code.' },
+    { p: 'Designing for a tester new to automation changed the plugin most. Fewer commands, a course that remembers where you stopped, and a track for products no browser can reach made it a tool for the whole QA team, not just the people who already write code.' },
     { p: 'And lessons belong in the tool, as rules it enforces, not advice someone has to remember. Every rule in this plugin started as something that went wrong once.' },
     { link: { to: '/case-studies/ai-test-suite-audit', text: 'The audit that specified the plugin' } },
     { link: { to: '/case-studies/ai-evaluation', text: 'How I evaluate AI features' } },

@@ -21,8 +21,8 @@ export default {
     { numbers: [['2', 'skills: tester and buggy'], ['3', 'UI levels: smoke, regression, end to end'], ['0', 'tracker writes without a yes']] },
 
     { h2: 'The step that was really three' },
-    { p: 'Dana’s bad afternoon has three cousins, and every testing team has met them.' },
-    { lead: 'Cases that read differently.', p: 'Five people, five styles. One writes “Check the pipeline works.” Another writes twelve careful rows. A reviewer can’t tell what was covered, and a failure doesn’t point anywhere.' },
+    { p: 'Dana’s afternoon has three cousins, and every testing team knows them.' },
+    { lead: 'Cases that read differently.', p: 'Five people can mean five styles. One writes “Check the pipeline works.” Another writes twelve careful rows. A reviewer can’t tell what was covered, and a failure doesn’t point anywhere.' },
     { lead: 'Scripts that drift from their cases.', p: 'Jordan automates a case in Playwright, the tool our browser tests run on. Months later someone edits the script but not the case. Now they disagree, and nobody remembers which is right.' },
     { lead: 'Typing cases into the tracker.', p: 'Entering a twelve-row case into the tracker by hand is slow. An assistant that writes straight into the tracker is fast, and can fill the wrong place in seconds.' },
     { p: 'So the plugin had three jobs. Write every case in one style a new tester can follow. Keep each case and its script saying the same thing. And put cases in the tracker only after a person has read them.' },

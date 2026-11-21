@@ -1,5 +1,4 @@
 import styles from './visuals.module.css';
-import { hoursText } from '../../content/hours';
 
 // Small, static previews for project cards. Decorative: the card's text carries the meaning.
 
@@ -58,7 +57,7 @@ function NumbersThumb({ items }) {
   );
 }
 
-const TrainingThumb = () => <NumbersThumb items={[[hoursText.junior, 'hours of training'], ['120+', 'live sessions'], ['60+', 'SOPs written']]} />;
+const TrainingThumb = () => <NumbersThumb items={[['120+', 'live sessions'], ['60+', 'SOPs written'], ['4', 'audiences']]} />;
 const FoundationsThumb = () => <NumbersThumb items={[['9', 'project briefs'], ['11', 'building blocks taught'], ['183', 'page handbook']]} />;
 const PostmanThumb = () => <NumbersThumb items={[['15', 'capabilities explained'], ['4', 'plans mapped'], ['5+', 'teams adopted it']]} />;
 
@@ -147,7 +146,7 @@ function StandardsThumb() {
         <span className={styles.specInput}>Input field</span>
         <span className={styles.specToggle}><span /></span>
       </div>
-      <span><strong>200+</strong> inconsistencies found in the audit</span>
+      <span><strong>200+</strong> UI consistency items catalogued in the audit</span>
     </div>
   );
 }

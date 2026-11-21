@@ -25,3 +25,47 @@
 .timeline { display: grid; gap: 6px; }
 .timelineYears { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); font-size: 0.6875rem; color: var(--quiet); font-variant-numeric: tabular-nums; }
 .timelineYears span { padding-left: 2px; }
+
+/* Project cover and icon: the project's colour runs in from the right, as on its preview card. */
+.cover {
+  --cv-tint: var(--tint);
+  --cv-wash: var(--wash);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 76px;
+  padding-right: 22px;
+  overflow: hidden;
+  background: linear-gradient(270deg, var(--cv-tint) 0%, var(--cv-wash) 42%, var(--surface) 88%);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 14%, var(--hairline));
+}
+:root[data-theme='dark'] .cover {
+  --cv-tint: color-mix(in srgb, var(--accent) 42%, var(--surface));
+  --cv-wash: color-mix(in srgb, var(--accent) 16%, var(--surface));
+}
+.coverRing {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  width: 92px;
+  height: 92px;
+  margin-top: -46px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  opacity: 0.16;
+}
+.coverDot { position: absolute; border-radius: 50%; background: var(--accent); }
+.cd1 { width: 7px; height: 7px; top: 14px; right: 104px; opacity: 0.45; }
+.cd2 { width: 10px; height: 10px; bottom: 12px; right: 92px; opacity: 0.25; }
+
+.icon {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  background: #FFFFFF;
+  box-shadow: 0 1px 2px rgba(20, 22, 27, 0.06), 0 6px 14px -6px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.icon-sm { width: 32px; height: 32px; border-radius: 10px; }
+.icon-lg { width: 52px; height: 52px; border-radius: 15px; }

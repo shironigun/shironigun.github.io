@@ -18,13 +18,13 @@ export default {
     ] },
     { numbers: [['3', 'skills, one per kind of ticket'], ['5', 'comment shapes, each with a template'], ['0', 'tokens or passwords stored in the plugin']] },
 
-    { h2: 'The bug nobody could reproduce' },
-    { p: 'Jordan’s bug wasn’t hard to fix. It was hard to find. Bad reports fail in a few predictable ways, and each one costs somebody else time.' },
+    { h2: 'What a developer needs from a bug' },
+    { p: 'Jordan’s bug wasn’t hard to fix. It was hard to find. A report is fastest to fix when it answers four things.' },
     { lead: 'No way to reproduce it.', p: 'No environment, no steps, no account. The developer rebuilds the tester’s afternoon from a screenshot.' },
-    { lead: 'No line between what happened and what “fixed” means.', p: 'The report says something is wrong, but not what right looks like. The fix ships, and the argument starts.' },
+    { lead: 'No line between what happened and what “fixed” means.', p: 'The report says something is wrong, but not what right looks like. A clear expected result means everyone agrees when it is fixed.' },
     { lead: 'The wrong board.', p: 'A problem a live client hit gets filed like a sprint bug. It lands in the feature team’s queue, without the production fields support needs, and waits.' },
-    { lead: 'Updates nobody can scan.', p: 'A fix gets verified in a paragraph of prose on the ticket. The people who needed to know aren’t mentioned, so they never hear.' },
-    { p: 'My own tickets followed a format that answers all four, built up one ticket at a time. The trouble was that it lived in my head. Whoever filed the next ticket, a teammate or an AI assistant, started from scratch. This plugin writes that format down as rules a skill follows every time.' },
+    { lead: 'Updates people can scan.', p: 'A fix verified in a paragraph of prose on the ticket is easy to miss, and the people who need to know only hear if they are mentioned.' },
+    { p: 'My own tickets followed a format that answers all four, built up one ticket at a time. The trouble was that it lived in my head. Anyone filing the next ticket, a person or an AI assistant, had nothing written down to follow. This plugin writes that format down as rules a skill follows every time.' },
 
     { h2: 'Three skills, three kinds of ticket' },
     { p: 'Each skill owns one kind of write, and each one’s description names its siblings, so a request lands with the right skill.' },
@@ -252,7 +252,7 @@ export default {
     { p: 'So the format travelled. The anatomy this plugin applies to one team also appears, product-neutral, in the plugins anyone can use.' },
 
     { h2: 'My role and the team' },
-    { p: 'I’m the creator. I specified the three skills, the house style they follow and the gates they keep. AI agents analysed my tickets and wrote the skill files under my direction, and I reviewed what they wrote.' },
+    { p: 'I’m the creator. I specified the three skills, the house style they follow and the gates they keep. The conventions come from Bugs and Defects I had written; AI agents wrote the skill files under my direction, and I reviewed what they wrote.' },
     { table: {
       columns: ['Stage', 'Me', 'AI agents', 'Team'],
       rows: [

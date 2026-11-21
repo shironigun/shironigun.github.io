@@ -12,7 +12,7 @@
 export default {
   updated: 'November 2026',
   body: [
-    { p: 'Wednesday, mid-sprint. A developer is halfway through building a new screen and has three questions that nobody wrote the answers to. Each one costs a message, a meeting or a guess, and one of the guesses comes back from testing as a bug.' },
+    { p: 'Wednesday, mid-sprint. A developer is halfway through building a new screen and has three questions the story doesn’t answer yet. Each one costs a message, a meeting or a guess, and one of the guesses comes back from testing as a bug.' },
     { p: 'Designs are cheapest to fix before anyone builds them. So I introduced a short design step that settles those questions first, and tied it to how the team decides a story is ready. In 2026 I used the same discipline to lead a revamp of seven areas of our dealership CRM, and to direct a design system taken from the product exactly as it ships.' },
 
     { h2: 'At a glance' },
@@ -32,7 +32,7 @@ export default {
       'Where does the “New group” button go on a phone?',
     ] },
     { p: 'Each answer costs a message, a meeting or a guess. In testing, the empty screen turns out to be blank, and the story goes back.' },
-    { p: 'That was the pattern. Without a dedicated design step, business rules, edge cases and design standards were settled late, during development and testing. That is exactly when changes cost the most: screens were reworked after they were built, and testing turned up gaps a design review would have caught much earlier.' },
+    { p: 'Without a dedicated design step, business rules, edge cases and design standards tend to be settled late, during development and testing. That is when changes cost the most. Settling these before the build saves rework, and a design review finds gaps much earlier than testing does.' },
     { p: 'None of those three questions is hard. They were simply asked at the most expensive moment.' },
 
     { h2: 'A short step before the build' },
@@ -41,7 +41,7 @@ export default {
     { lead: 'The sessions.', p: 'Twice a week, on Mondays and Thursdays, I sit with the UX designer as the functional-requirements partner. Questions about the rules get answered while the design is still a drawing, when changing it costs minutes.' },
     { lead: 'The review.', p: 'Before any developer starts, I review the design against the story, the component library and the design system. The library is the designers’ set of ready-made parts, kept in Figma; the system is the product’s colours, type and spacing, written down with rules. Anything that fails goes back to design, not on to development.' },
     { lead: 'The rule.', p: 'The Definition of Ready is the checklist a story must pass before it can enter a sprint. I added one line to it: a story isn’t ready for development until its design is referenced, or explicitly marked as not needed. That one rule is what made the step stick.' },
-    { p: 'Here is one story making the whole trip. Watch the loops on the right: a failed review sends the design back up to the designer, and the packet meets two of my gates before a developer sees it.' },
+    { p: 'Here is one story making the whole trip. Watch the loops on the right: a failed review sends the design back up to the designer, and the packet meets two review gates before a developer sees it.' },
     {
       graph: {
         lanes: [{ name: 'Me' }, { name: 'Designer' }, { name: 'Developers' }],
@@ -56,7 +56,7 @@ export default {
           { id: 'session', name: 'Design session', sub: 'Mondays and Thursdays', lane: 0.5, row: 2, kind: 'human', detail: 'I sit with the designer as the requirements partner. A question about a rule is answered here, on a drawing, not in code weeks later.' },
           { id: 'design', name: 'Design the screens', sub: 'every state, web and mobile', lane: 1, row: 3, kind: 'human', detail: 'The designer draws every state the brief asks for, on a phone as well as the web.' },
           { id: 'review', name: 'Design review', sub: 'six checks, before any build', lane: 0, row: 4, kind: 'gate', detail: 'I check the design against the story, the component library and the design system. One failed check and it goes back to the designer, not on to a developer.' },
-          { id: 'ready', name: 'Ready gate', sub: 'design referenced', lane: 0, row: 5, kind: 'gate', detail: 'The story can enter a sprint only with its approved design referenced, or marked as not needed. No reference, no development.' },
+          { id: 'ready', name: 'Ready gate', sub: 'design referenced', lane: 0, row: 5, kind: 'gate', detail: 'The story can enter a sprint only with its approved design referenced, or marked as not needed.' },
           { id: 'build', name: 'Build the screen', sub: 'to the approved design', lane: 2, row: 6, kind: 'human', detail: 'The developer builds from a design whose rules and states are already settled.' },
           { id: 'done', name: 'Done gate', sub: 'shipped matches design', lane: 0, row: 7, kind: 'gate', detail: 'A story is done only when what shipped matches the approved design. If it doesn’t, it goes back to the build.' },
           { id: 'shipped', name: 'Screen shipped', sub: 'rules and states included', lane: 1.5, row: 8, kind: 'output', detail: 'The screen reaches users with its empty state, its business rule and its phone layout, each decided on paper first.' },
@@ -74,7 +74,7 @@ export default {
           { from: 'done', to: 'shipped', label: 'done story' },
         ],
       },
-      caption: 'One story, from brief to shipped screen. The amber gates are mine; the loops are work going back before it can cost more.',
+      caption: 'One story, from brief to shipped screen. The amber gates are the design reviews; the loops are work going back before it can cost more.',
     },
     { p: 'And here is the customer-groups story once it has been through the brief. The rules and the states are in the criteria before design begins, so the designer draws every one of them.' },
     { story: {
@@ -110,13 +110,13 @@ export default {
     { figure: 'designReview', caption: 'A design review of the same screen: each check passes, or goes back to design before the build. Recreation, fictional data.' },
 
     { h2: 'My role and the team' },
-    { p: 'I introduced the design phase: I write the briefs, work through the rules with the designer and review every design before development. The UX designer designs the screens. For the revamp and the design system, I directed the work and reviewed it, and AI agents wrote the code and the documentation. My name is in the design system’s change record.' },
+    { p: 'I introduced the design phase: I write the briefs, work through the rules with the designer and review each design before development. The UX designer designs the screens. For the revamp and the design system, I directed the work and reviewed it, and AI agents wrote the code and the documentation.' },
     { table: {
       columns: ['Stage', 'Me', 'AI agents', 'Team'],
       rows: [
         ['Brief', 'Wrote the functional brief', '', ''],
         ['Design', 'Joined the designer twice a week as the requirements partner', '', 'The UX designer designed the screens'],
-        ['Review', 'Reviewed every design before development', '', ''],
+        ['Review', 'Reviewed each design before development', '', ''],
         ['Ready', 'Made a referenced design part of “ready”', '', 'Works to the rule'],
         ['Revamp', 'Led seven product areas; reviewed and tested what shipped', 'Wrote the code under my direction', ''],
         ['Design system', 'Directed it; set the rules for contrast, roles and approval', 'Extracted the tokens from the shipped theme', 'Approves new colours'],
@@ -129,7 +129,7 @@ export default {
     { stages: [
       { name: 'Brief', part: 'Rules, users and edge cases before design', by: 'me' },
       { name: 'Design sessions', part: 'Twice a week with the designer', by: 'me' },
-      { name: 'Review', part: 'Every design checked before development', by: 'proved' },
+      { name: 'Review', part: 'Designs checked before development', by: 'proved' },
       { name: 'Ready', part: 'No design reference, no development', by: 'me' },
       { name: 'Revamp', part: 'Seven product areas, three languages', by: 'ai' },
       { name: 'Design system', part: 'The shipped theme, written down as tokens', by: 'ai' },
@@ -161,14 +161,14 @@ export default {
           { from: 'live', to: 'test', label: 'shipped screens' },
         ],
       },
-      caption: 'One revamped area, from specification to tested release. The agents write the code; the amber gate is my review.',
+      caption: 'One revamped area, from specification to tested release. The agents write the code; the amber gate is the review.',
     },
     { p: 'The revamp also added new work, a performance dashboard, which I contributed to. And I had a Claude plugin made that turns a Figma design into code and grades the result pass or fail against the design system.' },
 
     { h2: 'The theme, written down honestly' },
-    { p: 'Our standards lived only in the code. Colours and spacing were hardcoded, and nothing written said which colour was for what. A reviewer could say a screen looked wrong, but not which rule it broke.' },
+    { p: 'The product’s standards were expressed in code. Writing them down would let a review point to the exact rule, not just say a screen looked wrong.' },
     { p: 'In October 2026 I directed a design system taken from the product as it ships, with every value traced to the code. It sits beside the component library our designers work from: the library holds the components, and the system holds the values and rules behind the product as it ships.' },
-    { p: 'Its most important habit is honesty. Watch the contrast check in the diagram: colours that fail are not quietly fixed but flagged, and colours nobody has named wait on a list instead of sneaking in.' },
+    { p: 'Its most important habit is honesty. Watch the contrast check in the diagram: colours that fail are not quietly fixed but flagged, and colours nobody has named wait on a list instead of entering the system unreviewed.' },
     {
       graph: {
         lanes: [{ name: 'Me' }, { name: 'AI agents' }, { name: 'Team' }],
@@ -176,7 +176,7 @@ export default {
           { id: 'brief', name: 'Set the brief', sub: 'the theme as it ships', lane: 0, row: 0, kind: 'human', detail: 'Take the theme exactly as the product ships it. No new palette, no tidying, every value traced to the code.' },
           { id: 'code', name: 'The shipped code', sub: 'colours, type, spacing', lane: 2, row: 0, kind: 'store', detail: 'The real theme, hardcoded values and all.' },
           { id: 'extract', name: 'Extract every value', sub: 'traced to the code', lane: 1, row: 1, kind: 'ai', detail: 'AI agents copy each colour, type style, spacing step and layer with its exact value and where in the code it lives.' },
-          { id: 'contrast', name: 'Measure contrast', sub: 'every colour, white text', lane: 1, row: 2, kind: 'check', detail: 'Every colour gets its contrast ratio against white text, written into its usage note. Several status colours fail.' },
+          { id: 'contrast', name: 'Measure contrast', sub: 'every colour, white text', lane: 1, row: 2, kind: 'check', detail: 'Each colour’s contrast against white text is recorded in its usage note, with usage rules where a colour needs them.' },
           { id: 'flag', name: 'Flag, don’t fix', sub: 'kept as shipped + a rule', lane: 1, row: 3, kind: 'ai', detail: 'A failing colour stays exactly as shipped and is marked as failing. A usage rule routes around it: the darker step for filled buttons, status colours only as indicators or with dark text.' },
           { id: 'waiting', name: '“Not synced” list', sub: 'colours without a name', lane: 2, row: 2, kind: 'store', detail: 'Colours in the code that the team hasn’t approved stay out of the system and on this list.' },
           { id: 'roles', name: 'Set roles and rules', sub: 'what each colour is for', lane: 0, row: 4, kind: 'human', detail: 'I set the rules: which colour is for primary actions, which only for indicators, which never for states.' },
@@ -255,7 +255,7 @@ export default {
       },
     ], caption: 'The decisions behind the design phase and the design system, in my words.' },
     { call: {
-      saw: 'Designs reached development with the business rules and edge cases still open, and the answers arrived as rework.',
+      saw: 'Designs reached development with business rules and edge cases still open. Settling these before the build saves rework.',
       decided: 'I made a referenced design part of “ready”: no story enters development until its design is referenced, or marked as not needed.',
       why: 'A step people have to remember fades in a busy sprint. A rule inside the Definition of Ready is checked every time a story is accepted.',
     } },

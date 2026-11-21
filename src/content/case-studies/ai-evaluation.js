@@ -16,8 +16,8 @@ export default {
   documentsNote: 'Written for our QA and product teams. Every example in it is fictional. It runs in your browser and keeps your progress on your device.',
   body: [
     { p: 'Ask an AI feature the same question three times and you can get three different answers. Two good ones, and one that promises a customer a discount nobody agreed.' },
-    { p: 'That is the trouble with testing AI the way we test screens. One green run proves very little, and a team has no clear way to say an AI feature is ready to ship.' },
-    { p: 'I designed a repeatable way to evaluate AI features before release. I use it on the AI features my team builds and on my own AI tooling, and I wrote a course, the Skills Evals Lab, so the rest of the team can work the same way. I’m still learning this field, and this page says where.' },
+    { p: 'That is the trouble with testing AI the way we test screens. One green run proves very little, so AI features need a shared bar for “ready”, and that is what this method gives.' },
+    { p: 'I designed a repeatable way to evaluate AI features before release. I use it on the AI features the team builds and on my own AI tooling, and I wrote a course, the Skills Evals Lab, so the rest of the team can work the same way. I keep deepening this practice; a later section covers what’s next.' },
 
     { h2: 'At a glance' },
     { ol: [
@@ -34,7 +34,7 @@ export default {
     { p: 'The maths is unkind. If a feature gets a task right three times in four, three users in a row all get a right answer less than half the time.' },
     { numbers: [['75%', 'right on any single try'], ['98%', 'works at least once in 3 tries'], ['42%', 'works all 3 times']], caption: 'One feature, two ways of counting. Illustrative numbers: the worked example the course uses.' },
     { p: 'Evaluators call the middle number pass@3 (“worked at least once”) and the last one pass^3 (“worked every time”). For a feature people rely on without checking each answer, only the last one matters.' },
-    { p: 'Without a shared bar, “ready” meant a demo that looked right.' },
+    { p: 'So “ready” needs a shared bar, not a demo that looks right.' },
 
     { h2: 'The whole method, end to end' },
     { p: 'I treat an AI feature like any release: written rules, a test for each, and a gate it must pass. Here is the whole method for one feature. Watch the middle: code checks every answer before a judge reads a word.' },
@@ -284,7 +284,7 @@ export default {
     ] },
 
     { h2: 'Where it is now' },
-    { p: 'The method is how I evaluate the AI features my team builds and my own AI tooling.' },
+    { p: 'The method is how I evaluate the AI features the team builds, and my own AI tooling.' },
     { p: 'The Skills Evals Lab is now a beginner course: 17 short lessons, about three hours, with no coding or maths needed. In November 2026 I reworked it so anyone new to AI can start from zero. Open it from the top of this page.' },
 
     { h2: 'Still learning' },
@@ -293,7 +293,7 @@ export default {
     { h2: 'What I learned' },
     { quote: 'Grading your own work means your mistakes confirm themselves.' },
     { p: 'Most of evaluation is deciding what not to trust: a single pass, a judge nobody has checked, a score that hides a critical failure, an author’s verdict on their own work.' },
-    { p: 'Knowing the system comes first. A tester who doesn’t know what is intentional files false defects.' },
+    { p: 'Knowing the system comes first. Without knowing what is intentional, it is easy to file false defects.' },
     { p: 'And a method spreads only once it is written down. That is why the course exists, with every example fictional, so anyone can practise on it.' },
     { link: { to: '/case-studies/promise-tracker', text: 'The release gate on a real AI feature' } },
     { link: { to: '/case-studies/qa-plugin', text: 'The QA Engineering Plugin, held to the same bar' } },

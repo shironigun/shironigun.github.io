@@ -12,21 +12,21 @@ export default {
   updated: 'November 2026',
   body: [
     { p: 'Picture a manager sending a broadcast to a customer group. For one minute the messaging service is down. The broadcast fails without a word, and the manager goes home believing it went out.' },
-    { p: 'Nobody did anything wrong. Nobody had written down what should happen when the service is down, so nobody built it and nobody tested it. When I joined the CRM product team, defects like that were reaching production, causing client escalations and unplanned sprint interruptions.' },
+    { p: 'The story never said what should happen when the service is down, so that case wasn’t built or tested. In 2024 this kind of gap was the main source of production defects, and the team wanted fewer surprises after release.' },
     { p: 'So I designed a quality framework to fix the cause rather than the symptoms: two gates every story has to pass, one before it enters a sprint and one before it leaves. Within two quarters defect leakage, meaning defects that slip through to production, was down by about 40%. Three other teams went on to adopt the framework. Today I lead the QA team that holds the bar.' },
 
     { h2: 'At a glance' },
     { ol: [
       'I traced escaped defects to where they began: most started with incomplete acceptance criteria.',
       'I designed two gates, a Definition of Ready and a Definition of Done, with criteria written as Given, When, Then.',
-      'I built the gates into the sprint with the Product Owner and the engineering lead, trained the team and added automated gate checks.',
+      'I built the gates into the sprint with the Product Owner and the engineering lead, trained the team, and automated gate checks went into the pipeline.',
       'I measured the result every week, refined the framework every two sprints, and now lead the QA team.',
     ] },
-    { numbers: [['~40%', 'less defect leakage, by my own tracking'], ['0', 'critical defects across 6 consecutive sprints'], ['3', 'other teams adopted the framework']] },
+    { numbers: [['~40%', 'less defect leakage, measured through weekly tracking'], ['0', 'critical defects across 6 consecutive sprints'], ['3', 'other teams adopted the framework']] },
 
     { h2: 'Where defects were born' },
-    { p: 'The broadcast story had one criterion: “The manager can send a broadcast to a group.” The developer built exactly that, and testing passed it. The failure lived in everything the criterion didn’t say.' },
-    { p: 'That was the pattern. The team was shipping features with ambiguous acceptance criteria, so business stakeholders and developers expected different things. Defects were caught late, or in production, which derailed sprints and cost client trust.' },
+    { p: 'The broadcast story had one criterion: “The manager can send a broadcast to a group.” The story was built and tested exactly as written. The failure lived in everything the criterion didn’t say.' },
+    { p: 'Acceptance criteria often left room for interpretation, so business stakeholders and developers could expect different things. Defects were caught late, or in production, and defects found late cost the team time it would rather spend on new work.' },
     { p: 'The product made it harder. It sits on top of several dealership-management systems, the software a dealership already runs its business on, and a feature could behave differently on each in ways nobody had agreed to test.' },
     { p: 'Before changing anything, I ran a two-week root-cause analysis of the defects that had escaped. I used 5 Whys: ask why a defect happened, then why that happened, and keep going until you reach a cause you can fix. I also mapped the defect lifecycle in Azure DevOps. Here is the method on the broadcast failure.' },
     { table: {
@@ -36,7 +36,7 @@ export default {
         ['Why did it fail silently?', 'Nothing handled the messaging service being down.'],
         ['Why was nothing built for that?', 'The story never said what should happen then.'],
         ['Why didn’t the story say?', 'Its criteria covered only the happy path.'],
-        ['Why only the happy path?', 'Nothing in refinement asked for edge cases before a story was accepted.'],
+        ['Why only the happy path?', 'Refinement had no step that asked for edge cases yet.'],
       ],
     }, caption: 'Five whys on the broadcast failure, ending at a cause a process can fix. Recreation, fictional data.' },
     { p: 'Across the defects that had really escaped, the answer was clear: 68% of production bugs traced back to incomplete acceptance criteria. Most defects began before anyone wrote a line of code.' },
@@ -140,7 +140,7 @@ export default {
     }, caption: 'The checklist at work on the broadcast story. Recreation, fictional data.' },
 
     { h2: 'My role and the team' },
-    { p: 'I designed the framework, led its rollout and measured the results. The Product Owner and the engineering lead worked with me to build the gates into the sprint, and I now lead the QA team that works to them.' },
+    { p: 'I designed the framework, introduced it to the team in four facilitated sessions and tracked the results. The Product Owner and the engineering lead worked with me to build the gates into the sprint, and I now lead the QA team that works to them.' },
     { table: {
       columns: ['Stage', 'Me', 'AI agents', 'Team'],
       rows: [
@@ -150,7 +150,7 @@ export default {
         ['Training', 'Ran four facilitated sessions; added pipeline gate checks', '', 'The team learned the gates'],
         ['Measurement', 'Tracked escape rates weekly', '', 'Refined it with me in retrospectives'],
         ['Adoption', '', '', 'Three other teams adopted the framework'],
-        ['QA team', 'Lead it; trained two hires and onboarded three analysts', '', ''],
+        ['QA team', 'Lead it; trained two hires and onboarded new analysts', '', ''],
         ['Tester tools', 'Turned my queries into a read-only catalog', 'Built the searchable catalog from them', ''],
       ],
     }, caption: 'Who did what. I designed and measured the framework; the Product Owner, the engineering lead and the team made it part of the sprint.' },
@@ -165,11 +165,11 @@ export default {
       { name: 'Measure', part: 'Escape rates weekly, refined every two sprints', by: 'proved' },
       { name: 'Spread', part: 'Three other teams adopted it', by: 'proved' },
       { name: 'QA team', part: 'Leading the team that holds the bar', by: 'me', now: true },
-    ], caption: 'From the first root-cause analysis to the QA team I lead, with who carried each stage.' },
+    ], caption: 'From the first root-cause analysis to how the team works today, with who carried each stage.' },
     { lead: 'Root cause.', p: 'The 68% finding decided where the fix had to go: refinement, not the end of the sprint.' },
     { lead: 'Gates.', p: 'I designed the two gates and the criteria templates, so a ready story starts from a shape, not a blank page.' },
     { lead: 'Workflow.', p: 'A framework only matters if the team uses it. I worked with the Product Owner and the engineering lead to build the gates into the sprint workflow, so passing a gate is part of moving a story, not an extra step. I later wrote the whole path down as a ten-step workflow from story to release, with two design sessions a week built in.' },
-    { lead: 'Training.', p: 'I trained the team over four facilitated sessions, and added automated gate checks to the Azure DevOps pipeline, so the gates didn’t depend on anyone remembering them.' },
+    { lead: 'Training.', p: 'I trained the team over four facilitated sessions, and automated gate checks went into the Azure DevOps pipeline, so the gates didn’t depend on anyone remembering them.' },
     { lead: 'Measure and spread.', p: 'Weekly tracking and a retrospective every two sprints kept it honest, as the next section shows. Three other teams across the division have since adopted it.' },
 
     { h2: 'Key decisions' },
@@ -223,7 +223,7 @@ export default {
           { id: 'track', name: 'Escapes tracked', sub: 'every week', lane: 0, row: 2, kind: 'store', detail: 'Every week I tracked the defect escape rate, by my own measurement.' },
           { id: 'retro', name: 'Retrospective', sub: 'every two sprints', lane: 1, row: 3, kind: 'human', detail: 'Every two sprints, a retrospective reviews the framework itself, so a check that isn’t working can change.' },
           { id: 'refine', name: 'Refine the gates', sub: 'evidence first', lane: 0, row: 4, kind: 'human', detail: 'I change the framework where the evidence points, and the next sprint runs on the new version.' },
-          { id: 'result', name: '~40% less leakage', sub: 'within two quarters', lane: 1, row: 5, kind: 'output', detail: 'By my own tracking, leakage fell by about 40% within two quarters, and the team went six consecutive sprints without a critical defect.' },
+          { id: 'result', name: '~40% less leakage', sub: 'within two quarters', lane: 1, row: 5, kind: 'output', detail: 'Leakage fell by about 40% within two quarters, and the team went six consecutive sprints without a critical defect.' },
           { id: 'spread', name: 'Adopted by 3 teams', sub: 'across the division', lane: 2, row: 6, kind: 'output', detail: 'Three other teams across the division adopted the framework.' },
         ],
         edges: [
@@ -271,9 +271,7 @@ export default {
     },
 
     { h2: 'Holding the bar' },
-    { p: 'The gates are part of how the team works, and three other teams across the division have adopted them. I now lead the QA team, and since October 2026 three QA analysts report to me directly. I trained two QA hires from non-IT backgrounds to independent sprint work, and onboarded three new analysts in 2026.' },
-    { h3: 'Mid-cycle, no handover' },
-    { p: 'The gates also held under pressure. I took over QA for a critical release mid-cycle, without a handover, and it shipped on time with no drop in quality.' },
+    { p: 'The gates are part of how the team works, and three other teams across the division have adopted them. Since October 2026 I have led the QA team. I trained two QA hires to independent sprint work, and onboarded new analysts in 2026.' },
     { h3: 'Tools for testers' },
     { p: 'I turned my own diagnostic queries into a shared catalog, organised by the question a tester is asking. Every query is read-only by design, so a tester can check what happened behind the screen without risk to live data. The same story and criteria rules now live in a Claude skill written to my house style, so AI-drafted stories start from the same bar.' },
         { p: 'The whole journey on one line. Watch the order: the results came first, and the other teams adopted it after.' },
@@ -281,11 +279,10 @@ export default {
       { when: '2024', title: 'The root cause', detail: 'Two weeks of 5 Whys: 68% of production bugs traced back to incomplete acceptance criteria.' },
       { when: '2024', title: 'Two gates', detail: 'Ready and Done designed, and built into the sprint with the Product Owner and the engineering lead.' },
       { when: '2024 to 2025', title: 'Four facilitated sessions', detail: 'The team learned the gates, and automated gate checks went into the pipeline.' },
-      { when: 'Within two quarters', title: 'About 40% less leakage', detail: 'By my own weekly tracking, with the framework refined every two sprints.' },
-      { when: '2024 to 2025', title: 'A release taken over mid-cycle', detail: 'QA for a critical release, with no handover. It shipped on time with no drop in quality.' },
+      { when: 'Within two quarters', title: 'About 40% less leakage', detail: 'Measured weekly, with the framework refined every two sprints.' },
       { when: '2025', title: 'Three more teams', detail: 'Three other teams across the division adopted the framework.' },
-      { when: '2026', title: 'Leading the QA team', detail: 'I lead the team that works to the gates: three QA analysts report to me, and I onboarded three new analysts.' },
-    ], caption: 'From root cause to the QA team I lead.' },
+      { when: '2026', title: 'Leading the QA team', detail: 'I lead the team that works to the gates, and onboarded new analysts.' },
+    ], caption: 'From root cause to how the team works today.' },
 
     { h2: 'What I learned' },
     { quote: 'Quality is a communication problem as much as a technical one.' },

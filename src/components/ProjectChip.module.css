@@ -1,0 +1,38 @@
+/* A linked project: its colour runs in from the right, as on its preview card. */
+.chip {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  width: fit-content;
+  max-width: min(100%, 460px);
+  padding: 8px 14px 8px 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--hairline));
+  border-radius: var(--radius);
+  background: linear-gradient(270deg, color-mix(in srgb, var(--accent) 14%, var(--surface)) 0%, var(--surface) 75%);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.chip:hover { border-color: var(--accent); transform: translateY(-1px); box-shadow: var(--shadow-panel); color: var(--ink); }
+.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.text { display: grid; min-width: 0; }
+.name { font-size: var(--text-sm); font-weight: 600; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sub { font-size: 0.75rem; line-height: 1.35; color: var(--graphite); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sub strong { color: var(--ink); font-weight: 700; }
+.tag { flex: none; margin-left: var(--s-2); font-size: 0.75rem; font-weight: 600; color: var(--cobalt-text); }
+
+/* On the dark career band of the home page. */
+.night {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(270deg, color-mix(in srgb, var(--accent) 34%, #14161B) 0%, rgba(255, 255, 255, 0.03) 80%);
+  color: #fff;
+}
+.night:hover { color: #fff; border-color: color-mix(in srgb, var(--accent) 70%, #fff); box-shadow: none; }
+.night .sub { color: var(--on-night-muted); }
+.night .sub strong { color: #fff; }
+.night .tag { color: var(--cobalt-on-night); }
+
+@media (max-width: 600px) {
+  .tag { display: none; }
+}

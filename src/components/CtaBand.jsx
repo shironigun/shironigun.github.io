@@ -10,7 +10,7 @@ export default function CtaBand() {
     <section className={styles.band} aria-labelledby="cta-title">
       <div className={`container ${styles.inner}`}>
         <div>
-          <h2 id="cta-title" className={styles.title}>Looking to take an AI product from idea to launch?</h2>
+          <h2 id="cta-title" className={styles.title}>Let’s talk about AI products.</h2>
           <p className={styles.text}>
             <span className={styles.dot} aria-hidden="true" />
             {person.availability}

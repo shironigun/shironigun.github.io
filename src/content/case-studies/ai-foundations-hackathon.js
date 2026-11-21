@@ -15,14 +15,14 @@ export default {
   ],
   body: [
     { p: 'Ten people, four days, and one rule: nobody writes code by hand. Each of them would direct AI agents to build a tool for a problem from their own week.' },
-    { p: 'That was the AI Foundations hackathon. In August 2026 I organised and led it for the QA team, with the design team alongside. I designed the format, wrote a brief for every participant, taught the foundations, mentored each team to a working demonstration, and created and compiled a handbook so the learning would continue.' },
-    { p: 'AI was changing how software gets built, and in our QA team there was still hesitation about using it in our own work. I wanted every QA in the division to get past that the practical way.' },
+    { p: 'That was the AI Foundations hackathon. In August 2026 I organised and led it for the QA team, with the design team alongside. I designed the format, wrote nine briefs for the ten participants, taught the foundations, mentored each team to a working demonstration, and created and compiled a handbook so the learning would continue.' },
+    { p: 'AI was changing how software gets built, and I wanted every QA in the division to have a practical way to start using it in their own work.' },
 
     { h2: 'At a glance' },
     { ol: [
       'I proposed the hackathon to the line managers, with the R&D director as sponsor, and designed a four-day format.',
       'I wrote nine briefs for the ten participants, each tied to a real problem in their own work; one brief covered two problems and was split between two people.',
-      'I taught the foundations, then mentored every team through the build days to a working demonstration.',
+      'I taught the foundations, then mentored each team through the build days; all ten reached a working demonstration.',
       'I created and compiled a 183-page handbook, so the learning continues after the event.',
     ] },
     { numbers: [['9', 'project briefs for 10 participants'], ['4', 'days, from keynote to team demos'], ['183', 'pages in the handbook']] },
@@ -32,7 +32,7 @@ export default {
     { p: 'A talk about AI doesn’t change Sam’s week. Building something for that exact chore, with help close by, does. So every participant would direct AI agents to build a tool for a problem they actually have, with no hand-coding.' },
 
     { h2: 'Where it came from' },
-    { p: 'The idea grew out of a cross-division AI Foundations program that July, where people learned to build by directing AI agents. QA joined that program at my request, and I built the AI QA Workbench in its cohort.' },
+    { p: 'The idea grew out of a cross-division AI Foundations program that July, where people learned to build by directing AI agents. I joined that program with the QA team, and built the AI QA Workbench in its cohort.' },
     { p: 'It showed what one QA could build by directing AI. The next question was whether every QA in the division could, and that became my proposal in late July.' },
 
     { h2: 'Four days, end to end' },
@@ -65,7 +65,7 @@ export default {
           { id: 'demo', name: 'Working demos', sub: 'all ten', lane: 2, row: 8, kind: 'output', detail: 'Each team presented what it did and learned, its challenges, and the future of its tool.' },
           { id: 'book', name: 'The handbook', sub: '183 pages, for afterwards', lane: 0, row: 9, kind: 'store', detail: 'Created and compiled so the learning continues after the event.' },
           { id: 'cert', name: 'Certificate', sub: '13 August 2026', lane: 1, row: 9, kind: 'output', detail: 'The R&D director recognised the initiative with a certificate of appreciation for organising and delivering it.' },
-          { id: 'follow', name: 'Follow-on support', sub: 'about two months, as pitched', lane: 0, row: 10, kind: 'human', detail: 'The pitch committed to about two months of hands-on support, to grow each tool into a full automation framework.' },
+          { id: 'follow', name: 'Follow-on support', sub: 'about two months, planned', lane: 0, row: 10, kind: 'human', detail: 'The plan included about two months of hands-on support, to grow each tool into a full automation framework.' },
         ],
         edges: [
           { from: 'pitch', to: 'yes', label: 'pitch deck' },
@@ -86,7 +86,7 @@ export default {
       caption: 'The hackathon end to end, with who did what. The amber gate is the sponsor’s yes.',
     },
 
-    { h2: 'A brief for every person' },
+    { h2: 'A brief for every project' },
     { p: 'Each brief was a full specification, so every participant would start the build days knowing what to make: the mission, the architecture, functional requirements, deliverables with acceptance criteria, guardrails and a phased roadmap.' },
     { p: 'The ten projects spanned several product areas: six on testing and quality, three on knowledge and delivery insight, and one on design. Briefs took on problems like flagging gaps in a story before testing starts, spotting likely duplicate defects, and turning a support report into a defect a developer can reproduce.' },
     { story: {
@@ -147,7 +147,7 @@ export default {
 
     { h2: 'From doing to directing' },
     { p: 'The keynote, “AI Foundations: From Doing to Directing”, covered Claude Projects, Skills, MCP servers, connectors, agents and workflows, with a live example on Azure DevOps MCP servers. An MCP server is what lets an AI agent read and act in a real tool, such as the team’s tracker.' },
-    { p: 'I opened it to the whole division: product owners, business analysts, design teams and other non-developers. I also shared a skill I had created that drafts test cases in my own style, as a worked example.' },
+    { p: 'The keynote was open to the whole division: product owners, business analysts, design teams and other non-developers. I also shared a skill I had created that drafts test cases in my own style, as a worked example.' },
     { p: 'The title names the shift: you describe the outcome clearly enough for AI to do the steps, and keep ownership of the result.' },
     { table: {
       columns: ['Role', 'Doing: every step by hand', 'Directing: describe it, AI does the steps'],
@@ -180,8 +180,8 @@ export default {
       rows: [
         ['Proposal', 'Proposed it to the line managers; made the pitch deck', '', 'The R&D director sponsored it'],
         ['Briefs', 'Brainstormed the projects with the team; wrote a brief per participant', '', 'Brought the problems from their own work'],
-        ['Keynote', 'Co-presented “From Doing to Directing”; opened it to the whole division', '', 'A peer co-presented'],
-        ['Build days', 'Mentored every team and unblocked them', 'Wrote the code each participant directed', 'Built their tools by directing AI agents'],
+        ['Keynote', 'Co-presented “From Doing to Directing”, open to the whole division', '', 'A peer co-presented'],
+        ['Build days', 'Mentored each team and unblocked them', 'Wrote the code each participant directed', 'Built their tools by directing AI agents'],
         ['Presentations', 'Set what each presentation should cover', '', 'Presented working demonstrations'],
         ['Handbook', 'Created and compiled the 183-page handbook', '', ''],
         ['Afterwards', 'Committed about two months of hands-on support in the pitch', '', 'Each team to grow its tool into a full framework'],
@@ -211,7 +211,7 @@ export default {
         q: 'How should people build?',
         options: ['Teach coding first', 'Direct AI agents, with no hand-coding'],
         chose: 'Direct AI agents, with no hand-coding',
-        why: 'The point was to get past the hesitation about AI, not to turn testers into developers. Directing an agent and judging what it produces is the shift the keynote was named for.',
+        why: 'The point was a practical first step with AI, not to turn testers into developers. Directing an agent and judging what it produces is the shift the keynote was named for.',
       },
       {
         q: 'Who should the keynote be for?',
@@ -223,11 +223,11 @@ export default {
         q: 'What happens after the demos?',
         options: ['End with the presentations', 'Commit to support after the event'],
         chose: 'Commit to support after the event',
-        why: 'A demo is a start, not a framework. The pitch committed to about two months of hands-on support to grow each tool into a full automation framework, so nobody was left to sink or swim.',
+        why: 'A demo is a start, not a framework. The plan included about two months of hands-on support to grow each tool into a full automation framework, so every team would have support after the event.',
       },
     ], caption: 'The decisions behind the format, in my words.' },
     { call: {
-      saw: 'There was hesitation about using AI in our own work, and a talk on its own wouldn’t change anyone’s week.',
+      saw: 'Using AI in our own day-to-day work was still new, and a talk on its own wouldn’t change anyone’s week.',
       decided: 'I made it a build event: every participant got a brief for a real problem of their own, and build days to make a working tool by directing AI agents.',
       why: 'A working tool for your own problem is something you can show, use and keep improving. That is what turns an AI concept into a habit.',
     } },

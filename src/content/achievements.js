@@ -2,22 +2,19 @@
 // Used on Home and in the footer; every item is also on the Journey timeline (dated) or in the
 // Journey recognition section (undated), and project results are on the Projects board.
 // Sources: his original portfolio, his LinkedIn profile and confirmed 2026 work. Nothing here is inferred.
-import { hoursText } from './hours';
 
 // The training programme ran in the Junior SQA title, so it carries that title's hours. Home
 // picks this achievement by its title, so the title is exported.
-export const domainLeadership = `${hoursText.junior} hours of domain leadership`;
+export const domainLeadership = 'Ran a domain training programme';
 
 export const achievements = [
   { icon: 'trophy', title: '1st place, division-wide AI hackathon', detail: 'Product Owner, Scrum Master and QA lead: I led the requirements, the UI prototypes and the final pitch. We placed 1st of 11 teams.', year: '2025', to: '/case-studies/hackathon-2025' },
   { icon: 'award', title: 'VP Award', detail: 'For contributions tied to multimillion-dollar business goals across a 200+ person division.', year: '2025' },
   { icon: 'shield', title: 'Quality framework adopted by 3 teams', detail: 'The Strict Quality Gates framework I designed: about 40% less defect leakage and zero critical defects across 6 sprints.', year: '2025', to: '/case-studies/quality-gates' },
-  { icon: 'book', title: domainLeadership, detail: 'A self-initiated training programme, the most comprehensive in the division’s history, with knowledge transfer that fed the public knowledge base.', year: '2024–2025', to: '/case-studies/domain-knowledge-base' },
+  { icon: 'book', title: domainLeadership, detail: 'Designed and delivered 120+ live sessions for development, QA, operations and business analysts, and contributed to the public product knowledge base.', year: '2024–2025', to: '/case-studies/domain-knowledge-base' },
   { icon: 'pen', title: 'Introduced the design phase', detail: 'A structured design step in delivery, now part of how the team works.', to: '/case-studies/design-phase' },
-  { icon: 'rocket', title: 'Shipped a release solo', detail: 'Took over QA of a critical release mid-cycle, without a handover, and shipped it on time with no drop in quality.' },
-  { icon: 'briefcase', title: 'Covered a 3-month BA vacancy', detail: 'Wrote the user stories and acceptance criteria with the Product Owner, with no gap in delivery.' },
   { icon: 'trend', title: 'Promoted to Product Quality Analyst', detail: 'From Junior SQA Analyst in under two years, into a product-analyst role.', year: '2026' },
-  { icon: 'users', title: 'Built QA talent from the ground up', detail: 'Trained two QA hires from non-IT backgrounds to independent sprint work, and onboarded three new analysts in 2026.' },
+  { icon: 'users', title: 'Trained and onboarded QA analysts', detail: 'Trained two QA hires to independent sprint work, and onboarded new analysts in 2026.' },
   { icon: 'spark', title: 'AI Innovator of the Month', detail: 'For the UI and UX revamp and new features, delivered through agentic development and product thinking.', year: '2026', to: '/case-studies/design-phase' },
   { icon: 'plug', title: 'Published a Claude Code marketplace', detail: '7 plugins and 30 skills, each built for one real job.', year: '2026', to: '/case-studies/claude-marketplace' },
   { icon: 'calendar', title: 'Organised the AI Foundations hackathon', detail: 'Briefed, taught and mentored the QA and design team to working demonstrations, and was recognised with a certificate of appreciation.', year: '2026', to: '/case-studies/ai-foundations-hackathon' },
@@ -33,7 +30,7 @@ export const events = [
     label: 'Award',
     icon: 'trophy',
     items: [
-      { title: 'Division-wide AI hackathon, 1st of 11 teams', when: '2025', date: '2025-05', photo: '/images/events/hackathon-first-prize.jpg', photoAlt: 'The winning team holding the First Prize card. Mahmood is second from the left.', detail: 'AI solutions for customer retention and employee performance monitoring. I was Product Owner, Scrum Master and QA lead, and delivered the final presentation.', to: '/case-studies/hackathon-2025' },
+      { title: 'Division-wide AI hackathon, 1st of 11 teams', when: '2025', date: '2025-05', photo: '/images/events/hackathon-first-prize.jpg', photoAlt: 'The winning team holding the First Prize card. Mahmood is second from the left.', detail: 'AI solutions for customer retention and employee performance analysis. I was Product Owner, Scrum Master and QA lead, and delivered the final presentation.', to: '/case-studies/hackathon-2025' },
     ],
   },
   {
@@ -41,7 +38,7 @@ export const events = [
     label: 'Organised',
     icon: 'calendar',
     items: [
-      { title: 'AI Foundations hackathon', when: 'Aug 2026', date: '2026-08', detail: 'Organised and led an AI hackathon for the QA and design team: foundations sessions, nine real-world project briefs for ten participants, and mentoring through to working demonstrations.', to: '/case-studies/ai-foundations-hackathon', links: [{ text: 'View certificate', href: '/certifications/ai-foundations-organiser-certificate.jpg' }] },
+      { title: 'AI Foundations: Powering Work with AI Orchestration', when: 'Aug 2026', date: '2026-08', detail: 'Organised and led an AI hackathon for the QA and design team: foundations sessions, nine real-world project briefs for ten participants, and mentoring through to working demonstrations.', to: '/case-studies/ai-foundations-hackathon', links: [{ text: 'View certificate', href: '/certifications/ai-foundations-organiser-certificate.jpg' }] },
     ],
   },
   {
@@ -57,7 +54,7 @@ export const events = [
     label: 'Talk',
     icon: 'mic',
     items: [
-      { title: 'Postman API testing: proof of concept', when: '2025', date: '2025-04', detail: 'Presented a 35-slide evaluation of Postman to the QA and engineering teams: the capabilities, plan limits, strengths and limitations, and a recommendation adopted by 5+ teams.', to: '/case-studies/postman-evaluation', links: [{ text: 'Present the slides', href: '/documents/postman-poc-presentation.pdf' }, { text: 'Read the evaluation', href: '/documents/postman-api-testing-evaluation.pdf' }] },
+      { title: 'Postman API testing: proof of concept', when: '2025', date: '2025-04', detail: 'Presented a 35-slide evaluation of Postman to the entire division: the capabilities, plan limits, strengths and limitations, and a recommendation adopted by 5+ teams.', to: '/case-studies/postman-evaluation', links: [{ text: 'Present the slides', href: '/documents/postman-poc-presentation.pdf' }, { text: 'Read the evaluation', href: '/documents/postman-api-testing-evaluation.pdf' }] },
       { title: 'The Lift: Why AI isn’t about 10x', when: 'Jun 2026', date: '2026-06', detail: 'Perseus Group’s AI Pulse session, alongside our R&D director: AI is a lift, not a multiplier. Context and clarity limit it, not coding ability, so domain knowledge is what turns AI into working solutions.' },
       { title: 'AI Foundations: From Doing to Directing', when: 'Aug 2026', date: '2026-08', detail: 'Opening session of the AI Foundations hackathon: Claude Projects, Skills, MCP servers, connectors, agents and workflows, with activities for each role and a live example on Azure DevOps MCP servers.', to: '/case-studies/ai-foundations-hackathon' },
     ],
@@ -67,9 +64,9 @@ export const events = [
     label: 'Workshop',
     icon: 'users',
     items: [
-      { title: 'Domain training programme', when: '2024–2025', date: '2024-07', detail: `120+ live sessions and ${hoursText.junior} hours of training for development, QA, operations and business analysts, with weekly Q&A office hours.`, to: '/case-studies/domain-knowledge-base' },
+      { title: 'Domain training programme', when: '2024–2025', date: '2024-07', detail: '120+ live sessions for development, QA, operations and business analysts, with weekly Q&A office hours.', to: '/case-studies/domain-knowledge-base' },
       { title: 'Quality Gates sessions', when: '2024–2025', date: '2024-08', detail: 'Four facilitated sessions that introduced the framework to the team.', to: '/case-studies/quality-gates' },
-      { title: 'AI workshop on Claude skills', when: 'Oct 2026', date: '2026-10', detail: 'A hands-on workshop with our division’s R&D director, who presented skills for reverse-engineering the context of our products. I led the QA and product part: I presented my QA Engineering plugin, and every QA in the room, most of them manual testers, tried it on their own day-to-day work.', to: '/case-studies/qa-plugin' },
+      { title: 'AI workshop on Claude skills', when: 'Oct 2026', date: '2026-10', detail: 'A hands-on workshop with our division’s R&D director, who presented skills for reverse-engineering the context of our products. I led the QA and product part: I presented my QA Engineering plugin, and the QAs in the room tried it on their own day-to-day work.', to: '/case-studies/qa-plugin' },
     ],
   },
   {

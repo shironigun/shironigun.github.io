@@ -30,7 +30,6 @@ const { experience, skills, education, certifications } = await vite.ssrLoadModu
 const { person, contact, recognition, tools, tenure } = await vite.ssrLoadModule('/src/content/site.js');
 // Both resumes list the tool groups under Skills, named "Product tools" and so on.
 const skillGroups = [...skills, ...tools.map((g) => ({ ...g, group: `${g.group} tools` }))];
-const { hoursText } = await vite.ssrLoadModule('/src/content/hours.js');
 const { recentEvents } = await vite.ssrLoadModule('/src/content/achievements.js');
 await vite.close();
 // The resume starts at SQA Trainee (Dec 2023): only the Perseus Group roles. The site's Journey and
@@ -46,7 +45,7 @@ const links = [
 // Written here, used by both PDFs; everything else comes from src/content. Projects follow the portfolio,
 // with no product name (the content rules); the experience already covers Promise Tracker and the revamp.
 const headline = 'AI Product Analyst | Business Analysis | Product Strategy | AI Product Development';
-const summary = `AI Product Analyst with ${tenure} years on enterprise dealership SaaS at Perseus Group, part of Constellation Software. I run discovery, requirements and AI feature definition, and shape the roadmap with the Product Owner. Certified ScrumMaster leading 3 QA analysts; I prototype by directing AI agents with Claude Code.`;
+const summary = `AI Product Analyst with ${tenure} years on enterprise dealership SaaS at Perseus Group, part of Constellation Software. I run discovery, requirements and AI feature definition, and shape the roadmap with the Product Owner. Certified ScrumMaster leading the QA team; I prototype by directing AI agents with Claude Code. I designed a Quality Gates framework adopted by 3 other teams, and was on the team that placed 1st of 11 in a division-wide AI hackathon.`;
 const projects = [
   { name: 'Claude Code marketplace', note: 'public on GitHub', when: 'Jul 2026 – Present', text: '7 plugins and 30 skills for QA and product work; every plugin asks a person before it writes.' },
   { name: 'AI evaluation and the Skills Evals Lab', note: 'AI quality', when: 'Sep 2026 – Present', text: 'A repeatable AI test (3 runs, counted only if all pass) and a 17-lesson beginner course on evaluating AI skills.' },

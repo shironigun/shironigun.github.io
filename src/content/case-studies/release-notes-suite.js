@@ -8,11 +8,11 @@ export default {
   updated: 'November 2026',
   body: [
     { p: 'The release went live this morning. Dana, who looks after client support, opens the draft notes from QA. Every behaviour is there, every quirk of every integration, every edge case, and a fix for a filter almost nobody uses. It is accurate, complete, and far too long. Her clients will read the headline, the bold bits and the screenshots.' },
-    { p: 'In our team, that exhaustive draft was mine to write, and the client note was the support lead’s. The release-notes suite is my Claude Code plugin for the step in between. A harvester finds everything that shipped, even work that never had a ticket. A releaser decides what clients hear, and writes it. Its core rule fits in one line: when in doubt, leave it out.' },
+    { p: 'In our team, that exhaustive draft was mine to write, and the client note was the support lead’s. The release-notes suite is my Claude Code plugin for the step in between. A harvester finds everything that shipped, even work tracked only in the code history. A releaser decides what clients hear, and writes it. Its core rule fits in one line: when in doubt, leave it out.' },
 
     { h2: 'At a glance' },
     { ol: [
-      'I split release notes into two skills with opposite jobs: one that misses nothing, and one that leaves most of it out, on purpose and with a reason.',
+      'I split release notes into two skills with opposite jobs: one built to miss nothing, and one that leaves most of it out, on purpose and with a reason.',
       'I turned down a version built as seventeen agents and kept the two skills.',
       'I used it on real releases, then turned our support team’s annotated feedback into rules on voice, accuracy and triage.',
       'I published it in my public Claude Code marketplace, with product names, data and tickets replaced by mock values.',
@@ -53,7 +53,7 @@ export default {
       ],
     }, caption: 'From closed work to a client note. Two gates, and the publish button belongs to people.' },
 
-    { h2: 'The harvester misses nothing' },
+    { h2: 'A harvester built to miss nothing' },
     { p: 'The harvester builds the complete internal inventory for a date window or an initiative. It wakes on questions like “what did we ship since the last notes?” or “round up everything released for this initiative between these dates”.' },
     { p: 'It pins down three things before it queries anything: the window, the theme turned into keywords and code touchpoints, and any filter, such as one integration or one module. Then it sweeps two layers. Watch the right-hand lane: that is the layer that catches work nobody ticketed.' },
     { graph: {
@@ -64,7 +64,7 @@ export default {
         { id: 'items', name: 'Query both boards', sub: 'stories, bugs, defects', lane: 2, row: 2, kind: 'external', detail: 'Everything closed or changed in the window, on the feature board and the production-support board, plus a full-text search.' },
         { id: 'prs', name: 'Sweep merged code', sub: 'pull requests + commits', lane: 3, row: 2, kind: 'external', detail: 'Completed pull requests in the window, with their linked work items and changed files, and commits that mention the theme.' },
         { id: 'links', name: 'Follow the links', sub: 'parent, child, related', lane: 2, row: 3, kind: 'external', detail: 'From the anchor stories it follows every link, catching bugs that never repeat the keyword. Noisy keyword matches are read and dropped.' },
-        { id: 'match', name: 'Match code to tickets', lane: 1, row: 4, kind: 'ai', detail: 'A pull request tied to a captured ticket folds under it. A completed one with no ticket is a deployment nobody filed, and gets its own entry.' },
+        { id: 'match', name: 'Match code to tickets', lane: 1, row: 4, kind: 'ai', detail: 'A pull request tied to a captured ticket folds under it. A completed one with no ticket is work tracked only in the code history, and gets its own entry.' },
         { id: 'gap', name: 'Flag any gap', sub: 'a warning banner', lane: 1, row: 5, kind: 'ai', detail: 'If the code sweep couldn’t run, it recovers the pull requests linked from tickets, then puts a warning at the top. It never implies completeness.' },
         { id: 'group', name: 'Group into themes', lane: 1, row: 6, kind: 'ai', detail: 'The major initiative first, then supporting themes, then clusters of fixes. Work that only reuses the initiative is fenced off and labelled.' },
         { id: 'inv', name: 'The inventory', sub: 'internal and exhaustive', lane: 1.5, row: 7, kind: 'output', detail: 'Every id, pull request, file, date and environment in the house format, ending with an offer to run the releaser.' },
@@ -80,7 +80,7 @@ export default {
         { from: 'gap', to: 'group', label: 'every item' },
         { from: 'group', to: 'inv', label: 'themes' },
       ],
-    }, caption: 'The harvester’s sweep. The code-history lane is why it exists: code ships that never gets a ticket.' },
+    }, caption: 'The harvester’s sweep. The code-history lane is why it exists: some work is tracked only in the code history.' },
     { p: 'Its output is dense on purpose. Numbered themes, with the major initiative first. Under each, one line per item: the id, a human title, the date, the pull requests and the code it touched. Deployments with no ticket get their own clearly marked lines. Two kinds of note matter later: the environment, and any pull request that deliberately held a feature back, because both change what a client can be told.' },
     { code: [
       '1. Scheduled texts: the major initiative (3 to 21 Mar). Send a text at a time the rep chooses.',
@@ -264,7 +264,7 @@ export default {
         q: 'One skill or two?',
         options: ['One skill that gathers and writes', 'Two skills with opposite jobs'],
         chose: 'Two skills with opposite jobs',
-        why: 'Completeness and curation pull in opposite directions. One skill misses nothing; the other leaves out most of it, on purpose and with a reason.',
+        why: 'Completeness and curation pull in opposite directions. One skill is built to miss nothing; the other leaves out most of it, on purpose and with a reason.',
       },
       {
         q: 'Seventeen agents, or two skills?',
@@ -322,7 +322,7 @@ export default {
 
     { h2: 'What I learned' },
     { quote: 'The core skill is suppression, not prose.' },
-    { p: 'Anyone can write cheerful copy. The value is in deciding what to leave out, and leaving it out on purpose, with a reason a person can check.' },
+    { p: 'Clear, friendly copy matters, but the bigger value is in deciding what to leave out, and leaving it out on purpose, with a reason a person can check.' },
     { p: 'My own drafts were the starting point and the problem. Keeping their accuracy while dropping their length took two skills, not one better prompt.' },
     { p: 'Feedback is worth most when it outlives the draft it was written on. An edit fixes one note; a rule fixes every note after it. And two skills with clear, opposite jobs were enough. A short note didn’t need seventeen agents.' },
     { link: { to: '/case-studies/qa-plugin', text: 'The QA Engineering Plugin, from the same marketplace' } },

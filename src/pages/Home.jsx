@@ -38,8 +38,8 @@ const featuredAchievements = [
   'Quality framework adopted by 3 teams',
   domainLeadership,
   'Introduced the design phase',
-  'Shipped a release solo',
-  'Covered a 3-month BA vacancy',
+  'Published a Claude Code marketplace',
+  'AI Innovator of the Month',
   'Organised the AI Foundations hackathon',
 ].map((title) => achievements.find((a) => a.title === title)).filter(Boolean);
 
@@ -168,7 +168,7 @@ export default function Home() {
           <div className={styles.rowHead}>
             <div className="section-head">
               <h2 id="events-band-title">Talks, workshops and events</h2>
-              <p>Sessions I have delivered, events I have organised and the hackathon my team won. Open an event to see the project behind it.</p>
+              <p>Sessions I have delivered, events I have organised and the hackathon our team won. Open an event to see the project behind it.</p>
             </div>
             <Link to="/journey" className="link-quiet">All talks, events and courses</Link>
           </div>
@@ -253,7 +253,7 @@ export default function Home() {
           <div className={styles.rowHead}>
             <div className="section-head">
               <h2 id="roles-title">One title, six roles</h2>
-              <p>Officially a Product Quality Analyst; in practice, accountable across product, design, AI and quality.</p>
+              <p>Product Quality Analyst by title, accountable across product, design, AI and quality.</p>
             </div>
             <Link to="/about" className="link-quiet">More about me</Link>
           </div>
@@ -334,7 +334,7 @@ export default function Home() {
           <div className={styles.rowHead}>
             <div className="section-head">
               <h2 id="method-title">How I work</h2>
-              <p>Product thinking and quality discipline come first. Implementation is delivered by directing AI agents, with full accountability for what ships.</p>
+              <p>Product thinking and quality discipline come first. Implementation is delivered by directing AI agents, with accountability for everything I specify and review.</p>
             </div>
             <Link to="/how-i-work" className="link-quiet">My methods in full</Link>
           </div>

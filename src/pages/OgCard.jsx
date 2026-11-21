@@ -24,7 +24,7 @@ export default function OgCard({ slug }) {
     <div className={styles.card} style={{ '--accent': pic.accent, '--wash': pic.wash, '--tint': pic.tint }}>
       <div className={styles.text}>
         <p className={styles.tag}>{(p.tags || [])[0]}</p>
-        <h1 className={styles.title}>{p.name}</h1>
+        <h1 className={`${styles.title} ${p.name.length > 42 ? styles.long : ''}`}>{p.name}</h1>
         {value ? (
           <p className={styles.kpi}>
             <span className={styles.value}>{value}</span>

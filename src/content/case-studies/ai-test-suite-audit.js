@@ -10,7 +10,7 @@ export default {
   updated: 'November 2026',
   body: [
     { p: 'The dashboard was green. Every test had passed. And underneath it, a feature could break and the suite would never say a word.' },
-    { p: 'As QA lead, I had AI agents build the API test automation for our dealership platform under my direction: a framework with three levels of tests, running in our pipeline. Then I had it audited the way I would audit any other feature, and found it was telling us things that weren’t true.' },
+    { p: 'I had AI agents build the API test automation for our dealership platform under my direction: a framework with three levels of tests, running in our pipeline. Then I had it audited the way I would audit any other feature, and turned what it found into rules that make every red result count.' },
     { p: 'I directed the audit and judged what it found; AI agents did the analysis at my request. Its findings became rules for how AI agents write our tests, and the specification for the QA plugin I built next.' },
 
     { h2: 'At a glance' },
@@ -22,7 +22,7 @@ export default {
     ] },
     { numbers: [['3', 'levels of tests, one job each'], ['1', 'question asked of every test'], ['4', 'rules set for the rebuild'], ['9', 'days from the audit to the plugin guide']] },
 
-    { h2: 'A green tick that lies' },
+    { h2: 'A green tick worth trusting' },
     { p: 'Picture Jordan, a developer, shipping a small change on a Friday. Without anyone noticing, it breaks saving a note on a customer record. The pipeline shows green and the release goes out.' },
     { p: 'On Monday a dealer calls support: notes aren’t saving. The tests covered notes. They just didn’t fail.' },
     { p: 'A green run that can’t be trusted is worse than none, because it tells the team to stop looking. A test suite has one job: to fail when the product breaks. So I asked one question of every test.' },
@@ -45,7 +45,7 @@ export default {
           { id: 'write', name: 'Write the test', sub: 'house-style skill', lane: 1, row: 1, kind: 'ai', detail: 'The agent writes the test in our house style, against the shared test environment.' },
           { id: 'red', name: 'It goes red', sub: 'shared, changing test data', lane: 2, row: 2, kind: 'check', detail: 'Data piles up, a record won’t delete, a known bug fires. Nobody has said yet whether the product or the test is wrong.' },
           { id: 'loosen', name: 'Loosen the check', sub: 'the easy road to green', lane: 1, row: 3, kind: 'ai', detail: 'Make a field optional. Accept several statuses. Skip when setup fails. Call the bug correct. Red becomes green without anyone deciding it should.' },
-          { id: 'lie', name: 'A green that lies', sub: 'nobody looks again', lane: 3, row: 4, kind: 'output', detail: 'The team moves on. The test is still there, still named for a check it no longer makes.' },
+          { id: 'lie', name: 'A green that misleads', sub: 'it reads as a pass', lane: 3, row: 4, kind: 'output', detail: 'A green run reads as a pass, so nothing prompts a second look. The test is still there, still named for a check it no longer makes.' },
           { id: 'red2', name: 'The same red', sub: 'any failure turns the run red', lane: 2, row: 5, kind: 'check', detail: 'Under the rules the run stays red, and a pile of skips is not green either.' },
           { id: 'why', name: 'Ask why it failed', sub: 'product, or test?', lane: 1, row: 6, kind: 'ai', detail: 'The agent must decide which is wrong. A missing field is a bug to report, never a schema to relax.' },
           { id: 'fix', name: 'Fix the test', sub: 'match the contract', lane: 1, row: 7, kind: 'ai', detail: 'A wrong test is fixed and run again. Fixing means matching the contract, never widening the check.' },
@@ -109,7 +109,7 @@ export default {
       ],
     }, caption: 'What a test should do, what the loosened ones did, and the verdict. Generic examples, no counts.' },
     { p: 'One loose shape check made the point best. Its schema accepted almost anything, so a test named for checking a record’s shape was really only checking the status code: a status check in costume.' },
-    { p: 'And here is the uncomfortable part. The team’s written testing standard was good. Nothing enforced it, so the code drifted away from it. That gap was the real finding.' },
+    { p: 'The team’s written testing standard was sound; the next step was to enforce it in tooling, and that became the real finding.' },
 
     { h2: 'How the audit worked' },
     { p: 'The audit asked two questions. Would each test fail if its feature broke? And was the framework built bigger than the problem it solves?' },
@@ -129,10 +129,10 @@ export default {
           { id: 'q', name: 'Ask two questions', sub: 'would it fail? too big?', lane: 0, row: 0, kind: 'human', detail: 'Would this test fail if the feature broke? Is the framework over-engineered? Every finding had to answer one of the two.' },
           { id: 'off', name: 'The backend-off run', sub: 'what can’t fail?', lane: 2, row: 1, kind: 'check', detail: 'Most tests failed and some still passed. The passes pointed straight at checks that could not fail.' },
           { id: 'read', name: 'Read the whole suite', sub: 'every layer, every level', lane: 1, row: 2, kind: 'ai', detail: 'AI agents read the framework end to end: the tests, the shared building blocks, the pipeline and the tooling.' },
-          { id: 'use', name: 'Measure by use', sub: 'not by design', lane: 1, row: 3, kind: 'ai', detail: 'Thin helpers were used widely. A heavier layer had been bypassed, its setup copied by hand instead.' },
+          { id: 'use', name: 'Measure by use', sub: 'not by design', lane: 1, row: 3, kind: 'ai', detail: 'Thin helpers were used widely. A heavier layer saw little use, so its setup could be consolidated.' },
           { id: 'verify', name: 'Check every claim again', sub: 'nothing on trust', lane: 2, row: 4, kind: 'check', detail: 'Anything an automated review claimed was checked again directly before it counted.' },
           { id: 'sort', name: 'Sort every check', sub: 'can’t fail, hidden, sound', lane: 1, row: 5, kind: 'ai', detail: 'Each check got a verdict, and each layer too: keep it, fix it, or cut it.' },
-          { id: 'verdict', name: 'Give the verdict', sub: 'core, edges, safety net', lane: 0, row: 6, kind: 'human', detail: 'The core was the right size. The edges were over-built. The safety net had holes: failures could hide as skips, and the pipeline could stay green while tests failed.' },
+          { id: 'verdict', name: 'Give the verdict', sub: 'core, edges, safety net', lane: 0, row: 6, kind: 'human', detail: 'The core was the right size. The edges were over-built. The safety net needed tightening: failures could hide as skips, and the pipeline could stay green while tests failed.' },
           { id: 'rank', name: 'Rank the fixes', sub: 'value per unit of effort', lane: 0, row: 7, kind: 'human', detail: 'Fixes that change what the suite reports come first. Deleting what nobody uses comes after.' },
           { id: 'rules', name: 'Rules an agent can’t loosen', sub: 'enforced, not remembered', lane: 0, row: 8, kind: 'output', detail: 'Written rules for the suite and for any agent that writes tests, and later the guardrails of my QA plugin.' },
           { id: 'plan', name: 'Clean-up plan', sub: 'drafted, then carried out', lane: 1, row: 8, kind: 'ai', detail: 'AI agents drafted the clean-up from my ranking and carried it out to the rules, one reviewed task at a time. Its review came back approved with small fixes.' },
@@ -183,7 +183,7 @@ export default {
       { name: 'Audit', part: 'The backend-off run and a full read', by: 'proved' },
       { name: 'Rules', part: 'What an agent may never loosen', by: 'me' },
       { name: 'Plugin', part: 'The rules, in a tool other QAs can use', by: 'ai' },
-      { name: 'Merge and baseline', part: 'The clean-up waits on a branch for its pull request', by: 'proved', now: true },
+      { name: 'Merge and baseline', part: 'Clean-up approved; merge is next', by: 'proved', now: true },
     ], caption: 'From structure to baseline, with who carried each stage.' },
     { lead: 'Structure.', p: 'Contract, endpoint and workflow tests, each with one job. The level decides what a test may check, so a failure tells you where to look.' },
     { cards: [
@@ -195,7 +195,7 @@ export default {
     { lead: 'Audit.', p: 'Each layer was judged by whether anything used it, and every automated finding was checked again directly. Then came the backend-off run.' },
     { lead: 'Rules.', p: 'Written down below, as rules the agent can’t edit, with the reason for each.' },
     { lead: 'Plugin.', p: 'The audit’s findings became the plugin’s rules, nine days later.' },
-    { lead: 'Merge and baseline.', p: 'The clean-up was done to the rules and approved with small fixes. It waits on a branch: its pull request isn’t open yet, and the first full baseline run comes after it merges.' },
+    { lead: 'Merge and baseline.', p: 'The clean-up was done to the rules and approved with small fixes. The first full baseline run follows the merge.' },
 
     { h2: 'The calls I made' },
     { decisions: [
@@ -244,7 +244,7 @@ export default {
       rows: [
         ['A field is optional only if the contract says so', 'Relaxing the schema until the response fits. A missing field is a bug to report.'],
         ['Known bugs are asserted as expected failures', 'Calling a known bug correct behaviour.'],
-        ['Cleanup always runs, whether the test passed or failed', 'Leaving data behind until tests start bending around the mess.'],
+        ['Cleanup always runs, whether the test passed or failed', 'Leftover data that later tests would have to work around.'],
         ['Every change is confirmed by a separate read', 'Trusting the call that made the change. Plenty of APIs echo a request back without saving it.'],
         ['Any failing test turns the run red, and too many skipped tests is not a green run', 'Failures hidden as skips, and a pipeline that stays green while tests fail.'],
         ['The review checklist is one the agent can’t edit', 'An agent quietly lowering the bar it is measured against.'],
@@ -294,7 +294,7 @@ export default {
     },
 
     { h2: 'Where it is now' },
-    { p: 'The clean-up is done and approved with small fixes, and it waits on a branch for its pull request. The rules already live in the public plugin, where any QA team can use them.' },
+    { p: 'The clean-up is done and approved with small fixes. The rules already live in the public plugin, where any QA team can use them.' },
 
     { h2: 'What I learned' },
     { quote: 'AI makes writing tests cheap, so the scarce skill becomes judging them.' },

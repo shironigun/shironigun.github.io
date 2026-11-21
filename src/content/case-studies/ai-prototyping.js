@@ -9,8 +9,8 @@
 export default {
   updated: 'November 2026',
   body: [
-    { p: 'A product meeting. Someone says, “What if the AI told us which customers are unhappy?” Every head nods. Nobody in the room can say whether the score would be right, whether a manager would act on it, or what happens on the day it’s wrong.' },
-    { p: 'That is where I come in. I turn AI ideas into prototypes people can click, grounded in real dealership workflows, and I check each one against reality before anyone builds it. Sometimes the prototype says yes. The most useful one said no, and that no became Promise Tracker.' },
+    { p: 'A product meeting. Someone says, “What if the AI told us which customers are unhappy?” It sounds useful. But nobody can know yet whether the score would be right, whether a manager would act on it, or what happens on the day it’s wrong.' },
+    { p: 'Those are the questions my prototypes answer. I turn AI ideas into prototypes people can click, grounded in real dealership workflows, and I check each one against reality before anyone builds it. Sometimes the prototype says yes. The most useful one said no, and that no became Promise Tracker.' },
     { p: 'I shape the idea and the workflow, specify the prototype and judge how it behaves. AI agents build it with Figma Make and Claude Code; developers build what moves forward. On campaign planning the idea and the build were colleagues’: I assisted the Product Owner and built the evaluation.' },
 
     { h2: 'At a glance' },
@@ -86,7 +86,7 @@ export default {
           { id: 'turn', name: 'Ask a better question', sub: 'what would a dealer pay for?', lane: 0, row: 3, kind: 'human', detail: 'The check refuted sentiment scoring as the central mechanism. I set the story aside and asked what a dealer would actually pay for.' },
           { id: 'drop', name: 'Dropped: mood as score', lane: 3, row: 4, kind: 'output', detail: 'Scoring how customers feel stopped being the heart of the feature.' },
           { id: 'keep', name: 'Kept: performance view', sub: 'measurement honesty', lane: 3, row: 5, kind: 'output', detail: 'The same check backed the performance angle, so the honest performance view stayed.' },
-          { id: 'queue', name: 'A colleague’s queue', sub: 'promises not yet kept', lane: 2, row: 5, kind: 'human', detail: 'A colleague had built a queue of promises reps hadn’t kept. I directed the merge of its best parts.' },
+          { id: 'queue', name: 'A colleague’s queue', sub: 'promises not yet kept', lane: 2, row: 5, kind: 'human', detail: 'A colleague had built a queue of unkept promises; I directed bringing it together with the sentiment work.' },
           { id: 'pt', name: 'Promise Tracker', sub: 'what we still owe', lane: 3, row: 6, kind: 'output', detail: 'First a “we owe” queue, then Promise Tracker: what the dealership still owes each customer. Now in pilot.' },
         ],
         edges: [
@@ -101,7 +101,7 @@ export default {
       },
       caption: 'The sentiment pivot as a fork: what the real-data check refuted, and what it backed.',
     },
-    { p: 'What hurt dealers wasn’t a customer’s mood. It was commitments nobody kept. And speed isn’t keeping your word: a fast reply that promises something and then goes quiet looks good on a speed board and bad on a list of what we owe.' },
+    { p: 'What hurt dealers wasn’t a customer’s mood. It was commitments that slipped through. And speed isn’t keeping your word: a fast reply that promises something and then goes quiet looks good on a speed board and bad on a list of what we owe.' },
 
     { h2: 'A number never travels alone' },
     { p: 'The performance view shows how responsive each person is, and a number about a person reads as a verdict. So I set three rules: no composite score, no ranking, and no number without context.' },
@@ -116,19 +116,19 @@ export default {
     }, caption: 'One person’s performance view: a figure arrives with its sample, range and previous value, or not at all. Recreation, fictional data.' },
     { p: 'Credit follows whoever sent each message, not whoever holds the conversation. Where a flag comes from a fixed rule rather than the AI, as with a lost deal, the screen says so.' },
 
-    { h2: 'Checking an AI I didn’t build' },
-    { p: 'AI campaign planning suggests what a dealer should send, to whom and when. The idea and the build were colleagues’. I assisted the Product Owner: I had the prototype’s screens ported into the product, chose the layouts, specified a guided send flow, and had a developer-heavy explainer rewritten for QA and product.' },
+    { h2: 'Evaluating a colleague’s AI feature' },
+    { p: 'AI campaign planning suggests what a dealer should send, to whom and when. The idea and the build were colleagues’. I assisted the Product Owner: I had the prototype’s screens ported into the product, chose the layouts, specified a guided send flow, and had an explainer rewritten for QA and product readers.' },
     { p: 'The evaluation is mine. Each AI helper gets a must-pass format test, which checks the answer’s shape, then one test per rule it can get wrong, and a hidden-instruction test, where text inside the input tries to give the AI orders. That test blocks a release on its own, and a case counts only after three passing runs.' },
-    { p: 'Then the audit, read-only, across the whole chain: instructions, the product’s checks, the code that calls the AI, and live answers. Watch where each rule lands. The third stop is where problems hide.' },
+    { p: 'Then the audit, read-only, across the whole chain: instructions, the product’s checks, the code that calls the AI, and live answers. Watch where each rule lands. The third stop is where testing adds the most value.' },
     {
       graph: {
         lanes: [{ name: 'Me' }, { name: 'AI agents' }, { name: 'Product' }, { name: 'Team' }],
         nodes: [
-          { id: 'gather', name: 'Collect every rule', sub: 'instructions, checks, docs', lane: 0, row: 0, kind: 'human', detail: 'The rules lived in places that didn’t agree. I gathered them into one list.' },
+          { id: 'gather', name: 'Collect every rule', sub: 'instructions, checks, docs', lane: 0, row: 0, kind: 'human', detail: 'The rules were spread across several places, so I gathered them into one list.' },
           { id: 'inv', name: 'Map what really runs', sub: 'from the code', lane: 1, row: 1, kind: 'ai', detail: 'Which AI helpers the product calls, which are switched off, and which nothing calls. From the code, not the documents.' },
           { id: 'rej', name: 'Product rejects it?', lane: 2, row: 2, kind: 'check', detail: 'The strongest kind of rule: break it and the product refuses the answer and asks again.' },
           { id: 'rep', name: 'Product repairs it?', lane: 2, row: 3, kind: 'check', detail: 'A softer kind: the product fixes a small slip in place.' },
-          { id: 'only', name: 'Only the AI is asked', sub: 'nothing checks it', lane: 2, row: 4, kind: 'output', detail: 'The rule is only a request in the AI’s instructions. Nothing enforces it, so this is where I looked hardest.' },
+          { id: 'only', name: 'Only the AI is asked', sub: 'nothing checks it', lane: 2, row: 4, kind: 'output', detail: 'The rule is only a request in the AI’s instructions. Nothing enforces it, so this is where the evaluation focused.' },
           { id: 'live', name: 'Capture live answers', sub: 'a Postman collection', lane: 1, row: 5, kind: 'ai', detail: 'Real answers from the test environment, not just examples.' },
           { id: 'verdict', name: 'Same rules, real answers', lane: 1, row: 6, kind: 'check', detail: 'Every live answer runs against the same rule list, so every rule gets a verdict.' },
           { id: 'cards', name: 'Write decision cards', sub: 'evidence and options', lane: 0, row: 7, kind: 'human', detail: 'Where the code, the instructions and the documents disagreed, I wrote a card with the evidence and the options, none decided in advance.' },
@@ -154,7 +154,7 @@ export default {
       columns: ['Stage', 'Me', 'AI agents', 'Team'],
       rows: [
         ['Idea and scope', 'Framed the questions; specified each prototype', '', 'A dealer chose one scope; colleagues had the campaign idea'],
-        ['Prototype', 'Specified screens and flows; set the UX direction', 'Built them with Figma Make and Claude Code', 'A colleague’s coaching work, merged at my direction'],
+        ['Prototype', 'Specified screens and flows; set the UX direction', 'Built them with Figma Make and Claude Code', 'A colleague’s coaching work, brought together at my direction'],
         ['Reality check', 'Asked the question; judged the answer', 'Ran the read-only analysis', ''],
         ['Campaign planning', 'Had the screens ported, chose layouts, specified the send flow', 'Made the code changes I directed', 'Colleagues built the feature and its AI'],
         ['Evaluation', 'Designed the tests and audit; judged every result', 'Ran the tests; captured live answers', 'Decide the open questions'],
@@ -167,7 +167,7 @@ export default {
       { name: 'Question and scope', part: 'The decision to inform, criterion by criterion', by: 'me' },
       { name: 'Prototype', part: 'Clickable, with Figma Make and Claude Code', by: 'ai' },
       { name: 'Reality check', part: 'Real conversations or a real dealer', by: 'proved' },
-      { name: 'Evaluation', part: 'Every AI rule tested against live answers', by: 'proved' },
+      { name: 'Evaluation', part: 'AI rules tested against live answers', by: 'proved' },
       { name: 'Handover', part: 'A brief for the developers, then support', by: 'me', now: true },
     ], caption: 'Reality, then evaluation, then a handover: nothing reaches a developer on the strength of a demo.' },
 
@@ -202,7 +202,7 @@ export default {
     { list: [
       'Every prototype meets reality before handover: real conversations, read-only, or a real dealer.',
       'A number about a person appears with its context, or not at all.',
-      'Every AI rule is checked on live answers, and a test counts only after three passing runs.',
+      'The AI rules are checked on live answers, and a test counts only after three passing runs.',
       'Where the documents and the code disagree, the code and live answers win.',
     ] },
 
@@ -213,7 +213,7 @@ export default {
     { quote: 'A prototype that disproves an idea has done its job.' },
     { p: 'The most useful thing the sentiment prototype did was show us we were about to build the wrong feature.' },
     { p: 'A number on a screen gets read as a verdict, however thin the data behind it, so measurement honesty has to be designed in from the first screen.' },
-    { p: 'And evaluating an AI someone else built taught me to look past the documents: problems hid in the rules nobody enforced.' },
+    { p: 'And evaluating a colleague’s feature taught me to check rules where they run, not only where they are written: the gaps sat in rules that were only requests in the AI’s instructions.' },
     { link: { to: '/case-studies/promise-tracker', text: 'Read the Promise Tracker case study' } },
     { link: { to: '/case-studies/product-decisions', text: 'The research behind “performance without a score”' } },
     { link: { to: '/case-studies/ai-evaluation', text: 'How I evaluate AI features' } },

@@ -19,7 +19,7 @@ export default {
   documents: [{ ...howToStandardPdf, primary: true }],
   documentsNote: 'A public copy. The product’s name, the dealer management systems it connects to, its feature names and its internal sources are replaced with general wording; the rules are as written.',
   body: [
-    { p: 'A dealer who wants to learn a feature finds short help articles, each answering one question, and sales material that introduces it at a high level. Neither shows the whole feature in one place: what it does, how to use it, what to expect, and what to do when something looks wrong.' },
+    { p: 'A dealer who wants to learn a feature finds short help articles, each answering one question, and sales material that introduces it at a high level. A complete guide adds the whole feature in one place: what it does, how to use it, what to expect, and what to do when something looks wrong.' },
     { p: 'In November 2026 I set out to close that gap. I wrote a standard for complete feature guides, had a build tool made that turns a written guide into a branded PDF and checks it against the standard, and wrote the first guide, for an AI feature. Then I asked the support team, who write our knowledge base, to review it. The guides hold internal detail, so every example here is fictional.' },
 
     { h2: 'At a glance' },
@@ -34,7 +34,7 @@ export default {
     { family: 'feature-guides' },
 
     { h2: 'One standard, from the world and from home' },
-    { p: 'A guide written to one person’s taste reads differently from the next. So before writing any guide, I directed research into how the best documentation teams write task help, and set it beside how we already speak to dealers.' },
+    { p: 'A guide written to one person’s taste reads differently from the next. So before writing any guide, I directed research into how established documentation teams write task help, and set it beside how we already speak to dealers.' },
     { pair: [
       { title: 'Global practice', items: [
         'Task topics: one goal, the steps to reach it, the result',
@@ -123,13 +123,13 @@ export default {
     } },
 
     { h2: 'Checking the guide against the code' },
-    { p: 'Where a line in the guide described what everyone assumed, I checked it against the code instead of against what people remembered. The code answered three of support’s product questions.' },
+    { p: 'Where a line in the guide described what everyone assumed, I checked it against the code. The code answered three of support’s product questions.' },
     { p: 'It also showed where the product itself still has a decision to make. Those questions go to Product, and the guide is published only once they are settled. Writing a guide turned out to be one more way to test a feature.' },
     {
       graph: {
         lanes: [{ name: 'Me' }, { name: 'AI agents' }, { name: 'Support team', note: 'write the knowledge base' }, { name: 'Product' }],
         nodes: [
-          { id: 'research', name: 'Gather the practice', sub: 'global and our house voice', lane: 1, row: 0, kind: 'ai', detail: 'Research agents gathered how the best documentation teams write task help. Our knowledge base, release notes and sales material gave the house voice.' },
+          { id: 'research', name: 'Gather the practice', sub: 'global and our house voice', lane: 1, row: 0, kind: 'ai', detail: 'Research agents gathered how established documentation teams write task help. Our knowledge base, release notes and sales material gave the house voice.' },
           { id: 'standard', name: 'Write the standard', sub: 'sections, steps, words', lane: 0, row: 1, kind: 'human', detail: 'The sections every guide needs, the three-part step, rules for AI features and screenshots, words to use and a checklist.' },
           { id: 'tool', name: 'The build tool', sub: 'plain text in, PDF out', lane: 1, row: 2, kind: 'ai', detail: 'I specified it and Claude Code built it: cover, contents, numbered figures, callouts, headers and footers.' },
           { id: 'guide', name: 'Write the first guide', sub: 'an AI feature, demo data', lane: 0, row: 3, kind: 'human', detail: 'Promise Tracker, end to end: how it works, each task, tips, questions dealers ask, and what to do when something goes wrong.' },
@@ -217,7 +217,7 @@ export default {
     { h2: 'What I learned' },
     { quote: 'Writing a guide is one more way to test a feature.' },
     { p: 'To explain a feature plainly, every sentence has to be true, and checking each one against the code finds what nobody had written down.' },
-    { p: 'And a standard is only as good as the trust of the people who use it. Asking the team who write our knowledge base to review mine cost me a rule, and made the standard theirs as well as mine.' },
+    { p: 'And a standard is only as good as the trust of the people who use it. Asking the team who write our knowledge base to review mine cost me a rule, and brought their rules into the standard.' },
     { link: { to: '/case-studies/product-documentation', text: 'How I document a subsystem for people who don’t read code' } },
     { link: { to: '/case-studies/promise-tracker', text: 'Promise Tracker, the AI feature in the first guide' } },
     { link: { to: '/case-studies/release-notes-suite', text: 'The release notes house style the guides speak in' } },

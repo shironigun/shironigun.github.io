@@ -7,7 +7,6 @@
 // project popup.
 // Block types: text, visual, steps, checks, cards, stats, who, code, insights, related.
 // Status words are deliberate: "In pilot" is not "Released"; "Assisted" is not "Led".
-import { hoursText } from './hours';
 
 export const categories = ['Product', 'Design', 'AI', 'Quality', 'Personal builds'];
 
@@ -107,7 +106,7 @@ const allProjects = [
     thumb: 'qaLoop',
     href: 'https://github.com/shironigun/claude-marketplace',
     page: {
-      lead: 'It began as a handful of helpers, each built alone to fix one job I was tired of doing by hand: release notes, bug reports, test cases. In October I gave them one home. Now anyone can add my marketplace with one command and install whichever plugin they need.',
+      lead: 'It began as a handful of helpers, each built alone to speed up one recurring job: release notes, bug reports, test cases. In October I gave them one home. Now anyone can add my marketplace with one command and install whichever plugin they need.',
       facts: [
         { label: 'My role', value: 'Creator and owner of the marketplace and every plugin in it' },
         { label: 'When', value: 'July to November 2026' },
@@ -130,7 +129,7 @@ const allProjects = [
     quarters: ['2026-Q3', '2026-Q4'],
     kpi: ['2', 'skills with opposite jobs'],
     delivered: [
-      'Specified a harvester that misses nothing and a releaser that leaves most of it out',
+      'Specified a harvester built to miss nothing and a releaser that leaves most of it out',
       'Rejected a seventeen-agent version and kept two skills',
       'Turned support-team feedback into rules on voice, accuracy and triage',
     ],
@@ -138,7 +137,7 @@ const allProjects = [
     thumb: 'qaLoop',
     href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/release-notes-suite',
     page: {
-      lead: 'Clients need to hear about the one thing they can now do, not every item that closed. My release-notes suite splits the job between two skills: a harvester that misses nothing and a releaser that leaves most of it out. Our support team’s feedback became rules the skill enforces.',
+      lead: 'Clients need to hear about the one thing they can now do, not every item that closed. My release-notes suite splits the job between two skills: a harvester built to miss nothing and a releaser that leaves most of it out. Our support team’s feedback became rules the skill enforces.',
       facts: [
         { label: 'My role', value: 'Creator' },
         { label: 'When', value: 'July to October 2026' },
@@ -214,8 +213,8 @@ const allProjects = [
     slug: 'crm-bug-suite',
     parent: 'claude-marketplace',
     name: 'CRM Bug Suite',
-    summary: 'Three skills that write bugs, production defects and ticket comments in one house format, so every ticket reads the same whoever files it.',
-    question: 'How do you make every bug report read like the best one on the board?',
+    summary: 'Three skills that write bugs, production defects and ticket comments in one house format, so tickets read the same whoever files them.',
+    question: 'How do you make every bug report clear enough to act on at once?',
     role: 'Creator',
     status: 'live',
     year: '2026',
@@ -368,8 +367,8 @@ const allProjects = [
   {
     slug: 'quality-gates',
     name: 'Quality Gates and the QA team',
-    summary: 'A quality-gate framework adopted by 3 other teams, and the QA team I lead.',
-    question: 'How I reduced CRM defect leakage by about 40%',
+    summary: 'A quality-gate framework adopted by 3 other teams, and how the QA team works to it today.',
+    question: 'How Quality Gates helped cut CRM defect leakage by about 40%',
     role: 'Designed it; lead the QA team',
     status: 'practice',
     year: '2024–2026',
@@ -385,7 +384,7 @@ const allProjects = [
     featured: true,
     thumb: 'stats',
     page: {
-      lead: 'When I joined the CRM product team, defects reaching production were causing client escalations and unplanned sprint interruptions. I designed a quality framework that cut leakage by about 40% within two quarters, and three other teams adopted it.',
+      lead: 'In 2024 the team set out to catch more defects before production. I designed a quality framework; by my own tracking, defect leakage fell by about 40% within two quarters, and three other teams adopted it.',
       facts: [
         { label: 'My role', value: 'Designed the framework; lead the QA team' },
         { label: 'When', value: 'Q1 2024 to now' },
@@ -413,11 +412,11 @@ const allProjects = [
     tags: ['Quality', 'AI'],
     thumb: 'audit',
     page: {
-      lead: 'As QA lead, I had AI agents build the API test automation for our dealership platform under my direction. Then I had it audited like any other feature, and found it was telling us things that weren’t true.',
+      lead: 'As QA lead, I had AI agents build the API test automation for our dealership platform under my direction. Then I had it audited like any other feature, and turned what it found into rules that make every red result count.',
       facts: [
         { label: 'My role', value: 'Directed the build and the audit, as QA lead' },
         { label: 'When', value: 'Aug to Oct 2026' },
-        { label: 'Status', value: 'Clean-up done and approved; waiting on a branch for its pull request' },
+        { label: 'Status', value: 'Clean-up approved; merge is next' },
         { label: 'Tools', value: 'Claude Code, Playwright, Azure DevOps' },
       ],
     },
@@ -442,7 +441,7 @@ const allProjects = [
     tags: ['AI', 'Quality'],
     thumb: 'pipeline',
     page: {
-      lead: 'I built it in the DIS AI Foundations cohort, a five-day AI hackathon run jointly by our division and other Perseus Group divisions, as a tool for the people who test our product. Most teams built product features; I built for the people testing them.',
+      lead: 'I built it in the DIS AI Foundations cohort, a five-day AI hackathon run jointly by our division and other Perseus Group divisions, as a tool for the people who test our product.',
       facts: [
         { label: 'My role', value: 'Creator' },
         { label: 'When', value: 'July 2026' },
@@ -484,13 +483,13 @@ const allProjects = [
   {
     slug: 'domain-knowledge-base',
     name: 'Domain training and knowledge transfer',
-    summary: `A self-initiated, ${hoursText.junior} hour training programme, with knowledge transfer that fed the public product knowledge base.`,
+    summary: 'A self-initiated training programme of 120+ live sessions, and contributions to the public product knowledge base.',
     question: 'How I turned months of shadowing into a structured training programme',
     role: 'Self-initiated; designed and delivered',
     status: 'completed',
     year: '2024–2025',
     quarters: ['2024-Q3', '2025-Q4'],
-    kpi: [hoursText.junior, 'training hours delivered'],
+    kpi: ['120+', 'live sessions delivered'],
     delivered: [
       'Mapped 14 critical knowledge domains',
       'Ran 120+ live sessions and wrote 60+ SOPs',
@@ -500,18 +499,18 @@ const allProjects = [
     featured: true,
     thumb: 'training',
     page: {
-      lead: 'Domain training that once took months of shadowing became a structured programme of live sessions, SOPs and walkthroughs, and my knowledge transfer fed the public product knowledge base. I designed and delivered the programme, which reached operations, development, QA, stakeholders and customers.',
+      lead: 'Domain training that once took months of shadowing became a structured programme of live sessions, SOPs and walkthroughs, and my knowledge transfer fed the public product knowledge base. I designed and delivered the programme, for development, QA, operations and business analysts.',
       facts: [
         { label: 'My role', value: 'Self-initiated; designed and delivered' },
         { label: 'When', value: '2024 to 2025' },
-        { label: 'Audience', value: 'Operations, development, QA, stakeholders and customers' },
+        { label: 'Audience', value: 'Development, QA, operations and business analysts' },
       ],
     },
   },
   {
     slug: 'ai-foundations-hackathon',
-    name: 'AI Foundations hackathon',
-    summary: 'An AI hackathon I organised and led for the QA and design team: foundations sessions, a real-world project for every participant, mentoring to working demonstrations, and a handbook for the division.',
+    name: 'AI Foundations: Powering Work with AI Orchestration',
+    summary: 'An AI hackathon I organised and led for the QA and design team: foundations sessions, nine real-world project briefs for ten participants, mentoring to working demonstrations, and a handbook for the division.',
     question: 'How do you turn AI concepts into working solutions across a whole team?',
     role: 'Organised and led',
     status: 'completed',
@@ -519,19 +518,19 @@ const allProjects = [
     quarters: ['2026-Q3', '2026-Q3'],
     kpi: ['9', 'briefs, 10 working demos'],
     delivered: [
-      'Wrote a full project brief for every participant',
-      'Taught the foundations and mentored every team to a demo',
+      'Wrote nine full project briefs for ten participants',
+      'Taught the foundations and mentored each team to a demo',
       'Created and compiled a 183-page handbook for the division',
     ],
     when: 'Aug 2026',
     tags: ['AI', 'Product', 'Quality'],
     thumb: 'foundations',
     page: {
-      lead: 'I organised and led an AI hackathon that turned AI concepts into practical solutions. I brought the design team in alongside QA, wrote a full project brief for every participant, taught the foundations, mentored each team to a working demonstration, and created and compiled a handbook so the learning continues across the division.',
+      lead: 'I organised and led an AI hackathon that turned AI concepts into practical solutions. I brought the design team in alongside QA, wrote nine full project briefs for the ten participants, taught the foundations, mentored each team to a working demonstration, and created and compiled a handbook so the learning continues across the division.',
       facts: [
         { label: 'My role', value: 'Organiser, instructor and mentor' },
         { label: 'When', value: 'August 2026' },
-        { label: 'Participants', value: 'Eight QA engineers and a designer' },
+        { label: 'Participants', value: 'Ten people across QA and design' },
         { label: 'Recognition', value: 'Certificate of appreciation for organising and delivering the initiative' },
       ],
     },
@@ -539,7 +538,7 @@ const allProjects = [
   {
     slug: 'postman-evaluation',
     name: 'Postman API testing evaluation',
-    summary: 'A proof of concept that made Postman the standard API testing tool across 5+ teams, updated against Postman’s current documentation.',
+    summary: 'A proof of concept whose recommendation 5+ teams adopted, making Postman their standard API testing tool, updated against Postman’s current documentation.',
     question: 'How a Postman proof of concept standardised API testing across 5+ teams',
     role: 'Researched, wrote and presented',
     status: 'completed',
@@ -555,11 +554,11 @@ const allProjects = [
     tags: ['Quality'],
     thumb: 'postman',
     page: {
-      lead: 'Postman was used for basic API checks, but its automation, performance and security features were unexplored. I evaluated its full feature set, mapped the plans, reviewed the findings with Postman’s support team and presented recommendations to the whole division that led to adoption across 5+ teams. This page is updated to November 2026 against Postman’s official documentation.',
+      lead: 'Postman was used for basic API checks; its automation, performance and security features had not been evaluated. I evaluated its full feature set, mapped the plans, reviewed the findings with Postman’s support team and presented recommendations to the whole division, which 5+ teams adopted. This page is updated to November 2026 against Postman’s official documentation.',
       facts: [
         { label: 'My role', value: 'Researched, wrote and presented' },
         { label: 'When', value: 'Q1 2025, updated November 2026' },
-        { label: 'Audience', value: 'QA and engineering teams' },
+        { label: 'Audience', value: 'The entire division' },
         { label: 'Deliverables', value: '35-slide presentation, 10-page evaluation' },
       ],
     },
@@ -577,7 +576,7 @@ const allProjects = [
     kpi: ['2', 'gates for every module: the plan, then the role'],
     delivered: [
       'Analysed and specified feature-access rules as two nested gates',
-      'Built a decision tool: each question with options and a recommendation',
+      'Designed a decision tool (AI agents built it): each question with options and a recommendation',
       'Commissioned and directed research on measuring rep performance without a score',
     ],
     tags: ['Product'],
@@ -641,7 +640,7 @@ const allProjects = [
     tags: ['Product', 'Design', 'Quality'],
     thumb: 'guideNumbers',
     page: {
-      lead: 'Dealers learn a feature from short help articles and from sales material, and neither shows the whole feature in one place. I wrote a standard for complete feature guides, had a build tool made that checks every guide against it, and wrote the first guide, for an AI feature. Then I asked the support team who write our knowledge base to review it, and took their changes.',
+      lead: 'Short help articles answer single questions and sales material introduces features; a complete guide adds the whole feature in one place. I wrote a standard for complete feature guides, had a build tool made that checks every guide against it, and wrote the first guide, for an AI feature. Then I asked the support team who write our knowledge base to review it, and took their changes.',
       facts: [
         { label: 'My role', value: 'Wrote the standard and the first guide; specified the build tool' },
         { label: 'When', value: 'November 2026 to now' },
@@ -673,7 +672,7 @@ const allProjects = [
     thumb: 'guides',
     documents: [howToStandardPdf],
     details: [
-      'I directed research into how the best documentation teams write task help (task topics, the Microsoft and Google style guides, Diátaxis and minimalism) and set it beside our own knowledge base, release notes and sales material.',
+      'I directed research into how established documentation teams write task help (task topics, the Microsoft and Google style guides, Diátaxis and minimalism) and set it beside our own knowledge base, release notes and sales material.',
       'The standard sets the sections every guide must have, a three-part step, how to cover features that work differently with each dealer-management system, how to write about AI features, a screenshot policy, words to use and a checklist before publishing. After the support team’s review I took several of their rules and changed mine where theirs served dealers better.',
     ],
   },
@@ -741,7 +740,7 @@ const allProjects = [
     tags: ['Design'],
     thumb: 'films',
     page: {
-      lead: 'Films that show TargetCRM, also offered as Notify360, exactly as it works, with the product screens rebuilt in code and a fictional dealership in place of real customers. Two of them play below.',
+      lead: 'Films that show TargetCRM, also offered as Notify360, as it works, with the product screens rebuilt in code and a fictional dealership in place of real customers. Two of them play below.',
       facts: [
         { label: 'My role', value: 'Directed all three films' },
         { label: 'When', value: 'November 2026' },
@@ -772,7 +771,7 @@ const allProjects = [
   {
     slug: 'hackathon-2025',
     name: 'AI hackathon, first place',
-    summary: 'AI solutions for customer retention and employee performance monitoring that placed 1st of 11 teams.',
+    summary: 'AI solutions for customer retention and employee performance analysis that placed 1st of 11 teams.',
     question: '1st of 11 teams in a division-wide AI hackathon',
     role: 'Product Owner, Scrum Master and QA lead',
     status: 'completed',
@@ -813,7 +812,7 @@ const allProjects = [
     kpi: ['3 of 3', 'runs must pass before a case counts'],
     delivered: [
       'Designed a repeatable way to release AI features',
-      'Used it on the AI features my team builds, and held my own QA plugin to the same bar',
+      'Used it on the AI features the team builds, and held my own QA plugin to the same bar',
       'Wrote the Skills Evals Lab: a 17-lesson beginner course with six hands-on labs',
     ],
     quarters: ['2026-Q4', '2026-Q4'],
@@ -822,7 +821,7 @@ const allProjects = [
       facts: [
         { label: 'My role', value: 'Designed the evaluations; wrote the course' },
         { label: 'When', value: 'Oct 2026 to now' },
-        { label: 'Used on', value: 'The AI features my team builds, and my own QA plugin' },
+        { label: 'Used on', value: 'The AI features the team builds, and my own QA plugin' },
         { label: 'Deliverables', value: 'An evaluation method, release gates and a 17-lesson beginner course' },
       ],
     },
@@ -854,14 +853,14 @@ const allProjects = [
   {
     slug: 'ui-standards',
     name: 'UI standards documentation',
-    summary: 'The organisation’s first shared reference for components, interaction patterns and accessibility, improved into a 12-page style guide in January 2024.',
+    summary: 'A shared reference for components, interaction patterns and accessibility, improved into a 12-page style guide in January 2024.',
     role: 'Initiated and wrote',
     status: 'completed',
     year: '2023–2024',
     quarters: ['2023-Q4', '2024-Q1'],
-    kpi: ['200+', 'inconsistencies found'],
+    kpi: ['200+', 'UI consistency items catalogued'],
     delivered: [
-      'Initiated the organisation’s first UI standards',
+      'Initiated shared UI standards',
       'Audited the UI across products with design and development leads',
       'Became the reference for UI reviews across 3 product lines',
       'Improved it into a 12-page style guide in January 2024',
@@ -871,7 +870,7 @@ const allProjects = [
     thumb: 'standards',
     details: [
       'Initiated during my first months as a QA trainee: component usage, interaction patterns, accessibility baselines and QA checklists.',
-      'Audited the UI across products and found 200+ inconsistencies, then defined the standards with design and development leads. It became the reference for new feature UI reviews across 3 product lines.',
+      'Audited the UI across products and catalogued 200+ UI consistency items, then defined the standards with design and development leads. It became the reference for new feature UI reviews across 3 product lines.',
       'On 18 January 2024 I improved it into a 12-page style guide: form validation, date and time formats, form-filling rules (input types, address auto-suggest, phone numbers), branding in light and dark mode, alert styles, pagination, universal styles (cursor, hover text, spacing, overflow, icons) and a grammar guide for interface text.',
     ],
   },
