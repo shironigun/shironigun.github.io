@@ -165,6 +165,34 @@ function EvalsThumb() {
   );
 }
 
+// The API Testing plugin's three levels.
+function ApiLevelsThumb() {
+  return (
+    <div className={styles.thumbList}>
+      {[['Contract', 'Response shape checked'], ['Endpoint', 'Happy and negative paths'], ['Workflow', 'Calls chained end to end']].map(([s, t]) => (
+        <div key={t} className={styles.thumbRow}>
+          <span className={styles.thumbTag}>{s}</span>
+          <span>{t}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// The UI Testing plugin: cases and scripts, both ways, filed only after a yes.
+function UiDirectionsThumb() {
+  return (
+    <div className={styles.thumbList}>
+      {[['Case', 'Becomes a Playwright spec'], ['Spec', 'Reads back into a case'], ['File', 'Only after a yes']].map(([s, t]) => (
+        <div key={t} className={styles.thumbRow}>
+          <span className={styles.thumbTag}>{s}</span>
+          <span>{t}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 // The standard's three-part step, on a fictional shop's setting.
 function GuidesThumb() {
   return (
@@ -218,6 +246,8 @@ function NotesThumb() {
 const GuideNumbersThumb = () => <NumbersThumb items={[['8', 'page standard'], ['22', 'cover designs'], ['12', 'page guide, down from 18']]} />;
 
 const THUMBS = {
+  apiLevels: ApiLevelsThumb,
+  uiDirections: UiDirectionsThumb,
   guides: GuidesThumb,
   styleCheck: StyleCheckThumb,
   guideContents: GuideContentsThumb,

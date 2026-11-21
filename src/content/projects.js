@@ -166,7 +166,7 @@ const allProjects = [
       'Filed approved cases as tracker Test Cases, linked to their story, only after a yes',
     ],
     tags: ['Quality', 'AI', 'Personal builds'],
-    thumb: 'testLevels',
+    thumb: 'uiDirections',
     href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/ui-testing',
     page: {
       lead: 'A test case and its script should say the same thing. This plugin writes both from a user story, click by click, reads an old script back into plain cases, and files approved cases in the team’s tracker only after a yes.',
@@ -197,7 +197,7 @@ const allProjects = [
       'Added a triage skill: four verdicts, and a bug draft only for a real product bug',
     ],
     tags: ['Quality', 'AI', 'Personal builds'],
-    thumb: 'testLevels',
+    thumb: 'apiLevels',
     href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/api-testing',
     page: {
       lead: 'Left alone, an AI will loosen an API test until it passes. This plugin writes API cases and Playwright specs that assert one exact status and every documented field, at three levels and in both directions. When a spec goes red, its partner skill triages the failure first and drafts a bug only for a real product fault.',

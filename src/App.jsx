@@ -15,6 +15,7 @@ import CaseStudies from './pages/CaseStudies';
 import Article from './pages/Article';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import OgCard from './pages/OgCard';
 
 function Routes() {
   const { path } = useRoute();
@@ -55,6 +56,9 @@ function Shell() {
 }
 
 export default function App() {
+  // Link-preview cards render alone, without the site's header, footer or rope agent.
+  const og = window.location.pathname.match(/^\/og\/([\w-]+)\/?$/);
+  if (og) return <OgCard slug={og[1]} />;
   return (
     <Router>
       <Shell />
