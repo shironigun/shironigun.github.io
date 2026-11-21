@@ -1,17 +1,16 @@
 import { Link } from '../lib/router';
 import Status from './Status';
-import Thumb from './visuals/Thumbs';
 import styles from './ProjectCard.module.css';
+
+// Each project's preview card (public/images/previews, made by scripts/og-images.mjs): the same
+// picture people see when a link to the project is shared.
+export const previewOf = (p) => `/images/previews/${p.slug}.png?v=2026-11-21c`;
 
 // One card design for every case study, on Home and on the case studies page.
 export default function ProjectCard({ project }) {
   return (
     <Link to={`/case-studies/${project.slug}`} className={styles.card}>
-      {project.cover ? (
-        <span className={styles.cover}><img src={project.cover} alt="" loading="lazy" /></span>
-      ) : (
-        <Thumb kind={project.thumb} />
-      )}
+      <span className={styles.preview}><img src={previewOf(project)} alt="" loading="lazy" /></span>
       <span className={styles.body}>
         <span className={styles.meta}><Status status={project.status} /><span>{project.when || project.year.replace('–', ' to ')}</span></span>
         <span className={styles.title}>{project.name}</span>

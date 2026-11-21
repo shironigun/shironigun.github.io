@@ -3,7 +3,7 @@ import { Link } from '../../lib/router';
 import { STATUS, parentOf } from '../../content/projects';
 import { useStudy } from '../../content/caseStudies';
 import Status from '../Status';
-import Thumb from '../visuals/Thumbs';
+import { previewOf } from '../ProjectCard';
 import { DocButton } from '../DocumentViewer';
 import { BookIcon, CheckIcon, ChevronIcon, CloseIcon, ExternalIcon, GitHubIcon } from '../Icons';
 import { Avatar, DisciplineIcon, QuarterTimeline } from './parts';
@@ -119,7 +119,7 @@ export default function ProjectDialog({ item, position, total, onClose, onPrev, 
           <div key={item.slug} className={styles.body}>
             <div className={styles.main}>
               <figure className={styles.visual}>
-                {item.cover ? <img src={item.cover} alt="" /> : <Thumb kind={item.thumb} />}
+                <img className={styles.previewImg} src={previewOf(item)} alt="" />
               </figure>
 
               <section className={styles.block}>
