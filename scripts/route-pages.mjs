@@ -68,3 +68,39 @@ for (const p of projectPages) {
   n += 1;
 }
 console.log(`✓ ${Object.keys(pages).length} pages and ${n} case-study pages with their own preview tags`);
+
+// Share pages for things LinkedIn can only link to as a file (a certificate image, a PDF): each is a
+// small page with its own preview tags that opens the file, so the link shows a real preview
+// instead of a blank card. Linked from his LinkedIn experience media.
+const shares = [
+  { id: 'manager-essentials', title: 'Manager Essentials Training certificate', description: 'Six-month leadership programme at Perseus Group, built on DDI’s frontline-leader curriculum: coaching, delegation and developing people.', image: '/certifications/manager-essentials-certificate.jpg', to: '/certifications/manager-essentials-certificate.jpg' },
+  { id: 'csm', title: 'Certified ScrumMaster® (CSM®)', description: 'Scrum Alliance certification, December 2024.', image: '/certifications/CSM.jpeg', to: '/certifications/CSM.jpeg' },
+  { id: 'istqb-ctfl', title: 'ISTQB® Certified Tester Foundation Level', description: 'ISTQB® foundation certification in software testing, July 2024.', image: '/certifications/ISTQB-Certificate.jpeg', to: '/certifications/ISTQB-Certificate.jpeg' },
+  { id: 'selenium-csharp-notes', title: 'Selenium WebDriver notes in C#', description: 'A 13-page guide to browser automation with Selenium WebDriver in C#, written for other automation testers.', image: `/images/previews/selenium-csharp-notes.png?v=${VERSION}`, to: '/documents/selenium-csharp-notes.pdf' },
+];
+for (const s of shares) {
+  const url = `${SITE}/share/${s.id}`;
+  write(`share/${s.id}.html`, `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(s.title)}: Mahmood Ahmad</title>
+<meta name="description" content="${esc(s.description)}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${esc(s.title)}">
+<meta property="og:description" content="${esc(s.description)}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${SITE}${s.image}">
+<meta property="og:image:alt" content="${esc(s.title)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta http-equiv="refresh" content="0; url=${s.to}">
+<link rel="canonical" href="${url}">
+</head>
+<body style="font-family: system-ui, sans-serif; padding: 2rem;">
+<p>Opening <a href="${s.to}">${esc(s.title)}</a>…</p>
+</body>
+</html>
+`);
+}
+console.log(`✓ ${shares.length} share pages`);
