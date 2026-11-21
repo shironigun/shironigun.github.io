@@ -387,13 +387,13 @@ Mirrors his LinkedIn skills (cleaned up on 20 Nov 2026), in the site's sentence 
 
 > Mahmood has displayed great commitment to TargetCRM since I have joined. When Sehar left our team, Mahmood stepped up to play a crucial role in our QA. He knows the application very well, and has ensured that our release quality is always High. What I really appreciate with Mahmood is that he is always thinking about the overall quality of the application. His focus goes beyond the items he is working on. He has recommended UI changes to make the application more usable and consistent, he has recommended performance updates ensure a Dealers have a great experience and as also pointed out areas where the application logic was not doing what a dealer would expect. I want to thank him for going above and beyond his role to ensure that the TargetCRM product is as good as possible. I'm happy to have him on my team, and am looking forward to see him grow in experience and leadership.
 
-### Adeen Bin Waheed, Senior Software Developer — Team Lead, Contour Software
+### Adeen Bin Waheed, Senior Software Developer — Team Lead, Perseus Group
 
 *Worked on the same team*
 
 > I had the pleasure of working with Mahmood, and if I were to give an example of someone who is dedicated, hardworking, smart, and highly attentive to detail, it would be him. He is an exceptional QA professional with a strong mindset and the ability to quickly learn whatever is required. He excels in his current role, consistently gives his best, and takes full ownership of his responsibilities. It's been a great experience working alongside him.
 
-### Daud Riaz, Senior Software Developer — Team Lead, Contour Software
+### Daud Riaz, Senior Software Developer — Team Lead, Perseus Group
 
 *Worked on the same team*
 

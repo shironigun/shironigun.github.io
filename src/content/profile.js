@@ -127,7 +127,7 @@ export const testimonials = [
     quote:
       "I had the pleasure of working with Mahmood, and if I were to give an example of someone who is dedicated, hardworking, smart, and highly attentive to detail, it would be him. He is an exceptional QA professional with a strong mindset and the ability to quickly learn whatever is required. He excels in his current role, consistently gives his best, and takes full ownership of his responsibilities. It's been a great experience working alongside him.",
     name: 'Adeen Bin Waheed',
-    role: 'Senior Software Developer — Team Lead, Contour Software',
+    role: 'Senior Software Developer — Team Lead, Perseus Group',
     photo: '/testimonial-profiles/Adeen-Bin-Waheed.png',
     relationship: 'Worked on the same team',
   },
@@ -135,7 +135,7 @@ export const testimonials = [
     quote:
       "I've had the privilege of working with Mahmood, a highly skilled and detail-oriented QA professional. He approaches every task with precision and a deep commitment to quality, ensuring our application meets the highest standards before every release. Mahmood's keen eye for identifying edge cases and potential issues has consistently saved us from production bugs. He collaborates seamlessly with the development team, providing clear and constructive feedback. His dedication, proactive mindset, and passion for continuous improvement make him an invaluable asset to any team. I strongly recommend Mahmood for any role where quality and reliability are a priority.",
     name: 'Daud Riaz',
-    role: 'Senior Software Developer — Team Lead, Contour Software',
+    role: 'Senior Software Developer — Team Lead, Perseus Group',
     photo: '/testimonial-profiles/Daud-Riaz.jpeg',
     relationship: 'Worked on the same team',
   },
