@@ -4,7 +4,7 @@ import styles from './ProjectCard.module.css';
 
 // Each project's preview card (public/images/previews, made by scripts/og-images.mjs): the same
 // picture people see when a link to the project is shared.
-export const previewOf = (p) => `/images/previews/${p.slug}.png?v=2026-11-21c`;
+export const previewOf = (p) => `/images/previews/${p.slug}.png?v=2026-11-21d`;
 
 // One card design for every case study, on Home and on the case studies page.
 export default function ProjectCard({ project }) {

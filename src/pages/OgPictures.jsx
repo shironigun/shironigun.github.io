@@ -308,10 +308,20 @@ const MAP = {
 // Every project gets its own colour: 31 hues spread around the wheel, ordered so that projects
 // next to each other in the list land far apart. Postman keeps its orange.
 const SLUGS = Object.keys(MAP);
+// Hand-picked hues for the projects shown together on LinkedIn, so neighbours there differ clearly.
+const PICKED = {
+  'feature-guides': 320, // magenta
+  'ai-evaluation': 172, // teal
+  'ai-qa-workbench': 222, // blue
+  'claude-marketplace': 140, // green
+  'ai-foundations-hackathon': 268, // violet
+  beacon: 0, // red
+  'hackathon-2025': 192, // cyan
+};
 function colourFor(slug) {
   if (slug === 'postman-evaluation') return PALETTE.postman;
   const i = Math.max(0, SLUGS.indexOf(slug));
-  const hue = Math.round(((i * 13) % SLUGS.length) * (360 / SLUGS.length) + 210) % 360;
+  const hue = slug in PICKED ? PICKED[slug] : Math.round(((i * 13) % SLUGS.length) * (360 / SLUGS.length) + 210) % 360;
   const light = hue >= 40 && hue <= 100 ? 31 : 40; // yellows need more depth to read as text
   return [`hsl(${hue} 68% ${light}%)`, `hsl(${hue} 70% 96%)`, `hsl(${hue} 72% ${light - 12}%)`, `hsl(${hue} 70% 84%)`];
 }
