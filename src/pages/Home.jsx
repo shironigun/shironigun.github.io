@@ -1,31 +1,30 @@
 import { useState } from 'react';
 import { Link, useDocumentTitle } from '../lib/router';
-import { hero, highlights, pillars, recognition } from '../content/site';
+import { hero, highlights, person, recognition, roleMap } from '../content/site';
 import { featuredProjects } from '../content/projects';
-import { achievements, domainLeadership, events, recentEvents } from '../content/achievements';
-import { stages } from '../content/method';
+import { achievements, domainLeadership, recentEvents } from '../content/achievements';
+import { operatingModel } from '../content/method';
+
+// How I work, one short line per stage.
+const stepLines = { Discover: 'Frame the right problem', Define: 'Testable requirements', Design: 'Reviewed before the build', Prototype: 'Try it before building it', Deliver: 'Predictable sprints', Release: 'Ship what was agreed' };
+const processSteps = operatingModel.map((s) => ({ name: s.name, line: stepLines[s.name] || s.summary }));
 import { ProjectGrid } from '../components/ProjectCard';
 import CareerTimeline from '../components/CareerTimeline';
-import WorkCarousel from '../components/WorkCarousel';
-import { workSlides } from '../content/workSlides';
 import Testimonials from '../components/Testimonials';
-import CountUp from '../components/CountUp';
-import { ChevronIcon, SubjectIcon } from '../components/Icons';
-import { findItem, laneVar } from '../components/board/model';
-import { DisciplineIcon } from '../components/board/parts';
+import { findItem } from '../components/board/model';
+import { BadgeWall, EventRecap, KpiPanel, Milestones, ProcessBar, RoleHub } from '../components/HomeDash';
 import ProjectDialog from '../components/board/ProjectDialog';
 import styles from './Home.module.css';
 
-const eventCount = events.reduce((n, g) => n + g.items.length, 0);
 
-// The latest events as four tickets, one per project, each with the project it belongs to (found
+// The latest events as six log rows, one per project, each with the project it belongs to (found
 // from its case-study link). When two events share a project, such as the hackathon he organised
 // and the talk that opened it, the first leads the ticket and the other is listed on it. An event
 // without a project stays a plain ticket.
 const projectOf = (e) => (e.to?.startsWith('/case-studies/') ? findItem(e.to.slice('/case-studies/'.length)) : null);
 const homeEvents = [];
 for (const e of recentEvents) {
-  if (homeEvents.length === 4) break;
+  if (homeEvents.length === 6) break;
   const project = projectOf(e);
   const ticket = project && homeEvents.find((t) => t.project?.slug === project.slug);
   if (ticket) ticket.also.push(e);
@@ -34,6 +33,16 @@ for (const e of recentEvents) {
 // The popup's previous and next step through these projects, in card order, each once.
 const eventProjects = [...new Set(homeEvents.map((e) => e.project?.slug).filter(Boolean))];
 
+// One figure per achievement for the results list; where there is no number, its icon stands in.
+const figures = {
+  'Quality framework adopted by 3 teams': { figure: '3', figureLabel: 'teams adopted it', date: '2025-06', when: '2025' },
+  [domainLeadership]: { figure: '120+', figureLabel: 'live sessions', date: '2024-07', when: '2024 to 2025' },
+  'Introduced the design phase': { figure: '7', figureLabel: 'product areas through it', date: '2024-06', when: '2024' },
+  'Published a Claude Code marketplace': { figure: '30', figureLabel: 'skills in 7 plugins', date: '2026-10', when: 'Oct 2026' },
+  'AI Innovator of the Month': { figureLabel: 'For the UI revamp', date: '2026-06', when: 'Jun 2026' },
+  'Organised the AI Foundations hackathon': { figure: '10', figureLabel: 'working demos', date: '2026-08', when: 'Aug 2026' },
+};
+
 const featuredAchievements = [
   'Quality framework adopted by 3 teams',
   domainLeadership,
@@ -41,9 +50,12 @@ const featuredAchievements = [
   'Published a Claude Code marketplace',
   'AI Innovator of the Month',
   'Organised the AI Foundations hackathon',
-].map((title) => achievements.find((a) => a.title === title)).filter(Boolean);
+].map((title) => achievements.find((a) => a.title === title)).filter(Boolean)
+  .map((a) => ({ ...a, ...(figures[a.title] || {}) }))
+  .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
 
 const latestTalk = recentEvents.find((e) => e.label === 'Talk');
+
 
 // "Aug 2026" reads as a large month over the year; "2026" shows the year alone.
 const splitWhen = (when) => {
@@ -53,9 +65,6 @@ const splitWhen = (when) => {
 
 export default function Home() {
   useDocumentTitle('Mahmood Ahmad: AI Product Analyst');
-  // The selected-work list and the carousel share one slide; pointing at the list holds the rotation.
-  const [slide, setSlide] = useState(0);
-  const [holdTour, setHoldTour] = useState(false);
   // The project open in the popup, by slug.
   const [openProject, setOpenProject] = useState(null);
   const projectIndex = eventProjects.indexOf(openProject);
@@ -105,17 +114,7 @@ export default function Home() {
               <h2 className={styles.glanceTitle}>Recognition</h2>
               <Link to="/journey#recognition" className="link-quiet">All recognition</Link>
             </div>
-            <ul className={styles.glanceList}>
-              {recognition.map((r, i) => (
-                <li key={r.title} style={{ '--i': i }}>
-                  <span className={styles.glanceIcon} aria-hidden="true"><SubjectIcon name={r.icon} width="18" height="18" /></span>
-                  <span className={styles.glanceText}>
-                    <strong>{r.title}</strong>
-                    {r.detail && <span>{r.detail}</span>}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <BadgeWall items={recognition} />
           </div>
         </div>
       </section>
@@ -123,45 +122,10 @@ export default function Home() {
       <section className={styles.highlights} aria-labelledby="highlights-title">
         <div className="container">
           <h2 id="highlights-title" className="visually-hidden">Highlights</h2>
-          <ul className={styles.highlightList}>
-            {highlights.map((h) => (
-              <li key={h.label}>
-                <CountUp value={h.value} className={styles.highlightValue} />
-                <span className={styles.highlightLabel}>{h.label}</span>
-              </li>
-            ))}
-          </ul>
+          <KpiPanel items={highlights} />
         </div>
       </section>
 
-      <section className="section" aria-labelledby="tour-title">
-        <div className={`container ${styles.tourGrid}`}>
-          <div className={styles.tourIntro}>
-            <div className="section-head">
-              <h2 id="tour-title">Selected work</h2>
-              <p>Six projects, each drawn as the flow it runs on. Choose one, or let them play through.</p>
-            </div>
-            <ul
-              className={styles.tourList}
-              onMouseEnter={() => setHoldTour(true)}
-              onMouseLeave={() => setHoldTour(false)}
-              onFocus={() => setHoldTour(true)}
-              onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setHoldTour(false); }}
-            >
-              {workSlides.map((s, i) => (
-                <li key={s.id}>
-                  <button type="button" aria-current={i === slide ? 'true' : undefined} onClick={() => setSlide(i)}>
-                    <span className={styles.tourLabel}>{s.label}</span>
-                    <span className={styles.tourTitle}>{s.title}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <Link to="/case-studies" className="link-quiet">All case studies</Link>
-          </div>
-          <WorkCarousel index={slide} onIndexChange={setSlide} hold={holdTour} />
-        </div>
-      </section>
 
       <section id="events" className={`section ${styles.eventsBand}`} aria-labelledby="events-band-title">
         <div className="container">
@@ -172,67 +136,7 @@ export default function Home() {
             </div>
             <Link to="/journey" className="link-quiet">All talks, events and courses</Link>
           </div>
-          <div className={styles.eventsLayout}>
-            <figure className={styles.eventPhoto}>
-              <img src="/images/events/hackathon-presenting.jpg" alt="Mahmood presenting with a microphone at the AI hackathon, with a group photo of the participants and the audience in the session room." width="800" height="800" loading="lazy" />
-              <figcaption><strong>On stage</strong><span>Presenting at the division-wide AI hackathon, 2025</span></figcaption>
-            </figure>
-            {/* Each event is a ticket: the date on a stub, the event below, and the project it
-                belongs to at the foot. The whole ticket opens that project in the popup. */}
-            <ol className={styles.eventCards} data-stagger>
-            {homeEvents.map((e, i) => {
-              const [big, small] = splitWhen(e.when);
-              const p = e.project;
-              return (
-                <li
-                  key={e.title}
-                  className={`${styles.eventCard} ${p ? styles.eventLinked : ''}`}
-                  style={{ '--lane': p ? laneVar(p.lane) : 'var(--cobalt)' }}
-                >
-                  <div className={styles.ticket}>
-                    <p className={styles.eventDate}>
-                      <span className={styles.eventBig}>{big}</span>
-                      {small && <span className={styles.eventSmall}>{small}</span>}
-                      <span className={styles.eventType}><SubjectIcon name={e.icon} width="14" height="14" />{e.label}</span>
-                    </p>
-                    <div className={styles.eventBody}>
-                      <h3>
-                        {p ? (
-                          <button
-                            type="button"
-                            className={styles.eventOpen}
-                            aria-haspopup="dialog"
-                            aria-describedby={`event-project-${i}`}
-                            onClick={() => setOpenProject(p.slug)}
-                          >
-                            {e.title}
-                          </button>
-                        ) : e.title}
-                      </h3>
-                      <p className={styles.eventDetail}>{e.detail}</p>
-                      {e.also.map((a) => (
-                        <p key={a.title} className={styles.eventAlso}>
-                          <SubjectIcon name={a.icon} width="14" height="14" />
-                          <span><strong>{a.label}</strong> {a.title}</span>
-                        </p>
-                      ))}
-                    </div>
-                    {p && (
-                      <p id={`event-project-${i}`} className={styles.eventProject}>
-                        <span className={styles.eventProjectIcon} aria-hidden="true"><DisciplineIcon tag={p.lane} /></span>
-                        <span className={styles.eventProjectName}>
-                          <span className="visually-hidden">Opens the project: </span>{p.name}
-                        </span>
-                        <span className={styles.eventProjectKey} aria-hidden="true">{p.id}</span>
-                        <ChevronIcon className={styles.eventProjectGo} width="16" height="16" aria-hidden="true" />
-                      </p>
-                    )}
-                  </div>
-                </li>
-              );
-            })}
-            </ol>
-          </div>
+          <EventRecap rows={homeEvents} onOpen={setOpenProject} />
         </div>
       </section>
 
@@ -257,18 +161,7 @@ export default function Home() {
             </div>
             <Link to="/about" className="link-quiet">More about me</Link>
           </div>
-          <ul className={styles.pillars}>
-            {pillars.map((p) => (
-              <li key={p.name} className={styles.pillar}>
-                <span className={styles.pillarIcon} aria-hidden="true"><SubjectIcon name={p.icon} width="22" height="22" /></span>
-                <h3>{p.name}</h3>
-                <p className={styles.roles}>{p.roles.join(', ')}</p>
-                <p>{p.body}</p>
-                <p className={styles.proof}>{p.proof}</p>
-                <Link to={p.link.to} className="link-quiet">{p.link.text}</Link>
-              </li>
-            ))}
-          </ul>
+          <RoleHub title={person.officialTitle} roles={roleMap} />
         </div>
       </section>
 
@@ -308,24 +201,7 @@ export default function Home() {
             <Link to="/journey" className="link-quiet">The full career journey</Link>
           </div>
 
-          <dl className={styles.achStats} data-stagger>
-            <div><dt>Recognitions</dt><dd><CountUp value={String(recognition.length)} /></dd></div>
-            <div><dt>Achievements</dt><dd><CountUp value={String(achievements.length)} /></dd></div>
-            <div><dt>Hackathons, talks, workshops and courses</dt><dd><CountUp value={String(eventCount)} /></dd></div>
-            <div><dt>Live training sessions delivered</dt><dd><CountUp value="120+" /></dd></div>
-          </dl>
-
-          <ul className={styles.achCards}>
-            {featuredAchievements.map((a) => (
-              <li key={a.title} className={styles.achCard}>
-                <span className={styles.achIcon} aria-hidden="true"><SubjectIcon name={a.icon} width="20" height="20" /></span>
-                <div>
-                  <h3>{a.to ? <Link to={a.to}>{a.title}</Link> : a.title}</h3>
-                  <p>{a.detail}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <Milestones rows={featuredAchievements} />
         </div>
       </section>
 
@@ -338,14 +214,7 @@ export default function Home() {
             </div>
             <Link to="/how-i-work" className="link-quiet">My methods in full</Link>
           </div>
-          <ol className={styles.stages}>
-            {stages.map((s) => (
-              <li key={s.name}>
-                <h3>{s.name}</h3>
-                <p>{s.body}</p>
-              </li>
-            ))}
-          </ol>
+          <ProcessBar steps={processSteps} />
         </div>
       </section>
 
@@ -353,7 +222,6 @@ export default function Home() {
         <div className="container">
           <div className={`section-head ${styles.centerHead}`}>
             <h2 id="quotes-title">What colleagues say</h2>
-            <p>Recommendations from my manager and the developers I work with, quoted in full from LinkedIn.</p>
           </div>
           <Testimonials />
         </div>

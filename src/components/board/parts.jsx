@@ -1,5 +1,6 @@
 import { PenIcon, PlugIcon, ShieldIcon, SparkIcon, TrendIcon } from '../Icons';
-import { pictureFor } from '../../pages/OgPictures';
+import { emblemFor, pictureFor, toneFor } from '../../pages/OgPictures';
+import { SubjectIcon } from '../Icons';
 import { FIRST, qIndex } from './model';
 import styles from './parts.module.css';
 
@@ -75,6 +76,32 @@ export function Cover({ slug }) {
       <span className={`${styles.coverDot} ${styles.cd1}`} />
       <span className={`${styles.coverDot} ${styles.cd2}`} />
       <ProjectIcon slug={slug} size="lg" />
+    </span>
+  );
+}
+
+// For things that aren't projects: a picture from the same set (by name) in a chosen hue, or an icon.
+export const toneVars = (hue) => {
+  const [accent, wash, , tint] = toneFor(hue);
+  return { '--accent': accent, '--wash': wash, '--tint': tint };
+};
+
+export function Emblem({ picture, icon, hue, size = 'sm' }) {
+  const px = size === 'lg' ? 40 : size === 'md' ? 32 : 25;
+  return (
+    <span className={`${styles.icon} ${styles[`icon-${size}`]}`} style={toneVars(hue)} aria-hidden="true">
+      {picture ? emblemFor(picture, hue, px).svg : <SubjectIcon name={icon} width={px - 6} height={px - 6} style={{ color: 'var(--accent)' }} />}
+    </span>
+  );
+}
+
+export function ToneCover({ picture, icon, hue }) {
+  return (
+    <span className={styles.cover} style={toneVars(hue)} aria-hidden="true">
+      <span className={styles.coverRing} />
+      <span className={`${styles.coverDot} ${styles.cd1}`} />
+      <span className={`${styles.coverDot} ${styles.cd2}`} />
+      <Emblem picture={picture} icon={icon} hue={hue} size="lg" />
     </span>
   );
 }

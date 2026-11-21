@@ -120,7 +120,7 @@
 .tourTitle { font-family: var(--font-display); font-size: var(--text-h4); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; }
 
 /* ─── Highlights ─────────────────────────────────────────────────── */
-.highlights { border-block: 1px solid var(--hairline); background: var(--surface); }
+.highlights { padding-block: var(--s-7, 48px) 0; }
 .highlightList { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .highlightList li { display: grid; align-content: start; gap: var(--s-2); padding: var(--s-6) var(--s-5); border-left: 1px solid var(--hairline); }
 .highlightList li:first-child { border-left: 0; padding-left: 0; }

@@ -44,10 +44,10 @@ export const tenureYears = Math.floor(((Date.now() - joined.getTime()) / (365.24
 export const tenure = `${tenureYears}+`;
 
 export const highlights = [
-  { value: tenure, label: 'years in enterprise dealership SaaS, from QA to product analysis' },
-  { value: '120+', label: 'live domain training sessions delivered' },
-  { value: '3', label: 'teams adopted the Quality Gates framework I designed' },
-  { value: '1st', label: 'of 11 teams in a division-wide AI hackathon' },
+  { value: tenure, label: 'years in enterprise dealership SaaS, from QA to product analysis', viz: 'years', to: '/journey' },
+  { value: '120+', label: 'live domain training sessions delivered', viz: 'dots', to: '/case-studies/domain-knowledge-base' },
+  { value: '3', label: 'teams adopted the Quality Gates framework I designed', viz: 'teams', to: '/case-studies/quality-gates' },
+  { value: '1st', label: 'of 11 teams in a division-wide AI hackathon', viz: 'rank', to: '/case-studies/hackathon-2025' },
 ];
 
 // The idea-to-launch journey, shown on Home and on the Promise Tracker page.
@@ -61,11 +61,21 @@ export const journey = [
 ];
 
 export const recognition = [
-  { title: 'VP Award', detail: 'Contributions tied to multimillion-dollar business goals', icon: 'award' },
-  { title: 'AI Innovator of the Month', icon: 'spark' },
-  { title: '1st of 11 teams, AI hackathon', detail: 'As Product Owner, Scrum Master and QA lead', icon: 'trophy' },
-  { title: 'Division All-Hands Recognition', icon: 'megaphone' },
-  { title: 'Annual Special Thanks', icon: 'heart' },
+  { title: 'VP Award', detail: 'Tied to multimillion-dollar business goals', icon: 'award' },
+  { title: 'AI Innovator of the Month', detail: 'For a UI revamp delivered with AI agents', icon: 'spark' },
+  { title: '1st of 11 teams, AI hackathon', detail: 'Product Owner, Scrum Master and QA lead', icon: 'trophy' },
+  { title: 'Division All-Hands Recognition', detail: 'For quality and process improvement work', icon: 'megaphone' },
+  { title: 'Annual Special Thanks', detail: 'Recognised for the second year running', icon: 'badge' },
+];
+
+// One title, six roles: each role with its area and one proof, for the Home page's role map.
+export const roleMap = [
+  { role: 'Business analyst', area: 'Product', icon: 'layers', proof: '70 user stories', to: '/how-i-work#requirements' },
+  { role: 'Operator and strategist', area: 'Product', icon: 'trend', proof: '2026 roadmap structure', to: '/projects#product-decisions' },
+  { role: 'Design collaborator', area: 'Design', icon: 'pen', proof: '7 product areas revamped', to: '/case-studies/design-phase' },
+  { role: 'AI prototyper', area: 'AI', icon: 'chip', proof: '30 skills published', to: '/case-studies/ai-prototyping' },
+  { role: 'QA lead', area: 'Quality', icon: 'shield', proof: '~40% less defect leakage', to: '/case-studies/quality-gates' },
+  { role: 'Scrum master', area: 'Delivery', icon: 'users', proof: 'Certified ScrumMaster', to: '/how-i-work' },
 ];
 
 // One title, six roles, grouped under four pillars.
@@ -73,6 +83,8 @@ export const pillars = [
   {
     name: 'Product',
     icon: 'layers',
+    metric: '70',
+    metricLabel: 'user stories this year',
     roles: ['Business analyst', 'Operator and strategist'],
     body: 'I run discovery, turn the product vision into a roadmap, epics and user stories, and work through product decisions with the Product Owner.',
     proof: '70 user stories and the 2026 roadmap structure this year.',
@@ -81,6 +93,8 @@ export const pillars = [
   {
     name: 'Design',
     icon: 'pen',
+    metric: '7',
+    metricLabel: 'product areas revamped',
     roles: ['Design collaborator'],
     body: 'I brief the designer on the business rules, review each design against the component library before development, and prototype ideas that people can click.',
     proof: 'Introduced a structured design phase into delivery; revamped seven product areas.',
@@ -89,6 +103,8 @@ export const pillars = [
   {
     name: 'AI',
     icon: 'chip',
+    metric: '30',
+    metricLabel: 'skills in a public marketplace',
     roles: ['AI prototyper'],
     body: 'I design AI features, write the AI skills behind them, and build working software by directing AI agents with Claude Code.',
     proof: 'AI prototypes such as Promise Tracker; a public Claude Code marketplace with 30 skills.',
@@ -97,6 +113,8 @@ export const pillars = [
   {
     name: 'Quality and delivery',
     icon: 'shield',
+    metric: '~40%',
+    metricLabel: 'less defect leakage, by my tracking',
     roles: ['QA lead', 'Scrum master'],
     body: 'I lead the QA team, run the sprint board and ceremonies, and set the quality bar features ship against.',
     proof: 'Quality Gates adopted by 3 teams: about 40% less defect leakage, zero critical defects across 6 sprints.',

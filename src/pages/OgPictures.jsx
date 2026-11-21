@@ -332,3 +332,16 @@ export function pictureFor(slug, size = 236) {
   const Pic = P[name];
   return { wash: w, accent: c, tint: t, svg: <svg viewBox="0 0 200 200" width={size} height={size} aria-hidden="true"><Pic c={c} w={w} d={d} /></svg> };
 }
+
+// The same drawn pictures for things that aren't projects (a role, a stage, an award): pick a
+// picture by name and a hue, and get the colours and the svg in the same shape as pictureFor.
+export function toneFor(hue) {
+  const light = hue >= 25 && hue <= 100 ? 36 : 38;
+  return [`hsl(${hue} 52% ${light}%)`, `hsl(${hue} 40% 97%)`, `hsl(${hue} 56% ${light - 12}%)`, `hsl(${hue} 42% 88%)`];
+}
+export const pictureNameFor = (slug) => (MAP[slug] || ['docs'])[0];
+export function emblemFor(name, hue, size = 40) {
+  const [c, w, d, t] = toneFor(hue);
+  const Pic = P[name] || P.docs;
+  return { wash: w, accent: c, tint: t, svg: <svg viewBox="0 0 200 200" width={size} height={size} aria-hidden="true"><Pic c={c} w={w} d={d} /></svg> };
+}
