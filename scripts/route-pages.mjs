@@ -85,25 +85,6 @@ const shares = [
   { id: 'postman-presentation', title: 'Postman proof of concept (35 slides)', description: 'The presentation given to the whole division in May 2025.', image: `/images/previews/doc-postman-presentation.png?v=${VERSION}`, to: '/documents/postman-poc-presentation.pdf' },
   { id: 'how-to-standard', title: 'How-to guide standard (8 pages)', description: 'A public copy of the standard for writing a feature how-to guide for dealers.', image: `/images/previews/doc-how-to-standard.png?v=${VERSION}`, to: '/documents/how-to-guide-standard.pdf' },
 ];
-// Tile-shaped versions for LinkedIn projects with more than one attachment: LinkedIn shows those
-// as two portrait tiles cropped from the centre, so these images keep everything in the middle.
-const tiles = [
-  ['feature-guides', 'Case study: feature guides for dealers', 'A how-to standard, a build tool that checks every guide against it, and the first complete guide.', '/case-studies/feature-guides'],
-  ['how-to-standard', 'How-to guide standard (8 pages)', 'A public copy of the standard for writing a feature how-to guide for dealers.', '/documents/how-to-guide-standard.pdf'],
-  ['postman-evaluation', 'Case study: Postman API testing evaluation', 'How a proof of concept led 5+ teams to adopt Postman as their API testing standard.', '/case-studies/postman-evaluation'],
-  ['postman-doc', 'Postman API testing evaluation (10 pages)', 'The written evaluation: features, plans, strengths, limits and the recommendation.', '/documents/postman-api-testing-evaluation.pdf'],
-  ['postman-slides', 'Postman proof of concept (35 slides)', 'The presentation given to the whole division in May 2025.', '/documents/postman-poc-presentation.pdf'],
-  ['ai-qa-workbench', 'Case study: the AI QA Workbench', '16 AI agents that take a user story to test cases, automation, pipeline runs and structured bug reports.', '/case-studies/ai-qa-workbench'],
-  ['dis-cert', 'AI Foundations: From Developer to Orchestrator', 'Certificate of completion for the five-day cross-division AI hackathon, July 2026.', '/certifications/dis-ai-foundations-certificate.jpg'],
-  ['ai-foundations', 'Case study: the AI Foundations hackathon', '9 real-world briefs for 10 participants, 10 working demos and a 183-page handbook on working with Claude.', '/case-studies/ai-foundations-hackathon'],
-  ['foundations-cert', 'Certificate of appreciation: AI Foundations', 'For organising and delivering AI Foundations: Powering Work with AI Orchestration, August 2026.', '/certifications/ai-foundations-organiser-certificate.jpg'],
-  ['hackathon-2025', 'Case study: first place of 11 teams', 'AI solutions for customer retention and employee performance analysis, as Product Owner, Scrum Master and QA lead.', '/case-studies/hackathon-2025'],
-  ['first-prize', 'First prize, division-wide AI hackathon', 'The winning team with the First Prize card: 1st of 11 teams, 2025.', '/images/events/hackathon-first-prize.jpg'],
-  ['final-pitch', 'Presenting the final pitch', 'Presenting the team’s AI solution to the judges at the division-wide AI hackathon, 2025.', '/images/events/hackathon-final-presentation.jpg'],
-];
-for (const [slug, title, description, to] of tiles) {
-  shares.push({ id: `tile-${slug}`, title, description, image: `/images/previews/tiles/${slug}.png?v=${VERSION}`, to });
-}
 for (const s of shares) {
   const url = `${SITE}/share/${s.id}`;
   write(`share/${s.id}.html`, `<!doctype html>
