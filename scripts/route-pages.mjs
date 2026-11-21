@@ -83,6 +83,7 @@ const shares = [
   { id: 'dis-ai-foundations', title: 'AI Foundations: From Developer to Orchestrator', description: 'Certificate of completion for the five-day cross-division AI hackathon, July 2026.', image: '/certifications/dis-ai-foundations-certificate.jpg', to: '/certifications/dis-ai-foundations-certificate.jpg' },
   { id: 'postman-evaluation-doc', title: 'Postman API testing evaluation (10 pages)', description: 'The written evaluation: features, plans, strengths, limits and the recommendation.', image: `/images/previews/doc-postman-evaluation.png?v=${VERSION}`, to: '/documents/postman-api-testing-evaluation.pdf' },
   { id: 'postman-presentation', title: 'Postman proof of concept (35 slides)', description: 'The presentation given to the whole division in May 2025.', image: `/images/previews/doc-postman-presentation.png?v=${VERSION}`, to: '/documents/postman-poc-presentation.pdf' },
+  { id: 'claude-handbook', title: 'Working with Claude: The Eleven Building Blocks (183 pages)', description: 'A practical handbook created for the AI Foundations hackathon, so the learning continues across the division.', image: `/images/previews/doc-handbook.png?v=${VERSION}`, to: '/documents/working-with-claude-eleven-building-blocks.pdf' },
   { id: 'how-to-standard', title: 'How-to guide standard (8 pages)', description: 'A public copy of the standard for writing a feature how-to guide for dealers.', image: `/images/previews/doc-how-to-standard.png?v=${VERSION}`, to: '/documents/how-to-guide-standard.pdf' },
 ];
 for (const s of shares) {
