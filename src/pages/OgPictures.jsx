@@ -305,9 +305,20 @@ const MAP = {
   beacon: ['beacon', 'product'],
 };
 
+// Every project gets its own colour: 31 hues spread around the wheel, ordered so that projects
+// next to each other in the list land far apart. Postman keeps its orange.
+const SLUGS = Object.keys(MAP);
+function colourFor(slug) {
+  if (slug === 'postman-evaluation') return PALETTE.postman;
+  const i = Math.max(0, SLUGS.indexOf(slug));
+  const hue = Math.round(((i * 13) % SLUGS.length) * (360 / SLUGS.length) + 210) % 360;
+  const light = hue >= 40 && hue <= 100 ? 31 : 40; // yellows need more depth to read as text
+  return [`hsl(${hue} 68% ${light}%)`, `hsl(${hue} 70% 96%)`, `hsl(${hue} 72% ${light - 12}%)`, `hsl(${hue} 70% 84%)`];
+}
+
 export function pictureFor(slug) {
-  const [name, pal] = MAP[slug] || ['docs', 'product'];
-  const [c, w, d, t] = PALETTE[pal];
+  const [name] = MAP[slug] || ['docs'];
+  const [c, w, d, t] = colourFor(slug);
   const Pic = P[name];
   return { wash: w, accent: c, tint: t, svg: <svg viewBox="0 0 200 200" width="236" height="236" aria-hidden="true"><Pic c={c} w={w} d={d} /></svg> };
 }

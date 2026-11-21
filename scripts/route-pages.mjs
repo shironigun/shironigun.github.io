@@ -8,7 +8,7 @@ import path from 'node:path';
 import { createServer } from 'vite';
 
 const SITE = 'https://shironigun.github.io';
-const VERSION = '2026-11-21b'; // bump when the preview images change, so LinkedIn fetches them again
+const VERSION = '2026-11-21c'; // bump when the preview images change, so LinkedIn fetches them again
 const dist = path.resolve('dist');
 const shell = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
 
