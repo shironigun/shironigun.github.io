@@ -27,7 +27,7 @@ export const experience = [
     'Organised the AI Foundations hackathon, writing 9 real-world project briefs and mentoring all 10 participants to working demos.',
     'Prepared a 183-page Claude handbook to support AI knowledge-sharing across the division.',
     'Managed release readiness and introduced API test automation built by AI agents, auditing it for false positives.',
-    'Evaluated QA candidates and onboarded 3 analysts; earned promotion from Junior SQA Analyst in under two years.',
+    'Evaluated QA candidates and onboarded 3 analysts, gaining promotion from Junior SQA Analyst in under two years.',
     ],
   },
   {

@@ -83,9 +83,10 @@ const links = [
 ];
 // The headline matches his LinkedIn headline.
 const headline = 'AI Product Analyst | AI product definition, design direction, agent-led prototyping, evaluation and QA leadership';
-// The summary sells results (his call, 22 Nov 2026): it opens with an adverb and an action, and never
+// The summary sells results (his call, 22 Nov 2026): implied first person in the past tense ("Earned", not
+// "Consistently delivers"), opening with the most eye-catching result of his work (no awards or competitions). It never
 // names a title, years of experience, the sector, the company, certifications or "I".
-const summary = `Consistently delivers clear requirements and AI features that teams can build with confidence, from business problem to release. Spearheaded an AI feature from discovery to pilot, directed AI agents to redesign 7 product areas, and built the method that decides when an AI feature is ready to release. Strengthened release quality with a Quality Gates framework that 3 other teams adopted, followed by about 40% less defect leakage and zero critical defects over 6 sprints. Unified API testing across 5+ teams, placed first among 11 teams in a division-wide AI hackathon, and now leads the QA team into AI-assisted testing.`;
+const summary = `Delivered AI features from first business problem to pilot, pairing clear requirements and agent-built prototypes with a repeatable test for release readiness. Spearheaded the redesign of 7 product areas by directing AI agents, keeping each one true to the component library and business rules. Strengthened release quality with a Quality Gates framework that 3 other teams adopted, followed by about 40% less defect leakage and zero critical defects over 6 sprints. Unified API testing across 5+ teams and stepped up to lead the QA team into AI-assisted testing.`;
 // Projects, newest first by start date; each one sentence or two, a verb first. No product name.
 const projects = [
   { name: 'Feature Guides for Dealers', note: 'Customer Documentation', when: 'Nov 2026 - Present', text: 'Structured an 8-page documentation standard and the first complete AI feature guide with the support team; specified a tool that checks each guide against it.' },
