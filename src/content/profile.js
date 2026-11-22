@@ -6,7 +6,9 @@ import { roleHours } from './hours';
 // Experience, newest first. `start`/`end` (YYYY-MM, end null for the current role) drive the
 // durations and the career strip on About; `track` colours it (design, quality, product); `org`
 // groups roles by employer; `promoted` marks a promotion into the role. `hours` is the working
-// time in each title at Perseus Group, worked out live in hours.js.
+// time in each title at Perseus Group, worked out live in hours.js. `bullets` are the role's results,
+// shared by the About page, the resume and his LinkedIn experience: one or two lines each, past tense, each
+// opening with a different word from his action words list (resume/build.mjs checks for repeats).
 export const experience = [
   {
     role: 'Product Quality Analyst',
@@ -14,15 +16,18 @@ export const experience = [
     period: 'Jan 2026 to present',
     start: '2026-01', end: null, track: 'product', org: 'Perseus Group, part of Constellation Software', promoted: true,
     hours: roleHours.current,
-    summary: 'On our dealership SaaS products I do the team’s business analysis and shape the roadmap with the Product Owner, collaborate on design, run the sprint as Scrum Master, prototype AI features and lead the QA team.',
-    highlights: [
-      { label: 'AI product definition', text: 'Lead AI feature definition for customer-engagement SaaS for automotive, agricultural and equipment dealerships, in a 200+ person division. Led product definition for Promise Tracker, an AI feature that surfaces what a dealership still owes its customers, from concept to its pilot ahead of production. Promoted from Junior SQA Analyst in under two years.' },
-      { label: 'AI-native product revamp', text: 'Led the rebuild of 7 product areas of our dealership CRM, directing Claude Code agents from specification to review against the component library and business rules.' },
-      { label: 'Roadmap and product strategy', text: 'Shape the roadmap and AI feature decisions with the Product Owner and Initiative Manager in Aha! and Azure DevOps, backing priorities with quantitative analysis (regression, trend and break-even), SWOT and 5 Whys.' },
-      { label: 'AI enablement', text: 'Organised the AI Foundations hackathon for 10 participants across QA and design, with 10 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page Claude handbook.' },
-      { label: 'People leadership', text: 'Lead the QA team (since October 2026), coaching the team toward AI-assisted testing, AI evaluation and automation; completed six-month Manager Essentials Training.' },
-      { label: 'Public AI tooling', text: 'Published a Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and built the AI QA Workbench in the DIS AI Foundations cohort.' },
-      { label: 'Delivery and insight', text: 'Own release readiness, introduced the API automation framework and onboarded 3 analysts.' },
+    summary: 'On our enterprise dealership CRM I do the team’s business analysis and shape the roadmap with the Product Owner, collaborate on design, run the sprint as Scrum Master, prototype AI features and lead the QA team.',
+    bullets: [
+    'Headed product definition for Promise Tracker, an AI feature that surfaces outstanding dealership commitments to customers, from discovery to pilot.',
+    'Defined AI feature requirements in 70 user stories with acceptance criteria.',
+    'Redesigned 7 CRM product areas by directing AI coding agents, reviewing each against the component library and business rules.',
+    'Influenced roadmap priorities with the Product Owner and Initiative Manager through trend analysis, break-even analysis and AI cost modelling.',
+    'Formulated a repeatable AI evaluation method using rule-based tests, written grading criteria and 3 runs per case to check consistency.',
+    'Oversaw the QA team from Oct 2026, coaching analysts in AI-assisted testing, LLM evaluation and test automation.',
+    'Organised the AI Foundations hackathon, writing 9 real-world project briefs and mentoring all 10 participants to working demos.',
+    'Prepared a 183-page Claude handbook to support AI knowledge-sharing across the division.',
+    'Managed release readiness and introduced API test automation built by AI agents, auditing it for false positives.',
+    'Evaluated QA candidates and onboarded 3 analysts; earned promotion from Junior SQA Analyst in under two years.',
     ],
   },
   {
@@ -32,11 +37,15 @@ export const experience = [
     start: '2024-02', end: '2025-12', track: 'quality', org: 'Perseus Group, part of Constellation Software', promoted: true,
     hours: roleHours.junior,
     summary: 'Owned QA for an enterprise dealership CRM and grew into business analysis and design.',
-    highlights: [
-      { label: 'Quality framework adopted by 3 teams', text: 'Designed the Strict Quality Gates framework, adopted by 3 other teams. By my own tracking: about 40% less defect leakage and zero critical defects across 6 consecutive sprints.' },
-      { label: 'Domain enablement', text: `Ran a domain training programme of 120+ live sessions, contributed to the public product knowledge base through training and knowledge transfer, and trained 2 new hires to independent sprint work within their first quarter.` },
-      { label: 'Design and tooling standards', text: 'Led the design phase for the dealership mobile app with the UX designer, and ran the Postman proof of concept, presented to the whole division, whose recommendation 5+ teams adopted as their standard API testing tool.' },
-      { label: 'AI hackathon winner', text: '1st of 11 teams in a division-wide AI hackathon (2025) as Product Owner, Scrum Master and QA lead, building AI for customer retention and employee performance; delivered the final pitch.' },
+    bullets: [
+    'Identified gaps in acceptance criteria behind 68% of escaped defects and designed the Quality Gates framework to close them.',
+    'Secured adoption of the Quality Gates framework by 3 other teams through 4 facilitated sessions.',
+    'Quantified about 40% lower defect leakage and zero critical defects across 6 consecutive sprints after adoption.',
+    'Launched a domain training programme of 120+ live sessions for development, QA, operations and business analysts.',
+    'Trained 2 new hires to handle sprint work independently within their first quarter, using 60+ SOPs and guides written for the programme.',
+    'Originated a pre-development design phase, aligning business rules with the UX designer before mobile app development.',
+    'Standardised API testing across 5+ teams by presenting a Postman proof of concept to the division.',
+    'Ranked first of 11 teams in a division-wide AI hackathon as Product Owner, Scrum Master and QA lead, delivering the final pitch.',
     ],
   },
   {
@@ -46,10 +55,10 @@ export const experience = [
     start: '2023-12', end: '2024-02', track: 'quality', org: 'Perseus Group, part of Constellation Software',
     hours: roleHours.trainee,
     summary: 'Learned the product, the domain and the sprint, and started improving them.',
-    highlights: [
-      { label: 'Standards from day one', text: 'Initiated and wrote shared UI standards, covering component consistency, interaction patterns and accessibility baselines, and improved it into a 12-page style guide in January 2024.' },
-      { label: 'Domain immersion', text: `Worked alongside the Product Owner, Initiative Manager, development and operations, and ran acceptance, functional, API and cross-platform testing with workarounds that cut regression effort.` },
-      { label: 'Automation guide', text: 'Published a 13-page Selenium WebDriver guide in C# for automation testers.' },
+    bullets: [
+    'Developed shared UI standards for components, interaction patterns and accessibility, then expanded them into a 12-page style guide.',
+    'Tested acceptance, functional, API and cross-platform flows, finding workarounds that reduced regression effort.',
+    'Wrote a 13-page Selenium WebDriver guide in C# to share automation practice with other testers.',
     ],
   },
   {
@@ -58,9 +67,9 @@ export const experience = [
     period: 'Sep 2022 to Mar 2023',
     start: '2022-09', end: '2023-03', track: 'design', org: 'Media Solutions',
     summary: 'Designed and built responsive client websites.',
-    highlights: [
-      { label: 'Client websites', text: 'Designed and built custom WordPress websites from client brand requirements, turning PSD designs into pixel-accurate, responsive Elementor builds.' },
-      { label: 'UX improvements', text: 'Improved navigation, layout hierarchy and UI consistency across the sites I delivered.' },
+    bullets: [
+    'Built custom WordPress websites from client brand requirements, turning PSD designs into pixel-accurate, responsive Elementor builds.',
+    'Improved navigation, layout hierarchy and UI consistency across every site delivered.',
     ],
   },
   {
@@ -69,15 +78,15 @@ export const experience = [
     period: 'Oct 2021 to Dec 2021',
     start: '2021-10', end: '2021-12', track: 'design', org: 'Arfa Software Technology Park',
     summary: 'Interface design, prototypes and marketing materials.',
-    highlights: [
-      { label: 'Interface design', text: 'Refined the organisation’s web interface for clearer navigation and hierarchy, and sketched and prototyped UI concepts for stakeholder review before engineering started.' },
-      { label: 'Brand materials', text: 'Designed e-brochures and client-facing materials to brand guidelines.' },
+    bullets: [
+    'Refined the organisation’s web interface for clearer navigation and hierarchy, and prototyped UI concepts for stakeholder review before engineering started.',
+    'Designed e-brochures and client-facing materials to brand guidelines.',
     ],
   },
 ];
 
 export const product = {
-  name: 'Enterprise dealership SaaS',
+  name: 'Enterprise dealership CRM',
   description: 'Customer-engagement software for automotive, agricultural and equipment dealerships, part of the dealer software group at Constellation Software. It sits on top of each dealership-management system and covers SMS, email and Messenger across the whole buying journey, on web and mobile.',
   features: ['Automations and visibility', 'Broadcasts and customer groups', 'Messenger and customers', 'Surveys and reviews', 'Deals, payments and inventory', 'Analytics and the mobile app'],
 };

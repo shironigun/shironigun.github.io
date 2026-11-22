@@ -189,10 +189,9 @@
 .promoted { background: color-mix(in srgb, var(--t) 14%, transparent); color: var(--t); }
 .roleDetail { padding: 0 var(--s-5) var(--s-5) calc(var(--s-5) + 12px + var(--s-4)); }
 .roleSummary { font-size: var(--text-md); line-height: 1.6; }
-.highlights { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); margin-top: var(--s-4); }
-.highlights li { display: grid; gap: 4px; align-content: start; padding: var(--s-3) var(--s-4); border: 1px solid var(--hairline); border-left: 3px solid var(--t); border-radius: var(--radius); background: var(--surface); }
-.highlights strong { font-size: var(--text-sm); font-weight: 650; }
-.highlights span { font-size: var(--text-sm); line-height: 1.55; color: var(--graphite); }
+.highlights { display: grid; gap: var(--s-2); margin-top: var(--s-4); padding-left: 1.15em; }
+.highlights li { padding-left: 4px; font-size: var(--text-sm); line-height: 1.6; color: var(--graphite); }
+.highlights li::marker { color: var(--t, var(--cobalt)); }
 
 /* Roles and skills */
 .pillars { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4); }
@@ -253,7 +252,7 @@
   .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .kpis > div:nth-child(3) { border-left: 0; }
   .kpis > div:nth-child(n + 3) { border-top: 1px solid var(--hairline); }
-  .pillars, .skillCols, .certs, .highlights { grid-template-columns: minmax(0, 1fr); }
+  .pillars, .skillCols, .certs { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 860px) {
   .record { grid-template-columns: minmax(0, 1fr); }

@@ -129,7 +129,7 @@ function RoleRecord({ e, defaultOpen }) {
       <div id={id} className={styles.roleDetail} hidden={!open}>
         <p className={styles.roleSummary}>{e.summary}</p>
         <ul className={styles.highlights}>
-          {e.highlights.map((h) => <li key={h.label}><strong>{h.label}</strong><span>{h.text}</span></li>)}
+          {e.bullets.map((b) => <li key={b}>{b}</li>)}
         </ul>
       </div>
     </li>
@@ -234,7 +234,7 @@ export default function About() {
                     <div className={styles.block}>
                       <h3>Summary</h3>
                       <p className={styles.summary}>
-                        I’m an AI Product Analyst. For {tenure} years I’ve worked on enterprise dealership SaaS at Perseus Group, part of Constellation Software:
+                        I’m an AI Product Analyst. For {tenure} years I’ve worked on an enterprise dealership CRM at Perseus Group, part of Constellation Software:
                         customer engagement, messaging, a mobile app and AI features for automotive, agricultural and equipment dealerships, in a 200+ person division.
                         I came to product through design and quality, and I build by directing AI agents.
                       </p>

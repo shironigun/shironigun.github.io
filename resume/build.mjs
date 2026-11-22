@@ -26,15 +26,54 @@ process.chdir(root);
 
 // ── Content, loaded through Vite so the site's own modules resolve as they do in the browser ──
 const vite = await createServer({ root, server: { middlewareMode: true, hmr: false }, appType: 'custom', logLevel: 'error' });
-const { experience, skills, education, certifications } = await vite.ssrLoadModule('/src/content/profile.js');
-const { person, contact, recognition, tools, tenure } = await vite.ssrLoadModule('/src/content/site.js');
-// Both resumes list the tool groups under Skills, named "Product tools" and so on.
-const skillGroups = [...skills, ...tools.map((g) => ({ ...g, group: `${g.group} tools` }))];
+const { experience, education, certifications } = await vite.ssrLoadModule('/src/content/profile.js');
+const { person, contact, recognition, tools } = await vite.ssrLoadModule('/src/content/site.js');
+// The resume lists a focused set of skills, each backed by the experience below (the site keeps the
+// full LinkedIn list); then the tool groups, named "Product tools" and so on.
+const resumeSkills = [
+  { group: 'Product', items: ['Product discovery', 'Requirements elicitation', 'Functional requirements', 'User stories', 'Acceptance criteria', 'Prioritisation', 'Product roadmapping', 'Business analysis', 'Stakeholder management'] },
+  { group: 'AI product work', items: ['AI feature definition', 'AI agent workflows', 'LLM evaluation', 'Evaluation methodology', 'Grading criteria', 'Prompt engineering', 'Agent-led prototyping', 'AI cost modelling'] },
+  { group: 'Design', items: ['Product design', 'User experience (UX)', 'User interface prototyping', 'Design direction', 'Design review'] },
+  { group: 'Quality', items: ['Release readiness', 'Quality gates', 'Test strategy', 'Test automation', 'API testing', 'Regression testing', 'User acceptance testing', 'Defect triage'] },
+  { group: 'Leadership and delivery', items: ['Team coaching', 'Mentoring', 'Cross-functional collaboration', 'Scrum (CSM®)', 'Sprint planning', 'Workshop facilitation'] },
+];
+// Tool names as a recruiter would search for them.
+const RESUME_TOOLS = { 'Claude Skills and Plugins': ['Claude Skills', 'Claude Plugins'], 'MCP servers': ['Model Context Protocol (MCP)'], Selenium: ['Selenium WebDriver'] };
+const resumeTools = tools.map((g) => ({ group: g.group === 'AI and agentic development' ? 'AI' : g.group, items: g.items.flatMap((i) => RESUME_TOOLS[i] || [i]) }));
+const skillGroups = [...resumeSkills, ...resumeTools.map((g) => ({ ...g, group: `${g.group} tools` }))];
 const { recentEvents } = await vite.ssrLoadModule('/src/content/achievements.js');
 await vite.close();
+
+// ── Resume rules (his, Nov 2026) ──
+//   - The summary says why a company should hire him: no "I", no current company, no official title
+//     (the official title is the first role under Experience). Action words and adverbs.
+//   - Experience is plain bullets: no bold label before each one. One or two lines each, a strong
+//     verb first, past tense throughout, a number wherever the facts have one. Every bullet, project and
+//     summary sentence opens with a different word from his 100 action words list (Interviewology); no repeats.
+//   - Every date sits right-aligned, in one format: "Mon YYYY" or "Mon YYYY - Present" (a plain hyphen: some viewers and ATS mangle the en dash).
+//   - Nothing repeats across sections: a fact lives in Experience, Projects or Awards, not two.
+// The bullets live in src/content/profile.js (`bullets`), shared with the About page and LinkedIn.
 // The resume starts at SQA Trainee (Dec 2023): only the Perseus Group roles. The site's Journey and
 // About still show the earlier design roles.
 const resumeRoles = experience.filter((r) => r.start >= '2023-12');
+
+// Certifications: the professional ones, newest first, each with its month. The introductory courses
+// stay on the site, and the organiser's certificate of appreciation is listed under Awards.
+const CERT_DATES = { 'Manager Essentials Training': 'Nov 2026', 'AI Foundations: From Developer to Orchestrator': 'Jul 2026', 'Business Analysis Fundamentals': 'Feb 2026', 'Certified ScrumMaster® (CSM®)': 'Dec 2024', 'Certified Tester Foundation Level': 'Jul 2024' };
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const sortKey = (d) => `${d.slice(-4)}-${String(MONTHS.indexOf(d.slice(0, 3)) + 1).padStart(2, '0')}`;
+const newestFirst = (a, b) => sortKey(b.when).localeCompare(sortKey(a.when));
+const resumeCerts = certifications
+  .filter((c) => CERT_DATES[c.title])
+  .map((c) => ({ ...c, when: CERT_DATES[c.title] }))
+  .sort(newestFirst);
+// Awards with their dates, newest first. The hackathon win is in Experience, so it is not repeated here.
+const AWARD_DATES = { 'VP Award': 'Jan 2025', 'AI Innovator of the Month': 'Jun 2026', 'Division All-Hands Recognition': 'Jan 2025', 'Annual Special Thanks': 'Jun 2025' };
+const AWARD_DETAILS = { 'VP Award': 'Contributions to multimillion-dollar business goals', 'AI Innovator of the Month': 'UI redesign delivered with AI agents', 'Division All-Hands Recognition': 'Quality and process improvement', 'Annual Special Thanks': 'Second consecutive year' };
+const awards = [
+  ...recognition.filter((r) => AWARD_DATES[r.title]).map((r) => ({ title: r.title, detail: AWARD_DETAILS[r.title] || r.detail, when: AWARD_DATES[r.title] })),
+  { title: 'Certificate of Appreciation', detail: 'AI Foundations hackathon leadership', when: 'Aug 2026' },
+].sort(newestFirst);
 
 const links = [
   { text: contact.email, href: `mailto:${contact.email}` },
@@ -42,22 +81,36 @@ const links = [
   { text: 'github.com/shironigun', href: contact.github },
   { text: 'shironigun.github.io', href: 'https://shironigun.github.io' },
 ];
-// Written here, used by both PDFs; everything else comes from src/content. Projects follow the portfolio,
-// with no product name (the content rules); the experience already covers Promise Tracker and the revamp.
-const headline = 'AI Product Analyst | Business Analysis | Product Strategy | AI Product Development';
-const summary = `AI Product Analyst with ${tenure} years on enterprise dealership SaaS at Perseus Group, part of Constellation Software. I run discovery, requirements and AI feature definition, and shape the roadmap with the Product Owner. Certified ScrumMaster leading the QA team; I prototype by directing AI agents with Claude Code. I designed a Quality Gates framework adopted by 3 other teams, and was on the team that placed 1st of 11 in a division-wide AI hackathon.`;
+// The headline matches his LinkedIn headline.
+const headline = 'AI Product Analyst | AI product definition, design direction, agent-led prototyping, evaluation and QA leadership';
+// The summary sells results (his call, 22 Nov 2026): it opens with an adverb and an action, and never
+// names a title, years of experience, the sector, the company, certifications or "I".
+const summary = `Consistently delivers clear requirements and AI features that teams can build with confidence, from business problem to release. Spearheaded an AI feature from discovery to pilot, directed AI agents to redesign 7 product areas, and built the method that decides when an AI feature is ready to release. Strengthened release quality with a Quality Gates framework that 3 other teams adopted, followed by about 40% less defect leakage and zero critical defects over 6 sprints. Unified API testing across 5+ teams, placed first among 11 teams in a division-wide AI hackathon, and now leads the QA team into AI-assisted testing.`;
+// Projects, newest first by start date; each one sentence or two, a verb first. No product name.
 const projects = [
-  { name: 'Claude Code marketplace', note: 'public on GitHub', when: 'Jul 2026 – Present', text: '7 plugins and 30 skills for QA and product work; every plugin asks a person before it writes.' },
-  { name: 'AI evaluation and the Skills Evals Lab', note: 'AI quality', when: 'Sep 2026 – Present', text: 'A repeatable AI test (3 runs, counted only if all pass) and a 17-lesson beginner course on evaluating AI skills.' },
-  { name: 'Feature guides for dealers', note: 'customer documentation', when: 'Nov 2026 – Present', text: 'Wrote a how-to standard and the first complete guide for an AI feature, and specified a build tool that checks every guide against the standard; cut the guide from 18 pages to 12 after the support team’s review.' },
-  { name: 'Product documentation', note: 'business analysis', when: 'Aug 2026 – Present', text: 'Reference manuals and a support runbook that let product, QA and support act on how a subsystem really works, with every claim tagged verified, not built or inferred.' },
-  { name: 'Product promo films', note: 'product marketing', when: 'Nov 2026', text: 'Directed 3 promo films, 2 published, with the real product screens rebuilt in code and demo data only.' },
-  { name: 'AI QA Workbench', note: 'DIS AI Foundations program', when: 'Jul 2026', text: '16 specialised AI agents take a user story to test cases, automation, pipeline runs and bug reports.' },
+  { name: 'Feature Guides for Dealers', note: 'Customer Documentation', when: 'Nov 2026 - Present', text: 'Structured an 8-page documentation standard and the first complete AI feature guide with the support team; specified a tool that checks each guide against it.' },
+  { name: 'Product Promo Films', note: 'Product Marketing', when: 'Nov 2026', text: 'Planned 3 product films for sales and marketing, scripting and art-directing each; 2 released, including a version for an industry expo.' },
+  { name: 'Skills Evals Lab', note: 'AI Evaluation Course', when: 'Sep 2026 - Present', text: 'Taught AI evaluation through a 17-lesson course with 6 practical labs; its method scored a QA plugin at 83.3% across 9 evaluations.' },
+  { name: 'Subsystem Documentation', note: 'Business Analysis', when: 'Aug 2026 - Present', text: 'Gathered subsystem knowledge into reference manuals and a support runbook, classifying each claim as verified, not yet built or inferred.' },
+  { name: 'Claude Code Marketplace', note: 'AI Product and QA Workflows', when: 'Jul 2026 - Present', text: 'Published 7 plugins and 30 skills for QA and product workflows, with approval controls before every write; introduced them to QA analysts in a hands-on workshop.' },
+  { name: 'AI QA Workbench', note: 'Cross-Division AI Hackathon', when: 'Jul 2026', text: 'Coordinated 16 specialised AI agents that turn user stories into test cases, automation, pipeline runs and bug reports, in a five-day hackathon.' },
 ];
-const dates = (period) => period.replace(' to present', ' – Present').replace(' to ', ' – ');
-// Talks and events from the site, newest first, with his role in each. The hackathon win is under Awards.
-const ROLE = { Talk: 'Speaker', Workshop: 'Presenter', Organised: 'Organiser', Participated: 'Participant' };
-const talks = recentEvents.filter((e) => ROLE[e.label]).map((e) => ({ title: e.title, role: ROLE[e.label], when: e.when }));
+// No two bullets, projects or summary sentences may open with the same word.
+{
+  const openers = [...resumeRoles.flatMap((r) => r.bullets), ...projects.map((p) => p.text), ...summary.split(/(?<=\.) /)].map((t) => t.split(' ')[0].toLowerCase());
+  const repeats = openers.filter((w, i) => openers.indexOf(w) !== i);
+  if (repeats.length) throw new Error(`Repeated opening words: ${[...new Set(repeats)].join(', ')}`);
+}
+const dates = (period) => period.replace(' to present', ' - Present').replace(' to ', ' - ');
+// Talks and events from the site, newest first, with his role in each. Participation, and the sessions
+// already in Experience (domain training, Quality Gates), are left off.
+const ROLE = { Talk: 'Speaker', Workshop: 'Presenter', Organised: 'Organiser' };
+const TALK_DATES = { 'Postman API testing: proof of concept': 'May 2025' };
+const TALK_TITLES = { 'AI workshop on Claude skills': 'AI Workshop on Claude Skills', 'The Lift: Why AI isn’t about 10x': 'The Lift: Why AI Isn’t About 10x', 'Postman API testing: proof of concept': 'Postman API Testing: Proof of Concept' };
+const talks = recentEvents
+  .filter((e) => ROLE[e.label] && !/Domain training|Quality Gates sessions/.test(e.title))
+  .map((e) => ({ title: TALK_TITLES[e.title] || e.title, role: ROLE[e.label], when: TALK_DATES[e.title] || e.when }));
+for (const t of talks) if (!/^[A-Z][a-z]{2} \d{4}$/.test(t.when)) throw new Error(`Talk date not "Mon YYYY": ${t.title} (${t.when})`);
 
 // ── The PDFs ──
 // Straight apostrophes in the PDFs: some applicant-tracking systems misread the curly one.
@@ -76,7 +129,7 @@ function html(theme) {
         <span class="period">${esc(dates(r.period))}</span>
       </div>
       <p class="company">${esc(r.company)}</p>
-      <ul class="points">${r.highlights.map((h) => `<li><strong>${esc(h.label)}.</strong> ${esc(h.text)}</li>`).join('')}</ul>
+      <ul class="points">${r.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>
     </article>`;
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
@@ -119,6 +172,13 @@ h3 { font-size: 10.6pt; font-weight: 650; }
 .list { margin: 1.2mm 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5mm 7mm; }
 .list.wide { grid-template-columns: 1fr 1fr; }
 .list li { display: grid; gap: 0.2mm; padding-top: 0.7mm; border-top: 0.5pt solid ${t.line}; break-inside: avoid; }
+.rows { margin: 1.2mm 0 0; padding: 0; list-style: none; }
+.rows li { display: flex; justify-content: space-between; gap: 6mm; padding: 0.5mm 0; break-inside: avoid; }
+.rows li b { color: ${t.ink}; font-weight: 600; }
+.rows .period { flex: none; }
+.proj { margin-top: 1.4mm; break-inside: avoid; }
+.proj .roleHead b { color: ${t.ink}; font-weight: 600; }
+.proj p { margin: 0.3mm 0 0; }
 .list li span:first-child { color: ${t.ink}; font-weight: 500; line-height: 1.35; }
 .list li span:last-child { color: ${t.quiet}; font-size: 8.4pt; line-height: 1.35; }
 .edu { display: flex; justify-content: space-between; align-items: baseline; margin-top: 1.4mm; }
@@ -129,7 +189,7 @@ h3 { font-size: 10.6pt; font-weight: 650; }
   <div>
     <h1>${esc(person.name)}</h1>
     <p class="title">${esc(person.title)}</p>
-    <p class="where">${esc(person.product)} at ${esc(person.company)}</p>
+    <p class="where">${esc(headline.split(' | ')[1])}</p>
   </div>
   <ul class="links">${links.map((l) => `<li><a href="${esc(l.href)}">${esc(l.text)}</a></li>`).join('')}</ul>
 </header>
@@ -138,27 +198,27 @@ h3 { font-size: 10.6pt; font-weight: 650; }
 <section><h2>Experience</h2>${resumeRoles.map(role).join('')}</section>
 
 <section><h2>Projects</h2>
-  <ul class="list wide">${projects.map((p) => `<li><span>${esc(p.name)}</span><span>${esc(p.when)}. ${esc(p.text)}</span></li>`).join('')}</ul>
-</section>
-
-<section><h2>Recognition</h2>
-  <ul class="list">${recognition.map((r) => `<li><span>${esc(r.title)}</span><span>${esc(r.detail || '')}</span></li>`).join('')}</ul>
-</section>
-
-<section><h2>Talks and events</h2>
-  <ul class="list">${talks.map((e) => `<li><span>${esc(e.title)}</span><span>${esc(e.role)}, ${esc(e.when)}</span></li>`).join('')}</ul>
+  ${projects.map((p) => `<div class="proj"><div class="roleHead"><span><b>${esc(p.name)}</b> | <em>${esc(p.note)}</em></span><span class="period">${esc(p.when)}</span></div><p>${esc(p.text)}</p></div>`).join('')}
 </section>
 
 <section><h2>Skills</h2>
   <div class="cols">${skillGroups.map((g) => `<div class="group"><b>${esc(g.group)}</b>${esc(g.items.join(', '))}</div>`).join('')}</div>
 </section>
 
-<section><h2>Education</h2>
-  <div class="edu"><span><b>${esc(education.degree)}</b>, ${esc(education.school)}</span><span class="period">${esc(dates(education.period))}</span></div>
+<section><h2>Certifications</h2>
+  <ul class="rows">${resumeCerts.map((c) => `<li><span><b>${esc(c.title)}</b>, ${esc(c.issuer)}</span><span class="period">${esc(c.when)}</span></li>`).join('')}</ul>
 </section>
 
-<section><h2>Certifications</h2>
-  <ul class="list">${certifications.map((c) => `<li><span>${esc(c.title)}</span><span>${esc(c.issuer)}, ${esc(c.year)}</span></li>`).join('')}</ul>
+<section><h2>Awards</h2>
+  <ul class="rows">${awards.map((r) => `<li><span><b>${esc(r.title)}</b>: ${esc(r.detail || '')}</span><span class="period">${esc(r.when)}</span></li>`).join('')}</ul>
+</section>
+
+<section><h2>Talks and Events</h2>
+  <ul class="rows">${talks.map((e) => `<li><span><b>${esc(e.title)}</b> (${esc(e.role)})</span><span class="period">${esc(e.when)}</span></li>`).join('')}</ul>
+</section>
+
+<section><h2>Education</h2>
+  <div class="edu"><span><b>${esc(education.degree)}</b>, ${esc(education.school)}</span><span class="period">${esc(dates(education.period))}</span></div>
 </section>
 </div></body></html>`;
 }
@@ -219,8 +279,8 @@ const range = (period) => tex(dates(period));
 // The full lists from src/content: every skill group, every tool group, every certification and award.
 const skillTex = skillGroups
   .map((g) => `     \\textbf{${tex(g.group)}}{: ${tex(g.items.join(', '))}}`).join(' \\\\\n');
-const certTex = certifications.map((c) => `      \\resumeItem{${tex(c.title)}, ${tex(c.issuer)}, ${tex(c.year)}}`).join('\n');
-const awardTex = recognition.map((r) => `      \\resumeItem{\\textbf{${tex(r.title)}}${r.detail ? `: ${tex(r.detail)}` : ''}}`).join('\n');
+const certTex = resumeCerts.map((c) => `      \\resumeItem{\\textbf{${tex(c.title)}}, ${tex(c.issuer)} \\hfill ${tex(c.when)}}`).join('\n');
+const awardTex = awards.map((r) => `      \\resumeItem{\\textbf{${tex(r.title)}}${r.detail ? `: ${tex(r.detail)}` : ''} \\hfill ${tex(r.when)}}`).join('\n');
 
 const latex = String.raw`%-------------------------
 % Resume in Latex
@@ -306,7 +366,7 @@ ${resumeRoles.map((r) => `
       {${tex(r.role)}}{${range(r.period)}}
       {${tex(r.company)}}{}
       \\resumeItemListStart
-${r.highlights.map((h) => `        \\resumeItem{\\textbf{${tex(h.label)}:} ${tex(h.text)}}`).join('\n')}
+${r.bullets.map((b) => `        \\resumeItem{${tex(b)}}`).join('\n')}
       \\resumeItemListEnd`).join('\n')}
   \resumeSubHeadingListEnd
 
@@ -351,7 +411,7 @@ ${awardTex}
   \resumeSubHeadingListStart
     \item
     \resumeItemListStart
-${talks.map((e) => `      \\resumeItem{\\textbf{${tex(e.title)}}: ${tex(e.role)}, ${tex(e.when)}}`).join('\n')}
+${talks.map((e) => `      \\resumeItem{\\textbf{${tex(e.title)}} (${tex(e.role)}) \\hfill ${tex(e.when)}}`).join('\n')}
     \resumeItemListEnd
   \resumeSubHeadingListEnd
 

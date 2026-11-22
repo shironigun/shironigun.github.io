@@ -8,7 +8,7 @@ Related: [content rules](content-rules.md), [journey inputs still to collect](jo
 
 ## Summary
 
-- **Who:** an AI Product Analyst in enterprise dealership SaaS at Perseus Group, part of Constellation Software. Official HR title: Product Quality Analyst. Joined 14 December 2023.
+- **Who:** an AI Product Analyst on an enterprise dealership CRM at Perseus Group, part of Constellation Software. Official HR title: Product Quality Analyst. Joined 14 December 2023.
 - **What he does:** business analysis and product work with the Product Owner (discovery, roadmap, epics, user stories with acceptance criteria), design collaboration and design review, AI feature definition and prototyping, Scrum Master duties, and leading the QA team (since October 2026). Public copy says "leading the QA team" with no team size and never "report to me".
 - **How he builds:** by directing AI agents (Claude Code). The decisions, specifications and accountability are his; he does not hand-write code, so programming languages are never listed as his skills.
 - **Career direction:** AI and agentic product work.
@@ -48,7 +48,7 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 - **Name:** Mahmood Ahmad
 - **Public title:** AI Product Analyst (official HR title: Product Quality Analyst)
 - **Company:** Perseus Group, Constellation Software
-- **Product area:** Enterprise dealership SaaS
+- **Product area:** Enterprise dealership CRM
 - **Joined:** 14 December 2023 (tenure on the site is worked out live from this date, rounded down to a tenth of a year)
 - **Availability:** not shown on the site (21 Nov 2026). The contact line reads "Happy to talk about AI product work, quality and agentic delivery."
 - **Home page headline:** “I shape AI products from idea to launch.”
@@ -57,7 +57,7 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 
 ### Headline numbers
 
-- **2.9+** years in enterprise dealership SaaS, from QA to product analysis
+- **2.9+** years on an enterprise dealership CRM, from QA to product analysis
 - **3** teams adopted the Quality Gates framework I designed
 - **1st** of 11 teams in a division-wide AI hackathon
 
@@ -71,7 +71,7 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 
 ## The product he works on (as described publicly)
 
-**Enterprise dealership SaaS.** Customer-engagement software for automotive, agricultural and equipment dealerships, part of the dealer software group at Constellation Software. It sits on top of each dealership-management system and covers SMS, email and Messenger across the whole buying journey, on web and mobile.
+**Enterprise dealership CRM.** Customer-engagement software for automotive, agricultural and equipment dealerships, part of the dealer software group at Constellation Software. It sits on top of each dealership-management system and covers SMS, email and Messenger across the whole buying journey, on web and mobile.
 
 - Automations and visibility
 - Broadcasts and customer groups
@@ -93,15 +93,18 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 
 *Jan 2026 to present*
 
-On our dealership SaaS products I do the team’s business analysis and shape the roadmap with the Product Owner, collaborate on design, run the sprint as Scrum Master, prototype AI features and lead the QA team.
+On our enterprise dealership CRM I do the team’s business analysis and shape the roadmap with the Product Owner, collaborate on design, run the sprint as Scrum Master, prototype AI features and lead the QA team.
 
-- **AI product definition:** Lead AI feature definition for customer-engagement SaaS for automotive, agricultural and equipment dealerships, in a 200+ person division. Led product definition for Promise Tracker, an AI feature that surfaces what a dealership still owes its customers, from concept to its pilot ahead of production. Promoted from Junior SQA Analyst in under two years.
-- **AI-native product revamp:** Led the rebuild of 7 product areas of our dealership CRM, directing Claude Code agents from specification to review against the component library and business rules.
-- **Roadmap and product strategy:** Shape the roadmap and AI feature decisions with the Product Owner and Initiative Manager in Aha! and Azure DevOps, backing priorities with quantitative analysis (regression, trend and break-even), SWOT and 5 Whys.
-- **AI enablement:** Organised the AI Foundations hackathon for 10 participants across QA and design, with 10 working demos; opened it with “AI Foundations: From Doing to Directing” and wrote a 183-page Claude handbook.
-- **People leadership:** Lead the QA team (since October 2026), coaching the team toward AI-assisted testing, AI evaluation and automation; completed six-month Manager Essentials Training.
-- **Public AI tooling:** Published a Claude Code marketplace of 7 plugins and 30 skills, with a person approving every write, and built the AI QA Workbench in the DIS AI Foundations cohort.
-- **Delivery and insight:** Own release readiness, introduced the API automation framework and onboarded 3 analysts.
+- Headed product definition for Promise Tracker, an AI feature that surfaces outstanding dealership commitments to customers, from discovery to pilot.
+- Defined AI feature requirements in 70 user stories with acceptance criteria.
+- Redesigned 7 CRM product areas by directing AI coding agents, reviewing each against the component library and business rules.
+- Influenced roadmap priorities with the Product Owner and Initiative Manager through trend analysis, break-even analysis and AI cost modelling.
+- Formulated a repeatable AI evaluation method using rule-based tests, written grading criteria and 3 runs per case to check consistency.
+- Oversaw the QA team from Oct 2026, coaching analysts in AI-assisted testing, LLM evaluation and test automation.
+- Organised the AI Foundations hackathon, writing 9 real-world project briefs and mentoring all 10 participants to working demos.
+- Prepared a 183-page Claude handbook to support AI knowledge-sharing across the division.
+- Managed release readiness and introduced API test automation built by AI agents, auditing it for false positives.
+- Evaluated QA candidates and onboarded 3 analysts; earned promotion from Junior SQA Analyst in under two years.
 
 ### Junior SQA Analyst, Perseus Group (Constellation Software)
 
@@ -109,10 +112,14 @@ On our dealership SaaS products I do the team’s business analysis and shape th
 
 Owned QA for an enterprise dealership CRM and grew into business analysis and design.
 
-- **Quality framework adopted by 3 teams:** Designed the Strict Quality Gates framework, adopted by 3 other teams: about 40% less defect leakage (by his own tracking) and zero critical defects across 6 consecutive sprints.
-- **Domain enablement:** Ran a domain training programme of 120+ live sessions, contributed to the public product knowledge base through training and knowledge transfer, and trained 2 new hires to independent sprint work within their first quarter.
-- **Design and tooling standards:** Led the design phase for the dealership mobile app with the UX designer, and ran the Postman proof of concept, presented to the whole division, whose recommendation 5+ teams adopted as their standard API testing tool.
-- **AI hackathon winner:** 1st of 11 teams in a division-wide AI hackathon (2025) as Product Owner, Scrum Master and QA lead, building AI for customer retention and employee performance; delivered the final pitch.
+- Identified gaps in acceptance criteria behind 68% of escaped defects and designed the Quality Gates framework to close them.
+- Secured adoption of the Quality Gates framework by 3 other teams through 4 facilitated sessions.
+- Quantified about 40% lower defect leakage and zero critical defects across 6 consecutive sprints after adoption.
+- Launched a domain training programme of 120+ live sessions for development, QA, operations and business analysts.
+- Trained 2 new hires to handle sprint work independently within their first quarter, using 60+ SOPs and guides written for the programme.
+- Originated a pre-development design phase, aligning business rules with the UX designer before mobile app development.
+- Standardised API testing across 5+ teams by presenting a Postman proof of concept to the division.
+- Ranked first of 11 teams in a division-wide AI hackathon as Product Owner, Scrum Master and QA lead, delivering the final pitch.
 
 ### SQA Trainee, Perseus Group (Constellation Software)
 
@@ -120,9 +127,9 @@ Owned QA for an enterprise dealership CRM and grew into business analysis and de
 
 Learned the product, the domain and the sprint, and started improving them.
 
-- **Standards from day one:** Initiated and wrote shared UI standards, covering component consistency, interaction patterns and accessibility baselines, and improved it into a 12-page style guide in January 2024.
-- **Domain immersion:** Worked alongside the Product Owner, Initiative Manager, development and operations, and ran acceptance, functional, API and cross-platform testing with workarounds that cut regression effort.
-- **Automation guide:** Published a 13-page Selenium WebDriver guide in C# for automation testers. (Published 31 Dec 2023, during the traineeship, not the Junior SQA role.)
+- Developed shared UI standards for components, interaction patterns and accessibility, then expanded them into a 12-page style guide.
+- Tested acceptance, functional, API and cross-platform flows, finding workarounds that reduced regression effort.
+- Wrote a 13-page Selenium WebDriver guide in C# to share automation practice with other testers.
 
 ### WordPress Designer, Media Solutions
 
@@ -130,8 +137,8 @@ Learned the product, the domain and the sprint, and started improving them.
 
 Designed and built responsive client websites.
 
-- **Client websites:** Designed and built custom WordPress websites from client brand requirements, turning PSD designs into pixel-accurate, responsive Elementor builds.
-- **UX improvements:** Improved navigation, layout hierarchy and UI consistency across the sites I delivered.
+- Built custom WordPress websites from client brand requirements, turning PSD designs into pixel-accurate, responsive Elementor builds.
+- Improved navigation, layout hierarchy and UI consistency across every site delivered.
 
 ### UX Designer, intern, Arfa Software Technology Park
 
@@ -139,8 +146,8 @@ Designed and built responsive client websites.
 
 Interface design, prototypes and marketing materials.
 
-- **Interface design:** Refined the organisation’s web interface for clearer navigation and hierarchy, and sketched and prototyped UI concepts for stakeholder review before engineering started.
-- **Brand materials:** Designed e-brochures and client-facing materials to brand guidelines.
+- Refined the organisation’s web interface for clearer navigation and hierarchy, and prototyped UI concepts for stakeholder review before engineering started.
+- Designed e-brochures and client-facing materials to brand guidelines.
 
 ## Career journey (every node on the Journey page)
 
@@ -157,7 +164,7 @@ Typed nodes, oldest first. Types: role (Role), promotion (Promotion), project (P
 - **Apr 2023** · Certification · Foundations of Project Management, Google
 - **Aug 2023** · Certification · Agile with Atlassian Jira, Atlassian
 - **2023** · Education · B.S. Information Technology, University of the Punjab. Completed the degree, 2019 to 2023.
-- **Dec 2023** · Role · SQA Trainee, Perseus Group. Joined enterprise dealership SaaS at Constellation Software.
+- **Dec 2023** · Role · SQA Trainee, Perseus Group. Joined an enterprise dealership CRM team at Constellation Software.
 - **Dec 2023** · Initiative · Shared UI standards. Audited the product UI and authored the shared standard for components, interaction patterns and accessibility.
 - **Jan 2024** · Initiative · Improved the UI style guide. Expanded the UI standards into a 12-page style guide (18 Jan 2024): form validation, date and time formats, form filling, branding in light and dark mode, alerts, pagination, cursor, hover, spacing, overflow and icon rules, and a grammar guide for interface text. The PDF names the product and a colleague, so it stays off the site; only this summary is public.
 - **Dec 2023** · Project · Selenium WebDriver notes in C#. Wrote and published a 13-page guide to browser automation in C# for other automation testers; links to the public PDF.

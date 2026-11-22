@@ -7,7 +7,7 @@ export const person = {
   title: 'AI Product Analyst',
   officialTitle: 'Product Quality Analyst',
   company: 'Perseus Group, Constellation Software',
-  product: 'Enterprise dealership SaaS',
+  product: 'Enterprise dealership CRM',
   available: false,
   availability: 'Happy to talk about AI product work, quality and agentic delivery.',
 };
@@ -44,7 +44,7 @@ export const tenureYears = Math.floor(((Date.now() - joined.getTime()) / (365.24
 export const tenure = `${tenureYears}+`;
 
 export const highlights = [
-  { value: tenure, label: 'years in enterprise dealership SaaS, from QA to product analysis', viz: 'years', to: '/journey' },
+  { value: tenure, label: 'years on an enterprise dealership CRM, from QA to product analysis', viz: 'years', to: '/journey' },
   { value: '120+', label: 'live domain training sessions delivered', viz: 'dots', to: '/case-studies/domain-knowledge-base' },
   { value: '3', label: 'teams adopted the Quality Gates framework I designed', viz: 'teams', to: '/case-studies/quality-gates' },
   { value: '1st', label: 'of 11 teams in a division-wide AI hackathon', viz: 'rank', to: '/case-studies/hackathon-2025' },

@@ -49,7 +49,7 @@ export default function Footer() {
               <span>{person.title}</span>
             </span>
           </Link>
-          <p className={styles.pitch}>{hero.headline} Enterprise dealership SaaS at {person.company}.</p>
+          <p className={styles.pitch}>{hero.headline} Enterprise dealership CRM at {person.company}.</p>
           <ul className={styles.social}>
             {SOCIAL.map(({ href, label, Icon, external }) => (
               <li key={label}>
@@ -84,7 +84,7 @@ export default function Footer() {
         <dl className={styles.facts}>
           <div>
             <dt>Experience</dt>
-            <dd>{tenure} years in enterprise dealership SaaS</dd>
+            <dd>{tenure} years on an enterprise dealership CRM</dd>
             <dd className={styles.sub}>From QA to product analysis</dd>
           </div>
           <div>
