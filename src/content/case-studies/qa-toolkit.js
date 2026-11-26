@@ -1,4 +1,4 @@
-// QA Toolkit, end to end. His own public plugin (shironigun/claude-marketplace, origin/main,
+// QA Toolkit, end to end. His own public plugin (shironigun/marketplace, origin/main,
 // plugins/qa-toolkit, version 1.0.0: ui-test-cases, api-test-cases, testcase-to-tracker,
 // api-failure-to-bug), product-neutral by design. Its relation to the flagship comes from
 // qa-engineering/docs/enhancement/SP1-spec.md §2d (7 Oct 2026: the four skills copied in, renamed and
@@ -233,12 +233,12 @@ export default {
     { h2: 'Try it' },
     { p: 'QA Toolkit is public in my Claude Code marketplace, version 1.0.0. Add the marketplace and install it:' },
     { code: [
-      'claude plugin marketplace add shironigun/claude-marketplace',
+      'claude plugin marketplace add shironigun/marketplace',
       'claude plugin install qa-toolkit@shironigun',
       '/qa-toolkit:ui-test-cases',
     ], caption: 'Two commands to install; then call any skill by name in a session.' },
     { p: 'Paste a story and ask for test cases, or paste a failed API test’s output and ask for a bug.' },
-    { link: { href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/qa-toolkit', text: 'See it on GitHub' } },
+    { link: { href: 'https://github.com/shironigun/marketplace/tree/main/plugins/qa-toolkit', text: 'See it on GitHub' } },
 
     { h2: 'What I learned' },
     { quote: 'Small enough to pick up is a feature.' },
@@ -246,6 +246,6 @@ export default {
     { p: 'Keeping the product out was the best decision in the plugin. It is what let the same four skills become the engines of a much bigger plugin, writing in the same format.' },
     { p: 'And a skill that only drafts is still worth having. Deciding that a red test is not a bug is half of the job.' },
     { link: { to: '/case-studies/qa-plugin', text: 'The QA Engineering Plugin, which grew from these four skills' } },
-    { link: { to: '/case-studies/crm-bug-suite', text: 'CRM Bug Suite, the product-specific bug skills' } },
+    { link: { to: '/case-studies/crm-bug-suite', text: 'Bug Suite, the house-style bug skills' } },
   ],
 };

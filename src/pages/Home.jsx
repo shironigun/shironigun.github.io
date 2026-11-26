@@ -38,7 +38,7 @@ const figures = {
   'Quality framework adopted by 3 teams': { figure: '3', figureLabel: 'teams adopted it', date: '2025-06', when: '2025' },
   [domainLeadership]: { figure: '120+', figureLabel: 'live sessions', date: '2024-07', when: '2024 to 2025' },
   'Introduced the design phase': { figure: '7', figureLabel: 'product areas through it', date: '2024-06', when: '2024' },
-  'Published a Claude Code marketplace': { figure: '30', figureLabel: 'skills in 7 plugins', date: '2026-10', when: 'Oct 2026' },
+  'Published a Claude Code marketplace': { figure: '38', figureLabel: 'skills in 10 plugins', date: '2026-10', when: 'Oct 2026' },
   'AI Innovator of the Month': { figureLabel: 'For the UI revamp', date: '2026-06', when: 'Jun 2026' },
   'Organised the AI Foundations hackathon': { figure: '10', figureLabel: 'working demos', date: '2026-08', when: 'Aug 2026' },
 };

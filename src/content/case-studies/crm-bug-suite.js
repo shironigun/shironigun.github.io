@@ -1,5 +1,5 @@
-// CRM Bug Suite, end to end. His own public plugin (shironigun/claude-marketplace, origin/main,
-// plugins/crm-bug-suite, version 0.2.0: bugger, defector, commentor), so full detail is allowed.
+// Bug Suite, end to end. His own public plugin (shironigun/marketplace, origin/main,
+// plugins/bug-suite, version 0.4.0: bugger, defector, commentor), so full detail is allowed.
 // Company rule still applies to the examples: no people, clients, boards, projects or ticket ids from
 // the repo; every example is fictional (0000-style ids), and the conventions behind it are described
 // without counts. Describes only what the public skills do.
@@ -7,7 +7,7 @@ export default {
   updated: 'November 2026',
   body: [
     { p: 'Picture Jordan, a developer, opening a new bug at the start of his day. The title says “customer page broken”. There is one screenshot, no steps, and no word on which environment it happened in. He spends the morning trying to make it happen again, then sends it back with a question.' },
-    { p: 'CRM Bug Suite is my Claude Code plugin for the other kind of report: the one a developer can act on before lunch. Three skills write Bugs, production Defects and ticket comments in my house format, the way I write them myself. None of them writes a word to the tracker until a person has read the preview and said yes.' },
+    { p: 'Bug Suite is my Claude Code plugin for the other kind of report: the one a developer can act on before lunch. Three skills write Bugs, production Defects and ticket comments in my house format, the way I write them myself. None of them writes a word to the tracker until a person has read the preview and said yes.' },
 
     { h2: 'At a glance' },
     { ol: [
@@ -228,7 +228,7 @@ export default {
     { h2: 'How it is built' },
     { p: 'The whole plugin is nine plain-text files. Each skill is a SKILL.md: a description that tells Claude when to use it, then the workflow, the format, the field defaults, the exact create call, the voice rules and the hard rules. The long tables live in a reference file the skill reads when it needs them.' },
     { tree: [
-      { name: 'crm-bug-suite/', note: 'Version 0.2.0' },
+      { name: 'bug-suite/', note: 'Version 0.4.0' },
       { name: '.claude-plugin/plugin.json', note: 'Name, version, description and keywords', depth: 1 },
       { name: '.mcp.json', note: 'Bundles the tracker connection; signs in with Azure Identity, no token', depth: 1 },
       { name: 'README.md', note: 'The three skills, the conventions, setup and install', depth: 1 },
@@ -243,7 +243,7 @@ export default {
     { p: 'The connection is self-contained. The plugin bundles its own Azure DevOps server, pinned to one version, and that server signs in with Azure Identity. You run az login once, and no token or password sits in any file of the plugin. Pointing it at another organisation means editing one line in .mcp.json. The launcher is written for Windows, and the README gives the one-line change for macOS and Linux.' },
 
     { h2: 'Its place in the marketplace' },
-    { p: 'CRM Bug Suite is one of the house-style plugins I built on their own before the marketplace existed. It is tuned to one team’s tracker project and one product, and it says so. The README tells another team which reference files to change: the board, the identity and the field conventions.' },
+    { p: 'Bug Suite is one of the house-style plugins I built on their own before the marketplace existed. It started tuned to one team’s tracker project and product. It is now product-neutral: on first use it discovers your boards and fields, read-only, into a local profile you confirm.' },
     { cards: [
       { title: 'ui-testing', tag: 'sibling', body: 'Its buggy skill writes test cases in the same house style. bugger is buggy’s bug-filing counterpart: same voice, same docs-first rule, same identity rules.' },
       { title: 'qa-toolkit', tag: 'product-neutral cousin', body: 'Its api-failure-to-bug skill drafts bugs with the same anatomy (environment-first steps, an OBSERVATION list, “I know this bug is resolved when”) for any product and any tracker.' },
@@ -323,14 +323,14 @@ export default {
     ] },
 
     { h2: 'Try it' },
-    { p: 'CRM Bug Suite is public in my Claude Code marketplace, version 0.2.0. It runs in Claude Code in the terminal, the desktop app and VS Code. Add the marketplace, install the plugin, and sign in once:' },
+    { p: 'Bug Suite is public in my Claude Code marketplace, version 0.4.0. It runs in Claude Code in the terminal, the desktop app and VS Code. Add the marketplace, install the plugin, and sign in once:' },
     { code: [
-      'claude plugin marketplace add shironigun/claude-marketplace',
-      'claude plugin install crm-bug-suite@shironigun',
+      'claude plugin marketplace add shironigun/marketplace',
+      'claude plugin install bug-suite@shironigun',
       'az login',
     ], caption: 'Three commands. The tracker connection starts on its own; check it with /mcp.' },
     { p: 'Then edit the organisation address in the plugin’s .mcp.json, start a session and say “file a bug for story 0000”. It is tuned to one team’s project and house style, so another team should first change the board, identity and field conventions in each skill’s reference file. For a product-neutral start, qa-toolkit is the better fit.' },
-    { link: { href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/crm-bug-suite', text: 'See it on GitHub' } },
+    { link: { href: 'https://github.com/shironigun/marketplace/tree/main/plugins/bug-suite', text: 'See it on GitHub' } },
 
     { h2: 'What I learned' },
     { quote: 'The shape of a report decides how fast it gets fixed.' },

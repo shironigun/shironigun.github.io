@@ -16,7 +16,7 @@ export const contact = {
   email: 'mehmood4129@gmail.com',
   linkedin: 'https://www.linkedin.com/in/shironigun',
   github: 'https://github.com/shironigun',
-  pluginRepo: 'https://github.com/shironigun/claude-marketplace',
+  pluginRepo: 'https://github.com/shironigun/marketplace',
   resumeLight: '/resumes/Mahmood_Ahmad_Resume_Light.pdf',
   resumeDark: '/resumes/Mahmood_Ahmad_Resume_Dark.pdf',
 };
@@ -73,7 +73,7 @@ export const roleMap = [
   { role: 'Business analyst', area: 'Product', icon: 'layers', proof: '70 user stories', to: '/how-i-work#requirements' },
   { role: 'Operator and strategist', area: 'Product', icon: 'trend', proof: '2026 roadmap structure', to: '/projects#product-decisions' },
   { role: 'Design collaborator', area: 'Design', icon: 'pen', proof: '7 product areas revamped', to: '/case-studies/design-phase' },
-  { role: 'AI prototyper', area: 'AI', icon: 'chip', proof: '30 skills published', to: '/case-studies/ai-prototyping' },
+  { role: 'AI prototyper', area: 'AI', icon: 'chip', proof: '38 skills published', to: '/case-studies/ai-prototyping' },
   { role: 'QA lead', area: 'Quality', icon: 'shield', proof: '~40% less defect leakage', to: '/case-studies/quality-gates' },
   { role: 'Scrum master', area: 'Delivery', icon: 'users', proof: 'Certified ScrumMaster', to: '/how-i-work' },
 ];
@@ -107,7 +107,7 @@ export const pillars = [
     metricLabel: 'skills in a public marketplace',
     roles: ['AI prototyper'],
     body: 'I design AI features, write the AI skills behind them, and build working software by directing AI agents with Claude Code.',
-    proof: 'AI prototypes such as Promise Tracker; a public Claude Code marketplace with 30 skills.',
+    proof: 'AI prototypes such as Promise Tracker; a public Claude Code marketplace with 38 skills.',
     link: { to: '/case-studies/ai-prototyping', text: 'AI product prototyping' },
   },
   {

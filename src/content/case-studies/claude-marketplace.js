@@ -17,7 +17,7 @@ export default {
         'I built each plugin alone, for one real job: release notes, bugs, test cases, API tests, explainers.',
         'On 9 October 2026 they moved under one roof: a public Claude Code marketplace you add with one line.',
         'Every plugin keeps a few shared rules: ask before writing, stand on its own, keep private things out.',
-        'It is still growing. The eighth plugin, Feature Intelligence, is being built on the dev branch now.',
+        'It is still growing: ten plugins are published, and Feature Intelligence is being built on the dev branch now.',
       ],
     },
     {
@@ -36,7 +36,7 @@ export default {
           ['Client release notes', 'A long list of closed work, for clients who only need what changes their day', 'Release-notes suite'],
           ['UI test cases', 'Steps with no expected result; scripts that drift away from their cases', 'UI Testing'],
           ['API tests', 'Tests quietly loosened until they pass', 'API Testing'],
-          ['Bugs and defects', 'No shared format, so reports vary', 'CRM Bug Suite'],
+          ['Bugs and defects', 'No shared format, so reports vary', 'Bug Suite'],
           ['The whole QA loop', 'A separate tool for every step, and no single place to start', 'QA Engineering'],
           ['Explaining a feature', 'One document for every reader, so it fits none of them', 'Feature Explainer'],
         ],
@@ -72,7 +72,7 @@ export default {
         nodes: [
           { id: 'rn', name: 'Release-notes suite', sub: 'July, 2 skills', lane: 0, row: 0, kind: 'ai', detail: 'The first helper. A harvester gathers everything that shipped; a releaser decides what clients hear and writes it in plain words.' },
           { id: 'ui', name: 'UI Testing', sub: 'August, 2 skills', lane: 1, row: 1, kind: 'ai', detail: 'My test-case style as rules: every step has an action and an expected result. It writes the cases, then the Playwright script, and can read a script back into cases.' },
-          { id: 'bug', name: 'CRM Bug Suite', sub: 'August, 3 skills', lane: 2, row: 1, kind: 'ai', detail: 'Bugs, production defects and ticket comments, all in one house format, so a ticket reads the same whoever files it.' },
+          { id: 'bug', name: 'Bug Suite', sub: 'August, 3 skills', lane: 2, row: 1, kind: 'ai', detail: 'Bugs, production defects and ticket comments, all in one house format, so a ticket reads the same whoever files it.' },
           { id: 'api', name: 'API Testing', sub: 'August, 2 skills', lane: 1, row: 2, kind: 'ai', detail: 'API cases and specs at three levels that assert one exact status and every documented field, and a partner skill that triages a failed run before drafting a bug.' },
           { id: 'kit', name: 'QA Toolkit', sub: '4 product-neutral skills', lane: 2, row: 3, kind: 'ai', detail: 'The same ideas with every product detail stripped out: UI cases, API cases, filing to a tracker and drafting a bug, each usable on its own.' },
           { id: 'qa', name: 'QA Engineering', sub: 'October, the flagship', lane: 3, row: 4, kind: 'ai', detail: 'One orchestrator for the whole loop, from story to filed bug, asking before every write. It took in the toolkit’s four skills on its first day.' },
@@ -106,7 +106,7 @@ export default {
           ['QA Toolkit', 'Four QA skills, one at a time', '4 skills', '1.0.0', 'Any product'],
           ['UI Testing', 'UI cases and Playwright UI specs', '2 skills', '1.1.0', 'Our CRM, with placeholders'],
           ['API Testing', 'API cases, specs and bug drafts', '2 skills', '1.0.0', 'Our CRM, with placeholders'],
-          ['CRM Bug Suite', 'Bugs, defects and ticket comments', '3 skills', '0.2.0', 'Our CRM, with placeholders'],
+          ['Bug Suite', 'Bugs, defects and ticket comments', '3 skills', '0.4.0', 'Any Azure DevOps project, via a local profile'],
           ['Release-notes suite', 'The release inventory and the client note', '2 skills', '0.1.0', 'Our CRM, with placeholders'],
           ['Feature Explainer', 'A visual explainer for each reader', '1 skill and 5 scripts', '0.1.0', 'Any product'],
           ['Feature Intelligence', 'A traceable model of a whole feature', 'In development', '0.0.2', 'Any product'],
@@ -168,7 +168,7 @@ export default {
         lanes: [{ name: 'You' }, { name: 'Claude Code' }, { name: 'The public repo' }, { name: 'Your session' }],
         nodes: [
           { id: 'add', name: 'Add the marketplace', sub: 'marketplace add …', lane: 0, row: 0, kind: 'human', detail: 'One command with the repo’s address. Claude Code remembers it as the “shironigun” marketplace.' },
-          { id: 'cat', name: 'Read the catalogue', sub: 'marketplace.json', lane: 2, row: 1, kind: 'store', detail: 'One file lists all seven plugins: name, description, category and the folder each one lives in.' },
+          { id: 'cat', name: 'Read the catalogue', sub: 'marketplace.json', lane: 2, row: 1, kind: 'store', detail: 'One file lists all ten plugins: name, description, category and the folder each one lives in.' },
           { id: 'shelf', name: 'Show the shelf', sub: 'the Discover tab', lane: 1, row: 2, kind: 'external', detail: 'Claude Code lists every plugin you could install, without installing any of them.' },
           { id: 'pick', name: 'Pick one', sub: 'install name@shironigun', lane: 0, row: 3, kind: 'human', detail: 'You install only what you need. A tester who writes API cases can take API Testing and nothing else.' },
           { id: 'folder', name: 'Fetch the plugin', sub: 'plugins/<name>/', lane: 2, row: 4, kind: 'store', detail: 'Its manifest, skills, commands, agents and tool settings come down together.' },
@@ -189,7 +189,7 @@ export default {
     {
       code: [
         '# add the marketplace (once)',
-        'claude plugin marketplace add shironigun/claude-marketplace',
+        'claude plugin marketplace add shironigun/marketplace',
         '',
         '# install what you need',
         'claude plugin install qa-engineering@shironigun',
@@ -327,7 +327,7 @@ export default {
         rows: [
           ['QA Engineering', 'Two recorded dry runs, a live test on a real product, and nine behavioural evaluations: seven passed, and both misses are explained on its page.'],
           ['Release-notes suite', 'Used to draft real client notes. The support team’s edits became rules the releaser enforces.'],
-          ['UI Testing, API Testing, CRM Bug Suite', 'Built from the formats I use on real tickets, and checked against them.'],
+          ['UI Testing, API Testing, Bug Suite', 'Built from the formats I use on real tickets, and checked against them.'],
           ['QA Toolkit', 'Its four skills became the flagship’s first four, and were tested again there.'],
           ['Feature Explainer', 'A lint step and page checks run on every explainer before anyone sees it.'],
           ['Feature Intelligence', '107 automated tests passing, and a pilot on a made-up feature with 17 planted faults. Six evaluations are written and not run yet.'],
@@ -346,6 +346,6 @@ export default {
     { lead: 'A house style is a product.', p: 'Writing down how I file a bug made me decide what a good bug is. The rules got better because a machine had to follow them.' },
     { lead: 'Treat publishing as a release.', p: 'Publishing is a release like any other: checked, versioned, and never rushed.' },
     { link: { to: '/case-studies/qa-plugin', text: 'Read the flagship: QA Engineering' } },
-    { link: { href: 'https://github.com/shironigun/claude-marketplace', text: 'See the marketplace on GitHub' } },
+    { link: { href: 'https://github.com/shironigun/marketplace', text: 'See the marketplace on GitHub' } },
   ],
 };

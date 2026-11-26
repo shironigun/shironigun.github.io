@@ -1,5 +1,5 @@
 // QA Engineering Plugin, end to end. His own public work, so full detail is allowed. Every fact comes from
-// the published repo (shironigun/claude-marketplace, main, 0106cbb), compiled in
+// the published repo (shironigun/marketplace, main, 0106cbb), compiled in
 // docs/private/artifacts/qa-plugin-facts.md on 11 Nov 2026. Say "public", never "open source": he chose not
 // to license it, so the work stays his. The live test ran on a real product: never name it or its defects.
 export default {
@@ -524,7 +524,7 @@ export default {
     {
       code: [
         '# add the marketplace once, then install the plugin',
-        'claude plugin marketplace add shironigun/claude-marketplace',
+        'claude plugin marketplace add shironigun/marketplace',
         'claude plugin install qa-engineering@shironigun',
         '',
         '# then, inside Claude Code',
@@ -532,7 +532,7 @@ export default {
       ],
       caption: 'Try it: three lines from nothing to the guided setup.',
     },
-    { link: { href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/qa-engineering', text: 'See the plugin on GitHub' } },
+    { link: { href: 'https://github.com/shironigun/marketplace/tree/main/plugins/qa-engineering', text: 'See the plugin on GitHub' } },
 
     { h2: 'What I learned' },
     { quote: 'An agent earns trust by showing what it will do before it does it.' },

@@ -1,4 +1,4 @@
-// Feature Explainer, told in full. His own public work (shironigun/claude-marketplace, branch main,
+// Feature Explainer, told in full. His own public work (shironigun/marketplace, branch main,
 // plugins/feature-explainer, version 0.1.0; committed 29 Oct 2026, merged into main by PR #18 on 30 Oct 2026),
 // so full detail is allowed. Every fact comes from the plugin's own files read through git (SKILL.md, the five
 // references, the five scripts, README, plugin.json) and from the chat exports (his request for a mode per team;
@@ -355,13 +355,13 @@ export default {
     { h2: 'Try it' },
     { p: 'Feature Explainer is public on the main branch of my marketplace. It needs Claude Code with the Artifact tool (to publish) and a browser tool (for the checks), plus Node.js and Python 3. A tracker’s MCP server is optional, for reading tickets.' },
     { code: [
-      'claude plugin marketplace add shironigun/claude-marketplace',
+      'claude plugin marketplace add shironigun/marketplace',
       'claude plugin install feature-explainer@shironigun',
       '',
       '/feature-explainer:feature-explainer explain how order refunds work, for QA',
     ] },
     { p: 'Or just ask: “I need to understand the subscription upgrade flow, make me a page for QA.” Research stays read-only, credentials are never printed or written into the page, and every page starts private until you share it.' },
-    { link: { href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/feature-explainer', text: 'See it on GitHub' } },
+    { link: { href: 'https://github.com/shironigun/marketplace/tree/main/plugins/feature-explainer', text: 'See it on GitHub' } },
 
     { h2: 'What I learned' },
     { quote: 'Turning prose into a picture is the job. Dropping facts is not.' },

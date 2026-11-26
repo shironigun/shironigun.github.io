@@ -93,7 +93,7 @@ const projects = [
   { name: 'Product Promo Films', note: 'Product Marketing', when: 'Nov 2026', text: 'Planned 3 product films for sales and marketing, scripting and art-directing each; 2 released, including a version for an industry expo.' },
   { name: 'Skills Evals Lab', note: 'AI Evaluation Course', when: 'Sep 2026 - Present', text: 'Taught AI evaluation through a 17-lesson course with 6 practical labs; its method scored a QA plugin at 83.3% across 9 evaluations.' },
   { name: 'Subsystem Documentation', note: 'Business Analysis', when: 'Aug 2026 - Present', text: 'Gathered subsystem knowledge into reference manuals and a support runbook, classifying each claim as verified, not yet built or inferred.' },
-  { name: 'Claude Code Marketplace', note: 'AI Product and QA Workflows', when: 'Jul 2026 - Present', text: 'Published 7 plugins and 30 skills for QA and product workflows, with approval controls before every write; introduced them to QA analysts in a hands-on workshop.' },
+  { name: 'Claude Code Marketplace', note: 'AI Product and QA Workflows', when: 'Jul 2026 - Present', text: 'Published 10 plugins and 38 skills for QA and product workflows, with approval controls before every write; introduced them to QA analysts in a hands-on workshop.' },
   { name: 'AI QA Workbench', note: 'Cross-Division AI Hackathon', when: 'Jul 2026', text: 'Coordinated 16 specialised AI agents that turn user stories into test cases, automation, pipeline runs and bug reports, in a five-day hackathon.' },
 ];
 // No two bullets, projects or summary sentences may open with the same word.

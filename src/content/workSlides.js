@@ -19,7 +19,7 @@ export const workSlides = [
       { id: 'qt', x: 118, y: 124, label: 'qa-toolkit', sub: 'Cases and bug reports' },
       { id: 'api', x: 442, y: 124, label: 'api-testing', sub: '3-level API specs' },
       { id: 'ui', x: 118, y: 238, label: 'ui-testing', sub: 'UI test cases' },
-      { id: 'crm', x: 442, y: 238, label: 'crm-bug-suite', sub: 'Bugs and comments' },
+      { id: 'crm', x: 442, y: 238, label: 'bug-suite', sub: 'Bugs and comments' },
       { id: 'rn', x: 280, y: 298, label: 'release-notes-suite', sub: 'Client notes' },
     ],
     edges: [['hub', 'qe', { flow: true }], ['hub', 'qt', { flow: true }], ['hub', 'api', { flow: true }], ['hub', 'ui', { flow: true }], ['hub', 'crm', { flow: true }], ['hub', 'rn', { flow: true }]],

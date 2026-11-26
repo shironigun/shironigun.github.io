@@ -10,7 +10,7 @@ One title, six roles: business analyst, design collaborator, AI prototyper, oper
 - [Quality Gates and the QA team](https://shironigun.github.io/case-studies/quality-gates): root-cause analysis, then a framework adopted by 3 teams; about 40% less defect leakage; zero critical defects across 6 sprints.
 - [Domain training and knowledge transfer](https://shironigun.github.io/case-studies/domain-knowledge-base): a self-initiated training programme of 120+ live sessions, with knowledge transfer into the public product knowledge base.
 - [AI product prototyping](https://shironigun.github.io/case-studies/ai-prototyping): working prototypes for AI ideas, built with Figma Make and Claude Code.
-- [QA Engineering Plugin](https://shironigun.github.io/case-studies/qa-plugin): public Claude Code marketplace; 7 plugins, 30 skills; human approval before every tracker write.
+- [QA Engineering Plugin](https://shironigun.github.io/case-studies/qa-plugin): public Claude Code marketplace; 10 plugins, 38 skills; human approval before every tracker write.
 - [AI hackathon, first place](https://shironigun.github.io/case-studies/hackathon-2025): 1st of 11 teams, as Product Owner, Scrum Master and QA lead.
 - [AI Foundations: Powering Work with AI Orchestration](https://shironigun.github.io/case-studies/ai-foundations-hackathon): organised and led an AI hackathon; nine briefs for ten participants, mentoring to working demos, and a 183-page handbook.
 - [AI Promise Tracker](https://shironigun.github.io/case-studies/promise-tracker): an AI feature whose product definition I led; in pilot, not released yet.

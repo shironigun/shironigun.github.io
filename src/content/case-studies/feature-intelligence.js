@@ -1,4 +1,4 @@
-// Feature Intelligence, told in full. His own public work (shironigun/claude-marketplace, branch dev,
+// Feature Intelligence, told in full. His own public work (shironigun/marketplace, branch dev,
 // plugins/feature-intelligence), so full detail is allowed. Counts are the ones true on disk on 11 Nov 2026:
 // version 0.0.2; 107 tests (84 at the end of plan 1); 10 playbooks, 4 subagents, 5 commands; 6 evals written
 // and NOT run; 17 planted faults; 67 commits, 34 of them fixes. Not the proposal's planned counts. Sources: the
@@ -396,7 +396,7 @@ export default {
 
     { h2: 'Where it is now' },
     { p: 'In development: version 0.0.2 on the public dev branch, and not yet registered in the marketplace, so there is nothing to install yet. Next come the first eval run and the pilot; then plan 3, the shareable reference page and its questions board; then plan 4, a ticket tree created in Azure DevOps only after an explicit yes to an exact preview.' },
-    { link: { href: 'https://github.com/shironigun/claude-marketplace/tree/dev/plugins/feature-intelligence', text: 'See it on GitHub, dev branch' } },
+    { link: { href: 'https://github.com/shironigun/marketplace/tree/dev/plugins/feature-intelligence', text: 'See it on GitHub, dev branch' } },
 
     { h2: 'What I learned' },
     { quote: 'Understanding has to be provable.' },

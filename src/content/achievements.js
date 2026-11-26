@@ -16,7 +16,7 @@ export const achievements = [
   { icon: 'trend', title: 'Promoted to Product Quality Analyst', detail: 'From Junior SQA Analyst in under two years, into a product-analyst role.', year: '2026' },
   { icon: 'users', title: 'Trained and onboarded QA analysts', detail: 'Trained two QA hires to independent sprint work, and onboarded new analysts in 2026.' },
   { icon: 'spark', title: 'AI Innovator of the Month', detail: 'For the UI and UX revamp and new features, delivered through agentic development and product thinking.', year: '2026', to: '/case-studies/design-phase' },
-  { icon: 'plug', title: 'Published a Claude Code marketplace', detail: '7 plugins and 30 skills, each built for one real job.', year: '2026', to: '/case-studies/claude-marketplace' },
+  { icon: 'plug', title: 'Published a Claude Code marketplace', detail: '10 plugins and 38 skills, each built for one real job.', year: '2026', to: '/case-studies/claude-marketplace' },
   { icon: 'calendar', title: 'Organised the AI Foundations hackathon', detail: 'Briefed, taught and mentored the QA and design team to working demonstrations, and was recognised with a certificate of appreciation.', year: '2026', to: '/case-studies/ai-foundations-hackathon' },
   { icon: 'badge', title: 'Completed the DIS AI Foundations program', detail: 'Built the AI QA Workbench in the cohort of a five-day, cross-division AI hackathon.', year: '2026', to: '/case-studies/ai-qa-workbench' },
   { icon: 'badge', title: 'Certified ScrumMaster® at 24', detail: 'Alongside ISTQB® CTFL and Microsoft Business Analysis Fundamentals.', year: '2024' },

@@ -66,7 +66,7 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 - Email: mehmood4129@gmail.com
 - LinkedIn: https://www.linkedin.com/in/shironigun
 - GitHub: https://github.com/shironigun
-- Public plugin marketplace: https://github.com/shironigun/claude-marketplace
+- Public plugin marketplace: https://github.com/shironigun/marketplace
 - Resumes: `public/resumes/Mahmood_Ahmad_Resume_Light.pdf`, `public/resumes/Mahmood_Ahmad_Resume_Dark.pdf`, and a one-page LaTeX version on Jake's Resume template, `resume/Mahmood_Ahmad_Resume.tex`, all built by `node resume/build.mjs` from the site's content (no phone number, no location)
 
 ## The product he works on (as described publicly)
@@ -84,7 +84,7 @@ The sections below mirror the site's content files (`src/content/*.js`) as of No
 
 - **Product** (Business analyst, Operator and strategist): I run discovery, turn the product vision into a roadmap, epics and user stories, and work through product decisions with the Product Owner. *Proof:* 70 user stories and the 2026 roadmap structure this year.
 - **Design** (Design collaborator): I brief the designer on the business rules, review each design against the component library before development, and prototype ideas that people can click. *Proof:* Introduced a structured design phase into delivery; revamped seven product areas.
-- **AI** (AI prototyper): I design AI features, write the AI skills behind them, and build working software by directing AI agents with Claude Code. *Proof:* AI prototypes such as Promise Tracker; a public Claude Code marketplace with 30 skills.
+- **AI** (AI prototyper): I design AI features, write the AI skills behind them, and build working software by directing AI agents with Claude Code. *Proof:* AI prototypes such as Promise Tracker; a public Claude Code marketplace with 38 skills.
 - **Quality and delivery** (QA lead, Scrum master): I lead the QA team, run the sprint board and ceremonies, and set the quality bar features ship against. *Proof:* Quality Gates adopted by 3 teams: about 40% less defect leakage (by his own tracking), zero critical defects across 6 sprints.
 
 ## Experience
@@ -240,7 +240,7 @@ Ownership words are exact: led, built, introduced, assisted. Status words are ex
 - **Promoted to Product Quality Analyst** (2026): From Junior SQA Analyst in under two years, into a product-analyst role.
 - **Trained and onboarded QA analysts**: Trained two QA hires to independent sprint work, and onboarded new analysts in 2026.
 - **AI Innovator of the Month** (Jun 2026): For the UI and UX revamp and new features, delivered through agentic development and product thinking.
-- **Published a Claude Code marketplace** (2026): 7 plugins and 30 skills, each built for one real job.
+- **Published a Claude Code marketplace** (2026): 10 plugins and 38 skills, each built for one real job.
 - **Organised the AI Foundations hackathon** (2026): Briefed, taught and mentored the QA and design team to working demonstrations, and was recognised with a certificate of appreciation.
 - **Completed the DIS AI Foundations program** (2026): Built the AI QA Workbench in the cohort of a five-day, cross-division AI hackathon.
 - **Certified ScrumMaster® at 24** (2024): Alongside ISTQB® CTFL and Microsoft Business Analysis Fundamentals.
@@ -347,7 +347,7 @@ Mirrors his LinkedIn skills (cleaned up on 20 Nov 2026), in the site's sentence 
 ### Skills and AI behaviour he has written
 
 - **Test-case drafting skill:** Drafts test cases in my house style, learned from hundreds of test cases I had written.
-- **Claude Code marketplace:** 30 skills across seven plugins, each built alone for one job; the QA Engineering plugin is the flagship.
+- **Claude Code marketplace:** 38 skills across ten plugins, each built alone for one job; the QA Engineering plugin is the flagship.
 - **AI feature behaviour:** The rules an AI feature follows: what it detects, when it acts and what it must never say.
 - **Skills Evals Lab:** A 17-lesson beginner course on evaluating AI skills.
 - **Working with Claude handbook:** A 183-page practical guide to the eleven building blocks of Claude, written for the division.

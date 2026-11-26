@@ -95,7 +95,7 @@ const allProjects = [
     year: '2026',
     when: 'Jul to Nov 2026',
     quarters: ['2026-Q3', '2026-Q4'],
-    kpi: ['30', 'skills across 7 published plugins'],
+    kpi: ['38', 'skills across 10 published plugins'],
     delivered: [
       'Built each plugin on its own, for one real job, before any of them met',
       'Brought them together in one public marketplace with a single install line',
@@ -104,14 +104,14 @@ const allProjects = [
     tags: ['AI', 'Quality', 'Personal builds'],
     featured: true,
     thumb: 'qaLoop',
-    href: 'https://github.com/shironigun/claude-marketplace',
+    href: 'https://github.com/shironigun/marketplace',
     page: {
       lead: 'It began as a handful of helpers, each built alone to speed up one recurring job: release notes, bug reports, test cases. In October I gave them one home. Now anyone can add my marketplace with one command and install whichever plugin they need.',
       facts: [
         { label: 'My role', value: 'Creator and owner of the marketplace and every plugin in it' },
         { label: 'When', value: 'July to November 2026' },
         { label: 'Status', value: 'Public on GitHub' },
-        { label: 'Size', value: '7 published plugins and 30 skills; an eighth plugin in development' },
+        { label: 'Size', value: '10 published plugins and 38 skills; another in development' },
         { label: 'Runs in', value: 'Claude Code: terminal, desktop app and VS Code' },
       ],
     },
@@ -135,7 +135,7 @@ const allProjects = [
     ],
     tags: ['Product', 'AI', 'Personal builds'],
     thumb: 'qaLoop',
-    href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/release-notes-suite',
+    href: 'https://github.com/shironigun/marketplace/tree/main/plugins/release-notes-suite',
     page: {
       lead: 'Clients need to hear about the one thing they can now do, not every item that closed. My release-notes suite splits the job between two skills: a harvester built to miss nothing and a releaser that leaves most of it out. Our support team’s feedback became rules the skill enforces.',
       facts: [
@@ -166,7 +166,7 @@ const allProjects = [
     ],
     tags: ['Quality', 'AI', 'Personal builds'],
     thumb: 'uiDirections',
-    href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/ui-testing',
+    href: 'https://github.com/shironigun/marketplace/tree/main/plugins/ui-testing',
     page: {
       lead: 'A test case and its script should say the same thing. This plugin writes both from a user story, click by click, reads an old script back into plain cases, and files approved cases in the team’s tracker only after a yes.',
       facts: [
@@ -197,7 +197,7 @@ const allProjects = [
     ],
     tags: ['Quality', 'AI', 'Personal builds'],
     thumb: 'apiLevels',
-    href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/api-testing',
+    href: 'https://github.com/shironigun/marketplace/tree/main/plugins/api-testing',
     page: {
       lead: 'Left alone, an AI will loosen an API test until it passes. This plugin writes API cases and Playwright specs that assert one exact status and every documented field, at three levels and in both directions. When a spec goes red, its partner skill triages the failure first and drafts a bug only for a real product fault.',
       facts: [
@@ -212,7 +212,7 @@ const allProjects = [
   {
     slug: 'crm-bug-suite',
     parent: 'claude-marketplace',
-    name: 'CRM Bug Suite',
+    name: 'Bug Suite',
     summary: 'Three skills that write bugs, production defects and ticket comments in one house format, so tickets read the same whoever files them.',
     question: 'How do you make every bug report clear enough to act on at once?',
     role: 'Creator',
@@ -228,7 +228,7 @@ const allProjects = [
     ],
     tags: ['Quality', 'AI', 'Personal builds'],
     thumb: 'qaLoop',
-    href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/crm-bug-suite',
+    href: 'https://github.com/shironigun/marketplace/tree/main/plugins/bug-suite',
     page: {
       lead: 'A bug report should let a developer reproduce the problem without asking a question. I turned the way I write bugs, production defects and ticket comments into three skills, so every ticket arrives in the same clear shape, whoever files it.',
       facts: [
@@ -259,7 +259,7 @@ const allProjects = [
     ],
     tags: ['Quality', 'AI', 'Personal builds'],
     thumb: 'qaLoop',
-    href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/qa-toolkit',
+    href: 'https://github.com/shironigun/marketplace/tree/main/plugins/qa-toolkit',
     page: {
       lead: 'Not every team wants an orchestrator. QA Toolkit is the light option: four skills that each do one job well, from writing UI and API test cases to drafting a bug from a failed run. Take one, or take all four.',
       facts: [
@@ -289,7 +289,7 @@ const allProjects = [
     ],
     tags: ['AI', 'Quality', 'Personal builds'],
     thumb: 'qaLoop',
-    href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/qa-engineering',
+    href: 'https://github.com/shironigun/marketplace/tree/main/plugins/qa-engineering',
     page: {
       lead: 'QA agents that ask first. One orchestrator runs the whole loop from story to filed bug, and a person says yes before anything touches Azure DevOps. It grew out of an audit of an AI-built test suite.',
       facts: [
@@ -320,7 +320,7 @@ const allProjects = [
     ],
     tags: ['Product', 'AI', 'Personal builds'],
     thumb: 'designReview',
-    href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/feature-explainer',
+    href: 'https://github.com/shironigun/marketplace/tree/main/plugins/feature-explainer',
     page: {
       lead: 'Type one line about a feature. Get back a researched, multi-page explainer written for the person who will read it: a product manager, a tester, a designer, a developer, or someone in sales and operations.',
       facts: [
@@ -351,7 +351,7 @@ const allProjects = [
     ],
     tags: ['AI', 'Product', 'Personal builds'],
     thumb: 'designReview',
-    href: 'https://github.com/shironigun/claude-marketplace/tree/dev/plugins/feature-intelligence',
+    href: 'https://github.com/shironigun/marketplace/tree/dev/plugins/feature-intelligence',
     page: {
       lead: 'A feature can reach a team as a long specification, a stack of stories, meeting notes and the code. Feature Intelligence turns all of it into one traceable model, where every statement carries its source quote and an evidence status. I wrote the brief and set the rules; AI agents are building it to my plans.',
       facts: [

@@ -88,7 +88,7 @@ export const journey = [
   { date: '2026-08', when: 'Aug 2026', type: 'course', title: 'Working with Claude: The Eleven Building Blocks', detail: 'A 183-page practical handbook for continued learning across the division.', file: '/documents/working-with-claude-eleven-building-blocks.pdf', fileLabel: 'Read the handbook' },
   { date: '2026-10', when: 'Oct 2026', type: 'course', title: 'Skills Evals Lab', detail: 'A beginner course on how to test AI skills, from what changes when you test AI to six hands-on labs: 17 short lessons, about three hours, no maths needed.', to: '/case-studies/ai-evaluation' },
   { date: '2026-09', when: '2026', type: 'course', title: 'Playwright automation course', detail: 'A self-paced course inside the QA plugin that remembers where each learner stopped.' },
-  { date: '2026-10', when: 'Oct 2026', type: 'project', title: 'Published a Claude Code marketplace', detail: 'Plugins built one at a time, brought together in one public repo; every one asks before it writes.', metric: { value: '30', label: 'skills across 7 plugins' }, to: '/case-studies/claude-marketplace', highlight: true },
+  { date: '2026-10', when: 'Oct 2026', type: 'project', title: 'Published a Claude Code marketplace', detail: 'Plugins built one at a time, brought together in one public repo; every one asks before it writes.', metric: { value: '38', label: 'skills across 10 plugins' }, to: '/case-studies/claude-marketplace', highlight: true },
   { date: '2026-11', when: 'Nov 2026', type: 'project', title: 'AI feature in pilot', detail: 'Led its product definition, from discovery and requirements to design, evaluation and the pilot.', to: '/case-studies/promise-tracker', highlight: true },
 ];
 

@@ -35,7 +35,7 @@ Drafts are in `docs/private/linkedin/` (not in git), including `profile-update.m
 - "User stories" reads dated; keep it out of the headline and About.
 - Company projects: say only what he did and the problem it solved, nothing further. No feature internals, per-feature numbers, data volumes, architecture or defects. His own open-source work is his to describe in full.
 - Hours are his working hours: Monday to Friday, 8 hours a day, weekends off. Each title at Perseus Group has its own live figure, plus an overall total (`src/content/hours.js`). Never hardcode an hours figure.
-- Numbers matter: ~40% less defect leakage, the live training hours, 1st of 11 teams, 30 skills across 7 plugins, 9 briefs for 10 participants and 10 demos, a 183-page handbook.
+- Numbers matter: ~40% less defect leakage, the live training hours, 1st of 11 teams, 38 skills across 10 plugins, 9 briefs for 10 participants and 10 demos, a 183-page handbook.
 - The About is enterprise-level and selling, and covers the whole journey (UX intern 2021, WordPress designer, SQA, then product and AI), the projects, wins and current interests, within 2,600 characters.
 - **Never notify his network** (21 Nov 2026): keep "Notify network" off on every edit form and check it before each save; the account setting "Share profile updates" is off. He doesn't want a string of update notices. After saving a role, LinkedIn may open a "Post now" share page: always click Dismiss.
 - **Each experience shows the full scope of his work** (21 Nov 2026): every verified fact that fits, strongest first, with a verified result in each bullet. LinkedIn counts a Unicode-bold letter as 2 characters, so count UTF-16 length before pasting. What doesn't fit in 2,000 characters goes on a media card for that role.

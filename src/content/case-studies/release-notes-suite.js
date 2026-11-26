@@ -1,4 +1,4 @@
-// The release-notes suite, end to end. His own public plugin (shironigun/claude-marketplace, origin/main,
+// The release-notes suite, end to end. His own public plugin (shironigun/marketplace, origin/main,
 // plugins/release-notes-suite, version 0.1.0: harvester and releaser), so full detail is allowed. The
 // client release notes themselves are company material: no product or brand names, no real features,
 // volumes or ratios, and every example here is fictional. The support team's feedback is described as
@@ -314,11 +314,11 @@ export default {
     { h2: 'Try it' },
     { p: 'The release-notes suite is public in my Claude Code marketplace, version 0.1.0. Add the marketplace and install it:' },
     { code: [
-      'claude plugin marketplace add shironigun/claude-marketplace',
+      'claude plugin marketplace add shironigun/marketplace',
       'claude plugin install release-notes-suite@shironigun',
     ], caption: 'Two commands install it in Claude Code.' },
     { p: 'Then paste a technical draft and say “turn this into release notes”, or ask “what did we ship since the last notes?” with a tracker connected. It is tuned to one team’s house style, so the rules and the exemplars are the parts most worth reusing. If you already have a standalone copy of the releaser, remove it so two copies don’t run.' },
-    { link: { href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/release-notes-suite', text: 'See it on GitHub' } },
+    { link: { href: 'https://github.com/shironigun/marketplace/tree/main/plugins/release-notes-suite', text: 'See it on GitHub' } },
 
     { h2: 'What I learned' },
     { quote: 'The core skill is suppression, not prose.' },

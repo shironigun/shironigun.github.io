@@ -1,4 +1,4 @@
-// The UI Testing plugin, told in full. His own public work (shironigun/claude-marketplace, origin/main,
+// The UI Testing plugin, told in full. His own public work (shironigun/marketplace, origin/main,
 // plugins/ui-testing, version 1.1.0: skills tester and buggy, their four reference files, README, plugin.json
 // and .mcp.json), so full detail is allowed. The skills were built for company work and scrubbed for the
 // public repo: never write the product, the organisation, the tracker project, the board names, the repo's
@@ -276,7 +276,7 @@ export default {
       columns: ['Plugin', 'How it relates to ui-testing'],
       rows: [
         ['api-testing', 'The request-and-response twin; its api-tester hands cases to buggy for the tracker'],
-        ['crm-bug-suite', 'Files bugs and production defects in the same house voice'],
+        ['bug-suite', 'Files bugs and production defects in the same house voice'],
         ['qa-toolkit', 'Product-neutral, one-at-a-time versions of the same jobs'],
         ['qa-engineering', 'The flagship. Its UI cases-to-scripts rules were inspired by tester, but it never depends on this plugin'],
       ],
@@ -357,12 +357,12 @@ export default {
     { h2: 'Try it' },
     { p: 'Two commands install it from my public marketplace. buggy also needs an Azure login, once; tester needs nothing.' },
     { code: [
-      'claude plugin marketplace add shironigun/claude-marketplace',
+      'claude plugin marketplace add shironigun/marketplace',
       'claude plugin install ui-testing@shironigun',
       'az login    # only if you will use buggy',
     ], caption: 'Install the plugin in Claude Code.' },
     { p: 'Then start a session, paste a story and ask “what should I test?”, or hand it a .spec.ts file and ask for the cases. On macOS or Linux, swap the bundled connection’s Windows launcher for plain npx, as the README shows. The plugin is tuned to one product and one tracker, so read it as a pattern to retarget rather than a drop-in.' },
-    { link: { href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/ui-testing', text: 'See the plugin on GitHub' } },
+    { link: { href: 'https://github.com/shironigun/marketplace/tree/main/plugins/ui-testing', text: 'See the plugin on GitHub' } },
 
     { h2: 'What I learned' },
     { quote: 'If a step could mean two things, it is two steps.' },

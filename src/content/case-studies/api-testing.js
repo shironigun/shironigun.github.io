@@ -1,4 +1,4 @@
-// The API Testing plugin, told in full. His own public work (shironigun/claude-marketplace, origin/main,
+// The API Testing plugin, told in full. His own public work (shironigun/marketplace, origin/main,
 // plugins/api-testing, version 1.0.0: skills api-tester and api-bugger, README, plugin.json), so full detail
 // is allowed. Built for company work and scrubbed for the public repo: never write the product, the
 // organisation, the tracker project, the board names, the repo's placeholder names, real module names or ids.
@@ -53,7 +53,7 @@ export default {
         { id: 'commit', name: 'Commit', sub: 'the pipeline only runs it', lane: 2, row: 7, kind: 'output', detail: 'Reviewed specs are committed. The pipeline runs them; it never calls a model.' },
         { id: 'draft', name: 'Draft the bug', sub: 'real product bugs only', lane: 3, row: 7, kind: 'ai', detail: 'Only a real product bug gets a draft, in the house format, saved for review.' },
         { id: 'ok3', name: 'Review the draft', sub: 'approve or reject', lane: 0, row: 8, kind: 'gate', detail: 'You approve or reject each draft. Nothing reaches the tracker from this plugin.' },
-        { id: 'file', name: 'Hand off to file', sub: 'crm-bug-suite', lane: 3, row: 9, kind: 'output', detail: 'Approved drafts go to a sibling plugin’s filing skills, which have their own approval.' },
+        { id: 'file', name: 'Hand off to file', sub: 'bug-suite', lane: 3, row: 9, kind: 'output', detail: 'Approved drafts go to a sibling plugin’s filing skills, which have their own approval.' },
       ],
       edges: [
         { from: 'in', to: 'model', label: 'story and routes' },
@@ -323,7 +323,7 @@ export default {
       columns: ['Plugin', 'How it relates to api-testing'],
       rows: [
         ['ui-testing', 'The click-by-click twin. Its buggy skill can file api-tester’s cases as tracker Test Cases'],
-        ['crm-bug-suite', 'Files what api-bugger drafts: bugger for test environments, defector for production'],
+        ['bug-suite', 'Files what api-bugger drafts: bugger for test environments, defector for production'],
         ['qa-toolkit', 'Product-neutral versions of the same jobs, API cases and failure-to-bug among them'],
         ['qa-engineering', 'The flagship. Its API cases-to-scripts rules were inspired by api-tester and its failure-to-bug by api-bugger, but it never depends on them'],
       ],
@@ -403,11 +403,11 @@ export default {
     { h2: 'Try it' },
     { p: 'Two commands install it from my public marketplace. It needs no setup and no connection.' },
     { code: [
-      'claude plugin marketplace add shironigun/claude-marketplace',
+      'claude plugin marketplace add shironigun/marketplace',
       'claude plugin install api-testing@shironigun',
     ], caption: 'Install the plugin in Claude Code.' },
     { p: 'Then ask for “API tests for POST /appointments”, hand it a .spec.ts file and ask for the cases, or paste a failed spec’s output and say “turn this red run into a bug”. To file an approved draft, install crm-bug-suite too. The plugin is tuned to one team’s framework, so read it as a pattern to retarget rather than a drop-in.' },
-    { link: { href: 'https://github.com/shironigun/claude-marketplace/tree/main/plugins/api-testing', text: 'See the plugin on GitHub' } },
+    { link: { href: 'https://github.com/shironigun/marketplace/tree/main/plugins/api-testing', text: 'See the plugin on GitHub' } },
 
     { h2: 'What I learned' },
     { quote: 'A test that passes either way has stopped testing.' },
